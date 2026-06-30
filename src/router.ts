@@ -33,6 +33,8 @@ export const router = createRouter({
   scrollBehavior(to, _from, savedPosition) {
     if (to.hash) return { el: to.hash, top: 90, behavior: 'smooth' }
     if (savedPosition) return savedPosition
-    return { top: 0 }
+    // Jump to top instantly — overrides the global `html { scroll-behavior: smooth }`
+    // in base.css so route changes don't play a smooth scroll-up.
+    return { top: 0, behavior: 'instant' }
   },
 })

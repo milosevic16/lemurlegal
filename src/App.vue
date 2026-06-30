@@ -1,5 +1,9 @@
 <template>
   <SiteChrome>
+    <!-- Each route is a distinct component, so router-view fully remounts the
+         view's #main root on navigation — which replays the CSS entry animation
+         below (signalling a new page) without a <transition>/key, both of which
+         fight the ported per-view scripts that mutate the DOM directly. -->
     <router-view />
   </SiteChrome>
 </template>
@@ -30,3 +34,18 @@ function onClick(e: MouseEvent) {
 onMounted(() => document.addEventListener('click', onClick))
 onBeforeUnmount(() => document.removeEventListener('click', onClick))
 </script>
+
+<!-- Global (non-scoped): targets each routed view's #main root, which a scoped
+     block here couldn't reach. -->
+<style>
+/* Page-entry animation: navigation remounts the view's #main, replaying this —
+   a subtle fade + rise that signals you've landed on a different page. */
+#main { animation: page-in .32s cubic-bezier(.22, .61, .36, 1) both; }
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #main { animation: none; }
+}
+</style>
