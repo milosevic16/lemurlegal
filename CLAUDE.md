@@ -9,24 +9,20 @@ npm run dev        # Vite dev server at http://localhost:5173
 npm run build      # production build -> dist/
 npm run preview    # serve the production build
 npm run typecheck  # vue-tsc -b (effects files are @ts-nocheck; legacy template attrs not strict-checked)
-
-python3 tools/extract.py   # regenerate views/styles/fonts/pages.ts from the source HTML
 ```
 
-There is no test suite and no linter configured. `LL_SRC` env var overrides the source HTML directory used by `extract.py` (default: `../projects/lemurlegal`).
+There is no test suite and no linter configured.
 
-## The core fact about this repo: most of `src/` is generated
+## The core fact about this repo: `src/` is the source of truth — do NOT run `extract.py`
 
-This is a Vite + Vue 3 (TS) + Tailwind rebuild of the Lemur Legal marketing site, ported 1:1 from 12 self-contained "Standalone" HTML exports. `tools/extract.py` decodes those exports and **emits** the following — editing them directly is almost always wrong because the next `extract.py` run overwrites them:
+This is a Vite + Vue 3 (TS) + Tailwind rebuild of the Lemur Legal marketing site, originally ported 1:1 from 12 self-contained "Standalone" HTML exports by `tools/extract.py`. That extractor decoded the exports and emitted, in a **one-time** generation:
 
 - `src/views/*.vue` — one per page (`<template>` = original `<main>` markup; `<style scoped>` = that page's content CSS)
-- `src/views/*.effects.ts` — the original page script, marked `// @ts-nocheck` and `// AUTO-GENERATED`
+- `src/views/*.effects.ts` — the original page script, marked `// @ts-nocheck`
 - `src/styles/fonts.css`, `src/styles/base.css`
 - `src/pages.ts` — route metadata table
 
-**To change page content, styles, or effects, edit `tools/extract.py` and rerun it**, not the generated files. Hand-maintained source lives in `src/components/`, `src/composables/`, `src/router.ts`, `src/App.vue`, `src/main.ts`, `tailwind.config.js`.
-
-When adding/removing a page, three lists must stay in sync: `FILES` in `tools/extract.py`, `VIEWS` in `src/router.ts`, and the generated `src/pages.ts`.
+**Edit these files in `src/` directly. Do not run `extract.py`.** The original source HTML (`../projects/lemurlegal`) is no longer present and Python isn't installed in this environment, so the extractor cannot run anyway — and if it could, it would clobber the hand-made changes that now live in these files (restored Regulatory Compliance page markup, sector colors, header fixes, route animation, …) and reintroduce bugs (the Regulatory Compliance standalone has no `<main>`, so regeneration emits a blank page). `tools/extract.py` is retained only as historical record of how the tree was first built; treat `src/` as authoritative.
 
 ## Architecture
 
@@ -38,7 +34,7 @@ When adding/removing a page, three lists must stay in sync: `FILES` in `tools/ex
 
 **Per-view theming (`src/composables/useTheme.ts`).** Different pages use different design tokens (e.g. the blog uses Spectral/Hanken; the rest use IBM Plex Mono) and palettes. Each view, on mount, sets `document.title` and calls `useRootVars(ROOT_VARS)` + `useTheme(aesthetic, signalPct, accent)` to write `:root` custom properties as inline styles on `documentElement`. This is intentional: applying tokens per-view at runtime prevents the collisions that merged global `:root` blocks would cause. `useTheme` takes an `Aesthetic` (Editorial/Live/Redacted) and `Accent` (Baltic/Thermal/Nordic).
 
-**CSS scoping strategy (in `extract.py`).** Chrome selectors (shared header/footer/wire primitives) are emitted **global** into `base.css`; everything else is scoped per-view into that view's `<style scoped>`, deduped within the page. This is why pages with identical class names don't collide. `@media` blocks are split so chrome rules stay global while content rules get scoped.
+**CSS scoping strategy (how the CSS is laid out).** Chrome selectors (shared header/footer/wire primitives) live **global** in `base.css`; everything else is scoped per-view in that view's `<style scoped>`. This is why pages with identical class names don't collide, and why shared-header tweaks (e.g. the `.status` rule) go in `base.css` while page-specific styles go in the view. `@media` blocks follow the same split — chrome rules global, content rules scoped.
 
 **Tailwind.** Preflight is **off** — the ported handcrafted CSS provides the reset. Design tokens in `tailwind.config.js` map to the CSS custom properties. Use Tailwind utilities for new layout; keep the bespoke CSS for existing sections.
 
