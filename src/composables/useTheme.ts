@@ -7,7 +7,10 @@
 // correct palette (the inline styles set here would otherwise persist).
 
 export type Aesthetic = 'Editorial' | 'Live' | 'Redacted'
-export type Accent = 'Baltic' | 'Thermal' | 'Nordic'
+// Baltic/Thermal/Nordic are tri-color brand palettes (b/g/o are distinct hues).
+// Purple/Green/Amber are monochrome: b/g/o collapse to one section hue (+ shades),
+// so a product page themed with one of them renders in a single color.
+export type Accent = 'Baltic' | 'Thermal' | 'Nordic' | 'Purple' | 'Green' | 'Amber'
 
 const MODES: Record<Aesthetic, Record<string, string>> = {
   Editorial: { paper: '#D2DDD7', paper2: '#C6D4CE', ink: '#1A1826', ink2: '#585672', hairline: '#B4C0BA', hairlineStr: '#A0AEA8', sig: '#7F59F5' },
@@ -19,6 +22,11 @@ const PALETTES: Record<Accent, Record<string, string>> = {
   Baltic: { b: '#7F59F5', bd: '#6444CC', g: '#1fc49a', gd: '#17967a', o: '#C4823A', od: '#A4651E' },
   Thermal: { b: '#9B2242', bd: '#7A1A34', g: '#9B5A1A', gd: '#7A4214', o: '#6B5200', od: '#523D00' },
   Nordic: { b: '#3A5F8A', bd: '#2D4466', g: '#2E6058', gd: '#1E4040', o: '#5A5A74', od: '#444460' },
+  // Monochrome section palettes: b/g/o are all shades of one hue, so every
+  // var(--blue/--green/--ochre) usage on the page resolves to the section color.
+  Purple: { b: '#7F59F5', bd: '#6444CC', g: '#A88BFF', gd: '#7F59F5', o: '#6444CC', od: '#4E33A8' },
+  Green: { b: '#1FC49A', bd: '#17967A', g: '#1FC49A', gd: '#17967A', o: '#137A5F', od: '#0E5C48' },
+  Amber: { b: '#C4823A', bd: '#A4651E', g: '#E8A33D', gd: '#C4823A', o: '#A4651E', od: '#6E3D12' },
 }
 
 // Apply a page's :root custom properties as inline styles on documentElement.
@@ -45,9 +53,12 @@ export function useTheme(aesthetic: Aesthetic = 'Editorial', signalPct = 50, acc
   r.style.setProperty('--ink-2', m.ink2)
   r.style.setProperty('--hairline', m.hairline)
   r.style.setProperty('--hairline-strong', m.hairlineStr)
-  r.style.setProperty('--sig', m.sig)
 
   const p = PALETTES[accent] || PALETTES.Baltic
+  // --sig follows the accent's primary hue (so it's section-colored on monochrome
+  // pages). Safe for legacy accents: Baltic's primary is the same purple as before.
+  const sigVal = aesthetic === 'Redacted' ? m.sig : p.b
+  r.style.setProperty('--sig', sigVal)
   const blueVal = aesthetic === 'Redacted' ? m.ink : p.b
   const blueDeep = aesthetic === 'Redacted' ? m.ink : p.bd
   const greenVal = aesthetic === 'Redacted' ? m.ink : p.g
@@ -67,7 +78,7 @@ export function useTheme(aesthetic: Aesthetic = 'Editorial', signalPct = 50, acc
   const period = Math.max(0.5, 10 - signal * 9.5)
   const hexOpac = 0.04 + signal * 0.36
   const sigAlpha = 0.07 + signal * 0.28
-  const sigRgb = aesthetic === 'Redacted' ? '155,14,0' : '127,89,245'
+  const sigRgb = aesthetic === 'Redacted' ? '155,14,0' : hexRgb(sigVal)
   const glEl = document.querySelector<HTMLElement>('[data-glitch-text]')
   if (glEl) glEl.style.setProperty('--glitch-period', period + 's')
   Array.prototype.slice.call(document.querySelectorAll<HTMLElement>('[data-anim="hexrow"]')).forEach((el: HTMLElement) => {

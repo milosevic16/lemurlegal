@@ -13,7 +13,7 @@
       <div class="mica__hero-in" data-ht="mica__hero-in">
         <div class="mica__hero-main" data-ht="mica__hero-main">
           <p class="mica__kicker" data-ht="mica__kicker">Regulatory Compliance · Ljubljana <span class="mica__caret" data-ht="mica__caret" data-ht-blink="" aria-hidden="true"></span></p>
-          <div class="mica__hexrow" data-ht="mica__hexrow" data-ht-hexrow="" aria-hidden="true">0x7F59F5  0xD2DDD7  434F4D50  4C49414E 4345  0x2D5BFF  4D694341  0x131220  5053 4432  4D694649 44 4949  0x7F59F5  414D4C</div>
+          <div class="mica__hexrow" data-ht="mica__hexrow" data-ht-hexrow="" aria-hidden="true">0x7F59F5  0xD2DDD7  434F4D50  4C49414E 4345  0x6444CC  4D694341  0x131220  5053 4432  4D694649 44 4949  0x7F59F5  414D4C</div>
           <h1 class="mica__h1" data-ht="mica__h1"><span class="mica__h1-prefix" data-ht="mica__h1-prefix" data-ht-glitch="" data-ht-glitch-text="Your outsourced">Your outsourced</span> <span class="mica__h1-em" data-ht="mica__h1-em">compliance function.</span></h1>
           <p class="mica__lead" data-ht="mica__lead">Most fintechs operate in heavily regulated territory. We act as your external compliance officer — keeping your policies, processes and filings in line with PSD2, MiFID II, EBA guidelines, MiCA and EU AML rules as they evolve.</p>
           <div class="mica__actions" data-ht="mica__actions">
@@ -26,15 +26,15 @@
           <svg class="mica__seal" data-ht="mica__seal" data-ht-seal="" viewBox="0 0 240 240" fill="none" role="img" aria-label="Compliance seal">
             <defs><path id="micaRing" d="M120,120 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"></path></defs>
             <g data-ht-seal-spin="">
-              <circle cx="120" cy="120" r="108" stroke="#5B82FF" stroke-width="1.5" opacity="0.85"></circle>
-              <circle cx="120" cy="120" r="100" stroke="#5B82FF" stroke-width="0.7" opacity="0.5"></circle>
-              <text font-family="'IBM Plex Mono', monospace" font-size="8.6" font-weight="500" letter-spacing="3" fill="#9DB6FF"><textPath href="#micaRing" startOffset="2%">· PSD2 · MiFID II · AML · MiCA · COMPLIANCE </textPath></text>
+              <circle cx="120" cy="120" r="108" stroke="#7F59F5" stroke-width="1.5" opacity="0.85"></circle>
+              <circle cx="120" cy="120" r="100" stroke="#7F59F5" stroke-width="0.7" opacity="0.5"></circle>
+              <text font-family="'IBM Plex Mono', monospace" font-size="8.6" font-weight="500" letter-spacing="3" fill="#A88BFF"><textPath href="#micaRing" startOffset="2%">· PSD2 · MiFID II · AML · MiCA · COMPLIANCE </textPath></text>
             </g>
-            <g stroke="#5B82FF" stroke-width="1.4" opacity="0.7">
+            <g stroke="#7F59F5" stroke-width="1.4" opacity="0.7">
               <line x1="120" y1="14" x2="120" y2="24"></line><line x1="120" y1="216" x2="120" y2="226"></line>
               <line x1="14" y1="120" x2="24" y2="120"></line><line x1="216" y1="120" x2="226" y2="120"></line>
             </g>
-            <circle cx="120" cy="120" r="62" stroke="#2D5BFF" stroke-width="1.2" opacity="0.85"></circle>
+            <circle cx="120" cy="120" r="62" stroke="#6444CC" stroke-width="1.2" opacity="0.85"></circle>
             <path data-ht-seal-check="" d="M104,120 l11,12 l22,-26" stroke="#7F59F5" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
             <text x="120" y="158" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5" fill="#EAF0FF">COMPLIANT</text>
           </svg>
@@ -163,7 +163,7 @@
       <div class="mica__wrap" data-ht="mica__wrap">
         <div class="mica__expert" data-ht="mica__expert" data-ht-reveal="">
           <!-- Founder photo slot — replace the SVG with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D."> (fills via object-fit:cover) -->
-          <div class="mica__avatar" data-ht="mica__avatar" role="img" aria-label="Peter Merc, Ph.D."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="8.5" r="4"></circle><path d="M4.5 20c0-3.7 3.2-6.2 7.5-6.2s7.5 2.5 7.5 6.2"></path></svg></div>
+          <div class="mica__avatar" data-ht="mica__avatar" role="img" aria-label="Peter Merc, Ph.D."><img src="/peter-merc.jpg" alt="Peter Merc, Ph.D."></div>
           <div class="mica__expert-body" data-ht="mica__expert-body">
             <span class="mica__eyebrow" data-ht="mica__eyebrow">Who will run your compliance</span>
             <p class="mica__expert-name" data-ht="mica__expert-name">Peter Merc, Ph.D.</p>
@@ -320,7 +320,7 @@ let dispose: (() => void) | undefined
 onMounted(() => {
   document.title = "Regulatory Compliance \u2014 Lemur Legal"
   useRootVars(ROOT_VARS)
-  useTheme('Editorial', 50, 'Baltic')
+  useTheme('Editorial', 50, 'Purple')
   dispose = initEffects()
 })
 onUnmounted(() => dispose && dispose())

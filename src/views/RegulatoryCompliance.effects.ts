@@ -148,7 +148,7 @@ export function initEffects(): () => void {
                 el.appendChild(ov);
                 return ov;
               };
-              const ov1 = mk('#7F59F5'), ov2 = mk('#2D5BFF');
+              const ov1 = mk('#7F59F5'), ov2 = mk('#A88BFF');
               const cycle = () => {
                 const period = 3600;
                 setTimeout(() => {
