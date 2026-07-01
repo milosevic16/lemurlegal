@@ -23,6 +23,14 @@ const routes: RouteRecordRaw[] = VIEWS.map(([slug, name]) => ({
   component: () => import(`./views/${name}.vue`),
 }))
 
+// Individual blog article, backed by Contentful (loaded by slug). Registered
+// explicitly because the VIEWS table above only maps param-less slugs.
+routes.push({
+  path: '/blog/:slug',
+  name: 'BlogPost',
+  component: () => import('./views/BlogPost.vue'),
+})
+
 // `About` has no standalone page in the export — send it to the founder section.
 routes.push({ path: '/about', redirect: { path: '/', hash: '#founder' } })
 routes.push({ path: '/:pathMatch(.*)*', redirect: '/' })
