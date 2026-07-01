@@ -2,13 +2,7 @@
   <header class="masthead">
     <div class="container masthead__inner">
       <a class="brand" href="/" aria-label="Lemur Legal, home">
-        <div
-          class="logo-placeholder"
-          aria-hidden="true"
-          title="Replace with your SVG logo"
-        >
-          <span>YOUR LOGO</span>
-        </div>
+        <img class="brand__logo" src="/ll-logo.svg" alt="Lemur Legal" width="764" height="184" />
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="/#crypto_fintech" class="nl-b">Crypto &amp; Fintech</a>
