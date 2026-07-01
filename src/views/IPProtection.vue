@@ -9,16 +9,16 @@
   <span class="regmark" style="top:1.2rem;right:.2rem" aria-hidden="true"></span>
   <div class="hero__in">
     <div class="hero__main">
-      <p class="kicker">IP Protection · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+      <p class="kicker">{{ t.hero.kicker }} <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" data-anim="hexrow" aria-hidden="true">0x1FC49A  49502052  0x2026  4F544543  0x1114  4C4547414C  0xD2DDD7  4C4A4C20  0x5FC27A</div>
-      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Your IP is an asset worth">Your IP is an asset worth</span> <span class="em">defending.</span></h1>
-      <p class="slogan-line">// identify · protect · manage.</p>
-      <p class="hero__lead">Intellectual property is more than trademarks and designs — it is one of your <strong>most valuable assets</strong>. We help you identify your IP, decide what to protect and how, and put the strategy, registrations and contracts in place to manage and defend it.</p>
+      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" :data-text="t.hero.h1Glitch">{{ t.hero.h1Glitch }}</span> <span class="em">{{ t.hero.h1Em }}</span></h1>
+      <p class="slogan-line">{{ t.hero.slogan }}</p>
+      <p class="hero__lead" v-html="t.hero.lead"></p>
       <div class="hero__actions">
-        <a class="h-btn" href="#contact" data-ht-arrow="">Send your inquiry <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
-        <a class="h-btn h-btn--ghost" href="#how">How it works</a>
+        <a class="h-btn" href="#contact" data-ht-arrow="">{{ t.hero.btnPrimary }} <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
+        <a class="h-btn h-btn--ghost" href="#how">{{ t.hero.btnGhost }}</a>
       </div>
-      <p class="hero__meta">IPR strategy · Identification · Protection · Contracts &amp; licensing</p>
+      <p class="hero__meta">{{ t.hero.meta }}</p>
     </div>
 
     <div class="seal-wrap" data-anim="reveal">
@@ -54,8 +54,8 @@
   <div class="strip__grid" aria-hidden="true"></div>
   <div class="cyberline" aria-hidden="true"><span class="cyberline__base"></span><span data-anim="cpulse"></span></div>
   <div class="container strip__in">
-    <span class="strip__k">Why it matters</span>
-    <p class="strip__v">As an IP rights holder you are constantly exposed to legal and business risks that need to be addressed. Protecting intellectual property means more than registration — it starts with identifying what you hold and choosing the right way to secure it.</p>
+    <span class="strip__k">{{ t.strip.k }}</span>
+    <p class="strip__v">{{ t.strip.v }}</p>
   </div>
 </section>
 
@@ -63,27 +63,27 @@
 <section class="section container" aria-labelledby="who-h">
   <div class="sec-head">
     <span class="mark">§ 01</span>
-    <h2 id="who-h">Protection that goes beyond registration.</h2>
+    <h2 id="who-h">{{ t.why.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ WHY IT MATTERS ]</span>
   </div>
   <div class="why-grid">
     <div class="why" data-anim="reveal">
-      <span class="wn">01</span>
+      <span class="wn">{{ t.why.items[0].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
-      <h3>Strategy first</h3>
-      <p>Protection starts with identifying what IP you hold and deciding what to secure, and how — by registration, by contract, or both.</p>
+      <h3>{{ t.why.items[0].h3 }}</h3>
+      <p>{{ t.why.items[0].p }}</p>
     </div>
     <div class="why" data-anim="reveal">
-      <span class="wn">02</span>
+      <span class="wn">{{ t.why.items[1].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div>
-      <h3>Registered representatives</h3>
-      <p>We are on the official list of trademark and design representatives at the EUIPO (the European Union Intellectual Property Office), and file across the EU, nationally and worldwide.</p>
+      <h3>{{ t.why.items[1].h3 }}</h3>
+      <p>{{ t.why.items[1].p }}</p>
     </div>
     <div class="why" data-anim="reveal">
-      <span class="wn">03</span>
+      <span class="wn">{{ t.why.items[2].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path></svg></div>
-      <h3>Owned &amp; licensed on your terms</h3>
-      <p>Contracts and licences keep your IP owned by the right entity and used by others only under the terms you set.</p>
+      <h3>{{ t.why.items[2].h3 }}</h3>
+      <p>{{ t.why.items[2].p }}</p>
     </div>
   </div>
 </section>
@@ -92,7 +92,7 @@
 <section class="section section--line container" id="how" aria-labelledby="how-h">
   <div class="sec-head">
     <span class="mark">§ 02</span>
-    <h2 id="how-h">From identifying your IP to managing it as an asset.</h2>
+    <h2 id="how-h">{{ t.how.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ HOW IT WORKS · 3 STEPS ]</span>
   </div>
   <div class="tl" data-anim="timeline" aria-label="From identifying your IP to managing it as an asset, in three steps">
@@ -111,28 +111,28 @@
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">01</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 01</p>
-            <h3 class="tl__title">Identify</h3>
-            <p class="tl__sub">We map your intellectual property — what it is, what can be protected and how — and where the risks and opportunities lie.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>IP mapping</span>
+            <p class="tl__step-k">{{ t.how.steps[0].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[0].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[0].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>{{ t.how.steps[0].tag }}</span>
           </div>
         </li>
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">02</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 02</p>
-            <h3 class="tl__title">Protect</h3>
-            <p class="tl__sub">We secure it through the right mix of registration (trademarks, designs) and contractual protection.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#84E3C4"></span>registration · contracts</span>
+            <p class="tl__step-k">{{ t.how.steps[1].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[1].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[1].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#84E3C4"></span>{{ t.how.steps[1].tag }}</span>
           </div>
         </li>
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">03</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 03</p>
-            <h3 class="tl__title">Manage</h3>
-            <p class="tl__sub">We put the agreements and licences in place to manage, license and defend your IP as the business grows.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>licensing · defence</span>
+            <p class="tl__step-k">{{ t.how.steps[2].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[2].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[2].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>{{ t.how.steps[2].tag }}</span>
           </div>
         </li>
       </ol>
@@ -147,69 +147,15 @@
 <section class="section section--line container" id="coverage" aria-labelledby="cov-h">
   <div class="sec-head">
     <span class="mark">§ 03</span>
-    <h2 id="cov-h">From IP strategy to registration, contracts and licensing.</h2>
+    <h2 id="cov-h">{{ t.coverage.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ WHAT WE COVER ]</span>
   </div>
   <div class="cov-grid">
-    <article class="cov cov--b" data-anim="reveal" data-ht-ledger="">
+    <article class="cov" :class="'cov--' + ['b','g','o'][i % 3]" data-anim="reveal" data-ht-ledger="" v-for="(cov, i) in t.coverage.items" :key="i">
       <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 01</span><h4>IPR strategy &amp; identification</h4></div>
+      <div class="cov__head"><span class="cov__pno">C · {{ String(i + 1).padStart(2, '0') }}</span><h4>{{ cov.h4 }}</h4></div>
       <div class="cov__list">
-        <div class="row"><span class="l">01</span>Mapping your IP assets</div>
-        <div class="row"><span class="l">02</span>What can be protected — and how</div>
-        <div class="row"><span class="l">03</span>Ownership structuring</div>
-        <div class="row"><span class="l">04</span>Portfolio strategy &amp; management</div>
-      </div>
-    </article>
-    <article class="cov cov--g" data-anim="reveal" data-ht-ledger="">
-      <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 02</span><h4>Trademarks</h4></div>
-      <div class="cov__list">
-        <div class="row"><span class="l">01</span>Prepare &amp; file applications (national, EU, worldwide)</div>
-        <div class="row"><span class="l">02</span>Opposition proceedings</div>
-        <div class="row"><span class="l">03</span>Deadline &amp; use monitoring</div>
-        <div class="row"><span class="l">04</span>Renewals &amp; portfolio management</div>
-      </div>
-    </article>
-    <article class="cov cov--o" data-anim="reveal" data-ht-ledger="">
-      <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 03</span><h4>Designs</h4></div>
-      <div class="cov__list">
-        <div class="row"><span class="l">01</span>Prepare &amp; file applications (national, EU, worldwide)</div>
-        <div class="row"><span class="l">02</span>Assignment agreements</div>
-        <div class="row"><span class="l">03</span>Deadline monitoring</div>
-        <div class="row"><span class="l">04</span>Renewals</div>
-      </div>
-    </article>
-    <article class="cov cov--b" data-anim="reveal" data-ht-ledger="">
-      <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 04</span><h4>Copyright &amp; know-how</h4></div>
-      <div class="cov__list">
-        <div class="row"><span class="l">01</span>Authorship &amp; ownership</div>
-        <div class="row"><span class="l">02</span>Assignment agreements</div>
-        <div class="row"><span class="l">03</span>Trade-secret &amp; know-how protection</div>
-        <div class="row"><span class="l">04</span>Infringement notices &amp; cease-and-desist</div>
-      </div>
-    </article>
-    <article class="cov cov--g" data-anim="reveal" data-ht-ledger="">
-      <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 05</span><h4>IPR contracts</h4></div>
-      <div class="cov__list">
-        <div class="row"><span class="l">01</span>IP assignment agreements</div>
-        <div class="row"><span class="l">02</span>Employee &amp; contractor IP clauses</div>
-        <div class="row"><span class="l">03</span>NDAs</div>
-        <div class="row"><span class="l">04</span>R&amp;D &amp; collaboration IP terms</div>
-        <div class="row"><span class="l">05</span>IP in financing &amp; M&amp;A</div>
-      </div>
-    </article>
-    <article class="cov cov--o" data-anim="reveal" data-ht-ledger="">
-      <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 06</span><h4>Licensing</h4></div>
-      <div class="cov__list">
-        <div class="row"><span class="l">01</span>Licence agreements — use without transferring ownership</div>
-        <div class="row"><span class="l">02</span>Scope, territory &amp; field of use</div>
-        <div class="row"><span class="l">03</span>Royalties &amp; reporting</div>
-        <div class="row"><span class="l">04</span>Term, termination &amp; enforcement</div>
+        <div class="row" v-for="(row, j) in cov.rows" :key="j"><span class="l">{{ String(j + 1).padStart(2, '0') }}</span>{{ row }}</div>
       </div>
     </article>
   </div>
@@ -217,8 +163,8 @@
   <div class="callout" data-anim="reveal">
     <div class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.3 2.3 7.3L12 16.7 5.7 21l2.3-7.3-6-4.3h7.6z"></path></svg></div>
     <div>
-      <h3>Registered IP representative</h3>
-      <p>Lemur Legal is listed as a representative for trademarks and designs at the EUIPO — so we can prepare and file your rights directly, as part of a wider IP strategy.</p>
+      <h3>{{ t.coverage.calloutH3 }}</h3>
+      <p>{{ t.coverage.calloutP }}</p>
     </div>
   </div>
 </section>
@@ -227,19 +173,19 @@
 <section class="section section--line container" id="expert" aria-labelledby="exp-h">
   <div class="sec-head">
     <span class="mark">§ 04</span>
-    <h2 id="exp-h">Who you'll work with</h2>
+    <h2 id="exp-h">{{ t.expert.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ 46.05°N · 14.51°E ]</span>
   </div>
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
-    <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-      <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+    <div class="avatar" role="img" :aria-label="t.expert.name">
+      <img src="/peter-merc.jpg" :alt="t.expert.name">
     </div>
     <div>
-      <span class="founder__eye">Founder · EUIPO trademark &amp; design representative · Lemur Legal</span>
-      <h3 class="founder__name">Peter Merc, Ph.D.</h3>
-      <p class="founder__role">// strategy · registration · licensing</p>
-      <p class="founder__bio">Peter and the Lemur Legal team help technology companies build and defend their IP — from identifying and structuring rights, through registration, to the contracts and licences that turn intellectual property into a <strong>managed, revenue-generating asset</strong>.</p>
+      <span class="founder__eye">{{ t.expert.eyebrow }}</span>
+      <h3 class="founder__name">{{ t.expert.name }}</h3>
+      <p class="founder__role">{{ t.expert.role }}</p>
+      <p class="founder__bio" v-html="t.expert.bio"></p>
     </div>
   </div>
 </section>
@@ -248,33 +194,13 @@
 <section class="section section--line container" aria-labelledby="faq-h">
   <div class="sec-head">
     <span class="mark">§ 05</span>
-    <h2 id="faq-h">Frequently asked questions</h2>
+    <h2 id="faq-h">{{ t.faq.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ FAQ ]</span>
   </div>
   <div class="faq" data-anim="reveal">
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What exactly counts as intellectual property? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>More than trademarks and designs: it includes your brand, product designs, copyright works, software, databases, know-how and trade secrets, and the inventions behind your technology. The first step is identifying what you hold.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">How do I decide what to protect — and how? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>We assess each asset and recommend the right route: registration (trademarks, designs), contractual protection, or a combination. Not everything is best protected by registration.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Can you protect IP through contracts, not just registration? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Yes — through IP assignment clauses, employee and contractor terms, NDAs, and R&amp;D and collaboration agreements. Contracts are often where ownership is won or lost.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What is the difference between assigning and licensing IP? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>An assignment transfers ownership; a licence grants only the right to use your solution, on terms you define, while you keep ownership. We prepare both.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What if someone opposes my trademark — or infringes it? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>We handle opposition proceedings — both defending your application and challenging conflicting marks — and we monitor databases so conflicts are caught early.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Are you authorised to file? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Yes — Lemur Legal is on the official list of trademark and design representatives at the EUIPO.</p></div>
+    <div class="faq__item" v-for="(item, i) in t.faq.items" :key="i">
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">{{ item.q }} <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>{{ item.a }}</p></div>
     </div>
   </div>
 </section>
@@ -282,8 +208,8 @@
 <!-- ===== CTA BAND ===== -->
 <section class="section section--line container">
   <div class="priceband" data-anim="reveal" style="max-width:none;">
-    <div class="t"><b>Have intellectual property worth protecting?</b> Tell us what you're building and we'll map your IP strategy and the next steps.</div>
-    <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">Book a consultation</button>
+    <div class="t" v-html="t.ctaBand.text"></div>
+    <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">{{ t.ctaBand.btn }}</button>
   </div>
 </section>
 
@@ -295,23 +221,23 @@
     <div class="formwrap__grid" aria-hidden="true"></div>
     <div class="formgrid">
       <div>
-        <div class="eye">// send your inquiry</div>
-        <h2 id="frm-h">Send your inquiry.</h2>
-        <p class="fl">Tell us about your company and what you need. We'll review it and come back with next steps — usually the same day.</p>
-        <p class="fl" style="font-size:.8rem;">Ljubljana, Slovenia · <span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
+        <div class="eye">{{ t.form.eye }}</div>
+        <h2 id="frm-h">{{ t.form.h }}</h2>
+        <p class="fl">{{ t.form.lead }}</p>
+        <p class="fl" style="font-size:.8rem;">{{ t.form.contactPrefix }}<span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
       </div>
       <div>
-        <div class="field"><label for="f-name">Name and surname</label><input type="text" id="f-name" name="name"></div>
-        <div class="field"><label for="f-email">Email</label><input type="text" id="f-email" name="email"></div>
-        <div class="field"><label for="f-proj">Company &amp; website</label><input type="text" id="f-proj" name="company"></div>
-        <div class="field"><label for="f-link">What do you need?</label><input type="text" id="f-link" name="need"></div>
-        <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(230,245,239,0.6);margin-bottom:.4rem;">I need help with</label>
+        <div class="field"><label for="f-name">{{ t.form.nameLabel }}</label><input type="text" id="f-name" name="name"></div>
+        <div class="field"><label for="f-email">{{ t.form.emailLabel }}</label><input type="text" id="f-email" name="email"></div>
+        <div class="field"><label for="f-proj">{{ t.form.projLabel }}</label><input type="text" id="f-proj" name="company"></div>
+        <div class="field"><label for="f-link">{{ t.form.linkLabel }}</label><input type="text" id="f-link" name="need"></div>
+        <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(230,245,239,0.6);margin-bottom:.4rem;">{{ t.form.choiceLabel }}</label>
         <div class="choice" data-ht-choice="" role="group" aria-label="What you need">
-          <span class="chip" data-ht-chip="" data-on="true">Trademark</span>
-          <span class="chip" data-ht-chip="" data-on="false">Design</span>
-          <span class="chip" data-ht-chip="" data-on="false">Copyright</span>
+          <span class="chip" data-ht-chip="" data-on="true">{{ t.form.chips[0] }}</span>
+          <span class="chip" data-ht-chip="" data-on="false">{{ t.form.chips[1] }}</span>
+          <span class="chip" data-ht-chip="" data-on="false">{{ t.form.chips[2] }}</span>
         </div>
-        <button class="btn" type="button" data-ht-hover-fill="">Submit inquiry</button>
+        <button class="btn" type="button" data-ht-hover-fill="">{{ t.form.submit }}</button>
       </div>
     </div>
   </div>
@@ -321,17 +247,17 @@
 <section class="section section--line container" aria-labelledby="xs-h">
   <div class="sec-head" style="margin-bottom:1.4rem;">
     <span class="mark">§ 06</span>
-    <h2 id="xs-h">Also from Lemur Legal</h2>
+    <h2 id="xs-h">{{ t.cross.h2 }}</h2>
   </div>
   <div class="cross">
     <a class="xc" href="/incorporation_esop" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"></path></svg></span>
-      <span><h4>Incorporation &amp; ESOP</h4><p>Set up your company and incentivise your team.</p></span>
+      <span><h4>{{ t.cross.items[0].h4 }}</h4><p>{{ t.cross.items[0].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
     <a class="xc" href="/startups_contracts" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span>
-      <span><h4>Contracts &amp; Commercial</h4><p>The contracts that protect your business.</p></span>
+      <span><h4>{{ t.cross.items[1].h4 }}</h4><p>{{ t.cross.items[1].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
   </div>
@@ -343,6 +269,12 @@
 import { onMounted, onUnmounted } from 'vue'
 import { initEffects } from './IPProtection.effects'
 import { useTheme, useRootVars } from '@/composables/useTheme'
+import { usePageContent } from '@/i18n/useContent'
+import { useHead } from '@/i18n/useHead'
+import content from '@/content/products/ipProtection'
+
+const t = usePageContent(content)
+useHead(content)
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.
@@ -378,7 +310,6 @@ const ROOT_VARS: Record<string, string> = {
 
 let dispose: (() => void) | undefined
 onMounted(() => {
-  document.title = "IP Protection \u2014 Lemur Legal"
   useRootVars(ROOT_VARS)
   useTheme('Editorial', 50, 'Green')
   dispose = initEffects()

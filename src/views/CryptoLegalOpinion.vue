@@ -9,16 +9,16 @@
   <span class="regmark" style="top:1.2rem;right:.2rem" aria-hidden="true"></span>
   <div class="hero__in">
     <div class="hero__main">
-      <p class="kicker">Crypto Legal Opinion · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+      <p class="kicker">{{ t.hero.kicker }} <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" data-anim="hexrow" aria-hidden="true">0x7F59F5  544F4B45  4C4547414C  0x2D5BFF  4D694341  0x131220  53454355  5554494C  0x7F59F5  4555204C</div>
-      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="The crypto legal opinion that gets your token">The crypto legal opinion that gets your token</span> <span class="em">listed.</span></h1>
-      <p class="slogan-line">// analyse · classify · accepted.</p>
-      <p class="hero__lead">Has a regulated exchange asked for a legal opinion confirming your token was fully analysed before listing? Or do you need an opinion required under <strong>MiCA</strong>? We deliver it — reasoned, classified and accepted.</p>
+      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" :data-text="t.hero.h1Glitch">{{ t.hero.h1Glitch }}</span> <span class="em">{{ t.hero.h1Em }}</span></h1>
+      <p class="slogan-line">{{ t.hero.slogan }}</p>
+      <p class="hero__lead" v-html="t.hero.lead"></p>
       <div class="hero__actions">
-        <a class="h-btn" href="#contact" data-ht-arrow="">Send your inquiry <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
-        <a class="h-btn h-btn--ghost" href="#how">How it works</a>
+        <a class="h-btn" href="#contact" data-ht-arrow="">{{ t.hero.btnPrimary }} <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
+        <a class="h-btn h-btn--ghost" href="#how">{{ t.hero.btnGhost }}</a>
       </div>
-      <p class="hero__meta">First draft in 48 hours · Accepted by major exchanges</p>
+      <p class="hero__meta">{{ t.hero.meta }}</p>
     </div>
     <div class="seal-wrap" data-anim="reveal">
       <svg class="seal" data-anim="seal" viewBox="0 0 240 240" fill="none" role="img" aria-label="MiCA white-paper verification badge">
@@ -56,8 +56,8 @@
   <div class="strip__grid" aria-hidden="true"></div>
   <div class="cyberline" aria-hidden="true"><span class="cyberline__base"></span><span data-anim="cpulse"></span></div>
   <div class="container strip__in">
-    <span class="strip__k">Opinions drafted for tokens listed on</span>
-    <p class="strip__v"><b>Binance</b> · <b>KuCoin</b> · <b>Bittrex</b> · <b>HitBTC</b> · <b>MEXC</b> · <b>OKX</b></p>
+    <span class="strip__k">{{ t.strip.k }}</span>
+    <p class="strip__v" v-html="t.strip.v"></p>
   </div>
 </section>
 
@@ -65,28 +65,28 @@
 <section class="section container" aria-labelledby="who-h">
   <div class="sec-head">
     <span class="mark">§ 01</span>
-    <h2 id="who-h">An exchange or regulator asked for an opinion. We write the one they accept.</h2>
+    <h2 id="who-h">{{ t.why.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ WHY IT MATTERS ]</span>
-    <p>From your project, token sale and tokenomics, we give a reasoned view on whether the token qualifies as a security, a utility token, e-money or an (un)regulated financial instrument — the classification that determines what you can do next.</p>
+    <p>{{ t.why.intro }}</p>
   </div>
   <div class="why-grid">
     <div class="why" data-anim="reveal">
-      <span class="wn">01</span>
+      <span class="wn">{{ t.why.items[0].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M9 12l2 2 4-4"></path></svg></div>
-      <h3>Required to list</h3>
-      <p>Centralized exchanges require a legal opinion before they list a utility token or meme coin.</p>
+      <h3>{{ t.why.items[0].h3 }}</h3>
+      <p>{{ t.why.items[0].p }}</p>
     </div>
     <div class="why" data-anim="reveal">
-      <span class="wn">02</span>
+      <span class="wn">{{ t.why.items[1].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path></svg></div>
-      <h3>Required to license</h3>
-      <p>Competent authorities may request an opinion within the process of obtaining crypto licences.</p>
+      <h3>{{ t.why.items[1].h3 }}</h3>
+      <p>{{ t.why.items[1].p }}</p>
     </div>
     <div class="why" data-anim="reveal">
-      <span class="wn">03</span>
+      <span class="wn">{{ t.why.items[2].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3.5 9h17M3.5 15h17M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></div>
-      <h3>Required under MiCA</h3>
-      <p>Issuers targeting EU investors are required to provide a legal opinion under MiCA.</p>
+      <h3>{{ t.why.items[2].h3 }}</h3>
+      <p>{{ t.why.items[2].p }}</p>
     </div>
   </div>
 </section>
@@ -95,7 +95,7 @@
 <section class="section section--line container" id="how" aria-labelledby="how-h">
   <div class="sec-head">
     <span class="mark">§ 02</span>
-    <h2 id="how-h">Three steps from tokenomics to a signed opinion.</h2>
+    <h2 id="how-h">{{ t.how.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ WHAT WE DO · 3 STEPS ]</span>
   </div>
   <div class="tl" data-anim="timeline" aria-label="From tokenomics to a signed opinion, in three steps">
@@ -114,28 +114,28 @@
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">01</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 01</p>
-            <h3 class="tl__title">Analyse</h3>
-            <p class="tl__sub">We examine the token's tokenomics and review all relevant documentation — white paper, terms of sale, SAFTs, marketing materials — and anything else affecting classification.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#A88BFF"></span>full documentation review</span>
+            <p class="tl__step-k">{{ t.how.steps[0].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[0].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[0].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#A88BFF"></span>{{ t.how.steps[0].tag }}</span>
           </div>
         </li>
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">02</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 02</p>
-            <h3 class="tl__title">Advise</h3>
-            <p class="tl__sub">If we see challenges to qualifying as a utility token or meme coin, we advise on the proper design of the tokenomics and on drafting the relevant documents.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#C4B5FF"></span>tokenomics · drafting</span>
+            <p class="tl__step-k">{{ t.how.steps[1].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[1].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[1].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#C4B5FF"></span>{{ t.how.steps[1].tag }}</span>
           </div>
         </li>
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">03</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 03</p>
-            <h3 class="tl__title">Draft &amp; classify</h3>
-            <p class="tl__sub">We draft a comprehensive legal opinion, including a token classification under applicable EU law — formatted for exchanges and regulators.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#A88BFF"></span>signed opinion</span>
+            <p class="tl__step-k">{{ t.how.steps[2].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[2].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[2].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#A88BFF"></span>{{ t.how.steps[2].tag }}</span>
           </div>
         </li>
       </ol>
@@ -147,12 +147,12 @@
   <div class="callout" data-anim="reveal" style="margin-top:1.6rem;align-items:center;">
     <div class="ci" style="font-family:var(--mono);font-weight:600;font-size:.7rem;letter-spacing:.04em;">1/4</div>
     <div>
-      <h3>Your token, classified as one of</h3>
+      <h3>{{ t.how.classifiedH3 }}</h3>
       <p style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem;">
-        <span class="clo-stamp">Utility token</span>
-        <span class="clo-stamp">Security token</span>
-        <span class="clo-stamp">E-money token</span>
-        <span class="clo-stamp">Financial instrument</span>
+        <span class="clo-stamp">{{ t.how.stamps[0] }}</span>
+        <span class="clo-stamp">{{ t.how.stamps[1] }}</span>
+        <span class="clo-stamp">{{ t.how.stamps[2] }}</span>
+        <span class="clo-stamp">{{ t.how.stamps[3] }}</span>
       </p>
     </div>
   </div>
@@ -162,27 +162,27 @@
 <section class="section section--line container" aria-labelledby="price-h">
   <div class="sec-head">
     <span class="mark">§ 03</span>
-    <h2 id="price-h">Clear, fixed pricing. Fast turnaround.</h2>
+    <h2 id="price-h">{{ t.pricing.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ PRICING &amp; DELIVERY ]</span>
   </div>
   <div data-anim="reveal" style="display:flex;flex-wrap:wrap;gap:1.4rem;max-width:820px;">
     <div class="clo-price clo-price--feat">
-      <span style="position:absolute;top:1.2rem;right:1.4rem;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-deep);">Most requested</span>
-      <div style="font-size:.78rem;color:var(--ink-2);letter-spacing:.04em;">Utility Token</div>
-      <div style="font-size:2.4rem;font-weight:600;letter-spacing:-0.02em;margin-top:.4rem;">$3,500<span style="font-size:.82rem;font-weight:400;color:var(--ink-2);"> / opinion</span></div>
-      <div style="font-size:.8rem;color:var(--ink-2);margin-top:.5rem;">+ VAT if applicable · Payable in USDC</div>
+      <span style="position:absolute;top:1.2rem;right:1.4rem;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-deep);">{{ t.pricing.featLabel }}</span>
+      <div style="font-size:.78rem;color:var(--ink-2);letter-spacing:.04em;">{{ t.pricing.utilLabel }}</div>
+      <div style="font-size:2.4rem;font-weight:600;letter-spacing:-0.02em;margin-top:.4rem;">{{ t.pricing.utilPrice }}<span style="font-size:.82rem;font-weight:400;color:var(--ink-2);">{{ t.pricing.perOpinion }}</span></div>
+      <div style="font-size:.8rem;color:var(--ink-2);margin-top:.5rem;">{{ t.pricing.vatNote }}</div>
     </div>
     <div class="clo-price">
-      <div style="font-size:.78rem;color:var(--ink-2);letter-spacing:.04em;">Meme Coin</div>
-      <div style="font-size:2.4rem;font-weight:600;letter-spacing:-0.02em;margin-top:.4rem;">$2,000<span style="font-size:.82rem;font-weight:400;color:var(--ink-2);"> / opinion</span></div>
-      <div style="font-size:.8rem;color:var(--ink-2);margin-top:.5rem;">+ VAT if applicable · Payable in USDC</div>
+      <div style="font-size:.78rem;color:var(--ink-2);letter-spacing:.04em;">{{ t.pricing.memeLabel }}</div>
+      <div style="font-size:2.4rem;font-weight:600;letter-spacing:-0.02em;margin-top:.4rem;">{{ t.pricing.memePrice }}<span style="font-size:.82rem;font-weight:400;color:var(--ink-2);">{{ t.pricing.perOpinion }}</span></div>
+      <div style="font-size:.8rem;color:var(--ink-2);margin-top:.5rem;">{{ t.pricing.vatNote }}</div>
     </div>
   </div>
   <div class="callout" data-anim="reveal" style="margin-top:1.6rem;align-items:center;max-width:820px;">
     <div class="ci" style="font-family:var(--mono);font-weight:600;font-size:1rem;letter-spacing:-0.01em;width:54px;height:54px;">48h</div>
     <div>
-      <h3>First draft in 48 hours</h3>
-      <p>First draft delivered within 48 hours of receiving your documentation.</p>
+      <h3>{{ t.pricing.deliveryH3 }}</h3>
+      <p>{{ t.pricing.deliveryP }}</p>
     </div>
   </div>
 </section>
@@ -191,24 +191,24 @@
 <section class="section section--line container" aria-labelledby="tst-h">
   <div class="sec-head">
     <span class="mark">§ 04</span>
-    <h2 id="tst-h">Trusted by token issuers across the industry.</h2>
+    <h2 id="tst-h">{{ t.testimonials.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ WHAT CLIENTS SAY ]</span>
   </div>
   <div class="quotes">
     <div class="quote" data-anim="reveal">
       <div class="qm">“</div>
-      <p>We navigated the crypto legal landscape with confidence, ensuring compliance and our BST token listing on MEXC.</p>
-      <div class="by">Denis Petrovcic · Blocksquare.io</div>
+      <p>{{ t.testimonials.quotes[0].p }}</p>
+      <div class="by">{{ t.testimonials.quotes[0].by }}</div>
     </div>
     <div class="quote" data-anim="reveal">
       <div class="qm">“</div>
-      <p>Impressed by the skill, flexibility and speed. High quality yet very affordable — Peter is your man.</p>
-      <div class="by">Michal Ptacnik · liberland.org</div>
+      <p>{{ t.testimonials.quotes[1].p }}</p>
+      <div class="by">{{ t.testimonials.quotes[1].by }}</div>
     </div>
     <div class="quote" data-anim="reveal">
       <div class="qm">“</div>
-      <p>A proactive approach that turned complex legal jargon into actionable insight — plus valuable tokenomics advice.</p>
-      <div class="by">Martial Medi · Masternoded.com</div>
+      <p>{{ t.testimonials.quotes[2].p }}</p>
+      <div class="by">{{ t.testimonials.quotes[2].by }}</div>
     </div>
   </div>
 </section>
@@ -217,23 +217,23 @@
 <section class="section section--line container" id="expert" aria-labelledby="exp-h">
   <div class="sec-head">
     <span class="mark">§ 05</span>
-    <h2 id="exp-h">Who will work on your opinion</h2>
+    <h2 id="exp-h">{{ t.expert.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ 46.05°N · 14.51°E ]</span>
   </div>
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
     <div class="founder__aside">
-      <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-        <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+      <div class="avatar" role="img" :aria-label="t.expert.name">
+        <img src="/peter-merc.jpg" :alt="t.expert.name">
       </div>
-      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" :aria-label="t.expert.linkedinAria"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div>
-      <span class="founder__eye">Managing partner · fintech lawyer · Lemur Legal</span>
-      <h3 class="founder__name">Peter Merc, Ph.D.</h3>
-      <p class="founder__role">// 20+ token generation events advised</p>
-      <p class="founder__bio">Peter is a <strong>technology and financial lawyer</strong> with a focus on cryptocurrency regulation, fintech, and startup ecosystems. He advises crypto companies, fintech ventures, and technology startups on regulatory compliance, contract law, and intellectual property matters, providing practical legal solutions at the intersection of law and emerging technology.</p>
-      <p class="founder__bio">Beyond private practice, Peter serves as an external evaluator for <strong>Horizon Europe</strong> and <strong>NATO Diana</strong>, assessing deep-tech and innovation-driven ventures for programme funding. He is also a partner at venture capital firms, <strong>Suricate Ventures</strong> and <strong>IBEX Equity Partners</strong>, bringing a dual perspective as both legal counsel and investor to the companies he works with.</p>
+      <span class="founder__eye">{{ t.expert.eyebrow }}</span>
+      <h3 class="founder__name">{{ t.expert.name }}</h3>
+      <p class="founder__role">{{ t.expert.role }}</p>
+      <p class="founder__bio" v-html="t.expert.bio1"></p>
+      <p class="founder__bio" v-html="t.expert.bio2"></p>
     </div>
   </div>
 </section>
@@ -242,33 +242,13 @@
 <section class="section section--line container" aria-labelledby="faq-h">
   <div class="sec-head">
     <span class="mark">§ 06</span>
-    <h2 id="faq-h">Frequently asked questions</h2>
+    <h2 id="faq-h">{{ t.faq.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ FAQ ]</span>
   </div>
   <div class="faq" data-anim="reveal">
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Do I really need a legal opinion to list my token? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Yes. Regulated exchanges require a legal opinion before they list a utility token or meme coin, and competent authorities may request one during licensing.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">How long does it take? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>We deliver a first draft within 48 hours of receiving your documentation.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">How much does it cost? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>A utility-token opinion is $3,500 and a meme-coin opinion is $2,000, plus VAT where applicable. Payable in USDC.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What does the opinion cover? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>A reasoned classification of your token — security, utility, e-money or an (un)regulated financial instrument — assessed against MiCA and relevant securities law.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What do you need from me? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Your white paper, terms of sale, SAFTs, marketing materials and tokenomics — anything that affects classification.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Will exchanges and regulators accept it? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Our opinions are formatted for exchanges and regulators, and we respond to any follow-up questions they raise.</p></div>
+    <div class="faq__item" v-for="(item, i) in t.faq.items" :key="i">
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">{{ item.q }} <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>{{ item.a }}</p></div>
     </div>
   </div>
 </section>
@@ -276,8 +256,8 @@
 <!-- CTA BAND -->
 <section class="section section--line container">
   <div class="priceband" data-anim="reveal" style="max-width:none;">
-    <div class="t"><b>Need a legal opinion your exchange will accept?</b> Tell us about your token and we'll scope it — usually the same day.</div>
-    <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">Send your inquiry</button>
+    <div class="t" v-html="t.ctaBand.text"></div>
+    <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">{{ t.ctaBand.btn }}</button>
   </div>
 </section>
 
@@ -289,22 +269,22 @@
     <div class="formwrap__grid" aria-hidden="true"></div>
     <div class="formgrid">
       <div>
-        <div class="eye">// get started</div>
-        <h2 id="frm-h">Send your inquiry.</h2>
-        <p class="fl">Tell us about your project and token. We'll review your documentation and come back with next steps — usually the same day.</p>
-        <p class="fl" style="font-size:.8rem;">WhatsApp · <span class="js-mail" data-u="info" data-d="fintechfactory.eu">info [at] fintechfactory.eu</span></p>
+        <div class="eye">{{ t.form.eye }}</div>
+        <h2 id="frm-h">{{ t.form.h }}</h2>
+        <p class="fl">{{ t.form.lead }}</p>
+        <p class="fl" style="font-size:.8rem;">{{ t.form.contactPrefix }}<span class="js-mail" data-u="info" data-d="fintechfactory.eu">info [at] fintechfactory.eu</span></p>
       </div>
       <div>
-        <div class="field"><label for="f-name">Name and surname</label><input type="text" id="f-name" name="name"></div>
-        <div class="field"><label for="f-email">Email</label><input type="text" id="f-email" name="email"></div>
-        <div class="field"><label for="f-proj">Project name &amp; website</label><input type="text" id="f-proj" name="project"></div>
-        <div class="field"><label for="f-link">Link to token's white paper</label><input type="text" id="f-link" name="link"></div>
-        <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(234,240,255,0.6);margin-bottom:.4rem;">I require an opinion for</label>
+        <div class="field"><label for="f-name">{{ t.form.nameLabel }}</label><input type="text" id="f-name" name="name"></div>
+        <div class="field"><label for="f-email">{{ t.form.emailLabel }}</label><input type="text" id="f-email" name="email"></div>
+        <div class="field"><label for="f-proj">{{ t.form.projLabel }}</label><input type="text" id="f-proj" name="project"></div>
+        <div class="field"><label for="f-link">{{ t.form.linkLabel }}</label><input type="text" id="f-link" name="link"></div>
+        <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(234,240,255,0.6);margin-bottom:.4rem;">{{ t.form.choiceLabel }}</label>
         <div class="choice" data-ht-choice="" role="group" aria-label="Opinion type">
-          <span class="chip" data-ht-chip="" data-on="true">Utility Token</span>
-          <span class="chip" data-ht-chip="" data-on="false">Meme coin</span>
+          <span class="chip" data-ht-chip="" data-on="true">{{ t.form.chips[0] }}</span>
+          <span class="chip" data-ht-chip="" data-on="false">{{ t.form.chips[1] }}</span>
         </div>
-        <button class="btn" type="button" data-ht-hover-fill="">Submit inquiry</button>
+        <button class="btn" type="button" data-ht-hover-fill="">{{ t.form.submit }}</button>
       </div>
     </div>
   </div>
@@ -314,17 +294,17 @@
 <section class="section section--line container" aria-labelledby="xs-h">
   <div class="sec-head" style="margin-bottom:1.4rem;">
     <span class="mark">§ 07</span>
-    <h2 id="xs-h">Also from Lemur Legal</h2>
+    <h2 id="xs-h">{{ t.cross.h2 }}</h2>
   </div>
   <div class="cross">
     <a class="xc" href="/mica_white_paper" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span>
-      <span><h4>MiCA White Paper</h4><p>Compliant white papers, drafted and filed with the competent authority.</p></span>
+      <span><h4>{{ t.cross.items[0].h4 }}</h4><p>{{ t.cross.items[0].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
     <a class="xc" href="/regulatory_compliance" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
-      <span><h4>Licensing &amp; AML</h4><p>CASP/VASP authorisation, registration and AML compliance.</p></span>
+      <span><h4>{{ t.cross.items[1].h4 }}</h4><p>{{ t.cross.items[1].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
   </div>
@@ -336,6 +316,12 @@
 import { onMounted, onUnmounted } from 'vue'
 import { initEffects } from './CryptoLegalOpinion.effects'
 import { useTheme, useRootVars } from '@/composables/useTheme'
+import { usePageContent } from '@/i18n/useContent'
+import { useHead } from '@/i18n/useHead'
+import content from '@/content/products/cryptoLegalOpinion'
+
+const t = usePageContent(content)
+useHead(content)
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.
@@ -371,7 +357,6 @@ const ROOT_VARS: Record<string, string> = {
 
 let dispose: (() => void) | undefined
 onMounted(() => {
-  document.title = "Crypto Legal Opinion \u2014 Lemur Legal"
   useRootVars(ROOT_VARS)
   useTheme('Editorial', 50, 'Purple')
   dispose = initEffects()
