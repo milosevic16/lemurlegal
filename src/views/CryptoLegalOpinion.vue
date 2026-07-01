@@ -448,7 +448,7 @@ img{ display:block; }
 }
 .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--ink); }
 .why{ padding:1.7rem clamp(1.1rem,2vw,1.6rem) 1.4rem; border-left:1px solid var(--hairline); }
-.why:first-child{ border-left:none; padding-left:0; }
+.why:first-child{ border-left:none; }
 .why .wn{ font-size:.72rem; color:var(--ink-2); }
 .why .ic{ width:38px; height:38px; border:1px solid var(--hairline-strong); display:flex; align-items:center; justify-content:center; color:var(--blue); margin-block:.9rem; }
 .why h3{ font-size:1.1rem; letter-spacing:-0.01em; }
