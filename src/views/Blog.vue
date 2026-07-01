@@ -152,13 +152,12 @@ img{ max-width:100%; }
 .section-label::before{ content:""; width:28px; height:1px; background:currentColor; }
 .section-title{ font-family:var(--serif); font-size:clamp(1.55rem,1.25rem + 1.4vw,2.3rem); letter-spacing:-0.015em; color:var(--ink); margin-bottom:.6rem; line-height:1.18; }
 .section-subtitle{ font-family:var(--serif); font-style:italic; color:var(--ink-2); font-size:1.05rem; max-width:62ch; }
-.blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1rem,2vw,1.5rem); margin-top:2.4rem; }
-@media (max-width:980px) {
-.blog-grid{ grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width:620px) {
-.blog-grid{ grid-template-columns:1fr; }
-}
+/* Horizontal scroll track — cards line up left-to-right and scroll when the
+   section has more than fit. Card sizing/scroll-snap lives in BlogCard.vue. */
+.blog-grid{ display:flex; gap:clamp(1rem,2vw,1.5rem); margin-top:2.4rem; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x proximity; padding-bottom:1rem; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:var(--hairline-strong) transparent; }
+.blog-grid::-webkit-scrollbar{ height:8px; }
+.blog-grid::-webkit-scrollbar-track{ background:transparent; }
+.blog-grid::-webkit-scrollbar-thumb{ background:var(--hairline-strong); border-radius:8px; border:2px solid transparent; background-clip:padding-box; }
 .blog-note{ font-family:var(--mono); font-size:.8rem; color:var(--ink-2); margin-top:1.6rem; letter-spacing:.02em; }
 .blog-note--err{ color:#9B0E00; }
 .blog-section{ border-top:1px solid var(--hairline); }

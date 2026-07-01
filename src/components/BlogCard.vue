@@ -39,6 +39,10 @@ const dateLabel = computed(() => formatDate(props.post.publishDate))
    Colours read from the global :root vars set by the blog theme. */
 .blog-card {
   position: relative;
+  /* Fixed-width item in the horizontal scroll track (Blog.vue .blog-grid). */
+  flex: 0 0 auto;
+  width: clamp(280px, 80vw, 340px);
+  scroll-snap-align: start;
   background: #e7ece8;
   border: 1px solid var(--hairline);
   display: flex;
