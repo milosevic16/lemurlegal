@@ -1,0 +1,4 @@
+# Local env files — keep the Contentful token out of source control.
+.env
+.env.local
+.env.*.local
