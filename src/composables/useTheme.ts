@@ -13,7 +13,9 @@ export type Aesthetic = 'Editorial' | 'Live' | 'Redacted'
 export type Accent = 'Baltic' | 'Thermal' | 'Nordic' | 'Purple' | 'Green' | 'Amber'
 
 const MODES: Record<Aesthetic, Record<string, string>> = {
-  Editorial: { paper: '#D2DDD7', paper2: '#C6D4CE', ink: '#1A1826', ink2: '#585672', hairline: '#B4C0BA', hairlineStr: '#A0AEA8', sig: '#7F59F5' },
+  // paper/paper2 unified with Home (Live) — content pages were rendering a
+  // brighter background (#D2DDD7) than the home page (#C0CEC8).
+  Editorial: { paper: '#C0CEC8', paper2: '#B6C6C0', ink: '#1A1826', ink2: '#585672', hairline: '#B4C0BA', hairlineStr: '#A0AEA8', sig: '#7F59F5' },
   Live: { paper: '#C0CEC8', paper2: '#B6C6C0', ink: '#0E0C1A', ink2: '#3A3858', hairline: '#9AB0A8', hairlineStr: '#88A098', sig: '#7F59F5' },
   Redacted: { paper: '#F0EFEA', paper2: '#E8E7E2', ink: '#080808', ink2: '#222222', hairline: '#C4C3BE', hairlineStr: '#A4A39E', sig: '#9B0E00' },
 }

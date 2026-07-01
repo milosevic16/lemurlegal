@@ -23,7 +23,7 @@
           ><span class="dot" data-anim="blink"></span> EU · OPEN FOR
           MATTERS</span
         >
-        <span class="lang"><b>EN</b> / SL</span>
+        <span class="lang"><b>EN</b> / SI</span>
       </div>
       <button
         class="nav-toggle"
@@ -45,7 +45,7 @@
       <a href="/contact">Contact</a>
       <span class="mobile-menu__meta"
         ><span class="dot" data-anim="blink"></span> EU · OPEN FOR MATTERS
-        &nbsp;·&nbsp; <b>EN</b> / SL</span
+        &nbsp;·&nbsp; <b>EN</b> / SI</span
       >
     </nav>
     <span class="seam" aria-hidden="true" data-anim="seam"></span>
