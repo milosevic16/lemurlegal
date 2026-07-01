@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^17.2.2",
+    "@contentful/rich-text-types": "^17.2.7",
     "vue": "^3.4.38",
     "vue-router": "^4.4.5"
   },
