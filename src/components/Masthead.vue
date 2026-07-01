@@ -8,7 +8,6 @@
         <a :href="sec('crypto_fintech')" class="nl-b">{{ c.nav.crypto }}</a>
         <a :href="sec('startups_deeptech')" class="nl-g">{{ c.nav.startups }}</a>
         <a :href="sec('defence_dualuse')" class="nl-o">{{ c.nav.defence }}</a>
-        <a :href="lp('/about')" class="nl-m">{{ c.nav.about }}</a>
         <a :href="lp('/blog')" class="nl-m">{{ c.nav.blog }}</a>
         <a :href="lp('/contact')" class="nl-m">{{ c.nav.contact }}</a>
       </nav>
@@ -37,7 +36,6 @@
       <a :href="sec('crypto_fintech')" class="mm-b">{{ c.nav.crypto }}</a>
       <a :href="sec('startups_deeptech')" class="mm-g">{{ c.nav.startups }}</a>
       <a :href="sec('defence_dualuse')" class="mm-o">{{ c.nav.defence }}</a>
-      <a :href="lp('/about')">{{ c.nav.about }}</a>
       <a :href="lp('/blog')">{{ c.nav.blog }}</a>
       <a :href="lp('/contact')">{{ c.nav.contact }}</a>
       <span class="mobile-menu__meta">

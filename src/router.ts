@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import { locale } from './i18n/locale'
+import { locale, closeMobileMenu } from './i18n/locale'
 
 // Map route slugs to lazily-loaded view components. Keep in sync with
 // tools/extract.py FILES / src/pages.ts.
@@ -42,11 +42,47 @@ routes.push({ path: '/about', redirect: { path: '/', hash: '#founder' } })
 routes.push({ path: '/sl/about', redirect: { path: '/sl', hash: '#founder' } })
 routes.push({ path: '/:pathMatch(.*)*', redirect: '/' })
 
+// Resolve once the hash target exists, the fixed-header spacer has a height
+// (a proxy for "the lazy view mounted and its effects ran") and web fonts have
+// loaded — fonts are the biggest source of post-mount reflow. Polls on a timer
+// (not rAF, which some embedded/background contexts throttle) and is bounded so
+// it can never hang navigation.
+function waitForAnchor(hash: string): Promise<void> {
+  return new Promise((resolve) => {
+    let tries = 0
+    let done = false
+    const finish = () => {
+      if (done) return
+      done = true
+      resolve()
+    }
+    const tick = () => {
+      if (done) return
+      const el = document.querySelector(hash)
+      const spacer = document.getElementById('site-head-spacer')
+      const fontsReady = !document.fonts || document.fonts.status === 'loaded'
+      if ((el && spacer && spacer.offsetHeight > 0 && fontsReady) || tries++ > 40) finish()
+      else setTimeout(tick, 50)
+    }
+    tick()
+  })
+}
+
 export const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, _from, savedPosition) {
-    if (to.hash) return { el: to.hash, top: 90, behavior: 'smooth' }
+  async scrollBehavior(to, _from, savedPosition) {
+    if (to.hash) {
+      // Anchor navigations — especially cross-page ones (a nav "sector" link on
+      // a product page jumps back to a Home section) — must wait for the lazy
+      // view to mount, fonts to load and the header spacer to be sized. Otherwise
+      // the target is measured mid-layout and the scroll lands on the wrong
+      // section. Then offset by the *actual* header height (varies by viewport).
+      await waitForAnchor(to.hash)
+      const head = document.getElementById('site-head')
+      const top = (head ? head.offsetHeight : 78) + 12
+      return { el: to.hash, top, behavior: 'smooth' }
+    }
     if (savedPosition) return savedPosition
     // Jump to top instantly — overrides the global `html { scroll-behavior: smooth }`
     // in base.css so route changes don't play a smooth scroll-up.
@@ -59,4 +95,7 @@ export const router = createRouter({
 // setup/onMounted runs — the ported effects read locale-bound content at mount.
 router.beforeEach((to) => {
   locale.value = to.params.lang === 'sl' ? 'sl' : 'en'
+  // Snap the mobile menu shut before the next view renders so an open/animating
+  // menu doesn't inflate the fixed-header height that anchor scrolls offset by.
+  closeMobileMenu()
 })

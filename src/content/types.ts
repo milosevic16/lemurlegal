@@ -16,7 +16,6 @@ export interface ChromeContent {
     crypto: string
     startups: string
     defence: string
-    about: string
     blog: string
     contact: string
   }

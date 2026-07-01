@@ -343,11 +343,7 @@
         <p>{{ t.cta.text }}</p>
         <a
           class="action"
-          data-mailto=""
-          data-u="info"
-          data-d="lemur.legal"
-          data-subject="Consultation"
-          href="#"
+          href="/contact#brief"
           >{{ t.cta.action }}
           <span class="arrow" aria-hidden="true">→</span></a
         >

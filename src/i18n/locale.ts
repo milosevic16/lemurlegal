@@ -26,16 +26,23 @@ export function otherLocale(loc: Locale = locale.value): Locale {
 }
 
 /**
- * Collapse the mobile menu instantly (transition suppressed). Called before a
- * locale switch: switching locale remounts the view, whose ported effects
- * re-measure the fixed header into `#site-head-spacer` on mount. If the menu is
- * still open at that moment, the open height gets baked into the spacer and
- * never corrected — leaving a gap after the menu closes. Collapsing first (and
- * forcing reflow) makes that measurement see the closed header.
+ * Collapse the mobile menu instantly (transition suppressed). Called on every
+ * navigation (router.beforeEach) and before a locale switch. Two reasons it must
+ * be *instant* and *unconditional*:
+ *  - Switching locale remounts the view, whose ported effects re-measure the
+ *    fixed header into `#site-head-spacer` on mount. An open menu bakes its
+ *    height into the spacer and leaves a gap after it closes.
+ *  - Clicking a nav link on mobile leaves the menu mid-close (0.4s transition);
+ *    while it animates, `#site-head` is taller, so an anchor scroll computed
+ *    against the header height would land too low. Snapping it shut first makes
+ *    the header its true (collapsed) height before the next page measures/scrolls.
+ * Runs the snap even when already closed (a cheap reflow) so the mid-transition
+ * case — where the `open` class is gone but the height is still animating down —
+ * is forced to its final height immediately.
  */
 export function closeMobileMenu() {
   const menu = document.getElementById('mobile-menu')
-  if (!menu || !menu.classList.contains('open')) return
+  if (!menu) return
   const toggle = document.querySelector<HTMLElement>('.nav-toggle')
   const prev = menu.style.transition
   menu.style.transition = 'none'

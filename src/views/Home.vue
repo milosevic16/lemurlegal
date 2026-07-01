@@ -13,7 +13,7 @@
       <h1 id="hero-h"><span class="hero-title-glitch" data-glitch-text="" :data-text="t.hero.titleGlitch" style="font-size:25px;font-weight:500;color:rgb(159,159,159)">{{ t.hero.titleGlitch }}</span><br>{{ t.hero.titleLead }} <span class="b">{{ t.hero.crypto }}</span>, <span class="g">{{ t.hero.deeptech }}</span> {{ t.hero.and }} <span class="o">{{ t.hero.defence }}</span>.</h1>
 
       <div class="hero__actions">
-        <a class="action" href="mailto:info@lemur.legal?subject=Consultation">{{ t.hero.actionPrimary }} <span class="arrow">→</span></a>
+        <a class="action" href="/contact#brief">{{ t.hero.actionPrimary }} <span class="arrow">→</span></a>
         <a class="action action--muted" href="#practices">{{ t.hero.actionSecondary }} <span class="arrow">→</span></a>
       </div>
       <div class="node-row" aria-hidden="true">
@@ -182,13 +182,13 @@
       </div>
     </div>
     <div class="matter-board__footer mb-hide">
-      <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" data-type-link="mailto:info@lemur.legal?subject=Consultation" data-type-speed="28"></span>
+      <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" data-type-link="/contact#brief" data-type-speed="28"></span>
     </div>
   </div>
 
 
   <div class="cta__act">
-    <a class="action" href="mailto:info@lemur.legal?subject=Consultation">{{ t.cta.action }} <span class="arrow">→</span></a>
+    <a class="action" href="/contact#brief">{{ t.cta.action }} <span class="arrow">→</span></a>
   </div>
 </section>
 </main>
