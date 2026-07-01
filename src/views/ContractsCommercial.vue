@@ -236,7 +236,7 @@
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
     <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="8.5" r="4"></circle><path d="M4.5 20c0-3.7 3.2-6.2 7.5-6.2s7.5 2.5 7.5 6.2"></path></svg>
+      <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
     </div>
     <div>
       <span class="founder__eye">Founder · technology lawyer · Lemur Legal</span>
@@ -420,7 +420,7 @@ let dispose: (() => void) | undefined
 onMounted(() => {
   document.title = "Contracts &amp; Commercial \u2014 Lemur Legal"
   useRootVars(ROOT_VARS)
-  useTheme('Editorial', 50, 'Baltic')
+  useTheme('Editorial', 50, 'Green')
   dispose = initEffects()
 })
 onUnmounted(() => dispose && dispose())
@@ -498,7 +498,7 @@ img{ display:block; }
 }
 .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--ink); }
 .why{ padding:1.7rem clamp(1.1rem,2vw,1.6rem) 1.4rem; border-left:1px solid var(--hairline); }
-.why:first-child{ border-left:none; padding-left:0; }
+.why:first-child{ border-left:none; }
 .why .wn{ font-size:.72rem; color:var(--ink-2); }
 .why .ic{ width:38px; height:38px; border:1px solid var(--hairline-strong); display:flex; align-items:center; justify-content:center; color:var(--blue); margin-block:.9rem; }
 .why h3{ font-size:1.1rem; letter-spacing:-0.01em; }

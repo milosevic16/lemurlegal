@@ -60,12 +60,61 @@ export function initEffects(): () => void {
           __fx.on(window, 'resize', function(){ if (window.innerWidth > 860) setOpen(false); }, {passive:true});
         })();
 
-        /* founder photo — try to load founder.jpg silently */
+        /* founder photo — load it, then "pixelate into existence" (low-res blocks
+           -> sharp) on a throwaway canvas overlay, then reveal the real <img> and
+           drop the canvas. Honors reduced-motion; rAF is tracked so it tears down
+           on navigation. */
         (function(){
+          var SRC = '/founder.jpg';
           var el = document.getElementById('founder-img'); if (!el) return;
+          var box = el.parentElement; /* .founder-photo (position:relative) */
+          var imgReady = false, inView = false, started = false, done = false, cv = null;
+
+          function finish(){ if (done) return; done = true; el.src = SRC; el.style.display = 'block'; if (cv && cv.parentNode) cv.parentNode.removeChild(cv); }
+
+          function animate(){
+            var w = box ? box.clientWidth : 0, h = box ? box.clientHeight : 0;
+            if (reduce || !box || !w || !h) { finish(); return; }
+            var SZ = 480; /* square internal res; CSS object-fit crops to the box like the <img> */
+            cv = document.createElement('canvas'); cv.width = SZ; cv.height = SZ;
+            cv.setAttribute('aria-hidden', 'true');
+            cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:3;';
+            var tmp = document.createElement('canvas'); tmp.width = SZ; tmp.height = SZ;
+            var ctx = cv.getContext('2d'), tctx = tmp.getContext('2d');
+            box.appendChild(cv);
+            var DUR = 1300, t0 = null;
+            function frame(ts){
+              if (done) return;
+              if (t0 == null) t0 = ts;
+              var p = (ts - t0) < DUR ? (ts - t0) / DUR : 1;
+              var s = Math.max(2, Math.round(2 + Math.pow(p, 1.6) * (SZ - 2))); /* blocks: coarse -> full */
+              tctx.imageSmoothingEnabled = false; tctx.clearRect(0, 0, SZ, SZ);
+              tctx.drawImage(probe, 0, 0, s, s);               /* downscale into corner */
+              ctx.imageSmoothingEnabled = false; ctx.clearRect(0, 0, SZ, SZ);
+              ctx.drawImage(tmp, 0, 0, s, s, 0, 0, SZ, SZ);    /* upscale, no smoothing -> blocky */
+              if (p < 1) { requestAnimationFrame(frame); } else { finish(); }
+            }
+            requestAnimationFrame(frame);
+            /* safety net: if rAF is paused (e.g. background tab), still reveal the photo */
+            setTimeout(finish, DUR + 800);
+          }
+
+          /* Only run the pixelate-in once the photo is BOTH loaded AND scrolled into
+             view — otherwise it plays unseen on mount (the section is below the fold). */
+          function maybeStart(){ if (started || !imgReady || !inView) return; started = true; animate(); }
+
           var probe = new window.Image();
-          probe.onload = function(){ el.src = 'founder.jpg'; el.style.display = 'block'; };
-          probe.src = 'founder.jpg';
+          probe.onload = function(){ imgReady = true; maybeStart(); };
+          probe.src = SRC;
+
+          if (box) {
+            var io = new IntersectionObserver(function(entries){
+              for (var i = 0; i < entries.length; i++) {
+                if (entries[i].isIntersecting) { inView = true; io.disconnect(); maybeStart(); break; }
+              }
+            }, { threshold: 0.35 });
+            io.observe(box);
+          } else { inView = true; maybeStart(); }
         })();
 
         if (reduce) return;

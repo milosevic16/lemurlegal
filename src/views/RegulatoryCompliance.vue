@@ -1,5 +1,293 @@
 <template>
-<main id="main"></main>
+<main id="main">
+<a id="top"></a>
+
+<div class="htflow__section-wrapper">
+  <section class="mica" data-ht="mica" aria-label="Regulatory Compliance">
+
+    <!-- hero -->
+    <header class="mica__hero" data-ht="mica__hero">
+      <canvas class="mica__mesh" data-ht="mica__mesh" data-ht-mesh="" aria-hidden="true"></canvas>
+      <span class="mica__regmark mica__regmark--tl" data-ht="mica__regmark" aria-hidden="true"></span>
+      <span class="mica__regmark mica__regmark--tr" data-ht="mica__regmark" aria-hidden="true"></span>
+      <div class="mica__hero-in" data-ht="mica__hero-in">
+        <div class="mica__hero-main" data-ht="mica__hero-main">
+          <p class="mica__kicker" data-ht="mica__kicker">Regulatory Compliance · Ljubljana <span class="mica__caret" data-ht="mica__caret" data-ht-blink="" aria-hidden="true"></span></p>
+          <div class="mica__hexrow" data-ht="mica__hexrow" data-ht-hexrow="" aria-hidden="true">0x7F59F5  0xD2DDD7  434F4D50  4C49414E 4345  0x6444CC  4D694341  0x131220  5053 4432  4D694649 44 4949  0x7F59F5  414D4C</div>
+          <h1 class="mica__h1" data-ht="mica__h1"><span class="mica__h1-prefix" data-ht="mica__h1-prefix" data-ht-glitch="" data-ht-glitch-text="Your outsourced">Your outsourced</span> <span class="mica__h1-em" data-ht="mica__h1-em">compliance function.</span></h1>
+          <p class="mica__lead" data-ht="mica__lead">Most fintechs operate in heavily regulated territory. We act as your external compliance officer — keeping your policies, processes and filings in line with PSD2, MiFID II, EBA guidelines, MiCA and EU AML rules as they evolve.</p>
+          <div class="mica__actions" data-ht="mica__actions">
+            <a class="mica__btn" data-ht="mica__btn" href="#mica-form">Send your inquiry <span class="mica__btn-arrow" data-ht="mica__btn-arrow" aria-hidden="true">→</span></a>
+            <a class="mica__btn mica__btn--ghost" data-ht="mica__btn" href="#mica-how">How it works</a>
+          </div>
+          <p class="mica__meta" data-ht="mica__meta">External compliance officer · Gap analysis · Regulator liaison</p>
+        </div>
+        <div class="mica__seal-wrap" data-ht="mica__seal-wrap">
+          <svg class="mica__seal" data-ht="mica__seal" data-ht-seal="" viewBox="0 0 240 240" fill="none" role="img" aria-label="Compliance seal">
+            <defs><path id="micaRing" d="M120,120 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"></path></defs>
+            <g data-ht-seal-spin="">
+              <circle cx="120" cy="120" r="108" stroke="#7F59F5" stroke-width="1.5" opacity="0.85"></circle>
+              <circle cx="120" cy="120" r="100" stroke="#7F59F5" stroke-width="0.7" opacity="0.5"></circle>
+              <text font-family="'IBM Plex Mono', monospace" font-size="8.6" font-weight="500" letter-spacing="3" fill="#A88BFF"><textPath href="#micaRing" startOffset="2%">· PSD2 · MiFID II · AML · MiCA · COMPLIANCE </textPath></text>
+            </g>
+            <g stroke="#7F59F5" stroke-width="1.4" opacity="0.7">
+              <line x1="120" y1="14" x2="120" y2="24"></line><line x1="120" y1="216" x2="120" y2="226"></line>
+              <line x1="14" y1="120" x2="24" y2="120"></line><line x1="216" y1="120" x2="226" y2="120"></line>
+            </g>
+            <circle cx="120" cy="120" r="62" stroke="#6444CC" stroke-width="1.2" opacity="0.85"></circle>
+            <path data-ht-seal-check="" d="M104,120 l11,12 l22,-26" stroke="#7F59F5" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <text x="120" y="158" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="12" font-weight="600" letter-spacing="1.5" fill="#EAF0FF">COMPLIANT</text>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- strip -->
+    <div class="mica__strip" data-ht="mica__strip">
+      <div class="mica__strip-grid" data-ht="mica__strip-grid" aria-hidden="true"></div>
+      <div class="mica__strip-in" data-ht="mica__strip-in">
+        <span class="mica__strip-k" data-ht="mica__strip-k">Why it matters</span>
+        <p class="mica__strip-v" data-ht="mica__strip-v">Most fintechs operate in territory governed by systemic legislation — PSD2, EBA guidelines and standards, MiFID II and EU AML rules. Regulatory non-compliance exposes your business to serious regulatory risk.</p>
+      </div>
+    </div>
+
+    <!-- why it matters -->
+    <div class="mica__section mica__wrap" data-ht="mica__section">
+      <div class="mica__sec-head" data-ht="mica__sec-head">
+        <span class="mica__eyebrow" data-ht="mica__eyebrow">Why it matters</span>
+        <h2 class="mica__h2" data-ht="mica__h2">Compliance isn't a one-off — it's a function.</h2>
+        <span class="mica__coord" data-ht="mica__coord" aria-hidden="true">[ 46.05°N · 14.51°E ]</span>
+      </div>
+      <div class="mica__why-grid" data-ht="mica__why-grid">
+        <div class="mica__why mica__why--first" data-ht="mica__why" data-ht-reveal="">
+          <div class="mica__why-ic" data-ht="mica__why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path></svg></div>
+          <div class="mica__why-n" data-ht="mica__why-n">i.</div>
+          <h3 data-ht="mica__why-h3">Heavily regulated</h3>
+          <p data-ht="mica__why-p">PSD2, MiFID II, EBA standards and AML rules govern most of what a fintech does.</p>
+        </div>
+        <div class="mica__why" data-ht="mica__why" data-ht-reveal="">
+          <div class="mica__why-ic" data-ht="mica__why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+          <div class="mica__why-n" data-ht="mica__why-n">ii.</div>
+          <h3 data-ht="mica__why-h3">A required function</h3>
+          <p data-ht="mica__why-p">Regulated payment institutions must run a compliance function within their internal controls — we can be it.</p>
+        </div>
+        <div class="mica__why" data-ht="mica__why" data-ht-reveal="">
+          <div class="mica__why-ic" data-ht="mica__why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="9"></circle></svg></div>
+          <div class="mica__why-n" data-ht="mica__why-n">iii.</div>
+          <h3 data-ht="mica__why-h3">Rules keep moving</h3>
+          <p data-ht="mica__why-p">New legislation lands constantly. You need someone watching it — and a plan to implement it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- how it works -->
+    <div class="mica__section mica__section--mist" data-ht="mica__section" id="mica-how">
+      <div class="mica__wrap" data-ht="mica__wrap">
+        <div class="mica__sec-head" data-ht="mica__sec-head">
+          <span class="mica__eyebrow" data-ht="mica__eyebrow">How it works</span>
+          <h2 class="mica__h2" data-ht="mica__h2">From gap analysis to an ongoing compliance function.</h2>
+        </div>
+        <div class="mica__steps" data-ht="mica__steps">
+          <div class="mica__step mica__step--first" data-ht="mica__step" data-ht-reveal="">
+            <div class="mica__step-num" data-ht="mica__step-num">01</div>
+            <h3 data-ht="mica__step-h3">Assess</h3>
+            <p data-ht="mica__step-p">We run a compliance gap analysis of your general terms, contracts and internal acts.</p>
+          </div>
+          <div class="mica__step" data-ht="mica__step" data-ht-reveal="">
+            <div class="mica__step-num" data-ht="mica__step-num">02</div>
+            <h3 data-ht="mica__step-h3">Document</h3>
+            <p data-ht="mica__step-p">We prepare the policies, risk assessments and legal opinions your compliance function needs.</p>
+          </div>
+          <div class="mica__step" data-ht="mica__step" data-ht-reveal="">
+            <div class="mica__step-num" data-ht="mica__step-num">03</div>
+            <h3 data-ht="mica__step-h3">Maintain</h3>
+            <p data-ht="mica__step-p">We monitor new legislation, liaise with the regulator and train your team — on an ongoing basis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- what the service includes -->
+    <div class="mica__section mica__wrap" data-ht="mica__section">
+      <div class="mica__sec-head" data-ht="mica__sec-head">
+        <span class="mica__eyebrow" data-ht="mica__eyebrow">What the service includes</span>
+        <h2 class="mica__h2" data-ht="mica__h2">Your external compliance officer, end to end.</h2>
+      </div>
+      <div class="mica__cov-grid" data-ht="mica__cov-grid">
+        <div class="mica__cov" data-ht="mica__cov" data-ht-reveal="">
+          <h4 data-ht="mica__cov-h4"><span class="mica__cov-tick" data-ht="mica__cov-tick" aria-hidden="true">§</span>Documentation &amp; policies</h4>
+          <div class="mica__cov-line mica__cov-line--first" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Compliance policies</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Risk assessments</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Legal opinions</div>
+        </div>
+        <div class="mica__cov" data-ht="mica__cov" data-ht-reveal="">
+          <h4 data-ht="mica__cov-h4"><span class="mica__cov-tick" data-ht="mica__cov-tick" aria-hidden="true">§</span>Compliance gap analysis</h4>
+          <div class="mica__cov-line mica__cov-line--first" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>General terms</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Contracts</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Internal acts</div>
+        </div>
+        <div class="mica__cov" data-ht="mica__cov" data-ht-reveal="">
+          <h4 data-ht="mica__cov-h4"><span class="mica__cov-tick" data-ht="mica__cov-tick" aria-hidden="true">§</span>New-service support</h4>
+          <div class="mica__cov-line mica__cov-line--first" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Applicable legislation review</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Implementation guidelines</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Opinions before launch</div>
+        </div>
+        <div class="mica__cov" data-ht="mica__cov" data-ht-reveal="">
+          <h4 data-ht="mica__cov-h4"><span class="mica__cov-tick" data-ht="mica__cov-tick" aria-hidden="true">§</span>Regulator liaison</h4>
+          <div class="mica__cov-line mica__cov-line--first" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Communication with competent regulators</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Filings &amp; correspondence</div>
+        </div>
+        <div class="mica__cov" data-ht="mica__cov" data-ht-reveal="">
+          <h4 data-ht="mica__cov-h4"><span class="mica__cov-tick" data-ht="mica__cov-tick" aria-hidden="true">§</span>Horizon scanning</h4>
+          <div class="mica__cov-line mica__cov-line--first" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Monitoring new legislation</div>
+          <div class="mica__cov-line" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Implementation plans</div>
+        </div>
+        <div class="mica__cov" data-ht="mica__cov" data-ht-reveal="">
+          <h4 data-ht="mica__cov-h4"><span class="mica__cov-tick" data-ht="mica__cov-tick" aria-hidden="true">§</span>Training</h4>
+          <div class="mica__cov-line mica__cov-line--first" data-ht="mica__cov-line"><span class="mica__cov-dot" data-ht="mica__cov-dot" aria-hidden="true">•</span>Compliance workshops for your employees</div>
+        </div>
+      </div>
+      <div class="mica__trav" data-ht="mica__trav" data-ht-reveal="">
+        <span class="mica__regmark mica__regmark--tl" data-ht="mica__regmark" aria-hidden="true"></span>
+        <span class="mica__regmark mica__regmark--tr" data-ht="mica__regmark" aria-hidden="true"></span>
+        <div class="mica__trav-ic" data-ht="mica__trav-ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3.5 9h17M3.5 15h17M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></div>
+        <div class="mica__trav-body" data-ht="mica__trav-body">
+          <h3 data-ht="mica__trav-h3">The EU rulebook, covered</h3>
+          <p data-ht="mica__trav-p">We work across PSD2, MiFID II, EBA guidelines, MiCA and EU anti-money-laundering rules — and adapt your processes as each one changes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- expert -->
+    <div class="mica__section mica__section--mist" data-ht="mica__section">
+      <div class="mica__wrap" data-ht="mica__wrap">
+        <div class="mica__expert" data-ht="mica__expert" data-ht-reveal="">
+          <!-- Founder photo slot — replace the SVG with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D."> (fills via object-fit:cover) -->
+          <div class="mica__avatar" data-ht="mica__avatar" role="img" aria-label="Peter Merc, Ph.D."><img src="/peter-merc.jpg" alt="Peter Merc, Ph.D."></div>
+          <div class="mica__expert-body" data-ht="mica__expert-body">
+            <span class="mica__eyebrow" data-ht="mica__eyebrow">Who will run your compliance</span>
+            <p class="mica__expert-name" data-ht="mica__expert-name">Peter Merc, Ph.D.</p>
+            <p class="mica__expert-role" data-ht="mica__expert-role">Founder · fintech lawyer · Lemur Legal</p>
+            <p class="mica__expert-bio" data-ht="mica__expert-bio">Peter worked in the banking sector in capital markets, compliance and bank supervision before founding Lemur Legal — so he knows the regulator's side of the table. He founded Blockchain Think Tank Slovenia in 2017 and lectures at the Law Faculty of New University in Ljubljana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- faq -->
+    <div class="mica__section mica__wrap" data-ht="mica__section">
+      <div class="mica__sec-head" data-ht="mica__sec-head">
+        <span class="mica__eyebrow" data-ht="mica__eyebrow">FAQ</span>
+        <h2 class="mica__h2" data-ht="mica__h2">Frequently asked questions</h2>
+      </div>
+      <div class="mica__faq-grid" data-ht="mica__faq-grid">
+        <div class="mica__faq" data-ht="mica__faq">
+          <button class="mica__faq-q" data-ht="mica__faq-q" data-ht-accordion-toggle="" aria-expanded="false" type="button"><span data-ht="mica__faq-qt">What does an external compliance officer do?</span><span class="mica__faq-pl" data-ht="mica__faq-pl" aria-hidden="true">+</span></button>
+          <div class="mica__faq-a" data-ht="mica__faq-a" data-ht-accordion-panel="" data-state="closed" aria-hidden="true">We run your compliance function — policies, risk assessments, gap analysis, regulator communication and ongoing monitoring — without you hiring in-house.</div>
+        </div>
+        <div class="mica__faq" data-ht="mica__faq">
+          <button class="mica__faq-q" data-ht="mica__faq-q" data-ht-accordion-toggle="" aria-expanded="false" type="button"><span data-ht="mica__faq-qt">Which regulations do you cover?</span><span class="mica__faq-pl" data-ht="mica__faq-pl" aria-hidden="true">+</span></button>
+          <div class="mica__faq-a" data-ht="mica__faq-a" data-ht-accordion-panel="" data-state="closed" aria-hidden="true">PSD2, MiFID II, EBA guidelines and standards, MiCA and EU AML rules, among others.</div>
+        </div>
+        <div class="mica__faq" data-ht="mica__faq">
+          <button class="mica__faq-q" data-ht="mica__faq-q" data-ht-accordion-toggle="" aria-expanded="false" type="button"><span data-ht="mica__faq-qt">Can you help us launch a new product?</span><span class="mica__faq-pl" data-ht="mica__faq-pl" aria-hidden="true">+</span></button>
+          <div class="mica__faq-a" data-ht="mica__faq-a" data-ht-accordion-panel="" data-state="closed" aria-hidden="true">Yes — we review the applicable legislation, set implementation guidelines and provide opinions before you go live.</div>
+        </div>
+        <div class="mica__faq" data-ht="mica__faq">
+          <button class="mica__faq-q" data-ht="mica__faq-q" data-ht-accordion-toggle="" aria-expanded="false" type="button"><span data-ht="mica__faq-qt">Do you deal with the regulator directly?</span><span class="mica__faq-pl" data-ht="mica__faq-pl" aria-hidden="true">+</span></button>
+          <div class="mica__faq-a" data-ht="mica__faq-a" data-ht-accordion-panel="" data-state="closed" aria-hidden="true">Yes — we handle communication, filings and correspondence with the competent authorities.</div>
+        </div>
+        <div class="mica__faq" data-ht="mica__faq">
+          <button class="mica__faq-q" data-ht="mica__faq-q" data-ht-accordion-toggle="" aria-expanded="false" type="button"><span data-ht="mica__faq-qt">How do you keep us up to date?</span><span class="mica__faq-pl" data-ht="mica__faq-pl" aria-hidden="true">+</span></button>
+          <div class="mica__faq-a" data-ht="mica__faq-a" data-ht-accordion-panel="" data-state="closed" aria-hidden="true">We monitor new legislation and prepare an implementation plan so changes don't catch you out.</div>
+        </div>
+        <div class="mica__faq" data-ht="mica__faq">
+          <button class="mica__faq-q" data-ht="mica__faq-q" data-ht-accordion-toggle="" aria-expanded="false" type="button"><span data-ht="mica__faq-qt">Do you train our staff?</span><span class="mica__faq-pl" data-ht="mica__faq-pl" aria-hidden="true">+</span></button>
+          <div class="mica__faq-a" data-ht="mica__faq-a" data-ht-accordion-panel="" data-state="closed" aria-hidden="true">Yes — we run compliance workshops for your employees so the whole team understands its obligations.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- quote band -->
+    <div class="mica__section mica__section--mist" data-ht="mica__section">
+      <div class="mica__wrap" data-ht="mica__wrap">
+        <div class="mica__quote" data-ht="mica__quote" data-ht-reveal="">
+          <span class="mica__regmark mica__regmark--tl" data-ht="mica__regmark" aria-hidden="true"></span>
+          <span class="mica__regmark mica__regmark--tr" data-ht="mica__regmark" aria-hidden="true"></span>
+          <p class="mica__quote-t" data-ht="mica__quote-t"><b>Need a compliance function without the headcount?</b> Tell us about your business and we'll scope an engagement.</p>
+          <a class="mica__btn" data-ht="mica__btn" href="#mica-form">Book a consultation <span class="mica__btn-arrow" data-ht="mica__btn-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- form -->
+    <div class="mica__section mica__wrap" data-ht="mica__section" id="mica-form">
+      <div class="mica__form-card" data-ht="mica__form-card" data-ht-reveal="">
+        <span class="mica__regmark mica__regmark--tl" data-ht="mica__regmark" aria-hidden="true"></span>
+        <span class="mica__regmark mica__regmark--tr" data-ht="mica__regmark" aria-hidden="true"></span>
+        <div class="mica__form-intro" data-ht="mica__form-intro">
+          <span class="mica__form-eyebrow" data-ht="mica__form-eyebrow">Get started</span>
+          <h2 class="mica__form-h" data-ht="mica__form-h">Send your inquiry.</h2>
+          <p class="mica__form-lead" data-ht="mica__form-lead">Tell us about your business and where you need compliance support. We'll review it and come back with next steps — usually the same day.</p>
+          <p class="mica__form-contact" data-ht="mica__form-contact">WhatsApp · <span class="js-mail" data-u="info" data-d="fintechfactory.eu">info [at] fintechfactory.eu</span></p>
+        </div>
+        <form class="mica__form-fields" data-ht="mica__form-fields" name="mica-inquiry" id="mica-inquiry" method="post" data-ht-form="">
+          <div class="mica__field" data-ht="mica__field">
+            <label class="mica__label" data-ht="mica__label" for="mica-name">Name and surname</label>
+            <input class="mica__input" data-ht="mica__input" type="text" id="mica-name" name="name">
+          </div>
+          <div class="mica__field" data-ht="mica__field">
+            <label class="mica__label" data-ht="mica__label" for="mica-email">Email</label>
+            <input class="mica__input" data-ht="mica__input" type="email" id="mica-email" name="email">
+          </div>
+          <div class="mica__field" data-ht="mica__field">
+            <label class="mica__label" data-ht="mica__label" for="mica-company">Company &amp; website</label>
+            <input class="mica__input" data-ht="mica__input" type="text" id="mica-company" name="company">
+          </div>
+          <div class="mica__field" data-ht="mica__field">
+            <label class="mica__label" data-ht="mica__label" for="mica-need">What do you need?</label>
+            <input class="mica__input" data-ht="mica__input" type="text" id="mica-need" name="need">
+          </div>
+          <label class="mica__label" data-ht="mica__label">I need help with</label>
+          <div class="mica__choice" data-ht="mica__choice">
+            <button class="mica__chip" data-ht="mica__chip" data-ht-chip="" data-state="on" type="button">External compliance officer</button>
+            <button class="mica__chip" data-ht="mica__chip" data-ht-chip="" data-state="off" type="button">Gap analysis</button>
+            <button class="mica__chip" data-ht="mica__chip" data-ht-chip="" data-state="off" type="button">New service review</button>
+          </div>
+          <button class="mica__btn mica__btn--full" data-ht="mica__btn" type="submit" data-wait="Please wait...">Submit inquiry</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- cross links -->
+    <div class="mica__section mica__section--mist" data-ht="mica__section">
+      <div class="mica__wrap" data-ht="mica__wrap">
+        <div class="mica__sec-head" data-ht="mica__sec-head">
+          <span class="mica__eyebrow" data-ht="mica__eyebrow">Also from Lemur Legal</span>
+        </div>
+        <div class="mica__cross" data-ht="mica__cross">
+          <a class="mica__xc mica__xc--first" data-ht="mica__xc" data-ht-cross="" href="/crypto_legal_opinion">
+            <div class="mica__xi" data-ht="mica__xi" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+            <div class="mica__xc-body" data-ht="mica__xc-body">
+              <h4 data-ht="mica__xc-h4">Crypto Legal Opinion</h4>
+              <p data-ht="mica__xc-p">The legal opinion that gets your token listed — classified and accepted.</p>
+            </div>
+            <span class="mica__arr" data-ht="mica__arr" aria-hidden="true">→</span>
+          </a>
+          <a class="mica__xc" data-ht="mica__xc" data-ht-cross="" href="/mica_white_paper">
+            <div class="mica__xi" data-ht="mica__xi" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></div>
+            <div class="mica__xc-body" data-ht="mica__xc-body">
+              <h4 data-ht="mica__xc-h4">MiCA White Paper</h4>
+              <p data-ht="mica__xc-p">Compliant white papers, drafted and filed with the competent authority.</p>
+            </div>
+            <span class="mica__arr" data-ht="mica__arr" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
 </template>
 
 <script setup lang="ts">
@@ -32,7 +320,7 @@ let dispose: (() => void) | undefined
 onMounted(() => {
   document.title = "Regulatory Compliance \u2014 Lemur Legal"
   useRootVars(ROOT_VARS)
-  useTheme('Editorial', 50, 'Baltic')
+  useTheme('Editorial', 50, 'Purple')
   dispose = initEffects()
 })
 onUnmounted(() => dispose && dispose())
@@ -1043,4 +1331,9 @@ input, button, textarea, select { font: inherit; color: inherit; }
 @media (max-width:600px) {
 .mica__expert{ grid-template-columns:1fr; }
 }
+
+/* htflow embed CSS (data-state toggles): drives FAQ accordion + active chips */
+[data-ht="mica__faq-a"][data-state="closed"] { display: none; }
+[data-ht="mica__faq-a"][data-state="open"] { display: block; }
+[data-ht="mica__chip"][data-state="on"] { color: #FFFFFF; background-color: #7F59F5; border-top-color: #7F59F5; border-right-color: #7F59F5; border-bottom-color: #7F59F5; border-left-color: #7F59F5; }
 </style>
