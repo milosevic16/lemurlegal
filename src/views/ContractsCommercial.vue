@@ -235,14 +235,18 @@
   </div>
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
-    <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-      <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+    <div class="founder__aside">
+      <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
+        <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+      </div>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div>
       <span class="founder__eye">Founder · technology lawyer · Lemur Legal</span>
       <h3 class="founder__name">Peter Merc, Ph.D.</h3>
       <p class="founder__role">// software, commercial &amp; partnership contracts</p>
-      <p class="founder__bio">Peter and the Lemur Legal team specialise in <strong>technology law</strong> — drafting the software, commercial and partnership contracts that growing tech companies depend on. He founded <strong>Blockchain Think Tank Slovenia</strong> in 2017, lectures at the Law Faculty of the New University in Ljubljana, and previously worked in the banking sector in capital markets, compliance and supervision.</p>
+      <p class="founder__bio">Peter is a <strong>technology and financial lawyer</strong> with a focus on cryptocurrency regulation, fintech, and startup ecosystems. He advises crypto companies, fintech ventures, and technology startups on regulatory compliance, contract law, and intellectual property matters, providing practical legal solutions at the intersection of law and emerging technology.</p>
+      <p class="founder__bio">Beyond private practice, Peter serves as an external evaluator for <strong>Horizon Europe</strong> and <strong>NATO Diana</strong>, assessing deep-tech and innovation-driven ventures for programme funding. He is also a partner at venture capital firms, <strong>Suricate Ventures</strong> and <strong>IBEX Equity Partners</strong>, bringing a dual perspective as both legal counsel and investor to the companies he works with.</p>
     </div>
   </div>
 </section>

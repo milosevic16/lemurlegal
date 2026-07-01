@@ -9,16 +9,16 @@
   <span class="regmark" style="top:1.2rem;right:.2rem" aria-hidden="true"></span>
   <div class="hero__in">
     <div class="hero__main">
-      <p class="kicker">Investment Readiness Review · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+      <p class="kicker">Investment Readiness Review for Defence &amp; Dual-Use · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" data-anim="hexrow" aria-hidden="true">0xE8A33D  494E5645  0x2026  53544D54  0x1114  4C4547414C  0xD2DDD7  4C4A4C20  0xC8772E</div>
-      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Prove you're investment-ready —">Prove you're investment-ready —</span> <span class="em">and de-risk the deal.</span></h1>
+      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Prove your defence or dual-use company is investment-ready —">Prove your defence or dual-use company is investment-ready —</span> <span class="em">and de-risk the deal.</span></h1>
       <p class="slogan-line">// exposure · scoring · gaps · diligence-ready.</p>
-      <p class="hero__lead">An investor-oriented assessment of your regulatory exposure, compliance maturity and operational readiness — so you can <strong>demonstrate preparedness</strong>, reduce perceived risk and back it with a clear readiness score and targeted recommendations.</p>
+      <p class="hero__lead">An investor-oriented assessment of your regulatory exposure, compliance maturity and operational readiness as a defence or dual-use company — so you can <strong>demonstrate preparedness</strong>, reduce perceived risk and support your valuation with a clear readiness score and targeted recommendations.</p>
       <div class="hero__actions">
         <a class="h-btn" href="#contact" data-ht-arrow="">Send your inquiry <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
         <a class="h-btn h-btn--ghost" href="#how">How it works</a>
       </div>
-      <p class="hero__meta">A scored readiness picture · Built for the diligence room</p>
+      <p class="hero__meta">A scored readiness picture · Built for defence &amp; dual-use diligence</p>
     </div>
 
     <div class="seal-wrap" data-anim="reveal">
@@ -54,7 +54,7 @@
   <div class="cyberline" aria-hidden="true"><span class="cyberline__base"></span><span data-anim="cpulse"></span></div>
   <div class="container strip__in">
     <span class="strip__k">Defence &amp; dual use</span>
-    <p class="strip__v">Investors and acquirers price in regulatory risk. A clear, scored readiness picture turns an unknown into a managed, demonstrable strength — and protects your valuation in diligence.</p>
+    <p class="strip__v">Investors and acquirers price in regulatory risk — especially in defence and dual-use transactions. A clear, scored readiness picture turns export-control, FDI, sanctions, procurement and compliance exposure into a managed, demonstrable strength.</p>
   </div>
 </section>
 
@@ -62,7 +62,7 @@
 <section class="section container" aria-labelledby="who-h">
   <div class="sec-head">
     <span class="mark">§ 01</span>
-    <h2 id="who-h">Regulatory readiness is part of your valuation.</h2>
+    <h2 id="who-h">Regulatory readiness is part of your valuation in defence &amp; dual-use.</h2>
     <span class="coord" aria-hidden="true">[ THE CHALLENGE ]</span>
   </div>
   <div class="why-grid">
@@ -70,19 +70,19 @@
       <span class="wn">01</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3.5 9h17M3.5 15h17M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></div>
       <h3>Risk is priced in</h3>
-      <p>Unmapped regulatory exposure reads as risk to investors — and discounts your valuation.</p>
+      <p>Unmapped export-control, sanctions, FDI or procurement exposure reads as risk to investors — and can discount your valuation.</p>
     </div>
     <div class="why" data-anim="reveal">
       <span class="wn">02</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18M5 6l14 12M19 6L5 18"></path></svg></div>
-      <h3>A score they trust</h3>
-      <p>We translate readiness into a clear maturity score that supports investor-facing diligence.</p>
+      <h3>A score they can defend</h3>
+      <p>We translate defence and dual-use readiness into a clear maturity score that supports investor-facing diligence.</p>
     </div>
     <div class="why" data-anim="reveal">
       <span class="wn">03</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></div>
       <h3>Find the gaps first</h3>
-      <p>Get ahead of potential regulatory gaps and support a smoother transaction with the client.</p>
+      <p>Identify regulatory gaps before they become deal blockers in fundraising, M&amp;A, procurement or strategic partnership discussions.</p>
     </div>
   </div>
 </section>
@@ -91,9 +91,9 @@
 <section class="section section--line container" aria-labelledby="scan-h">
   <div class="sec-head">
     <span class="mark">§ 02</span>
-    <h2 id="scan-h">A score you can put in front of investors.</h2>
+    <h2 id="scan-h">A defence &amp; dual-use readiness score you can put in front of investors.</h2>
     <span class="coord" aria-hidden="true">[ READINESS SCAN ]</span>
-    <p>We translate regulatory preparedness into a clear maturity score across the dimensions diligence cares about.</p>
+    <p>We translate regulatory preparedness into a clear maturity score across the dimensions defence and dual-use diligence cares about.</p>
   </div>
   <div class="scan" data-anim="scan" aria-label="Sample readiness score breakdown">
     <span class="hud-tl" aria-hidden="true"></span><span class="hud-tr" aria-hidden="true"></span>
@@ -108,12 +108,12 @@
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:82%"></span></span>
       </div>
       <div class="scan__row" data-scan-row="74">
-        <span class="scan__label">Compliance maturity</span>
+        <span class="scan__label">Export-control &amp; dual-use exposure</span>
         <span class="scan__val"><span data-scan-val="">74</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:74%"></span></span>
       </div>
       <div class="scan__row" data-scan-row="68">
-        <span class="scan__label">FDI &amp; market access</span>
+        <span class="scan__label">FDI &amp; ownership sensitivity</span>
         <span class="scan__val"><span data-scan-val="">68</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:68%"></span></span>
       </div>
@@ -123,7 +123,7 @@
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:79%"></span></span>
       </div>
       <div class="scan__row" data-scan-row="88">
-        <span class="scan__label">Documentation &amp; controls</span>
+        <span class="scan__label">Documentation &amp; internal controls</span>
         <span class="scan__val"><span data-scan-val="">88</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:88%"></span></span>
       </div>
@@ -139,7 +139,7 @@
 <section class="section section--line container" id="how" aria-labelledby="how-h">
   <div class="sec-head">
     <span class="mark">§ 03</span>
-    <h2 id="how-h">From exposure to a score you can defend.</h2>
+    <h2 id="how-h">From defence &amp; dual-use exposure to a score you can defend.</h2>
     <span class="coord" aria-hidden="true">[ HOW IT WORKS · 3 STEPS ]</span>
   </div>
   <div class="tl" data-anim="timeline" aria-label="From exposure assessment to a defensible score, in three steps">
@@ -160,7 +160,7 @@
           <div class="tl__card" data-tl-card="">
             <p class="tl__step-k">Step 01</p>
             <h3 class="tl__title">Assess</h3>
-            <p class="tl__sub">We identify the principal regulatory risks across your business model, product, markets and counterparties.</p>
+            <p class="tl__sub">We identify the principal regulatory risks across your technology, business model, target markets, counterparties, investors and public-sector opportunities.</p>
             <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#E8A33D"></span>exposure mapped</span>
           </div>
         </li>
@@ -169,7 +169,7 @@
           <div class="tl__card" data-tl-card="">
             <p class="tl__step-k">Step 02</p>
             <h3 class="tl__title">Score</h3>
-            <p class="tl__sub">We translate regulatory preparedness into a clear maturity score for investor-facing discussions.</p>
+            <p class="tl__sub">We translate defence and dual-use preparedness into a clear maturity score for investor-facing, acquirer-facing or partner-facing discussions.</p>
             <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#F2C879"></span>maturity scored</span>
           </div>
         </li>
@@ -178,7 +178,7 @@
           <div class="tl__card" data-tl-card="">
             <p class="tl__step-k">Step 03</p>
             <h3 class="tl__title">Remediate</h3>
-            <p class="tl__sub">We highlight key weaknesses and the priority actions required to strengthen readiness before diligence.</p>
+            <p class="tl__sub">We highlight the gaps and priority actions required to strengthen readiness before fundraising, M&amp;A, procurement or strategic partnership due diligence.</p>
             <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#E8A33D"></span>gaps · priorities</span>
           </div>
         </li>
@@ -194,7 +194,7 @@
 <section class="section section--line container" id="coverage" aria-labelledby="cov-h">
   <div class="sec-head">
     <span class="mark">§ 04</span>
-    <h2 id="cov-h">A complete, investor-ready regulatory picture.</h2>
+    <h2 id="cov-h">A complete, investor-ready regulatory picture for defence &amp; dual-use companies.</h2>
     <span class="coord" aria-hidden="true">[ WHAT THE SERVICE INCLUDES ]</span>
     <p>Six lenses, one readiness picture — scored, gapped and ready for the diligence room.</p>
   </div>
@@ -203,10 +203,10 @@
       <span class="cov__bar" aria-hidden="true"></span>
       <div class="cov__head"><span class="cov__pno">C · 01</span><h4>Regulatory exposure assessment</h4></div>
       <div class="cov__list">
-        <div class="row"><span class="l">01</span>Business model &amp; product</div>
-        <div class="row"><span class="l">02</span>Markets &amp; jurisdictions</div>
-        <div class="row"><span class="l">03</span>Counterparties</div>
-        <div class="row"><span class="l">04</span>Principal regulatory risks</div>
+        <div class="row"><span class="l">01</span>Business model &amp; technology</div>
+        <div class="row"><span class="l">02</span>Target markets &amp; jurisdictions</div>
+        <div class="row"><span class="l">03</span>Investors, customers and counterparties</div>
+        <div class="row"><span class="l">04</span>Export-control, sanctions, FDI and procurement risk</div>
       </div>
     </article>
     <article class="cov cov--g" data-anim="reveal" data-ht-ledger="">
@@ -224,7 +224,7 @@
       <div class="cov__list">
         <div class="row"><span class="l">01</span>Internal compliance structures</div>
         <div class="row"><span class="l">02</span>Controls in practice</div>
-        <div class="row"><span class="l">03</span>Decision-making processes</div>
+        <div class="row"><span class="l">03</span>Decision-making and escalation processes</div>
       </div>
     </article>
     <article class="cov cov--b" data-anim="reveal" data-ht-ledger="">
@@ -232,8 +232,8 @@
       <div class="cov__head"><span class="cov__pno">C · 04</span><h4>Gap &amp; remediation analysis</h4></div>
       <div class="cov__list">
         <div class="row"><span class="l">01</span>Key weaknesses</div>
-        <div class="row"><span class="l">02</span>Unresolved issues</div>
-        <div class="row"><span class="l">03</span>Priority actions</div>
+        <div class="row"><span class="l">02</span>Unresolved regulatory issues</div>
+        <div class="row"><span class="l">03</span>Priority actions before diligence</div>
       </div>
     </article>
     <article class="cov cov--g" data-anim="reveal" data-ht-ledger="">
@@ -241,8 +241,9 @@
       <div class="cov__head"><span class="cov__pno">C · 05</span><h4>FDI &amp; market-access review</h4></div>
       <div class="cov__list">
         <div class="row"><span class="l">01</span>Foreign-investment screening</div>
-        <div class="row"><span class="l">02</span>Market-entry restrictions</div>
-        <div class="row"><span class="l">03</span>Barriers to growth plans</div>
+        <div class="row"><span class="l">02</span>Ownership and investor sensitivity</div>
+        <div class="row"><span class="l">03</span>Market-entry restrictions</div>
+        <div class="row"><span class="l">04</span>Barriers to growth plans</div>
       </div>
     </article>
     <article class="cov cov--o" data-anim="reveal" data-ht-ledger="">
@@ -250,8 +251,9 @@
       <div class="cov__head"><span class="cov__pno">C · 06</span><h4>Tender &amp; procurement readiness</h4></div>
       <div class="cov__list">
         <div class="row"><span class="l">01</span>Regulated procurement</div>
-        <div class="row"><span class="l">02</span>Tenders</div>
+        <div class="row"><span class="l">02</span>Defence, security and public-sector tenders</div>
         <div class="row"><span class="l">03</span>Public-sector engagement</div>
+        <div class="row"><span class="l">04</span>Documentation expected by buyers and partners</div>
       </div>
     </article>
   </div>
@@ -259,8 +261,8 @@
   <div class="callout" data-anim="reveal">
     <div class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M11 6l6 6-6 6M16 5h5v14h-5"></path></svg></div>
     <div>
-      <h3>Built for the diligence room</h3>
-      <p>A readiness picture that investors and acquirers recognise — backed by a maturity score and a prioritised set of recommendations that hold up under scrutiny.</p>
+      <h3>Built for defence &amp; dual-use diligence</h3>
+      <p>A readiness picture that investors, acquirers and strategic partners recognise — backed by a maturity score and a prioritised set of recommendations that can hold up under defence and dual-use scrutiny.</p>
     </div>
   </div>
 </section>
@@ -274,8 +276,11 @@
   </div>
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
-    <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-      <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+    <div class="founder__aside">
+      <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
+        <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+      </div>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div>
       <span class="founder__eye">Founder · technology &amp; regulatory lawyer · Lemur Legal</span>
@@ -294,17 +299,18 @@
 <section class="section section--line container" aria-labelledby="inc-h">
   <div class="sec-head">
     <span class="mark">§ 07</span>
-    <h2 id="inc-h">Everything an investor will look for, in one review.</h2>
+    <h2 id="inc-h">Everything a defence or dual-use investor will look for, in one review.</h2>
     <span class="coord" aria-hidden="true">[ WHAT'S INCLUDED ]</span>
   </div>
   <div class="inc-list">
     <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>A mapped picture of your regulatory exposure</div>
     <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>A clear readiness score for the diligence room</div>
-    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Compliance maturity and gaps identified</div>
+    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Export-control, sanctions, FDI and procurement risk areas identified</div>
+    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Compliance maturity and documentation gaps reviewed</div>
     <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>A prioritised set of remediation actions</div>
   </div>
   <div class="priceband" data-anim="reveal">
-    <div class="t"><b>Scope is set to your stage and where you're raising or selling.</b> Tell us about your business and we'll scope a readiness review with a fixed proposal.</div>
+    <div class="t"><b>Scope is set to your stage, technology, target markets and transaction context.</b> Tell us about your company and we'll scope a defence &amp; dual-use readiness review with a fixed proposal.</div>
     <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">Request a proposal</button>
   </div>
 </section>
@@ -322,7 +328,7 @@
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Startups and scaling companies preparing to raise, sell or enter regulated markets, who need to demonstrate regulatory preparedness.</p></div>
     </div>
     <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What is the readiness score? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What is the defence &amp; dual-use readiness score? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>A clear maturity score that translates your regulatory preparedness into something investors and acquirers can assess during diligence.</p></div>
     </div>
     <div class="faq__item">
@@ -342,11 +348,11 @@
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>It frequently arises during fundraising, M&amp;A and commercial due diligence — investors and acquirers increasingly scrutinise whether sensitive software, technology or know-how crosses borders, with whom and for what purpose. Identifying exposure early prevents avoidable difficulties later in the deal.</p></div>
     </div>
     <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Why assess dual-use exposure early? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Why assess export-control and dual-use exposure early? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Early assessment is part of mature governance. Identifying exposure early helps prevent problems in fundraising, contracting, deployment, procurement and international expansion — and lets you respond to investor, customer and partner scrutiny with credibility and resilience.</p></div>
     </div>
     <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Do I need step 1 first? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Do I need Regulatory Qualification first? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Most clients begin with regulatory qualification, but we can start here and fold qualification in where needed.</p></div>
     </div>
   </div>
@@ -362,19 +368,21 @@
       <div>
         <div class="eye">// get started</div>
         <h2 id="frm-h">Send your inquiry.</h2>
-        <p class="fl">Tell us about your company and what you need — a readiness review, a score ahead of a raise, or a diligence health-check. We'll review it and come back with next steps, usually the same day.</p>
+        <p class="fl">Tell us about your company, technology and transaction context — whether you need a readiness review, a score ahead of fundraising, or a diligence health-check before investors, acquirers or strategic partners review your company. We'll review it and come back with next steps, usually the same day.</p>
         <p class="fl" style="font-size:.8rem;">Ljubljana, Slovenia · <span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
       </div>
       <div>
         <div class="field"><label for="f-name">Name and surname</label><input type="text" id="f-name" name="name"></div>
         <div class="field"><label for="f-email">Email</label><input type="text" id="f-email" name="email"></div>
         <div class="field"><label for="f-proj">Company name &amp; website</label><input type="text" id="f-proj" name="project"></div>
-        <div class="field"><label for="f-link">Stage — raising, selling or entering a market (or a short brief)</label><input type="text" id="f-link" name="link"></div>
+        <div class="field"><label for="f-link">Stage — raising, selling or entering a market</label><input type="text" id="f-link" name="link"></div>
         <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(242,237,227,0.6);margin-bottom:.4rem;">I need help with</label>
         <div class="choice" data-ht-choice="" role="group" aria-label="What you need">
           <span class="chip" data-ht-chip="" data-on="true">Readiness review</span>
           <span class="chip" data-ht-chip="" data-on="false">Investor diligence</span>
           <span class="chip" data-ht-chip="" data-on="false">FDI review</span>
+          <span class="chip" data-ht-chip="" data-on="false">Export-control exposure</span>
+          <span class="chip" data-ht-chip="" data-on="false">Procurement readiness</span>
         </div>
         <button class="btn" type="button" data-ht-hover-fill="">Submit inquiry</button>
       </div>
@@ -391,12 +399,12 @@
   <div class="cross">
     <a class="xc" href="/regulatory_qualification" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"></path></svg></span>
-      <span><h4>Regulatory Qualification</h4><p>Step 1 · Export controls, customs &amp; sanctions qualification.</p></span>
+      <span><h4>Regulatory Qualification</h4><p>Step 1 · Export controls, customs, sanctions and dual-use qualification.</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
     <a class="xc" href="/compliance_frameworks" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
-      <span><h4>Compliance Frameworks</h4><p>Step 3 · Internal programmes, governance &amp; controls.</p></span>
+      <span><h4>Compliance Frameworks</h4><p>Step 3 · Internal programmes, governance, controls and repeatable compliance workflows.</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
   </div>

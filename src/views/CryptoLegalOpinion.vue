@@ -11,7 +11,7 @@
     <div class="hero__main">
       <p class="kicker">Crypto Legal Opinion · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" data-anim="hexrow" aria-hidden="true">0x7F59F5  544F4B45  4C4547414C  0x2D5BFF  4D694341  0x131220  53454355  5554494C  0x7F59F5  4555204C</div>
-      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="The legal opinion that gets your token">The legal opinion that gets your token</span> <span class="em">listed.</span></h1>
+      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="The crypto legal opinion that gets your token">The crypto legal opinion that gets your token</span> <span class="em">listed.</span></h1>
       <p class="slogan-line">// analyse · classify · accepted.</p>
       <p class="hero__lead">Has a regulated exchange asked for a legal opinion confirming your token was fully analysed before listing? Or do you need an opinion required under <strong>MiCA</strong>? We deliver it — reasoned, classified and accepted.</p>
       <div class="hero__actions">
@@ -222,8 +222,11 @@
   </div>
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
-    <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-      <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+    <div class="founder__aside">
+      <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
+        <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+      </div>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div>
       <span class="founder__eye">Managing partner · fintech lawyer · Lemur Legal</span>

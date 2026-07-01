@@ -9,16 +9,16 @@
   <span class="regmark" style="top:1.2rem;right:.2rem" aria-hidden="true"></span>
   <div class="hero__in">
     <div class="hero__main">
-      <p class="kicker">Trade Regulatory Qualification · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+      <p class="kicker">Trade Regulatory Qualification for Defence &amp; Dual-Use · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" data-anim="hexrow" aria-hidden="true">0xE8A33D  4558504F  0x2026  52542043  0x1114  4C4547414C  0xD2DDD7  4C4A4C20  0xC8772E</div>
-      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Reach global markets —">Reach global markets —</span> <span class="em">without regulatory friction.</span></h1>
-      <p class="slogan-line">// classify · screen · sanctions · authorise.</p>
-      <p class="hero__lead">We translate complex trade regulations into <strong>repeatable, scalable workflows</strong> that support your global supply chain — so your technology reaches international markets without friction.</p>
+      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Defence &amp; dual-use technology,">Defence &amp; dual-use technology,</span> <span class="em">cleared for global markets.</span></h1>
+      <p class="slogan-line">// classify · screen · sanctions · export controls · authorise.</p>
+      <p class="hero__lead">We help defence and dual-use companies translate export controls, sanctions, customs classification and regulatory screening into <strong>clear, repeatable workflows</strong> — so products, components and technologies can move across borders with fewer legal and operational risks.</p>
       <div class="hero__actions">
         <a class="h-btn" href="#contact" data-ht-arrow="">Send your inquiry <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
         <a class="h-btn h-btn--ghost" href="#how">How it works</a>
       </div>
-      <p class="hero__meta">Export controls · customs · sanctions — qualified for cross-border growth</p>
+      <p class="hero__meta">Export controls · sanctions · customs classification · dual-use qualification · cross-border growth</p>
     </div>
 
     <div class="seal-wrap" data-anim="reveal">

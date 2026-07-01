@@ -28,12 +28,11 @@
           Start with the legal question.
           <span class="b">We map the path from there.</span>
         </h1>
-        <p class="slogan-line">// open for matters — awaiting your brief.</p>
+        <p class="slogan-line">// From first question to legal strategy.</p>
         <p class="hero__lead">
           Launching a token, raising a round, or scaling a product — send a
           short brief and we'll map the legal path, with a
-          <strong>fixed fee in writing</strong>. One firm, three frontiers. We
-          reply within 24 hours.
+          <strong>fixed fee in writing</strong>. We reply within 24 hours.
         </p>
       </div>
     </section>
@@ -49,10 +48,10 @@
           ><span class="coord">[ 46.05°N · 14.51°E · INTAKE ]</span>
         </div>
         <div class="section-label">Get in touch</div>
-        <h2 class="section-title">Send a brief.</h2>
+        <h2 class="section-title">Tell us what you're working on.</h2>
         <p class="section-subtitle">
-          Tell us what you're building and which frontier you're on. The more
-          concrete the brief, the sharper the first reply.
+          Share what you're building, where you are in the process and which
+          frontier you're on. We'll take it from there.
         </p>
       </div>
 
@@ -155,7 +154,7 @@
             </div>
           </div>
           <div class="field">
-            <label for="f-message">Your brief <span class="req">*</span></label>
+            <label for="f-message">Legal question <span class="req">*</span></label>
             <textarea
               id="f-message"
               name="message"
@@ -164,7 +163,7 @@
             ></textarea>
           </div>
           <button class="submit" type="submit">
-            Send brief <span class="arrow" aria-hidden="true">→</span>
+            Send enquiry <span class="arrow" aria-hidden="true">→</span>
           </button>
           <p class="form-note">
             Opens your email client, pre-filled. Or write us directly at
@@ -412,8 +411,8 @@ const ROOT_VARS: Record<string, string> = {
   "--term-cyan": "#A88BFF",
   "--term-ok": "#5FC27A",
   "--term-amber": "#D9AE5E",
-  "--serif": '"Spectral", Georgia, "Times New Roman", serif',
-  "--sans": '"Hanken Grotesk", system-ui, -apple-system, Segoe UI, sans-serif',
+  "--serif": '"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace',
+  "--sans": '"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace',
   "--mono": '"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace',
   "--pad-x": "clamp(1.25rem, 5vw, 4rem)",
   "--section-y": "clamp(3.5rem, 7vw, 6rem)",

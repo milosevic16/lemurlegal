@@ -9,16 +9,16 @@
   <span class="regmark" style="top:1.2rem;right:.2rem" aria-hidden="true"></span>
   <div class="hero__in">
     <div class="hero__main">
-      <p class="kicker">Compliance Frameworks · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+      <p class="kicker">Compliance Frameworks for Defence &amp; Dual-Use · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" data-anim="hexrow" aria-hidden="true">0xE8A33D  434F4D50  0x2026  4C49414E  0x1114  4C4547414C  0xD2DDD7  4C4A4C20  0xC8772E</div>
-      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Turn regulatory complexity into">Turn regulatory complexity into</span> <span class="em">audit-ready operations.</span></h1>
-      <p class="slogan-line">// frameworks · governance · controls · audit-readiness.</p>
-      <p class="hero__lead">We establish scalable internal frameworks, compliance programmes and control systems that translate <strong>regulatory complexity</strong> into robust, audit-ready operational standards.</p>
+      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Turn defence &amp; dual-use regulatory complexity into">Turn defence &amp; dual-use regulatory complexity into</span> <span class="em">audit-ready operations.</span></h1>
+      <p class="slogan-line">// export controls · sanctions · governance · controls · audit-readiness.</p>
+      <p class="hero__lead">We establish <strong>scalable internal compliance frameworks</strong> for defence and dual-use companies, translating export controls, sanctions exposure, counterparty screening, procurement requirements and internal approval rules into clear operational standards.</p>
       <div class="hero__actions">
         <a class="h-btn" href="#contact" data-ht-arrow="">Send your inquiry <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
         <a class="h-btn h-btn--ghost" href="#how">How it works</a>
       </div>
-      <p class="hero__meta">Fixed-scope build-outs · Defensible, audit-ready &amp; embedded in how you operate</p>
+      <p class="hero__meta">Fixed-scope build-outs · Defensible, audit-ready &amp; embedded in defence and dual-use operations</p>
     </div>
 
     <div class="seal-wrap" data-anim="reveal">
@@ -58,7 +58,7 @@
   <div class="cyberline" aria-hidden="true"><span class="cyberline__base"></span><span data-anim="cpulse"></span></div>
   <div class="container strip__in">
     <span class="strip__k">Defence &amp; dual use</span>
-    <p class="strip__v">As you scale, ad-hoc compliance breaks. A designed framework makes compliance repeatable, defensible and audit-ready — and turns regulatory complexity into an operational standard your whole team can follow.</p>
+    <p class="strip__v">As defence and dual-use companies scale, ad-hoc compliance breaks. A designed framework makes export-control checks, sanctions screening, internal approvals, procurement readiness and recordkeeping repeatable, defensible and audit-ready — so regulatory control becomes part of how the company operates.</p>
   </div>
 </section>
 
@@ -66,27 +66,27 @@
 <section class="section container" aria-labelledby="who-h">
   <div class="sec-head">
     <span class="mark">§ 01</span>
-    <h2 id="who-h">Compliance that scales with you.</h2>
+    <h2 id="who-h">Compliance that scales with defence &amp; dual-use growth.</h2>
     <span class="coord" aria-hidden="true">[ THE CHALLENGE ]</span>
   </div>
   <div class="why-grid">
     <div class="why" data-anim="reveal">
       <span class="wn">01</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3.5 9h17M3.5 15h17M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"></path></svg></div>
-      <h3>Compliance Programme Design</h3>
-      <p>Building proportionate internal compliance programmes aligned with the company's regulatory exposure, operating model, and stage of growth.</p>
+      <h3>Regulatory exposure grows with the business</h3>
+      <p>As defence and dual-use companies move from prototype to sales, exports, procurement, partnerships or fundraising, informal compliance decisions become harder to defend.</p>
     </div>
     <div class="why" data-anim="reveal">
       <span class="wn">02</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18M5 6l14 12M19 6L5 18"></path></svg></div>
-      <h3>Governance and Control Structures</h3>
-      <p>Establishing clear internal responsibilities, escalation channels, approval pathways, and control mechanisms for higher-risk decisions and transactions.</p>
+      <h3>Governance must be clear before risk appears</h3>
+      <p>Sensitive transactions need defined roles, escalation pathways and approval rules before teams make decisions under commercial pressure.</p>
     </div>
     <div class="why" data-anim="reveal">
       <span class="wn">03</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></div>
-      <h3>Operational Implementation and Audit Readiness</h3>
-      <p>Translating legal requirements into practical workflows, templates, training, and documentation standards that support consistent execution and audit-ready records.</p>
+      <h3>Audit-readiness cannot be improvised</h3>
+      <p>Investors, public buyers, strategic partners and regulators may ask how export controls, sanctions, screening and internal approvals are documented in practice.</p>
     </div>
   </div>
 </section>
@@ -95,7 +95,7 @@
 <section class="section section--line container" id="how" aria-labelledby="how-h">
   <div class="sec-head">
     <span class="mark">§ 02</span>
-    <h2 id="how-h">From regulatory complexity to operational standard.</h2>
+    <h2 id="how-h">From defence &amp; dual-use exposure to operational standard.</h2>
     <span class="coord" aria-hidden="true">[ HOW IT WORKS · 3 STEPS ]</span>
   </div>
   <div class="tl" data-anim="timeline" aria-label="From programme design to audit-readiness, in three steps">
@@ -116,7 +116,7 @@
           <div class="tl__card" data-tl-card="">
             <p class="tl__step-k">Step 01</p>
             <h3 class="tl__title">Design</h3>
-            <p class="tl__sub">We build a compliance programme tailored to your regulatory exposure, operating model and stage of growth.</p>
+            <p class="tl__sub">We design a compliance programme tailored to your technology, regulatory exposure, target markets, operating model and stage of growth.</p>
             <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#E8A33D"></span>tailored programme</span>
           </div>
         </li>
@@ -125,8 +125,8 @@
           <div class="tl__card" data-tl-card="">
             <p class="tl__step-k">Step 02</p>
             <h3 class="tl__title">Embed</h3>
-            <p class="tl__sub">We integrate compliance into day-to-day processes and define governance, roles and escalation pathways.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#F2C879"></span>governance · escalation</span>
+            <p class="tl__sub">We integrate compliance into day-to-day processes, including customer and partner screening, internal approvals, contract review, export-control checks and escalation pathways.</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#F2C879"></span>governance · approvals · escalation</span>
           </div>
         </li>
         <li class="tl__step" data-tl-step="">
@@ -134,7 +134,7 @@
           <div class="tl__card" data-tl-card="">
             <p class="tl__step-k">Step 03</p>
             <h3 class="tl__title">Assure</h3>
-            <p class="tl__sub">We set documentation, training and audit-readiness standards that stand up to internal and external scrutiny.</p>
+            <p class="tl__sub">We define documentation, training and audit-readiness standards that support internal oversight, investor review, public-sector engagement and external scrutiny.</p>
             <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#E8A33D"></span>audit-ready</span>
           </div>
         </li>
@@ -150,19 +150,19 @@
 <section class="section section--line container" id="coverage" aria-labelledby="cov-h">
   <div class="sec-head">
     <span class="mark">§ 03</span>
-    <h2 id="cov-h">Everything a defensible compliance function needs.</h2>
+    <h2 id="cov-h">Everything a defence &amp; dual-use compliance function needs.</h2>
     <span class="coord" aria-hidden="true">[ WHAT THE SERVICE INCLUDES ]</span>
-    <p>Six building blocks, one framework — designed, embedded and made audit-ready.</p>
+    <p>Six building blocks, one framework — designed, embedded and made audit-ready for regulated defence and dual-use operations.</p>
   </div>
   <div class="cov-grid">
     <article class="cov cov--b" data-anim="reveal" data-ht-ledger="">
       <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 01</span><h4>Compliance programme design</h4></div>
+      <div class="cov__head"><span class="cov__pno">C · 01</span><h4>Defence &amp; dual-use compliance programme design</h4></div>
       <div class="cov__list">
         <div class="row"><span class="l">01</span>Tailored to your regulatory exposure</div>
         <div class="row"><span class="l">02</span>Mapped to your operating model</div>
         <div class="row"><span class="l">03</span>Scaled to your stage of growth</div>
-        <div class="row"><span class="l">04</span>Internal compliance structures</div>
+        <div class="row"><span class="l">04</span>Built around export controls, sanctions, FDI, procurement and market access</div>
       </div>
     </article>
     <article class="cov cov--g" data-anim="reveal" data-ht-ledger="">
@@ -172,36 +172,37 @@
         <div class="row"><span class="l">01</span>Roles &amp; responsibilities</div>
         <div class="row"><span class="l">02</span>Decision-making lines</div>
         <div class="row"><span class="l">03</span>Escalation pathways for higher-risk issues</div>
-        <div class="row"><span class="l">04</span>Handling of higher-risk transactions</div>
+        <div class="row"><span class="l">04</span>Approval rules for sensitive transactions, markets and counterparties</div>
       </div>
     </article>
     <article class="cov cov--o" data-anim="reveal" data-ht-ledger="">
       <span class="cov__bar" aria-hidden="true"></span>
       <div class="cov__head"><span class="cov__pno">C · 03</span><h4>Policies, templates &amp; controls</h4></div>
       <div class="cov__list">
-        <div class="row"><span class="l">01</span>Internal documentation</div>
-        <div class="row"><span class="l">02</span>Reusable templates</div>
-        <div class="row"><span class="l">03</span>Control measures</div>
-        <div class="row"><span class="l">04</span>Consistent, defensible practice</div>
+        <div class="row"><span class="l">01</span>Internal compliance documentation</div>
+        <div class="row"><span class="l">02</span>Reusable screening and approval templates</div>
+        <div class="row"><span class="l">03</span>Control measures for export, licensing, procurement and partner relationships</div>
+        <div class="row"><span class="l">04</span>Consistent, defensible practice across the company</div>
       </div>
     </article>
     <article class="cov cov--b" data-anim="reveal" data-ht-ledger="">
       <span class="cov__bar" aria-hidden="true"></span>
       <div class="cov__head"><span class="cov__pno">C · 04</span><h4>Operational process integration</h4></div>
       <div class="cov__list">
-        <div class="row"><span class="l">01</span>Onboarding</div>
-        <div class="row"><span class="l">02</span>Approvals</div>
-        <div class="row"><span class="l">03</span>Contracting</div>
-        <div class="row"><span class="l">04</span>Internal review</div>
+        <div class="row"><span class="l">01</span>Customer, supplier and partner onboarding</div>
+        <div class="row"><span class="l">02</span>Sanctions and counterparty screening</div>
+        <div class="row"><span class="l">03</span>Contracting and transaction approvals</div>
+        <div class="row"><span class="l">04</span>Internal review before exports, technical transfers or regulated engagements</div>
       </div>
     </article>
     <article class="cov cov--g" data-anim="reveal" data-ht-ledger="">
       <span class="cov__bar" aria-hidden="true"></span>
       <div class="cov__head"><span class="cov__pno">C · 05</span><h4>Training &amp; internal awareness</h4></div>
       <div class="cov__list">
-        <div class="row"><span class="l">01</span>Targeted training</div>
-        <div class="row"><span class="l">02</span>Practical guidance</div>
-        <div class="row"><span class="l">03</span>Clearer understanding of risk areas</div>
+        <div class="row"><span class="l">01</span>Targeted training for management and commercial teams</div>
+        <div class="row"><span class="l">02</span>Practical guidance on defence and dual-use risk areas</div>
+        <div class="row"><span class="l">03</span>Clearer understanding of when legal review is required</div>
+        <div class="row"><span class="l">04</span>Internal awareness for sales, partnerships, procurement and investor discussions</div>
       </div>
     </article>
     <article class="cov cov--o" data-anim="reveal" data-ht-ledger="">
@@ -211,7 +212,7 @@
         <div class="row"><span class="l">01</span>Recordkeeping standards</div>
         <div class="row"><span class="l">02</span>Documentation standards</div>
         <div class="row"><span class="l">03</span>Internal oversight support</div>
-        <div class="row"><span class="l">04</span>External diligence &amp; audit prep</div>
+        <div class="row"><span class="l">04</span>External diligence, audit and public-sector review preparation</div>
       </div>
     </article>
   </div>
@@ -219,8 +220,8 @@
   <div class="callout" data-anim="reveal">
     <div class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M11 6l6 6-6 6M16 5h5v14h-5"></path></svg></div>
     <div>
-      <h3>Audit-ready, end to end</h3>
-      <p>From programme design to recordkeeping, we build the controls and documentation that support internal oversight, external diligence and audits — so readiness is the default, not a scramble.</p>
+      <h3>Audit-ready for defence &amp; dual-use operations</h3>
+      <p>From programme design to recordkeeping, we build the controls and documentation that support internal oversight, investor diligence, public-sector engagement and external review — so compliance is not reconstructed after the question is asked.</p>
     </div>
   </div>
 </section>
@@ -234,8 +235,11 @@
   </div>
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
-    <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-      <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+    <div class="founder__aside">
+      <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
+        <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+      </div>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div>
       <span class="founder__eye">Founder · technology &amp; regulatory lawyer · Lemur Legal</span>
@@ -254,17 +258,18 @@
 <section class="section section--line container" aria-labelledby="inc-h">
   <div class="sec-head">
     <span class="mark">§ 06</span>
-    <h2 id="inc-h">Everything your framework needs, in one build-out.</h2>
+    <h2 id="inc-h">Everything your defence &amp; dual-use framework needs, in one build-out.</h2>
     <span class="coord" aria-hidden="true">[ WHAT'S INCLUDED ]</span>
   </div>
   <div class="inc-list">
-    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>A compliance programme mapped to your regulatory exposure</div>
+    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>A compliance programme mapped to your defence and dual-use regulatory exposure</div>
     <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Governance, roles and escalation pathways defined</div>
-    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Policies, templates and controls documented</div>
-    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Training and audit-ready recordkeeping standards</div>
+    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Export-control, sanctions, screening and approval workflows documented</div>
+    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Policies, templates and internal controls prepared</div>
+    <div class="inc" data-anim="reveal"><span class="ck"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>Training and audit-ready recordkeeping standards established</div>
   </div>
   <div class="priceband" data-anim="reveal">
-    <div class="t"><b>Scope is set to your regulatory exposure and stage.</b> Tell us about your business and we'll scope a framework build-out with a fixed proposal.</div>
+    <div class="t"><b>Scope is set to your technology, regulatory exposure, target markets and stage of growth.</b> Tell us about your company and we'll scope a defence &amp; dual-use compliance framework build-out with a fixed proposal.</div>
     <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">Request a proposal</button>
   </div>
 </section>
@@ -278,11 +283,11 @@
   </div>
   <div class="faq" data-anim="reveal">
     <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What is a compliance framework? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What is a defence &amp; dual-use compliance framework? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>The internal structures, policies, controls and governance that make regulatory compliance consistent, repeatable and defensible.</p></div>
     </div>
     <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">We're small — do we need this? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">We're small — do we need this already? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>We tailor the programme to your stage and exposure; the point is a framework that scales as you grow, not bureaucracy.</p></div>
     </div>
     <div class="faq__item">
@@ -310,7 +315,7 @@
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>When classification is unclear, you operate across borders or near controlled categories, destinations are higher-risk, or governance must be built from the ground up. Addressing licensing pathways, end-use risk, contractual protections and internal governance early materially improves outcomes and reduces later delays.</p></div>
     </div>
     <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">How does Lemur Legal support dual-use businesses? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">How does Lemur Legal support defence and dual-use businesses? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
       <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>We combine public- and private-sector experience across legal analysis, regulatory practice and the operational realities of sensitive industries — supporting clients from early compliance design through to advanced regulatory and transactional questions: building compliance culture and governance, assessing classification, navigating authorisations, structuring contracts and addressing strategic legal issues in defence-tech and dual-use markets.</p></div>
     </div>
   </div>
@@ -326,19 +331,22 @@
       <div>
         <div class="eye">// get started</div>
         <h2 id="frm-h">Send your inquiry.</h2>
-        <p class="fl">Tell us about your company and what you need — a new framework, a governance build-out, or audit-readiness. We'll review it and come back with next steps, usually the same day.</p>
+        <p class="fl">Tell us about your company, technology, products and target markets — whether you need a new compliance framework, a governance build-out, internal approval workflows or audit-readiness for defence and dual-use operations. We'll review it and come back with next steps, usually the same day.</p>
         <p class="fl" style="font-size:.8rem;">Ljubljana, Slovenia · <span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
       </div>
       <div>
         <div class="field"><label for="f-name">Name and surname</label><input type="text" id="f-name" name="name"></div>
         <div class="field"><label for="f-email">Email</label><input type="text" id="f-email" name="email"></div>
         <div class="field"><label for="f-proj">Company name &amp; website</label><input type="text" id="f-proj" name="project"></div>
-        <div class="field"><label for="f-link">Sector, products &amp; markets (or a short brief)</label><input type="text" id="f-link" name="link"></div>
+        <div class="field"><label for="f-link">Technology, products &amp; target markets</label><input type="text" id="f-link" name="link"></div>
         <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(242,237,227,0.6);margin-bottom:.4rem;">I need help with</label>
         <div class="choice" data-ht-choice="" role="group" aria-label="What you need">
           <span class="chip" data-ht-chip="" data-on="true">Programme design</span>
           <span class="chip" data-ht-chip="" data-on="false">Governance</span>
           <span class="chip" data-ht-chip="" data-on="false">Audit readiness</span>
+          <span class="chip" data-ht-chip="" data-on="false">Export-control workflow</span>
+          <span class="chip" data-ht-chip="" data-on="false">Sanctions screening</span>
+          <span class="chip" data-ht-chip="" data-on="false">Procurement readiness</span>
         </div>
         <button class="btn" type="button" data-ht-hover-fill="">Submit inquiry</button>
       </div>
@@ -350,17 +358,17 @@
 <section class="section section--line container" aria-labelledby="xs-h">
   <div class="sec-head" style="margin-bottom:1.4rem;">
     <span class="mark">§ 08</span>
-    <h2 id="xs-h">Earlier steps in the defence practice</h2>
+    <h2 id="xs-h">Earlier steps in the defence &amp; dual-use practice</h2>
   </div>
   <div class="cross">
     <a class="xc" href="/regulatory_qualification" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"></path></svg></span>
-      <span><h4>Regulatory Qualification</h4><p>Step 1 · Export controls, customs &amp; sanctions qualification.</p></span>
+      <span><h4>Regulatory Qualification</h4><p>Step 1 · Export controls, customs, sanctions and dual-use qualification.</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
     <a class="xc" href="/investment_readiness_review" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
-      <span><h4>Investment Readiness Review</h4><p>Step 2 · Investor-oriented regulatory readiness &amp; scoring.</p></span>
+      <span><h4>Investment Readiness Review</h4><p>Step 2 · Investor-oriented regulatory readiness, scoring and diligence preparation.</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
   </div>

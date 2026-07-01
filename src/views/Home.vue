@@ -47,9 +47,9 @@
 <section class="section container" id="practices" aria-labelledby="practices-h">
   <div class="sec-head">
     <span class="mark">§ 01</span>
-    <h2 id="practices-h">Three practices, one firm</h2>
+    <h2 id="practices-h">Three sectors. Specialist legal services.</h2>
     <span class="coord" aria-hidden="true">[ 46.05°N · 14.51°E ]</span>
-    <p>Whichever frontier you're on, you're working with specialists — not a generalist learning your sector on your clock.</p>
+    <p>Lemur Legal advises clients across three specialist areas: crypto and fintech, startups and deep tech, and defence and dual-use innovation. Each practice combines legal knowledge with a practical understanding of the market it serves.</p>
   </div>
 
   <article class="ledger ledger--b" id="crypto_fintech" data-anim="reveal">
@@ -102,7 +102,8 @@
     <h2 id="founder-h">Founder</h2>
   </div>
   <div class="founder">
-    <div class="founder-photo" data-anim="reveal">
+    <div class="founder__aside">
+      <div class="founder-photo" data-anim="reveal">
       <!-- DEVELOPER: drop founder.jpg (square, ~1341×1356) next to this HTML file. The image will appear automatically. -->
       <img id="founder-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Peter Merc, Ph.D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2;display:none;">
       <div class="photo-grid"></div>
@@ -124,6 +125,8 @@
         <span class="photo-meta__name">P. MERC, PH.D.</span>
         <span class="photo-meta__id">ID:PM·001</span>
       </div>
+    </div>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div data-anim="reveal">
       <p class="founder__name">Peter Merc, Ph.D.</p>
@@ -156,34 +159,34 @@
   <div class="sec-head">
     <span class="mark">§ 05</span>
     <h2 id="cta-h">Start with the legal question.</h2>
-    <p class="cta__lead" style="font-style:normal;font-family:var(--sans);">Whether you're launching, scaling, listing or entering a regulated market, send us the brief. We'll map the legal path from there.</p>
+    <p class="cta__lead" style="font-style:normal;font-family:var(--sans);">Whether you're launching, scaling, listing or entering a regulated market, bring us your legal question. We'll map the path from there.</p>
   </div>
 
   <div class="matter-board" data-anim="reveal" aria-label="Matter intake: three steps from brief to engagement">
     <span class="hud-tl" aria-hidden="true"></span><span class="hud-tr" aria-hidden="true"></span>
     <span class="hud-bl" aria-hidden="true"></span><span class="hud-br" aria-hidden="true"></span>
     <div class="matter-board__header" aria-hidden="true">
-      <span class="mb-type" data-type="MATTER INTAKE PROTOCOL"></span>&nbsp;·&nbsp;<span class="mb-type" data-type="OPEN FOR MATTERS" data-type-color="var(--term-ok)"></span> <span class="blip" data-anim="blink"></span><span class="blip" data-anim="blink" style="margin-left:.4rem;opacity:.5;"></span>
+      <span class="mb-type" data-type="From first consultation to dedicated legal support"></span> <span class="blip" data-anim="blink"></span><span class="blip" data-anim="blink" style="margin-left:.4rem;opacity:.5;"></span>
     </div>
     <div class="matter-board__nodes">
       <div class="mnode mb-hide">
         <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" data-type="01"></span></span>
         <p class="mnode__title"><span class="mb-type" data-type="Consultation"></span></p>
-        <span class="mnode__sub"><span class="mb-type" data-type="You tell us what you're building. We map the legal path."></span></span>
+        <span class="mnode__sub"><span class="mb-type" data-type="Tell us what you're building. We'll map the legal path, identify the key risks and define the next steps."></span></span>
         <span class="mnode__badge"><span class="mnd" data-anim="nd" data-nd-color="#5FC27A"></span><span class="mb-type" data-type="OPEN"></span></span>
       </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
         <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" data-type="02"></span></span>
         <p class="mnode__title"><span class="mb-type" data-type="Fixed-fee proposal"></span></p>
-        <span class="mnode__sub"><span class="mb-type" data-type="Scope and a fixed fee, in writing. No surprises."></span></span>
+        <span class="mnode__sub"><span class="mb-type" data-type="We define the scope, deliverables and fixed fee before work begins. No hourly surprises, no open-ended retainer."></span></span>
         <span class="mnode__badge" style="color:var(--term-amber);"><span class="mnd" data-anim="nd" data-nd-color="#D9AE5E"></span><span class="mb-type" data-type="in writing"></span></span>
       </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
         <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" data-type="03"></span></span>
-        <p class="mnode__title"><span class="mb-type" data-type="We start"></span></p>
-        <span class="mnode__sub"><span class="mb-type" data-type="First filing through to ongoing compliance."></span></span>
+        <p class="mnode__title"><span class="mb-type" data-type="Dedicated legal support"></span></p>
+        <span class="mnode__sub"><span class="mb-type" data-type="Once we begin, you work with a dedicated legal team that understands your project, keeps the work moving and supports you from first filing to ongoing compliance."></span></span>
         <span class="mnode__badge" style="color:var(--term-dim);"><span class="mnd" data-anim="nd" data-nd-color="#6E6890"></span><span class="mb-type" data-type="one firm"></span></span>
       </div>
     </div>
@@ -420,6 +423,7 @@ ul,ol{ margin:0; padding:0; list-style:none; }
 .photo-grid{ position:absolute; inset:0; background-image:linear-gradient(var(--hairline) 1px,transparent 1px),linear-gradient(90deg,var(--hairline) 1px,transparent 1px); background-size:24px 24px; opacity:.18; pointer-events:none; }
 @media (max-width:860px) {
 .founder{ grid-template-columns:1fr 1fr; }
+.founder__aside{ grid-column:1/-1; }
 .founder-photo{ grid-column:1/-1; aspect-ratio:16/7; }
 }
 @media (max-width:580px) {
