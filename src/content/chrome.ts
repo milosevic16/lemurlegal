@@ -31,7 +31,7 @@ const chrome: Bilingual<ChromeContent> = {
           links: ['Regulatory Qualification', 'Investment Readiness Review', 'Compliance Frameworks'],
         },
       },
-      legal: { privacy: 'Privacy Policy', terms: 'Terms of Use', cookie: 'Cookie Policy' },
+      legal: { terms: 'Terms of Use and Privacy Policy' },
       copyright: '© 2026 Lemur Legal d.o.o.',
       strap: 'Fintech Factory — crypto & fintech practice by Lemur Legal',
       socialAria: 'Lemur Legal on LinkedIn',
@@ -64,8 +64,8 @@ const chrome: Bilingual<ChromeContent> = {
           links: ['Regulativna opredelitev', 'Pregled pripravljenosti na investicije', 'Okviri skladnosti'],
         },
       },
-      // TODO(sl-review): legal link labels machine-translated (not in docx)
-      legal: { privacy: 'Politika zasebnosti', terms: 'Pogoji uporabe', cookie: 'Politika piškotkov' },
+      // TODO(sl-review): "Pogoji uporabe in politika zasebnosti" machine-translated (not in docx)
+      legal: { terms: 'Pogoji uporabe in politika zasebnosti' },
       copyright: '© 2026 Lemur Legal d.o.o.',
       strap: 'Fintech Factory — praksa za kripto in fintech pri Lemur Legal',
       socialAria: 'Lemur Legal na LinkedInu', // TODO(sl-review)

@@ -187,6 +187,14 @@ html{ scroll-behavior:auto; }
 .foot-col.fc-b a:hover{ border-color:#7F59F5; color:#6444CC; }
 .foot-col.fc-g a:hover{ border-color:#1FC49A; color:#17967A; }
 .foot-col.fc-o a:hover{ border-color:#C4823A; color:#A4651E; }
+/* Footer compaction: address / LinkedIn / terms sit under the three service columns.
+   These override the broad `.foot-col a` rules so the relocated items keep their look. */
+.foot-col__addr{ margin-top:1.5rem; font-size:.82rem; color:var(--ink-2); line-height:1.7; max-width:26ch; }
+.foot-col .foot__social{ margin-top:1.5rem; }
+.foot-col a.foot__social-link{ display:inline-flex; width:34px; height:34px; padding:0; color:var(--ink-2); border:1px solid var(--hairline-strong); }
+.foot-col a.foot__social-link:hover{ color:var(--ink); border-color:var(--ink); }
+.foot-col a.foot__legal-inline{ display:inline-block; margin-top:1.5rem; width:auto; max-width:28ch; padding-block:0; white-space:normal; line-height:1.5; font-size:.74rem; color:var(--ink-2); border-bottom:1px solid transparent; }
+.foot-col a.foot__legal-inline:hover{ color:var(--ink); border-color:var(--hairline-strong); }
 @keyframes clo-scan{ from{ transform:translateY(-120%); } to{ transform:translateY(280%); } }
 *, *::before, *::after { box-sizing: border-box; }
 .nav a[aria-current="page"]{ color:#17967A; font-weight:600; }

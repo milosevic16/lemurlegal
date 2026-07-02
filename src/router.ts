@@ -16,6 +16,7 @@ const VIEWS: Array<[string, string]> = [
   ['compliance_frameworks', 'ComplianceFrameworks'],
   ['blog', 'Blog'],
   ['contact', 'Contact'],
+  ['terms_of_use', 'TermsOfUse'],
 ]
 
 // Every param-less view except the blog gets an optional `/sl` locale prefix and

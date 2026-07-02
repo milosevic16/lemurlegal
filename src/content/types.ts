@@ -30,7 +30,7 @@ export interface ChromeContent {
       startups: { heading: string; links: [string, string, string] }
       defence: { heading: string; links: [string, string, string] }
     }
-    legal: { privacy: string; terms: string; cookie: string }
+    legal: { terms: string }
     copyright: string
     strap: string
     socialAria: string
