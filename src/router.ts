@@ -15,6 +15,7 @@ const VIEWS: Array<[string, string]> = [
   ['investment_readiness_review', 'InvestmentReadiness'],
   ['compliance_frameworks', 'ComplianceFrameworks'],
   ['blog', 'Blog'],
+  ['media', 'MediaCoverage'],
   ['contact', 'Contact'],
   ['terms_of_use', 'TermsOfUse'],
 ]

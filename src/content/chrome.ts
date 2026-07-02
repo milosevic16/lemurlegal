@@ -10,6 +10,7 @@ const chrome: Bilingual<ChromeContent> = {
       startups: 'Startups & Deep Tech',
       defence: 'Defence & Dual Use',
       blog: 'Blog',
+      media: 'Media Coverage',
       contact: 'Contact',
     },
     status: 'EU · OPEN FOR MATTERS',
@@ -43,6 +44,7 @@ const chrome: Bilingual<ChromeContent> = {
       startups: 'Zagonska podjetja',
       defence: 'Obramba in dvojna raba',
       blog: 'Blog',
+      media: 'V medijih', // TODO(sl-review)
       contact: 'Kontakt',
     },
     status: 'EU · ODPRTI ZA NOVE ZADEVE',

@@ -17,6 +17,7 @@ export interface ChromeContent {
     startups: string
     defence: string
     blog: string
+    media: string
     contact: string
   }
   /** Header status line, e.g. "EU · OPEN FOR MATTERS". */

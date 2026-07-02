@@ -9,6 +9,7 @@
         <a :href="sec('startups_deeptech')" class="nl-g">{{ c.nav.startups }}</a>
         <a :href="sec('defence_dualuse')" class="nl-o">{{ c.nav.defence }}</a>
         <a :href="lp('/blog')" class="nl-m">{{ c.nav.blog }}</a>
+        <a :href="lp('/media')" class="nl-m">{{ c.nav.media }}</a>
         <a :href="lp('/contact')" class="nl-m">{{ c.nav.contact }}</a>
       </nav>
       <div class="head-right">
@@ -37,6 +38,7 @@
       <a :href="sec('startups_deeptech')" class="mm-g">{{ c.nav.startups }}</a>
       <a :href="sec('defence_dualuse')" class="mm-o">{{ c.nav.defence }}</a>
       <a :href="lp('/blog')">{{ c.nav.blog }}</a>
+      <a :href="lp('/media')">{{ c.nav.media }}</a>
       <a :href="lp('/contact')">{{ c.nav.contact }}</a>
       <span class="mobile-menu__meta">
         <span class="dot" data-anim="blink"></span> {{ c.status }} &nbsp;·&nbsp;
