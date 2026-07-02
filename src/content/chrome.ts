@@ -13,11 +13,11 @@ const chrome: Bilingual<ChromeContent> = {
       media: 'Media Coverage',
       contact: 'Contact',
     },
-    status: 'EU · OPEN FOR MATTERS',
     footer: {
-      blurb:
-        'Specialist law for crypto, fintech, startups, deep tech & dual-use. Lemur Legal d.o.o. · Ljubljana, Slovenia',
-      address: 'Ciril-Metodov trg 14, 1000 Ljubljana',
+      blurb: 'Law for crypto, fintech, startup, deep tech, defence & dual-use',
+      org: 'Lemur Legal, d.o.o.',
+      street: 'Ciril-Metodov trg 14',
+      city: 'Ljubljana, Slovenia',
       cols: {
         crypto: {
           heading: 'Crypto & Fintech',
@@ -47,11 +47,12 @@ const chrome: Bilingual<ChromeContent> = {
       media: 'V medijih', // TODO(sl-review)
       contact: 'Kontakt',
     },
-    status: 'EU · ODPRTI ZA NOVE ZADEVE',
     footer: {
-      blurb:
-        'Specializirano pravo za kripto, fintech, zagonska podjetja, napredno tehnologijo in dvojno rabo. Lemur Legal d.o.o. · Ljubljana, Slovenija',
-      address: 'Ciril-Metodov trg 14, 1000 Ljubljana',
+      // TODO(sl-review): tagline reworded per "popravki" (added obrambo/defence, dropped "Specializirano")
+      blurb: 'Pravo za kripto, fintech, zagonska podjetja, napredno tehnologijo, obrambo in dvojno rabo',
+      org: 'Lemur Legal, d.o.o.',
+      street: 'Ciril-Metodov trg 14',
+      city: 'Ljubljana, Slovenija',
       cols: {
         crypto: {
           heading: 'Kripto in fintech',
