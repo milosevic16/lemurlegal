@@ -56,7 +56,7 @@
   <div class="container cta-band__in">
     <h2>Have a question we haven't answered?</h2>
     <p>Tell us what you're building and we'll map the legal path — with a fixed fee, in writing. One firm, three frontiers.</p>
-    <a class="action" href="/contact">Book a consultation <span class="arrow">→</span></a>
+    <a class="action" href="/contact#brief">Book a consultation <span class="arrow">→</span></a>
   </div>
 </section>
 

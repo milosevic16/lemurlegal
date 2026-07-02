@@ -31,7 +31,7 @@
       <article class="article__body" v-html="post.bodyHtml"></article>
 
       <div class="article__cta">
-        <a class="action" href="/contact">Have a question like this? Book a consultation <span class="arrow">→</span></a>
+        <a class="action" href="/contact#brief">Have a question like this? Book a consultation <span class="arrow">→</span></a>
       </div>
     </template>
 

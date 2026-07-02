@@ -4,7 +4,7 @@
          view's #main root on navigation — which replays the CSS entry animation
          below (signalling a new page) without a <transition>/key, both of which
          fight the ported per-view scripts that mutate the DOM directly. -->
-    <router-view />
+    <router-view :key="$route.path" />
   </SiteChrome>
 </template>
 
@@ -12,6 +12,7 @@
 import { onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import SiteChrome from './components/SiteChrome.vue'
+import { localePath } from './i18n/locale'
 
 const router = useRouter()
 
@@ -28,7 +29,8 @@ function onClick(e: MouseEvent) {
   if (!href.startsWith('/') || href.startsWith('//')) return
   e.preventDefault()
   const url = new URL(href, window.location.origin)
-  router.push({ path: url.pathname, hash: url.hash || undefined })
+  // Keep the current locale (and leave /blog English-only) on internal nav.
+  router.push({ path: localePath(url.pathname), hash: url.hash || undefined })
 }
 
 onMounted(() => document.addEventListener('click', onClick))

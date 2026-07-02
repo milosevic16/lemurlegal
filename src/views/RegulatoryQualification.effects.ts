@@ -460,7 +460,7 @@ export function initEffects(): () => void {
           setOpen(btn.getAttribute('aria-expanded') !== 'true');
         });
         __fx.on(menu, 'click', function(e){ if (e.target.tagName === 'A') setOpen(false); });
-        __fx.on(window, 'resize', function(){ if (window.innerWidth > 860) setOpen(false); }, {passive:true});
+        __fx.on(window, 'resize', function(){ if (window.innerWidth > 1200) setOpen(false); }, {passive:true});
       })();
 
       /* email assembly — keeps the literal address out of the static HTML so it survives Cloudflare email obfuscation on export */

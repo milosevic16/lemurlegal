@@ -8,18 +8,18 @@
   <span class="regmark tr" style="top:1.2rem;right:.4rem" aria-hidden="true"></span>
   <div class="hero__grid">
     <div class="hero__main">
-      <p class="kicker">Specialist tech-law firm · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+      <p class="kicker">{{ t.hero.kicker }} <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" aria-hidden="true" data-anim="hexrow">0x7F59F5  0xD2DDD7  4C454741 4C2E4C41  0x1FC49A  0xC4823A  4C4A4C20  0x131220  454F5552  0x7F59F5  4D694341</div>
-      <h1 id="hero-h"><span class="hero-title-glitch" data-glitch-text="" data-text="Your terminal to the legal world:" style="font-size:25px;font-weight:500;color:rgb(159,159,159)">Your terminal to the legal world:</span><br>Law for <span class="b">crypto</span>, <span class="g">deep&nbsp;tech</span> and <span class="o">defence&nbsp;&amp;&nbsp;dual-use</span>.</h1>
+      <h1 id="hero-h"><span class="hero-title-glitch" data-glitch-text="" :data-text="t.hero.titleGlitch" style="font-size:25px;font-weight:500;color:rgb(159,159,159)">{{ t.hero.titleGlitch }}</span><br>{{ t.hero.titleLead }} <span class="b">{{ t.hero.crypto }}</span>, <span class="g">{{ t.hero.deeptech }}</span> {{ t.hero.and }} <span class="o">{{ t.hero.defence }}</span>.</h1>
 
       <div class="hero__actions">
-        <a class="action" href="mailto:info@lemur.legal?subject=Consultation">Book a consultation <span class="arrow">→</span></a>
-        <a class="action action--muted" href="#practices">Explore our services <span class="arrow">→</span></a>
+        <a class="action" href="/contact#brief">{{ t.hero.actionPrimary }} <span class="arrow">→</span></a>
+        <a class="action action--muted" href="#practices">{{ t.hero.actionSecondary }} <span class="arrow">→</span></a>
       </div>
       <div class="node-row" aria-hidden="true">
-        <span class="node-item"><span class="node-dot nd-ok" data-anim="nd" data-nd-color="#5FC27A"></span>matters: open</span>
-        <span class="node-item"><span class="node-dot nd-blue" data-anim="nd" data-nd-color="#7F59F5"></span>fee: fixed</span>
-        <span class="node-item"><span class="node-dot nd-ok" data-anim="nd" data-nd-color="#5FC27A"></span>lang: EN / SL</span>
+        <span class="node-item"><span class="node-dot nd-ok" data-anim="nd" data-nd-color="#5FC27A"></span>{{ t.hero.nodes[0] }}</span>
+        <span class="node-item"><span class="node-dot nd-blue" data-anim="nd" data-nd-color="#7F59F5"></span>{{ t.hero.nodes[1] }}</span>
+        <span class="node-item"><span class="node-dot nd-ok" data-anim="nd" data-nd-color="#5FC27A"></span>{{ t.hero.nodes[2] }}</span>
 
       </div>
     </div>
@@ -31,14 +31,10 @@
         <span class="console__title">counsel@lemur:~<span class="right">v2026.1</span></span>
       </div>
       <div class="console__body" aria-hidden="true">
-        <div class="cl"><span class="pr">$</span> <span class="cm">lemur-legal --status</span></div>
-        <div class="cl"><span class="mut">  fintech   : </span><span class="ok">MiCA-compliant</span><span class="mut"> ........... ACTIVE</span></div>
-        <div class="cl"><span class="mut">  startups  : </span><span class="ok">incorporated · IP-protected</span><span class="mut"> .. ACTIVE</span></div>
-        <div class="cl"><span class="mut">  defence   : </span><span class="wn">dual-use · export-ctrl</span><span class="mut"> ..... PREP</span></div>
-        <div class="cl"><span class="mut">  seat      : </span><span class="em">Ljubljana · EU</span><span class="mut"> ............ live</span></div>
-        <div class="cl"><span class="mut">  fee       : </span><span class="ok">fixed</span><span class="mut"> · no retainer · EN/SL</span></div>
-        <div class="cl"><span class="pr">$</span> <span class="cm">open-matters</span></div>
-        <div class="cl"><span class="mut">  ready · awaiting your brief ..........</span><span class="caret" data-anim="blink" aria-hidden="true"></span></div>
+        <div class="cl"><span class="pr">$</span> <span class="cm">{{ t.console.cmd1 }}</span></div>
+        <div class="cl" v-for="(r, i) in t.console.rows" :key="i"><span class="mut">{{ r.key }}</span><span :class="r.cls">{{ r.val }}</span><span class="mut">{{ r.tail }}</span></div>
+        <div class="cl"><span class="pr">$</span> <span class="cm">{{ t.console.cmd2 }}</span></div>
+        <div class="cl"><span class="mut">{{ t.console.ready }}</span><span class="caret" data-anim="blink" aria-hidden="true"></span></div>
       </div>
     </div>
   </div>
@@ -47,51 +43,51 @@
 <section class="section container" id="practices" aria-labelledby="practices-h">
   <div class="sec-head">
     <span class="mark">§ 01</span>
-    <h2 id="practices-h">Three sectors. Specialist legal services.</h2>
+    <h2 id="practices-h">{{ t.practices.heading }}</h2>
     <span class="coord" aria-hidden="true">[ 46.05°N · 14.51°E ]</span>
-    <p>Lemur Legal advises clients across three specialist areas: crypto and fintech, startups and deep tech, and defence and dual-use innovation. Each practice combines legal knowledge with a practical understanding of the market it serves.</p>
+    <p>{{ t.practices.subtitle }}</p>
   </div>
 
   <article class="ledger ledger--b" id="crypto_fintech" data-anim="reveal">
     <div class="ledger__head">
-      <span class="pno">P·1 — flagship</span>
-      <h3>Crypto &amp; Fintech</h3>
-      <span class="pstate"><span class="led" data-anim="blink" aria-hidden="true"></span>ACTIVE</span>
-      <p class="desc">MiCA, crypto legal opinion, and ongoing compliance for crypto and fintech companies.</p>
+      <span class="pno">{{ t.practices.items[0].pno }}</span>
+      <h3>{{ t.practices.items[0].name }}</h3>
+      <span class="pstate"><span class="led" data-anim="blink" aria-hidden="true"></span>{{ t.practices.items[0].state }}</span>
+      <p class="desc">{{ t.practices.items[0].desc }}</p>
     </div>
     <div class="svc">
-      <a href="/mica_white_paper"><span class="l">a.</span><span class="t">MiCA white paper</span><span class="ar">→</span></a>
-      <a href="/crypto_legal_opinion"><span class="l">b.</span><span class="t">Crypto Legal Opinion</span><span class="ar">→</span></a>
-      <a href="/regulatory_compliance"><span class="l">c.</span><span class="t">Regulatory Compliance</span><span class="ar">→</span></a>
+      <a href="/mica_white_paper"><span class="l">a.</span><span class="t">{{ t.practices.items[0].services[0].label }}</span><span class="ar">→</span></a>
+      <a href="/crypto_legal_opinion"><span class="l">b.</span><span class="t">{{ t.practices.items[0].services[1].label }}</span><span class="ar">→</span></a>
+      <a href="/regulatory_compliance"><span class="l">c.</span><span class="t">{{ t.practices.items[0].services[2].label }}</span><span class="ar">→</span></a>
     </div>
   </article>
 
   <article class="ledger ledger--g" id="startups_deeptech" data-anim="reveal">
     <div class="ledger__head">
-      <span class="pno">P·2</span>
-      <h3>Startups &amp; Deep Tech</h3>
-      <span class="pstate"><span class="led" data-anim="blink" aria-hidden="true"></span>ACTIVE</span>
-      <p class="desc">Incorporation, IP protection and commercial contracts for technology companies building and scaling in regulated markets.</p>
+      <span class="pno">{{ t.practices.items[1].pno }}</span>
+      <h3>{{ t.practices.items[1].name }}</h3>
+      <span class="pstate"><span class="led" data-anim="blink" aria-hidden="true"></span>{{ t.practices.items[1].state }}</span>
+      <p class="desc">{{ t.practices.items[1].desc }}</p>
     </div>
     <div class="svc">
-      <a href="/incorporation_esop"><span class="l">a.</span><span class="t">Incorporation &amp; ESOP</span><span class="ar">→</span></a>
-      <a href="/ip_protection"><span class="l">b.</span><span class="t">IP protection — registered representatives</span><span class="ar">→</span></a>
-      <a href="/startups_contracts"><span class="l">c.</span><span class="t">Contracts &amp; commercial</span><span class="ar">→</span></a>
+      <a href="/incorporation_esop"><span class="l">a.</span><span class="t">{{ t.practices.items[1].services[0].label }}</span><span class="ar">→</span></a>
+      <a href="/ip_protection"><span class="l">b.</span><span class="t">{{ t.practices.items[1].services[1].label }}</span><span class="ar">→</span></a>
+      <a href="/startups_contracts"><span class="l">c.</span><span class="t">{{ t.practices.items[1].services[2].label }}</span><span class="ar">→</span></a>
     </div>
   </article>
 
   <article class="ledger ledger--o" id="defence_dualuse" data-anim="reveal">
     <div class="ledger__head">
-      <span class="pno">P·3</span>
-      <h3>Defence &amp; Dual-Use</h3>
-      <span class="pstate"><span class="led" data-anim="blink" aria-hidden="true"></span>ACTIVE</span>
-      <p class="desc">Export controls, dual-use licensing, FDI screening and commercial contracts for defence and dual-use technology companies.</p>
+      <span class="pno">{{ t.practices.items[2].pno }}</span>
+      <h3>{{ t.practices.items[2].name }}</h3>
+      <span class="pstate"><span class="led" data-anim="blink" aria-hidden="true"></span>{{ t.practices.items[2].state }}</span>
+      <p class="desc">{{ t.practices.items[2].desc }}</p>
 
     </div>
     <div class="svc">
-      <a href="/investment_readiness_review"><span class="l">a.</span><span class="t">Investment readiness review</span><span class="ar">→</span></a>
-      <a href="/compliance_frameworks"><span class="l">b.</span><span class="t">Compliance frameworks</span><span class="ar">→</span></a>
-      <a href="/regulatory_qualification"><span class="l">c.</span><span class="t">Regulatory qualification</span><span class="ar">→</span></a>
+      <a href="/investment_readiness_review"><span class="l">a.</span><span class="t">{{ t.practices.items[2].services[0].label }}</span><span class="ar">→</span></a>
+      <a href="/compliance_frameworks"><span class="l">b.</span><span class="t">{{ t.practices.items[2].services[1].label }}</span><span class="ar">→</span></a>
+      <a href="/regulatory_qualification"><span class="l">c.</span><span class="t">{{ t.practices.items[2].services[2].label }}</span><span class="ar">→</span></a>
     </div>
   </article>
 </section>
@@ -99,13 +95,13 @@
 <section class="section section--line container" id="founder" aria-labelledby="founder-h">
   <div class="sec-head">
     <span class="mark">§ 04</span>
-    <h2 id="founder-h">Founder</h2>
+    <h2 id="founder-h">{{ t.founder.heading }}</h2>
   </div>
   <div class="founder">
     <div class="founder__aside">
       <div class="founder-photo" data-anim="reveal">
       <!-- DEVELOPER: drop founder.jpg (square, ~1341×1356) next to this HTML file. The image will appear automatically. -->
-      <img id="founder-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Peter Merc, Ph.D." style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2;display:none;">
+      <img id="founder-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" :alt="t.founder.name" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2;display:none;">
       <div class="photo-grid"></div>
       <div class="photo-scan"></div>
       <span class="photo-corner photo-corner--tl"></span>
@@ -119,27 +115,22 @@
             <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14"></path>
           </svg>
         </div>
-        <p class="founder-photo__label">PHOTO<br>Peter Merc, Ph.D.</p>
+        <p class="founder-photo__label">{{ t.founder.photoLabel }}<br>{{ t.founder.name }}</p>
       </div>
       <div class="photo-meta" aria-hidden="true">
-        <span class="photo-meta__name">P. MERC, PH.D.</span>
+        <span class="photo-meta__name">{{ t.founder.metaName }}</span>
         <span class="photo-meta__id">ID:PM·001</span>
       </div>
     </div>
-      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" :aria-label="t.founder.linkedinAria"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div data-anim="reveal">
-      <p class="founder__name">Peter Merc, Ph.D.</p>
-      <p class="founder__role">Founder · fintech lawyer · Lemur Legal</p>
-      <p class="founder__bio">Peter is a technology and financial lawyer with a focus on cryptocurrency regulation, fintech, and startup ecosystems. He advises crypto companies, fintech ventures, and technology startups on regulatory compliance, contract law, and intellectual property matters, providing practical legal solutions at the intersection of law and emerging technology.<br><br>Beyond private practice, Peter serves as an external evaluator for <strong>Horizon Europe</strong> and <strong>NATO Diana</strong>, assessing deep-tech and innovation-driven ventures for programme funding. He is also a partner at venture capital firms, <strong>Suricate Ventures</strong> and <strong>IBEX Equity Partners</strong>, bringing a dual perspective as both legal counsel and investor to the companies he works with.</p>
+      <p class="founder__name">{{ t.founder.name }}</p>
+      <p class="founder__role">{{ t.founder.role }}</p>
+      <p class="founder__bio" v-html="t.founder.bio"></p>
     </div>
     <ul class="creds" data-anim="reveal">
-      <li>Technology &amp; financial lawyer</li>
-      <li>Crypto regulation &amp; fintech compliance</li>
-      <li>Contracts, IP &amp; startup structuring</li>
-      <li>Horizon Europe evaluator</li>
-      <li>NATO DIANA evaluator</li>
-      <li>VC partner: Suricate Ventures &amp; IBEX Equity Partners</li>
+      <li v-for="(cr, i) in t.founder.creds" :key="i">{{ cr }}</li>
       <li style="border-top:1px solid var(--hairline-strong); padding-top:1.4rem; margin-top:.4rem; display:block; list-style:none;" class="sig-li">
         <div class="sigblock" data-anim="sigblock">
           <svg class="sig" viewBox="0 0 420 128" role="img" aria-label="Signature of Peter Merc">
@@ -148,7 +139,7 @@
             <path d="M22 110 C80 101 200 99 314 104 C348 106 380 100 416 91"></path>
           </svg>
           <div class="sig__rule"></div>
-          <p class="sig__cap">/s/ Peter Merc, Ph.D. &nbsp;<span>— Founder</span></p>
+          <p class="sig__cap">{{ t.founder.sigName }} &nbsp;<span>{{ t.founder.sigRole }}</span></p>
         </div>
       </li>
     </ul>
@@ -158,46 +149,46 @@
 <section class="section section--line container cta" id="contact" aria-labelledby="cta-h">
   <div class="sec-head">
     <span class="mark">§ 05</span>
-    <h2 id="cta-h">Start with the legal question.</h2>
-    <p class="cta__lead" style="font-style:normal;font-family:var(--sans);">Whether you're launching, scaling, listing or entering a regulated market, bring us your legal question. We'll map the path from there.</p>
+    <h2 id="cta-h">{{ t.cta.heading }}</h2>
+    <p class="cta__lead" style="font-style:normal;font-family:var(--sans);">{{ t.cta.lead }}</p>
   </div>
 
   <div class="matter-board" data-anim="reveal" aria-label="Matter intake: three steps from brief to engagement">
     <span class="hud-tl" aria-hidden="true"></span><span class="hud-tr" aria-hidden="true"></span>
     <span class="hud-bl" aria-hidden="true"></span><span class="hud-br" aria-hidden="true"></span>
     <div class="matter-board__header" aria-hidden="true">
-      <span class="mb-type" data-type="From first consultation to dedicated legal support"></span> <span class="blip" data-anim="blink"></span><span class="blip" data-anim="blink" style="margin-left:.4rem;opacity:.5;"></span>
+      <span class="mb-type" :data-type="t.cta.matter.header"></span> <span class="blip" data-anim="blink"></span><span class="blip" data-anim="blink" style="margin-left:.4rem;opacity:.5;"></span>
     </div>
     <div class="matter-board__nodes">
       <div class="mnode mb-hide">
-        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" data-type="01"></span></span>
-        <p class="mnode__title"><span class="mb-type" data-type="Consultation"></span></p>
-        <span class="mnode__sub"><span class="mb-type" data-type="Tell us what you're building. We'll map the legal path, identify the key risks and define the next steps."></span></span>
-        <span class="mnode__badge"><span class="mnd" data-anim="nd" data-nd-color="#5FC27A"></span><span class="mb-type" data-type="OPEN"></span></span>
+        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[0].num"></span></span>
+        <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[0].title"></span></p>
+        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[0].sub"></span></span>
+        <span class="mnode__badge"><span class="mnd" data-anim="nd" data-nd-color="#5FC27A"></span><span class="mb-type" :data-type="t.cta.matter.steps[0].badge"></span></span>
       </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
-        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" data-type="02"></span></span>
-        <p class="mnode__title"><span class="mb-type" data-type="Fixed-fee proposal"></span></p>
-        <span class="mnode__sub"><span class="mb-type" data-type="We define the scope, deliverables and fixed fee before work begins. No hourly surprises, no open-ended retainer."></span></span>
-        <span class="mnode__badge" style="color:var(--term-amber);"><span class="mnd" data-anim="nd" data-nd-color="#D9AE5E"></span><span class="mb-type" data-type="in writing"></span></span>
+        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[1].num"></span></span>
+        <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[1].title"></span></p>
+        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[1].sub"></span></span>
+        <span class="mnode__badge" style="color:var(--term-amber);"><span class="mnd" data-anim="nd" data-nd-color="#D9AE5E"></span><span class="mb-type" :data-type="t.cta.matter.steps[1].badge"></span></span>
       </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
-        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" data-type="03"></span></span>
-        <p class="mnode__title"><span class="mb-type" data-type="Dedicated legal support"></span></p>
-        <span class="mnode__sub"><span class="mb-type" data-type="Once we begin, you work with a dedicated legal team that understands your project, keeps the work moving and supports you from first filing to ongoing compliance."></span></span>
-        <span class="mnode__badge" style="color:var(--term-dim);"><span class="mnd" data-anim="nd" data-nd-color="#6E6890"></span><span class="mb-type" data-type="one firm"></span></span>
+        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[2].num"></span></span>
+        <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[2].title"></span></p>
+        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[2].sub"></span></span>
+        <span class="mnode__badge" style="color:var(--term-dim);"><span class="mnd" data-anim="nd" data-nd-color="#6E6890"></span><span class="mb-type" :data-type="t.cta.matter.steps[2].badge"></span></span>
       </div>
     </div>
     <div class="matter-board__footer mb-hide">
-      <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" data-type-link="mailto:info@lemur.legal?subject=Consultation" data-type-speed="28"></span>
+      <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" data-type-link="/contact#brief" data-type-speed="28"></span>
     </div>
   </div>
 
 
   <div class="cta__act">
-    <a class="action" href="mailto:info@lemur.legal?subject=Consultation">Book a consultation <span class="arrow">→</span></a>
+    <a class="action" href="/contact#brief">{{ t.cta.action }} <span class="arrow">→</span></a>
   </div>
 </section>
 </main>
@@ -207,6 +198,12 @@
 import { onMounted, onUnmounted } from 'vue'
 import { initEffects } from './Home.effects'
 import { useTheme, useRootVars } from '@/composables/useTheme'
+import { usePageContent } from '@/i18n/useContent'
+import { useHead } from '@/i18n/useHead'
+import home from '@/content/home'
+
+const t = usePageContent(home)
+useHead(home)
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.
@@ -245,7 +242,6 @@ const ROOT_VARS: Record<string, string> = {
 
 let dispose: (() => void) | undefined
 onMounted(() => {
-  document.title = "Lemur Legal \u2014 Law for crypto, fintech, startups, deep tech &amp; dual-use"
   useRootVars(ROOT_VARS)
   useTheme('Live', 50, 'Baltic')
   dispose = initEffects()
@@ -275,7 +271,7 @@ ul,ol{ margin:0; padding:0; list-style:none; }
 .hero__main{ min-width:0; }
 .kicker{ font-family:var(--mono); font-size:.76rem; color:var(--ink-2); letter-spacing:.04em; margin-bottom:1.3rem; display:inline-flex; align-items:center; gap:.6rem; }
 .kicker .caret{ display:inline-block; width:7px; height:1.05em; background:var(--sig); vertical-align:-2px; }
-.hero h1{ font-size:clamp(2.3rem,1.2rem + 4vw,4.1rem); line-height:1.04; letter-spacing:-0.02em; max-width:17ch; }
+.hero h1{ font-size:clamp(2.3rem,1.2rem + 4vw,4.1rem); line-height:1.04; letter-spacing:-0.02em; max-width:17ch; overflow-wrap:break-word; }
 .hero h1 .b{ color:var(--blue); font-weight:500; }
 .hero h1 .g{ color:var(--green); font-weight:500; }
 .hero h1 .o{ color:var(--ochre); font-weight:500; }

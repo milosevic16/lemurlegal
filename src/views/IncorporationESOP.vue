@@ -9,16 +9,16 @@
   <span class="regmark" style="top:1.2rem;right:.2rem" aria-hidden="true"></span>
   <div class="hero__in">
     <div class="hero__main">
-      <p class="kicker">Incorporation &amp; ESOP · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+      <p class="kicker">{{ t.hero.kicker }} <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
       <div class="hexrow" data-anim="hexrow" aria-hidden="true">0x1FC49A  494E434F  0x2026  45534F50  0x1114  4C4547414C  0xD2DDD7  4C4A4C20  0x5FC27A</div>
-      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" data-text="Set up your company.">Set up your company.</span> <span class="em">Incentivise your team.</span></h1>
-      <p class="slogan-line">// incorporate · structure · incentivise.</p>
-      <p class="hero__lead">From choosing the right legal form to issuing employee options, we put the <strong>legal foundations of your startup</strong> in place — correctly, from day one.</p>
+      <h1 id="hero-h"><span class="hero__glitch" data-anim="glitch" :data-text="t.hero.h1Glitch">{{ t.hero.h1Glitch }}</span> <span class="em">{{ t.hero.h1Em }}</span></h1>
+      <p class="slogan-line">{{ t.hero.slogan }}</p>
+      <p class="hero__lead" v-html="t.hero.lead"></p>
       <div class="hero__actions">
-        <a class="h-btn" href="#contact" data-ht-arrow="">Send your inquiry <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
-        <a class="h-btn h-btn--ghost" href="#how">How it works</a>
+        <a class="h-btn" href="#contact" data-ht-arrow="">{{ t.hero.btnPrimary }} <span class="arrow" data-ht-glyph="" aria-hidden="true">→</span></a>
+        <a class="h-btn h-btn--ghost" href="#how">{{ t.hero.btnGhost }}</a>
       </div>
-      <p class="hero__meta">Company setup · Founder &amp; employee docs · ESOP</p>
+      <p class="hero__meta">{{ t.hero.meta }}</p>
     </div>
 
     <div class="seal-wrap" data-anim="reveal">
@@ -56,8 +56,8 @@
   <div class="strip__grid" aria-hidden="true"></div>
   <div class="cyberline" aria-hidden="true"><span class="cyberline__base"></span><span data-anim="cpulse"></span></div>
   <div class="container strip__in">
-    <span class="strip__k">Why it matters</span>
-    <p class="strip__v">A startup enters relationships with co-founders, employees, contractors and investors from day one. The right structure and documents remove or sharply limit the risks in each of them.</p>
+    <span class="strip__k">{{ t.strip.k }}</span>
+    <p class="strip__v">{{ t.strip.v }}</p>
   </div>
 </section>
 
@@ -65,27 +65,27 @@
 <section class="section container" aria-labelledby="who-h">
   <div class="sec-head">
     <span class="mark">§ 01</span>
-    <h2 id="who-h">The legal foundations every founder needs.</h2>
+    <h2 id="who-h">{{ t.why.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ WHY IT MATTERS ]</span>
   </div>
   <div class="why-grid">
     <div class="why" data-anim="reveal">
-      <span class="wn">01</span>
+      <span class="wn">{{ t.why.items[0].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
-      <h3>Right legal form</h3>
-      <p>We advise on the legal form and country of incorporation — and restructure from sole trader to a limited company when you outgrow it.</p>
+      <h3>{{ t.why.items[0].h3 }}</h3>
+      <p>{{ t.why.items[0].p }}</p>
     </div>
     <div class="why" data-anim="reveal">
-      <span class="wn">02</span>
+      <span class="wn">{{ t.why.items[1].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div>
-      <h3>Clean cap table</h3>
-      <p>Option agreements (ESOP) and founder arrangements that keep your equity clear and investable.</p>
+      <h3>{{ t.why.items[1].h3 }}</h3>
+      <p>{{ t.why.items[1].p }}</p>
     </div>
     <div class="why" data-anim="reveal">
-      <span class="wn">03</span>
+      <span class="wn">{{ t.why.items[2].wn }}</span>
       <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path></svg></div>
-      <h3>Solid paperwork</h3>
-      <p>Articles of association, employment and contractor agreements, NDAs and internal acts — ready before you need them.</p>
+      <h3>{{ t.why.items[2].h3 }}</h3>
+      <p>{{ t.why.items[2].p }}</p>
     </div>
   </div>
 </section>
@@ -94,7 +94,7 @@
 <section class="section section--line container" id="how" aria-labelledby="how-h">
   <div class="sec-head">
     <span class="mark">§ 02</span>
-    <h2 id="how-h">From idea to incorporated, incentivised company.</h2>
+    <h2 id="how-h">{{ t.how.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ HOW IT WORKS · 3 STEPS ]</span>
   </div>
   <div class="tl" data-anim="timeline" aria-label="From idea to an incorporated, incentivised company, in three steps">
@@ -113,28 +113,28 @@
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">01</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 01</p>
-            <h3 class="tl__title">Structure</h3>
-            <p class="tl__sub">We advise on the right legal form and the jurisdiction of incorporation.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>legal form · jurisdiction</span>
+            <p class="tl__step-k">{{ t.how.steps[0].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[0].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[0].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>{{ t.how.steps[0].tag }}</span>
           </div>
         </li>
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">02</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 02</p>
-            <h3 class="tl__title">Incorporate</h3>
-            <p class="tl__sub">We set up the company, draft the articles of association and arrange the notary.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#84E3C4"></span>articles · notary</span>
+            <p class="tl__step-k">{{ t.how.steps[1].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[1].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[1].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#84E3C4"></span>{{ t.how.steps[1].tag }}</span>
           </div>
         </li>
         <li class="tl__step" data-tl-step="">
           <span class="tl__node" data-tl-node=""><span class="tl__node-num">03</span></span>
           <div class="tl__card" data-tl-card="">
-            <p class="tl__step-k">Step 03</p>
-            <h3 class="tl__title">Incentivise</h3>
-            <p class="tl__sub">We prepare option agreements (ESOP), employment and service agreements, NDAs and internal acts.</p>
-            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>ESOP · agreements</span>
+            <p class="tl__step-k">{{ t.how.steps[2].stepK }}</p>
+            <h3 class="tl__title">{{ t.how.steps[2].title }}</h3>
+            <p class="tl__sub">{{ t.how.steps[2].sub }}</p>
+            <span class="tl__tag"><span class="tl__tag-dot" data-anim="nd" data-nd-color="#1FC49A"></span>{{ t.how.steps[2].tag }}</span>
           </div>
         </li>
       </ol>
@@ -149,38 +149,15 @@
 <section class="section section--line container" id="coverage" aria-labelledby="cov-h">
   <div class="sec-head">
     <span class="mark">§ 03</span>
-    <h2 id="cov-h">Everything that puts your company on solid legal ground.</h2>
+    <h2 id="cov-h">{{ t.coverage.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ WHAT WE COVER ]</span>
   </div>
   <div class="cov-grid">
-    <article class="cov cov--b" data-anim="reveal" data-ht-ledger="">
+    <article class="cov" :class="'cov--' + ['b','g','o'][i % 3]" data-anim="reveal" data-ht-ledger="" v-for="(cov, i) in t.coverage.items" :key="i">
       <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 01</span><h4>Company &amp; legal form</h4></div>
+      <div class="cov__head"><span class="cov__pno">C · {{ String(i + 1).padStart(2, '0') }}</span><h4>{{ cov.h4 }}</h4></div>
       <div class="cov__list">
-        <div class="row"><span class="l">01</span>Advice on the legal form</div>
-        <div class="row"><span class="l">02</span>Country of incorporation</div>
-        <div class="row"><span class="l">03</span>Restructuring from sole trader (s.p.) to d.o.o.</div>
-        <div class="row"><span class="l">04</span>Notary appointment</div>
-      </div>
-    </article>
-    <article class="cov cov--g" data-anim="reveal" data-ht-ledger="">
-      <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 02</span><h4>Founding &amp; internal documents</h4></div>
-      <div class="cov__list">
-        <div class="row"><span class="l">01</span>Articles of association</div>
-        <div class="row"><span class="l">02</span>Employment agreements</div>
-        <div class="row"><span class="l">03</span>Service agreements (contractors)</div>
-        <div class="row"><span class="l">04</span>Non-disclosure agreements</div>
-        <div class="row"><span class="l">05</span>Internal company acts</div>
-      </div>
-    </article>
-    <article class="cov cov--o" data-anim="reveal" data-ht-ledger="">
-      <span class="cov__bar" aria-hidden="true"></span>
-      <div class="cov__head"><span class="cov__pno">C · 03</span><h4>ESOP &amp; equity</h4></div>
-      <div class="cov__list">
-        <div class="row"><span class="l">01</span>Option agreements (employee stock options)</div>
-        <div class="row"><span class="l">02</span>Founder equity arrangements</div>
-        <div class="row"><span class="l">03</span>Legal opinion &amp; risk assessment</div>
+        <div class="row" v-for="(row, j) in cov.rows" :key="j"><span class="l">{{ String(j + 1).padStart(2, '0') }}</span>{{ row }}</div>
       </div>
     </article>
   </div>
@@ -188,8 +165,8 @@
   <div class="callout" data-anim="reveal">
     <div class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.3 2.3 7.3L12 16.7 5.7 21l2.3-7.3-6-4.3h7.6z"></path></svg></div>
     <div>
-      <h3>Insiders in the startup ecosystem</h3>
-      <p>We are founders, investors and startup mentors ourselves — listed on the Start:up Slovenia mentor roster and active in national startup programmes. We know the documents investors expect to see.</p>
+      <h3>{{ t.coverage.calloutH3 }}</h3>
+      <p>{{ t.coverage.calloutP }}</p>
     </div>
   </div>
 </section>
@@ -198,23 +175,23 @@
 <section class="section section--line container" id="expert" aria-labelledby="exp-h">
   <div class="sec-head">
     <span class="mark">§ 04</span>
-    <h2 id="exp-h">Who you'll work with</h2>
+    <h2 id="exp-h">{{ t.expert.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ 46.05°N · 14.51°E ]</span>
   </div>
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
     <div class="founder__aside">
-      <div class="avatar" role="img" aria-label="Peter Merc, Ph.D.">
-        <img src="/peter-merc.jpg" alt="Peter Merc, Ph.D.">
+      <div class="avatar" role="img" :aria-label="t.expert.name">
+        <img src="/peter-merc.jpg" :alt="t.expert.name">
       </div>
-      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" aria-label="Peter Merc on LinkedIn"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="li-link" href="https://www.linkedin.com/in/petermerc/" target="_blank" rel="noopener noreferrer" :aria-label="t.expert.linkedinAria"><svg class="li-link__ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
     </div>
     <div>
-      <span class="founder__eye">Founder · startup-ecosystem insider · Lemur Legal</span>
-      <h3 class="founder__name">Peter Merc, Ph.D.</h3>
-      <p class="founder__role">// founders · investors · mentors</p>
-      <p class="founder__bio">Peter is a <strong>technology and financial lawyer</strong> with a focus on cryptocurrency regulation, fintech, and startup ecosystems. He advises crypto companies, fintech ventures, and technology startups on regulatory compliance, contract law, and intellectual property matters, providing practical legal solutions at the intersection of law and emerging technology.</p>
-      <p class="founder__bio">Beyond private practice, Peter serves as an external evaluator for <strong>Horizon Europe</strong> and <strong>NATO Diana</strong>, assessing deep-tech and innovation-driven ventures for programme funding. He is also a partner at venture capital firms, <strong>Suricate Ventures</strong> and <strong>IBEX Equity Partners</strong>, bringing a dual perspective as both legal counsel and investor to the companies he works with.</p>
+      <span class="founder__eye">{{ t.expert.eyebrow }}</span>
+      <h3 class="founder__name">{{ t.expert.name }}</h3>
+      <p class="founder__role">{{ t.expert.role }}</p>
+      <p class="founder__bio" v-html="t.expert.bio1"></p>
+      <p class="founder__bio" v-html="t.expert.bio2"></p>
     </div>
   </div>
 </section>
@@ -223,33 +200,13 @@
 <section class="section section--line container" aria-labelledby="faq-h">
   <div class="sec-head">
     <span class="mark">§ 05</span>
-    <h2 id="faq-h">Frequently asked questions</h2>
+    <h2 id="faq-h">{{ t.faq.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ FAQ ]</span>
   </div>
   <div class="faq" data-anim="reveal">
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Which legal form should my startup take? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>We advise on the right legal form and the country of incorporation for your plans — and restructure from a sole trader (s.p.) to a limited company (d.o.o.) when you outgrow it.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What is an ESOP and do I need one? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>An employee stock option plan lets you grant equity-based incentives to your team. We prepare the option agreements and align them with your cap table and founder arrangements.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">What documents do founders need at the start? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Typically articles of association, employment and service (contractor) agreements, NDAs and internal company acts — we prepare them so they are ready before you need them.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Can you convert my sole trader business into a company? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Yes — we handle the restructuring from sole trader (s.p.) to a limited company (d.o.o.), including the documents and the notary appointment.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">Do you work with international founders? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Yes — we advise on the jurisdiction of incorporation and structure the company and documents for cross-border teams and investors.</p></div>
-    </div>
-    <div class="faq__item">
-      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">When should we put option agreements in place? <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
-      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>Early — clean, documented equity and option arrangements keep your cap table investable and help avoid disputes as you grow.</p></div>
+    <div class="faq__item" v-for="(item, i) in t.faq.items" :key="i">
+      <button class="faq__q" type="button" data-ht-accordion-toggle="" aria-expanded="false">{{ item.q }} <span class="pl" data-ht-accordion-sign="" aria-hidden="true">+</span></button>
+      <div class="faq__a" data-ht-accordion-panel="" aria-hidden="true"><p>{{ item.a }}</p></div>
     </div>
   </div>
 </section>
@@ -257,8 +214,8 @@
 <!-- ===== CTA BAND ===== -->
 <section class="section section--line container">
   <div class="priceband" data-anim="reveal" style="max-width:none;">
-    <div class="t"><b>Setting up or restructuring your company?</b> Tell us where you are and we'll map the steps and what comes next.</div>
-    <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">Book a consultation</button>
+    <div class="t" v-html="t.ctaBand.text"></div>
+    <button class="btn" type="button" data-ht-hover-fill="" onclick="location.href='#contact'">{{ t.ctaBand.btn }}</button>
   </div>
 </section>
 
@@ -270,23 +227,23 @@
     <div class="formwrap__grid" aria-hidden="true"></div>
     <div class="formgrid">
       <div>
-        <div class="eye">// get started</div>
-        <h2 id="frm-h">Send your inquiry.</h2>
-        <p class="fl">Tell us about your company and what you need. We'll review it and come back with next steps — usually the same day.</p>
-        <p class="fl" style="font-size:.8rem;">Ljubljana, Slovenia · <span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
+        <div class="eye">{{ t.form.eye }}</div>
+        <h2 id="frm-h">{{ t.form.h }}</h2>
+        <p class="fl">{{ t.form.lead }}</p>
+        <p class="fl" style="font-size:.8rem;">{{ t.form.contactPrefix }}<span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
       </div>
       <div>
-        <div class="field"><label for="f-name">Name and surname</label><input type="text" id="f-name" name="name"></div>
-        <div class="field"><label for="f-email">Email</label><input type="text" id="f-email" name="email"></div>
-        <div class="field"><label for="f-proj">Company &amp; website</label><input type="text" id="f-proj" name="company"></div>
-        <div class="field"><label for="f-link">What do you need?</label><input type="text" id="f-link" name="need"></div>
-        <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(230,245,239,0.6);margin-bottom:.4rem;">I need help with</label>
+        <div class="field"><label for="f-name">{{ t.form.nameLabel }}</label><input type="text" id="f-name" name="name"></div>
+        <div class="field"><label for="f-email">{{ t.form.emailLabel }}</label><input type="text" id="f-email" name="email"></div>
+        <div class="field"><label for="f-proj">{{ t.form.projLabel }}</label><input type="text" id="f-proj" name="company"></div>
+        <div class="field"><label for="f-link">{{ t.form.linkLabel }}</label><input type="text" id="f-link" name="need"></div>
+        <label style="display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(230,245,239,0.6);margin-bottom:.4rem;">{{ t.form.choiceLabel }}</label>
         <div class="choice" data-ht-choice="" role="group" aria-label="What you need">
-          <span class="chip" data-ht-chip="" data-on="true">Incorporation</span>
-          <span class="chip" data-ht-chip="" data-on="false">ESOP</span>
-          <span class="chip" data-ht-chip="" data-on="false">Restructuring</span>
+          <span class="chip" data-ht-chip="" data-on="true">{{ t.form.chips[0] }}</span>
+          <span class="chip" data-ht-chip="" data-on="false">{{ t.form.chips[1] }}</span>
+          <span class="chip" data-ht-chip="" data-on="false">{{ t.form.chips[2] }}</span>
         </div>
-        <button class="btn" type="button" data-ht-hover-fill="">Submit inquiry</button>
+        <button class="btn" type="button" data-ht-hover-fill="">{{ t.form.submit }}</button>
       </div>
     </div>
   </div>
@@ -296,17 +253,17 @@
 <section class="section section--line container" aria-labelledby="xs-h">
   <div class="sec-head" style="margin-bottom:1.4rem;">
     <span class="mark">§ 06</span>
-    <h2 id="xs-h">Also from Lemur Legal</h2>
+    <h2 id="xs-h">{{ t.cross.h2 }}</h2>
   </div>
   <div class="cross">
     <a class="xc" href="/ip_protection" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
-      <span><h4>IP Protection</h4><p>IPR strategy, registration, contracts &amp; licensing.</p></span>
+      <span><h4>{{ t.cross.items[0].h4 }}</h4><p>{{ t.cross.items[0].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
     <a class="xc" href="/startups_contracts" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span>
-      <span><h4>Contracts &amp; Commercial</h4><p>The contracts that protect your business.</p></span>
+      <span><h4>{{ t.cross.items[1].h4 }}</h4><p>{{ t.cross.items[1].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
   </div>
@@ -318,6 +275,12 @@
 import { onMounted, onUnmounted } from 'vue'
 import { initEffects } from './IncorporationESOP.effects'
 import { useTheme, useRootVars } from '@/composables/useTheme'
+import { usePageContent } from '@/i18n/useContent'
+import { useHead } from '@/i18n/useHead'
+import content from '@/content/products/incorporationEsop'
+
+const t = usePageContent(content)
+useHead(content)
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.
@@ -353,7 +316,6 @@ const ROOT_VARS: Record<string, string> = {
 
 let dispose: (() => void) | undefined
 onMounted(() => {
-  document.title = "Incorporation &amp; ESOP \u2014 Lemur Legal"
   useRootVars(ROOT_VARS)
   useTheme('Editorial', 50, 'Green')
   dispose = initEffects()

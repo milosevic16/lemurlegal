@@ -17,7 +17,7 @@
       ></span>
       <div class="hero__in">
         <p class="kicker">
-          Contact · Ljubljana
+          {{ t.hero.kicker }}
           <span class="caret" data-anim="blink" aria-hidden="true"></span>
         </p>
         <div class="hexrow" aria-hidden="true" data-anim="hexrow">
@@ -25,15 +25,11 @@
           41435420 0x131220 0x7F59F5 4C4A4C20
         </div>
         <h1 id="hero-h">
-          Start with the legal question.
-          <span class="b">We map the path from there.</span>
+          {{ t.hero.h1Main }}
+          <span class="b">{{ t.hero.h1Em }}</span>
         </h1>
-        <p class="slogan-line">// From first question to legal strategy.</p>
-        <p class="hero__lead">
-          Launching a token, raising a round, or scaling a product — send a
-          short brief and we'll map the legal path, with a
-          <strong>fixed fee in writing</strong>. We reply within 24 hours.
-        </p>
+        <p class="slogan-line">{{ t.hero.slogan }}</p>
+        <p class="hero__lead" v-html="t.hero.lead"></p>
       </div>
     </section>
 
@@ -47,46 +43,43 @@
           <span class="mark">§ 01</span
           ><span class="coord">[ 46.05°N · 14.51°E · INTAKE ]</span>
         </div>
-        <div class="section-label">Get in touch</div>
-        <h2 class="section-title">Tell us what you're working on.</h2>
-        <p class="section-subtitle">
-          Share what you're building, where you are in the process and which
-          frontier you're on. We'll take it from there.
-        </p>
+        <div class="section-label">{{ t.form.label }}</div>
+        <h2 class="section-title">{{ t.form.title }}</h2>
+        <p class="section-subtitle">{{ t.form.subtitle }}</p>
       </div>
 
       <div class="contact-grid">
         <!-- form -->
-        <form class="cform" data-form="brief" data-anim="reveal" novalidate="">
+        <form class="cform" data-form="brief" data-anim="reveal" novalidate>
           <span class="hud-tl" aria-hidden="true"></span
           ><span class="hud-tr" aria-hidden="true"></span>
           <span class="hud-bl" aria-hidden="true"></span
           ><span class="hud-br" aria-hidden="true"></span>
           <div class="field-row">
             <div class="field">
-              <label for="f-name">Name <span class="req">*</span></label>
+              <label for="f-name">{{ t.form.nameLabel }} <span class="req">*</span></label>
               <input
                 id="f-name"
                 name="name"
                 type="text"
                 autocomplete="name"
-                required=""
+                required
               />
             </div>
             <div class="field">
-              <label for="f-email">Email <span class="req">*</span></label>
+              <label for="f-email">{{ t.form.emailLabel }} <span class="req">*</span></label>
               <input
                 id="f-email"
                 name="email"
                 type="email"
                 autocomplete="email"
-                required=""
+                required
               />
             </div>
           </div>
           <div class="field">
             <label for="f-company"
-              >Company <span style="opacity: 0.6">/ optional</span></label
+              >{{ t.form.companyLabel }} <span style="opacity: 0.6">{{ t.form.companyOpt }}</span></label
             >
             <input
               id="f-company"
@@ -96,7 +89,7 @@
             />
           </div>
           <div class="field">
-            <label id="f-practice-label">Which frontier?</label>
+            <label id="f-practice-label">{{ t.form.frontierLabel }}</label>
             <div class="cselect" data-cselect="">
               <button
                 type="button"
@@ -105,7 +98,7 @@
                 aria-expanded="false"
                 aria-labelledby="f-practice-label"
               >
-                <span class="cselect__val">Crypto &amp; Fintech</span>
+                <span class="cselect__val">{{ t.form.options[0] }}</span>
                 <span class="cselect__arr" aria-hidden="true">▾</span>
               </button>
               <ul
@@ -119,7 +112,7 @@
                   aria-selected="true"
                   data-val="Crypto &amp; Fintech"
                 >
-                  Crypto &amp; Fintech
+                  {{ t.form.options[0] }}
                 </li>
                 <li
                   class="cselect__opt"
@@ -127,7 +120,7 @@
                   aria-selected="false"
                   data-val="Startups &amp; Deep Tech"
                 >
-                  Startups &amp; Deep Tech
+                  {{ t.form.options[1] }}
                 </li>
                 <li
                   class="cselect__opt"
@@ -135,7 +128,7 @@
                   aria-selected="false"
                   data-val="Defence &amp; Dual-Use"
                 >
-                  Defence &amp; Dual-Use
+                  {{ t.form.options[2] }}
                 </li>
                 <li
                   class="cselect__opt"
@@ -143,7 +136,7 @@
                   aria-selected="false"
                   data-val="Not sure yet"
                 >
-                  Not sure yet
+                  {{ t.form.options[3] }}
                 </li>
               </ul>
               <input
@@ -154,19 +147,19 @@
             </div>
           </div>
           <div class="field">
-            <label for="f-message">Legal question <span class="req">*</span></label>
+            <label for="f-message">{{ t.form.briefLabel }} <span class="req">*</span></label>
             <textarea
               id="f-message"
               name="message"
-              placeholder="What are you building, and what's the legal question?"
-              required=""
+              :placeholder="t.form.briefPlaceholder"
+              required
             ></textarea>
           </div>
           <button class="submit" type="submit">
-            Send enquiry <span class="arrow" aria-hidden="true">→</span>
+            {{ t.form.submit }} <span class="arrow" aria-hidden="true">→</span>
           </button>
           <p class="form-note">
-            Opens your email client, pre-filled. Or write us directly at
+            {{ t.form.note }}
             <a
               class="js-mail"
               data-u="info"
@@ -204,38 +197,38 @@
           <div class="console__body" aria-hidden="true">
             <div class="cl">
               <span class="pr">$</span>
-              <span class="cm">lemur-legal --contact</span>
+              <span class="cm">{{ t.console.cmd }}</span>
             </div>
             <div class="cl">
-              <span class="mut"> email : </span
+              <span class="mut">{{ t.console.emailLabel }}</span
               ><span class="em js-mail" data-u="info" data-d="lemur.legal"
                 >info [at] lemur.legal</span
-              ><span class="mut"> ...... LIVE</span>
+              ><span class="mut">{{ t.console.emailTail }}</span>
             </div>
             <div class="cl">
-              <span class="mut"> seat : </span
-              ><span class="ok">Ljubljana · EU</span
-              ><span class="mut"> · 46.05°N 14.51°E</span>
+              <span class="mut">{{ t.console.seatLabel }}</span
+              ><span class="ok">{{ t.console.seatVal }}</span
+              ><span class="mut">{{ t.console.seatTail }}</span>
             </div>
             <div class="cl">
-              <span class="mut"> hours : </span
-              ><span class="cm">Mon–Fri · 09:00–18:00 CET</span>
+              <span class="mut">{{ t.console.hoursLabel }}</span
+              ><span class="cm">{{ t.console.hoursVal }}</span>
             </div>
             <div class="cl">
-              <span class="mut"> languages : </span
-              ><span class="em">EN / SL</span>
+              <span class="mut">{{ t.console.langLabel }}</span
+              ><span class="em">{{ t.console.langVal }}</span>
             </div>
             <div class="cl">
-              <span class="mut"> fee : </span><span class="ok">fixed</span
-              ><span class="mut"> · no retainer</span>
+              <span class="mut">{{ t.console.feeLabel }}</span><span class="ok">{{ t.console.feeVal }}</span
+              ><span class="mut">{{ t.console.feeTail }}</span>
             </div>
             <div class="cl">
-              <span class="mut"> response : </span
-              ><span class="wn">within 24h</span>
+              <span class="mut">{{ t.console.respLabel }}</span
+              ><span class="wn">{{ t.console.respVal }}</span>
             </div>
             <div class="cl">
               <span class="pr">$</span>
-              <span class="cm">awaiting your brief</span
+              <span class="cm">{{ t.console.awaiting }}</span
               ><span class="caret" data-anim="blink" aria-hidden="true"></span>
             </div>
           </div>
@@ -253,12 +246,9 @@
           <span class="mark">§ 02</span
           ><span class="coord">[ 46.05°N · 14.51°E · ROUTING ]</span>
         </div>
-        <div class="section-label">Direct lines</div>
-        <h2 class="section-title">Reach the right practice.</h2>
-        <p class="section-subtitle">
-          Know which frontier you're on? Write straight to the practice — or
-          send a general brief and we'll route it.
-        </p>
+        <div class="section-label">{{ t.lines.label }}</div>
+        <h2 class="section-title">{{ t.lines.title }}</h2>
+        <p class="section-subtitle">{{ t.lines.subtitle }}</p>
       </div>
 
       <div class="lines">
@@ -271,12 +261,9 @@
           data-subject="Crypto &amp; Fintech"
           href="#"
         >
-          <span class="line__k">P·1 — flagship</span>
-          <span class="line__name">Crypto &amp; Fintech</span>
-          <span class="line__desc"
-            >MiCA, token offerings, licensing, AML and ongoing compliance for
-            crypto and fintech companies.</span
-          >
+          <span class="line__k">{{ t.lines.items[0].k }}</span>
+          <span class="line__name">{{ t.lines.items[0].name }}</span>
+          <span class="line__desc">{{ t.lines.items[0].desc }}</span>
           <span class="line__go"
             ><span class="js-mail" data-u="info" data-d="lemur.legal"
               >info [at] lemur.legal</span
@@ -293,12 +280,9 @@
           data-subject="Startups &amp; Deep Tech"
           href="#"
         >
-          <span class="line__k">P·2</span>
-          <span class="line__name">Startups &amp; Deep Tech</span>
-          <span class="line__desc"
-            >Incorporation, ESOP, IP protection and the contracts founders
-            actually sign.</span
-          >
+          <span class="line__k">{{ t.lines.items[1].k }}</span>
+          <span class="line__name">{{ t.lines.items[1].name }}</span>
+          <span class="line__desc">{{ t.lines.items[1].desc }}</span>
           <span class="line__go"
             ><span class="js-mail" data-u="info" data-d="lemur.legal"
               >info [at] lemur.legal</span
@@ -315,12 +299,9 @@
           data-subject="Defence &amp; Dual-Use"
           href="#"
         >
-          <span class="line__k">P·3</span>
-          <span class="line__name">Defence &amp; Dual-Use</span>
-          <span class="line__desc"
-            >Export controls, dual-use licensing and foreign-investment review
-            for defence and dual-use tech.</span
-          >
+          <span class="line__k">{{ t.lines.items[2].k }}</span>
+          <span class="line__name">{{ t.lines.items[2].name }}</span>
+          <span class="line__desc">{{ t.lines.items[2].desc }}</span>
           <span class="line__go"
             ><span class="js-mail" data-u="info" data-d="lemur.legal"
               >info [at] lemur.legal</span
@@ -332,7 +313,7 @@
 
       <div class="details" data-anim="reveal">
         <div class="detail">
-          <h5>Email</h5>
+          <h5>{{ t.details.emailH }}</h5>
           <p>
             <a class="js-mail" data-u="info" data-d="lemur.legal" href="#"
               >info [at] lemur.legal</a
@@ -340,16 +321,16 @@
           </p>
         </div>
         <div class="detail">
-          <h5>Office</h5>
-          <p>Lemur Legal d.o.o.<br />Ljubljana, Slovenia · EU</p>
+          <h5>{{ t.details.officeH }}</h5>
+          <p v-html="t.details.officeVal"></p>
         </div>
         <div class="detail">
-          <h5>Hours</h5>
-          <p>Mon–Fri<br />09:00–18:00 CET</p>
+          <h5>{{ t.details.hoursH }}</h5>
+          <p v-html="t.details.hoursVal"></p>
         </div>
         <div class="detail">
-          <h5>Languages</h5>
-          <p>EN / SL</p>
+          <h5>{{ t.details.langH }}</h5>
+          <p>{{ t.details.langVal }}</p>
         </div>
       </div>
     </section>
@@ -358,19 +339,12 @@
     <section class="cta-band" id="contact">
       <div class="strip-grid" aria-hidden="true"></div>
       <div class="container cta-band__in">
-        <h2>One firm, three frontiers.</h2>
-        <p>
-          Not sure which practice you need? Send a brief and we'll route it —
-          and put a fixed fee in writing.
-        </p>
+        <h2>{{ t.cta.heading }}</h2>
+        <p>{{ t.cta.text }}</p>
         <a
           class="action"
-          data-mailto=""
-          data-u="info"
-          data-d="lemur.legal"
-          data-subject="Consultation"
-          href="#"
-          >Book a consultation
+          href="/contact#brief"
+          >{{ t.cta.action }}
           <span class="arrow" aria-hidden="true">→</span></a
         >
       </div>
@@ -382,6 +356,12 @@
 import { onMounted, onUnmounted } from "vue";
 import { initEffects } from "./Contact.effects";
 import { useTheme, useRootVars } from "@/composables/useTheme";
+import { usePageContent } from "@/i18n/useContent";
+import { useHead } from "@/i18n/useHead";
+import contact from "@/content/contact";
+
+const t = usePageContent(contact);
+useHead(contact);
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.
@@ -420,7 +400,6 @@ const ROOT_VARS: Record<string, string> = {
 
 let dispose: (() => void) | undefined;
 onMounted(() => {
-  document.title = "Contact \u2014 Lemur Legal";
   useRootVars(ROOT_VARS);
   useTheme("Editorial", 50, "Baltic");
   dispose = initEffects();
