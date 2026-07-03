@@ -13,6 +13,7 @@
 // ignored — delete SAMPLE_MEDIA and the fallback in the view then.
 
 import { formatDate } from './contentful'
+import type { Locale } from '@/i18n/locale'
 
 export type MediaSectionId = 'podcasts' | 'tv' | 'articles'
 
@@ -104,9 +105,23 @@ async function cda(params: Record<string, string>): Promise<any> {
   for (const k in params) url.searchParams.set(k, params[k])
   const res = await fetch(url.toString())
   if (!res.ok) {
-    throw new Error(`Contentful request failed (${res.status})`)
+    const err = new Error(`Contentful request failed (${res.status})`)
+    ;(err as { status?: number }).status = res.status
+    throw err
   }
   return res.json()
+}
+
+// Fetch in the active locale, falling back to the default locale if the `sl`
+// locale does not exist yet in the space (400) — mirrors src/lib/contentful.ts.
+async function cdaLocalized(params: Record<string, string>, loc: Locale): Promise<any> {
+  if (loc !== 'sl') return cda(params)
+  try {
+    return await cda({ ...params, locale: 'sl' })
+  } catch (e) {
+    if ((e as { status?: number }).status === 400) return cda(params)
+    throw e
+  }
 }
 
 function indexAssets(includes: any): AssetIndex {
@@ -155,13 +170,16 @@ function mapEntry(item: any, assets: AssetIndex): MediaItem {
 }
 
 /** All published media items, ordered by `order` asc then newest first. */
-export async function fetchMediaItems(): Promise<MediaItem[]> {
-  const data = await cda({
-    content_type: 'mediaCoverage',
-    include: '1',
-    order: 'fields.order,-fields.publishDate',
-    limit: '1000',
-  })
+export async function fetchMediaItems(loc: Locale = 'en'): Promise<MediaItem[]> {
+  const data = await cdaLocalized(
+    {
+      content_type: 'mediaCoverage',
+      include: '1',
+      order: 'fields.order,-fields.publishDate',
+      limit: '1000',
+    },
+    loc,
+  )
   const assets = indexAssets(data.includes)
   return (data.items ?? []).map((it: any) => mapEntry(it, assets))
 }

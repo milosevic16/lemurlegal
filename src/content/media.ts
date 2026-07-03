@@ -19,6 +19,8 @@ export interface MediaSection {
   nav: string
   title: string
   subtitle: string
+  /** Read-more label on each card in this category (e.g. "Preberi več"). */
+  cta: string
 }
 
 export interface MediaContent {
@@ -66,6 +68,7 @@ const media: Bilingual<MediaContent> = {
         title: 'Conversations & talks.',
         subtitle:
           'Long-form podcast appearances, panels and lectures — Lemur Legal on crypto regulation, startups and the law behind emerging technology.',
+        cta: 'Listen',
       },
       {
         id: 'tv',
@@ -75,6 +78,7 @@ const media: Bilingual<MediaContent> = {
         nav: 'TV Appearances',
         title: 'On air.',
         subtitle: 'Television interviews and studio appearances that bring tech law to a broad audience.',
+        cta: 'Watch',
       },
       {
         id: 'articles',
@@ -85,6 +89,7 @@ const media: Bilingual<MediaContent> = {
         title: 'In print.',
         subtitle:
           'Press articles, columns and features quoting or written by Lemur Legal across Slovenian and international media.',
+        cta: 'Read more',
       },
     ],
     states: {
@@ -123,6 +128,7 @@ const media: Bilingual<MediaContent> = {
         title: 'Pogovori in predavanja.',
         subtitle:
           'Daljši nastopi v podkastih, paneli in predavanja — Lemur Legal o regulaciji kripta, zagonskih podjetjih in pravu za nove tehnologije.',
+        cta: 'Poslušajte',
       },
       {
         id: 'tv',
@@ -132,6 +138,7 @@ const media: Bilingual<MediaContent> = {
         nav: 'TV oddaje',
         title: 'Na zaslonu.',
         subtitle: 'Televizijski intervjuji in studijski nastopi, ki tehnološko pravo približajo širši javnosti.',
+        cta: 'Oglejte si oddajo',
       },
       {
         id: 'articles',
@@ -142,6 +149,7 @@ const media: Bilingual<MediaContent> = {
         title: 'V tisku.',
         subtitle:
           'Časopisni članki, kolumne in prispevki, ki citirajo Lemur Legal ali so njegovo delo, v slovenskih in mednarodnih medijih.',
+        cta: 'Preberi več',
       },
     ],
     states: {

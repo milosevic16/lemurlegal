@@ -41,7 +41,7 @@
       <p class="section-subtitle">{{ s.subtitle }}</p>
     </div>
     <div class="media-grid">
-      <MediaCard v-for="item in itemsBySection(s.id)" :key="item.id" :item="item" />
+      <MediaCard v-for="item in itemsBySection(s.id)" :key="item.id" :item="item" :cta="s.cta" />
     </div>
     <p v-if="loading" class="media-note">{{ t.states.loading }}</p>
     <p v-else-if="error" class="media-note media-note--err">{{ t.states.error }}</p>
@@ -71,6 +71,7 @@ import { initEffects } from './Blog.effects'
 import { applyBlogTheme } from '@/composables/blogTheme'
 import { useHead } from '@/i18n/useHead'
 import { usePageContent } from '@/i18n/useContent'
+import { locale } from '@/i18n/locale'
 import MediaCard from '@/components/MediaCard.vue'
 import media from '@/content/media'
 import { fetchMediaItems, SAMPLE_MEDIA, mediaSectionMeta, type MediaItem, type MediaSectionId } from '@/lib/media'
@@ -92,7 +93,7 @@ onMounted(async () => {
   // IntersectionObserver over [data-anim="reveal"] at init time, so the cards
   // must already be in the DOM (hence the await + nextTick) — same as Blog.vue.
   try {
-    const live = await fetchMediaItems()
+    const live = await fetchMediaItems(locale.value)
     // Until the Contentful `mediaCoverage` type is populated, show the mockups so
     // the layout is visible. Once real entries exist, replace this with
     // `items.value = live` and restore the error/empty states.
