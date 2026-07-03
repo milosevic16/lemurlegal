@@ -17,22 +17,35 @@
   </div>
 </section>
 
-<!-- ════════ SECTION — single section; cards loaded from Contentful (SAMPLE_MEDIA until wired) ════════ -->
-<section class="media-section" id="coverage">
+<!-- ════════ CATEGORY NAV ════════ -->
+<nav class="catnav" aria-label="Media categories">
+  <div class="container catnav__in">
+    <a v-for="s in t.sections" :key="s.id" :href="'#' + s.id">{{ s.nav }}</a>
+  </div>
+</nav>
+
+<!-- ════════ SECTIONS — one per category; cards loaded from Contentful (SAMPLE_MEDIA until wired) ════════ -->
+<section
+  v-for="s in t.sections"
+  :key="s.id"
+  class="media-section"
+  :class="'media-section--' + clsFor(s.id)"
+  :id="s.id"
+>
   <div class="cyberline" aria-hidden="true"><span data-anim="cpulse"></span></div>
   <div class="container">
     <div data-anim="reveal">
-      <div class="sec-meta"><span class="mark">{{ t.section.mark }}</span><span class="coord">{{ t.section.coord }}</span></div>
-      <div class="section-label">{{ t.section.label }}</div>
-      <h2 class="section-title">{{ t.section.title }}</h2>
-      <p class="section-subtitle">{{ t.section.subtitle }}</p>
+      <div class="sec-meta"><span class="mark">{{ s.mark }}</span><span class="coord">{{ s.coord }}</span></div>
+      <div class="section-label">{{ s.label }}</div>
+      <h2 class="section-title">{{ s.title }}</h2>
+      <p class="section-subtitle">{{ s.subtitle }}</p>
     </div>
     <div class="media-grid">
-      <MediaCard v-for="item in items" :key="item.id" :item="item" />
+      <MediaCard v-for="item in itemsBySection(s.id)" :key="item.id" :item="item" />
     </div>
     <p v-if="loading" class="media-note">{{ t.states.loading }}</p>
     <p v-else-if="error" class="media-note media-note--err">{{ t.states.error }}</p>
-    <p v-else-if="items.length === 0" class="media-note">{{ t.states.empty }}</p>
+    <p v-else-if="itemsBySection(s.id).length === 0" class="media-note">{{ t.states.empty }}</p>
   </div>
 </section>
 
@@ -53,14 +66,14 @@
 import { onMounted, onUnmounted, ref, nextTick } from 'vue'
 // Reuse the blog's effects verbatim — they attach to generic hooks (#mesh,
 // [data-anim="blink|hexrow|reveal|cpulse"]) plus the shared header/mobile-menu,
-// all of which this page has, so a media-specific copy would only drift.
+// all of which this page has.
 import { initEffects } from './Blog.effects'
 import { applyBlogTheme } from '@/composables/blogTheme'
 import { useHead } from '@/i18n/useHead'
 import { usePageContent } from '@/i18n/useContent'
 import MediaCard from '@/components/MediaCard.vue'
 import media from '@/content/media'
-import { fetchMediaItems, SAMPLE_MEDIA, type MediaItem } from '@/lib/media'
+import { fetchMediaItems, SAMPLE_MEDIA, mediaSectionMeta, type MediaItem, type MediaSectionId } from '@/lib/media'
 
 const t = usePageContent(media)
 useHead(media)
@@ -68,6 +81,9 @@ useHead(media)
 const items = ref<MediaItem[]>([])
 const loading = ref(true)
 const error = ref(false)
+
+const clsFor = (id: MediaSectionId) => mediaSectionMeta(id).cls
+const itemsBySection = (id: MediaSectionId) => items.value.filter((i) => i.section === id)
 
 let dispose: (() => void) | undefined
 onMounted(async () => {
@@ -78,8 +94,8 @@ onMounted(async () => {
   try {
     const live = await fetchMediaItems()
     // Until the Contentful `mediaCoverage` type is populated, show the mockups so
-    // the layout + external-link cards are visible. Once real entries exist,
-    // replace this with `items.value = live` and restore the error/empty states.
+    // the layout is visible. Once real entries exist, replace this with
+    // `items.value = live` and restore the error/empty states.
     items.value = live.length ? live : SAMPLE_MEDIA
   } catch (e) {
     // Backend not wired yet → fall back to sample mockups rather than an error.
@@ -95,18 +111,19 @@ onUnmounted(() => dispose && dispose())
 </script>
 
 <style scoped>
-/* Ported from Blog.vue — identical look, but a single (blue/Baltic) section and
-   no category nav (nothing to switch between with one section). */
+/* Same layout as Blog.vue — hero, category nav and stacked sections — but with
+   three media categories, each in a distinct shade of the signature mint, and a
+   wrapping card grid (no horizontal scroll). */
 ::-webkit-scrollbar{ width:12px; height:12px; }
 ::-webkit-scrollbar-track{ background:var(--paper-2); }
 ::-webkit-scrollbar-thumb{ background:var(--hairline-strong); border:3px solid var(--paper-2); border-radius:8px; }
-::selection{ background:var(--blue); color:var(--paper); }
+::selection{ background:#1FC49A; color:var(--paper); }
 a{ color:inherit; }
 h1,h2,h3,h4{ font-family:var(--serif); font-weight:400; margin:0; }
 p{ margin:0; }
 ul,ol{ margin:0; padding:0; list-style:none; }
 img{ max-width:100%; }
-:focus-visible{ outline:2px solid var(--sig); outline-offset:3px; }
+:focus-visible{ outline:2px solid #1FC49A; outline-offset:3px; }
 .cyberline{ position:relative; height:1px; overflow:hidden; pointer-events:none; }
 .cyberline::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent,currentColor 30%,currentColor 70%,transparent); opacity:.24; }
 .regmark{ position:absolute; width:18px; height:18px; pointer-events:none; opacity:.5; }
@@ -118,22 +135,47 @@ img{ max-width:100%; }
 #mesh{ position:absolute; inset:0; z-index:0; pointer-events:none; }
 .hero__in{ position:relative; z-index:1; }
 .kicker{ font-family:var(--mono); font-size:.76rem; color:var(--ink-2); letter-spacing:.04em; margin-bottom:1.1rem; display:inline-flex; align-items:center; gap:.6rem; }
-.kicker .caret{ display:inline-block; width:7px; height:1.05em; background:var(--sig); vertical-align:-2px; }
-.hexrow{ font-family:var(--mono); font-size:.58rem; letter-spacing:.18em; color:var(--blue); opacity:.22; overflow:hidden; white-space:nowrap; margin-bottom:.9rem; pointer-events:none; user-select:none; }
+.kicker .caret{ display:inline-block; width:7px; height:1.05em; background:#1FC49A; vertical-align:-2px; }
+.hexrow{ font-family:var(--mono); font-size:.58rem; letter-spacing:.18em; color:#1FA080; opacity:.22; overflow:hidden; white-space:nowrap; margin-bottom:.9rem; pointer-events:none; user-select:none; }
 .hero h1{ font-family:var(--serif); font-size:clamp(2.3rem,1.2rem + 4vw,4rem); line-height:1.05; letter-spacing:-0.02em; max-width:18ch; }
-.hero h1 .b{ color:var(--blue); font-weight:500; }
-.slogan-line{ font-family:var(--mono); font-size:.82rem; color:var(--sig); letter-spacing:.05em; margin-top:.9rem; }
+.hero h1 .b{ color:#1FA080; font-weight:500; }
+.slogan-line{ font-family:var(--mono); font-size:.82rem; color:#1FA080; letter-spacing:.05em; margin-top:.9rem; }
 .hero__lead{ margin-top:1.5rem; max-width:60ch; font-size:1.1rem; color:var(--ink-2); }
 .hero__lead strong{ color:var(--ink); font-weight:500; }
-.media-section{ padding-block:var(--section-y); position:relative; border-top:1px solid var(--ink); background:#CBC4DC; }
-.media-section::before{ content:""; position:absolute; left:var(--pad-x); top:-1px; width:46px; height:3px; z-index:3; background:var(--blue); }
-.media-section .cyberline{ position:absolute; top:0; left:0; right:0; z-index:2; color:#6444CC; }
-.section-label{ font-family:var(--mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--blue-deep); display:flex; align-items:center; gap:.7rem; margin-bottom:1rem; }
+/* Category nav */
+.catnav{ border-top:1px solid var(--ink); border-bottom:1px solid var(--hairline); background:var(--paper-2); }
+.catnav__in{ display:flex; gap:0; flex-wrap:wrap; }
+.catnav a{ font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2); padding:1rem clamp(.85rem,2vw,1.4rem); border-left:1px solid var(--hairline); text-decoration:none; position:relative; transition:color .2s ease; white-space:nowrap; }
+.catnav a:first-child{ border-left:none; }
+.catnav a::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:2px; background:#1FC49A; transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+.catnav a:hover{ color:var(--ink); }
+.catnav a:hover::after{ transform:scaleX(1); }
+@media (max-width:640px) {
+.catnav a{ padding:.8rem .9rem; font-size:.62rem; letter-spacing:.1em; }
+}
+/* Sections */
+.media-section{ padding-block:var(--section-y); position:relative; border-top:1px solid var(--hairline); scroll-margin-top:92px; }
+.media-section:first-of-type{ border-top:1px solid var(--ink); }
+.media-section::before{ content:""; position:absolute; left:var(--pad-x); top:-1px; width:46px; height:3px; z-index:3; }
+.media-section .cyberline{ position:absolute; top:0; left:0; right:0; z-index:2; }
+.section-label{ font-family:var(--mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; display:flex; align-items:center; gap:.7rem; margin-bottom:1rem; }
 .section-label::before{ content:""; width:28px; height:1px; background:currentColor; }
 .section-title{ font-family:var(--serif); font-size:clamp(1.55rem,1.25rem + 1.4vw,2.3rem); letter-spacing:-0.015em; color:var(--ink); margin-bottom:.6rem; line-height:1.18; }
 .section-subtitle{ font-family:var(--serif); font-style:italic; color:var(--ink-2); font-size:1.05rem; max-width:62ch; }
-/* Responsive grid — cards wrap onto the page (no horizontal scroll) on both
-   mobile and desktop. Card sizing lives in MediaCard.vue (fills its track). */
+/* Three shades of the signature mint (light → deep). */
+.media-section--m1{ background:#D3ECE1; }
+.media-section--m1::before{ background:#3FD9B0; }
+.media-section--m1 .cyberline{ color:#1FA080; }
+.media-section--m1 .section-label{ color:#1FA080; }
+.media-section--m2{ background:#B4DACA; }
+.media-section--m2::before{ background:#1FC49A; }
+.media-section--m2 .cyberline{ color:#17967A; }
+.media-section--m2 .section-label{ color:#17967A; }
+.media-section--m3{ background:#9AC7B0; }
+.media-section--m3::before{ background:#2A8A66; }
+.media-section--m3 .cyberline{ color:#1C6349; }
+.media-section--m3 .section-label{ color:#1C6349; }
+/* Responsive grid — cards wrap onto the page (no horizontal scroll), mobile + desktop. */
 .media-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:clamp(1rem,2vw,1.5rem); margin-top:2.4rem; }
 .media-note{ font-family:var(--mono); font-size:.8rem; color:var(--ink-2); margin-top:1.6rem; letter-spacing:.02em; }
 .media-note--err{ color:#9B0E00; }
@@ -143,12 +185,13 @@ img{ max-width:100%; }
 @media (max-width:560px) {
 .sec-meta .coord{ display:none; }
 }
+/* CTA band */
 .cta-band{ border-top:1px solid var(--ink); text-align:center; position:relative; overflow:hidden; }
-.cta-band .strip-grid{ position:absolute; inset:0; pointer-events:none; z-index:0; background-image:radial-gradient(circle,var(--blue) 1px,transparent 1px); background-size:28px 28px; opacity:.045; }
+.cta-band .strip-grid{ position:absolute; inset:0; pointer-events:none; z-index:0; background-image:radial-gradient(circle,#1FC49A 1px,transparent 1px); background-size:28px 28px; opacity:.05; }
 .cta-band__in{ position:relative; z-index:1; padding-block:clamp(3rem,6vw,4.5rem); }
 .cta-band h2{ font-family:var(--serif); font-size:clamp(1.8rem,1.4rem + 1.6vw,2.7rem); letter-spacing:-0.02em; max-width:20ch; margin-inline:auto; }
 .cta-band p{ margin:1.1rem auto 1.9rem; max-width:56ch; color:var(--ink-2); font-size:1.05rem; }
-.action{ text-decoration:none; font-weight:500; font-size:1rem; border-bottom:1px solid var(--blue); padding-bottom:3px; color:var(--blue-deep); display:inline-flex; align-items:center; gap:.5rem; }
+.action{ text-decoration:none; font-weight:500; font-size:1rem; border-bottom:1px solid #1FC49A; padding-bottom:3px; color:#17967A; display:inline-flex; align-items:center; gap:.5rem; }
 .action .arrow{ display:inline-block; transition:transform .3s ease; }
 .action:hover .arrow{ transform:translateX(5px); }
 @media (prefers-reduced-motion: reduce) {

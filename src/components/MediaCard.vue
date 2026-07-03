@@ -1,6 +1,7 @@
 <template>
   <a
     class="media-card"
+    :class="'media-card--' + cls"
     data-anim="reveal"
     :href="item.url"
     target="_blank"
@@ -23,18 +24,20 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { type MediaItem, mediaCover, formatDate } from '@/lib/media'
+import { type MediaItem, mediaCover, mediaSectionMeta, formatDate } from '@/lib/media'
 
 const props = defineProps<{ item: MediaItem }>()
 
+const cls = computed(() => mediaSectionMeta(props.item.section).cls)
 const coverSrc = computed(() => mediaCover(props.item))
 const dateLabel = computed(() => formatDate(props.item.publishDate))
 </script>
 
 <style scoped>
 /* Ported from BlogCard.vue — the media card is visually identical to the blog
-   card, but always uses the blue (Baltic) accent (single-section page) and the
-   whole card is an external link (↗). Colours read from the blog theme :root. */
+   card, but the whole card is an external link (↗) and its accent is one of
+   three shades of the signature mint, keyed to the item's category. Colours read
+   from the blog theme :root. */
 .media-card {
   position: relative;
   /* Fills its grid track — MediaCoverage.vue .media-grid wraps cards (no scroll). */
@@ -51,7 +54,6 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
 .media-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 44px -24px rgba(26, 24, 38, 0.55);
-  border-color: var(--blue);
 }
 .media-card__img {
   width: 100%;
@@ -72,7 +74,6 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--blue-deep);
   margin-bottom: 0.7rem;
   display: flex;
   align-items: center;
@@ -113,7 +114,6 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
   height: 30px;
   border-radius: 50%;
   background: var(--ink);
-  color: var(--term-cyan);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +140,6 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
   top: 0.85rem;
   right: 0.9rem;
   font-family: var(--mono);
-  color: var(--sig);
   opacity: 0;
   transform: translate(-4px, 4px);
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -149,4 +148,20 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
   opacity: 1;
   transform: none;
 }
+
+/* Per-category mint shades (light → deep). */
+.media-card--m1 .media-card__cat { color: #1FA080; }
+.media-card--m1:hover { border-color: #3FD9B0; }
+.media-card--m1 .media-card__go { color: #3FD9B0; }
+.media-card--m1 .media-card__av { color: #3FD9B0; }
+
+.media-card--m2 .media-card__cat { color: #17967A; }
+.media-card--m2:hover { border-color: #1FC49A; }
+.media-card--m2 .media-card__go { color: #1FC49A; }
+.media-card--m2 .media-card__av { color: #1FC49A; }
+
+.media-card--m3 .media-card__cat { color: #1C6349; }
+.media-card--m3:hover { border-color: #2A8A66; }
+.media-card--m3 .media-card__go { color: #2A8A66; }
+.media-card--m3 .media-card__av { color: #7FD6B6; }
 </style>

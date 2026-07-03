@@ -20,12 +20,15 @@ export interface ChromeContent {
     media: string
     contact: string
   }
-  /** Header status line, e.g. "EU · OPEN FOR MATTERS". */
-  status: string
   footer: {
-    /** Brand blurb, ending just before the "· <email>" link. */
+    /** Brand tagline, ending just before the "· <email>" link. */
     blurb: string
-    address: string
+    /** Legal entity name, e.g. "Lemur Legal, d.o.o." */
+    org: string
+    /** Street address line. */
+    street: string
+    /** City + country line. */
+    city: string
     cols: {
       crypto: { heading: string; links: [string, string, string] }
       startups: { heading: string; links: [string, string, string] }
