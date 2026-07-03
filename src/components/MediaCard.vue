@@ -1,6 +1,7 @@
 <template>
   <a
     class="media-card"
+    :class="'media-card--' + cls"
     data-anim="reveal"
     :href="item.url"
     target="_blank"
@@ -8,33 +9,40 @@
   >
     <img class="media-card__img" :alt="item.coverImageAlt" :src="coverSrc" />
     <div class="media-card__body">
-      <span class="media-card__cat"><span class="l"></span>{{ item.outlet }}</span>
-      <h3 class="media-card__title">{{ item.title }}</h3>
-      <p class="media-card__sum">{{ item.summary }}</p>
-      <div class="media-card__meta">
-        <span v-if="item.authorInitials" class="media-card__av">{{ item.authorInitials }}</span>
-        <span v-if="item.author" class="media-card__author">{{ item.author }}</span>
+      <div class="media-card__top">
+        <span class="media-card__cat"><span class="l"></span>{{ item.outlet }}</span>
         <time class="media-card__date" :datetime="item.publishDate">{{ dateLabel }}</time>
       </div>
+      <h3 class="media-card__title">{{ item.title }}</h3>
+      <p class="media-card__sum">{{ item.summary }}</p>
+      <div class="media-card__foot">
+        <span v-if="item.author" class="media-card__author">
+          <span v-if="item.authorInitials" class="media-card__av">{{ item.authorInitials }}</span>{{ item.author }}
+        </span>
+        <span class="media-card__more">{{ cta }} <span class="media-card__go" aria-hidden="true">↗</span></span>
+      </div>
     </div>
-    <span class="media-card__go" aria-hidden="true">↗</span>
   </a>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { type MediaItem, mediaCover, formatDate } from '@/lib/media'
+import { type MediaItem, mediaCover, mediaSectionMeta, formatDate } from '@/lib/media'
+import { locale } from '@/i18n/locale'
 
-const props = defineProps<{ item: MediaItem }>()
+const props = defineProps<{ item: MediaItem; cta?: string }>()
 
+const cls = computed(() => mediaSectionMeta(props.item.section).cls)
 const coverSrc = computed(() => mediaCover(props.item))
-const dateLabel = computed(() => formatDate(props.item.publishDate))
+const dateLabel = computed(() => formatDate(props.item.publishDate, locale.value))
 </script>
 
 <style scoped>
-/* Ported from BlogCard.vue — the media card is visually identical to the blog
-   card, but always uses the blue (Baltic) accent (single-section page) and the
-   whole card is an external link (↗). Colours read from the blog theme :root. */
+/* Ported from BlogCard.vue — the media card is an external link (↗) whose accent
+   is one of three shades of the signature mint, keyed to the item's category.
+   Unlike the blog card, the outlet and date sit together on one line above the
+   title, and each card carries a visible read-more CTA (its label depends on the
+   category: Listen / Watch / Read more). Colours read from the blog theme :root. */
 .media-card {
   position: relative;
   /* Fills its grid track — MediaCoverage.vue .media-grid wraps cards (no scroll). */
@@ -51,7 +59,6 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
 .media-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 44px -24px rgba(26, 24, 38, 0.55);
-  border-color: var(--blue);
 }
 .media-card__img {
   width: 100%;
@@ -67,22 +74,38 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
   flex-direction: column;
   flex: 1;
 }
+/* Outlet + date on one line (e.g. "Oddaja KODA, RTV" · "11. februar 2020"). */
+.media-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
 .media-card__cat {
   font-family: var(--mono);
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--blue-deep);
-  margin-bottom: 0.7rem;
   display: flex;
   align-items: center;
   gap: 0.45rem;
+  min-width: 0;
 }
 .media-card__cat .l {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background: currentColor;
+  flex-shrink: 0;
+}
+.media-card__date {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-2);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .media-card__title {
   font-family: var(--serif);
@@ -100,20 +123,29 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
   margin: 0 0 1.25rem;
   flex: 1;
 }
-.media-card__meta {
+.media-card__foot {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.6rem;
   margin-top: auto;
   padding-top: 0.9rem;
   border-top: 1px solid var(--hairline);
+}
+.media-card__author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink);
+  min-width: 0;
 }
 .media-card__av {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background: var(--ink);
-  color: var(--term-cyan);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,30 +155,40 @@ const dateLabel = computed(() => formatDate(props.item.publishDate))
   flex-shrink: 0;
   letter-spacing: 0.02em;
 }
-.media-card__author {
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  color: var(--ink);
-}
-.media-card__date {
+/* Visible read-more CTA — always shown, accent-coloured per category. */
+.media-card__more {
   font-family: var(--mono);
   font-size: 0.68rem;
-  color: var(--ink-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
   margin-left: auto;
-  letter-spacing: 0.03em;
 }
 .media-card__go {
-  position: absolute;
-  top: 0.85rem;
-  right: 0.9rem;
-  font-family: var(--mono);
-  color: var(--sig);
-  opacity: 0;
-  transform: translate(-4px, 4px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+  transition: transform 0.25s ease;
 }
 .media-card:hover .media-card__go {
-  opacity: 1;
-  transform: none;
+  transform: translate(3px, -3px);
 }
+
+/* Per-category mint shades (light → deep). */
+.media-card--m1 .media-card__cat,
+.media-card--m1 .media-card__more { color: #1FA080; }
+.media-card--m1:hover { border-color: #3FD9B0; }
+.media-card--m1 .media-card__av { color: #3FD9B0; }
+
+.media-card--m2 .media-card__cat,
+.media-card--m2 .media-card__more { color: #17967A; }
+.media-card--m2:hover { border-color: #1FC49A; }
+.media-card--m2 .media-card__av { color: #1FC49A; }
+
+.media-card--m3 .media-card__cat,
+.media-card--m3 .media-card__more { color: #1C6349; }
+.media-card--m3:hover { border-color: #2A8A66; }
+.media-card--m3 .media-card__av { color: #7FD6B6; }
 </style>

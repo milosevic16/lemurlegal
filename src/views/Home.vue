@@ -45,7 +45,7 @@
     <span class="mark">§ 01</span>
     <h2 id="practices-h">{{ t.practices.heading }}</h2>
     <span class="coord" aria-hidden="true">[ 46.05°N · 14.51°E ]</span>
-    <p>{{ t.practices.subtitle }}</p>
+    <p style="font-style:normal;">{{ t.practices.subtitle }}</p>
   </div>
 
   <article class="ledger ledger--b" id="crypto_fintech" data-anim="reveal">
@@ -163,23 +163,17 @@
       <div class="mnode mb-hide">
         <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[0].num"></span></span>
         <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[0].title"></span></p>
-        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[0].sub"></span></span>
-        <span class="mnode__badge"><span class="mnd" data-anim="nd" data-nd-color="#5FC27A"></span><span class="mb-type" :data-type="t.cta.matter.steps[0].badge"></span></span>
-      </div>
+        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[0].sub"></span></span>      </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
         <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[1].num"></span></span>
         <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[1].title"></span></p>
-        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[1].sub"></span></span>
-        <span class="mnode__badge" style="color:var(--term-amber);"><span class="mnd" data-anim="nd" data-nd-color="#D9AE5E"></span><span class="mb-type" :data-type="t.cta.matter.steps[1].badge"></span></span>
-      </div>
+        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[1].sub"></span></span>      </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
         <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[2].num"></span></span>
         <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[2].title"></span></p>
-        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[2].sub"></span></span>
-        <span class="mnode__badge" style="color:var(--term-dim);"><span class="mnd" data-anim="nd" data-nd-color="#6E6890"></span><span class="mb-type" :data-type="t.cta.matter.steps[2].badge"></span></span>
-      </div>
+        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[2].sub"></span></span>      </div>
     </div>
     <div class="matter-board__footer mb-hide">
       <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" data-type-link="/contact#brief" data-type-speed="28"></span>

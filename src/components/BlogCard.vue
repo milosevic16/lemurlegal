@@ -23,6 +23,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { type BlogPost, sectionMeta, placeholderCover, formatDate } from '@/lib/contentful'
+import { locale } from '@/i18n/locale'
 
 const props = defineProps<{ post: BlogPost }>()
 
@@ -30,7 +31,7 @@ const meta = computed(() => sectionMeta(props.post.section))
 const coverSrc = computed(
   () => props.post.coverImageUrl || placeholderCover(props.post.section, props.post.category),
 )
-const dateLabel = computed(() => formatDate(props.post.publishDate))
+const dateLabel = computed(() => formatDate(props.post.publishDate, locale.value))
 </script>
 
 <style scoped>

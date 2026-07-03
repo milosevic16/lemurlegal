@@ -8,29 +8,28 @@
   <span class="regmark" style="top:1.2rem;left:.4rem" aria-hidden="true"></span>
   <span class="regmark tr" style="top:1.2rem;right:.4rem" aria-hidden="true"></span>
   <div class="hero__in">
-    <p class="kicker">Blog · Ljubljana <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
-    <div class="hexrow" aria-hidden="true" data-anim="hexrow">0x7F59F5  0xD2DDD7  4C454741 4C2E4C41  0x3D7A5E  0xC4823A  4C4A4C20  0x131220  424C4F47  0x7F59F5</div>
-    <h1 id="hero-h">Plain answers to <span class="b">hard</span> tech-law questions.</h1>
-    <p class="slogan-line">// field notes from the legal frontier.</p>
-    <p class="hero__lead">Briefings, explainers and deep-dives across our three practices — from <strong>MiCA</strong> and token classification, through incorporation, equity and IP, to export controls and dual-use. Written by the people who sign the advice.</p>
+    <p class="kicker">{{ t.hero.kicker }} <span class="caret" data-anim="blink" aria-hidden="true"></span></p>
+    <div class="hexrow" aria-hidden="true" data-anim="hexrow">{{ t.hero.hexrow }}</div>
+    <h1 id="hero-h">{{ t.hero.titleLead }} <span class="b">{{ t.hero.titleAccent }}</span>{{ t.hero.titleTail }}</h1>
+    <p class="slogan-line">{{ t.hero.slogan }}</p>
+    <!-- eslint-disable-next-line vue/no-v-html -->
+    <p class="hero__lead" v-html="t.hero.lead"></p>
   </div>
 </section>
 
 <!-- ════════ CATEGORY NAV ════════ -->
 <nav class="catnav" aria-label="Blog categories">
   <div class="container catnav__in">
-    <a href="#crypto">Crypto &amp; Fintech</a>
-    <a href="#startups">Startups &amp; Deep Tech</a>
-    <a href="#defence">Defence &amp; Dual-Use</a>
+    <a v-for="s in t.sections" :key="s.id" :href="'#' + s.id">{{ s.nav }}</a>
   </div>
 </nav>
 
 <!-- ════════ SECTIONS — cards are loaded from Contentful ════════ -->
 <section
-  v-for="s in SECTIONS"
+  v-for="s in t.sections"
   :key="s.id"
   class="blog-section"
-  :class="'blog-section--' + s.cls"
+  :class="'blog-section--' + clsFor(s.id)"
   :id="s.id"
 >
   <div class="cyberline" aria-hidden="true"><span data-anim="cpulse"></span></div>
@@ -44,9 +43,9 @@
     <div class="blog-grid">
       <BlogCard v-for="post in postsBySection(s.id)" :key="post.id" :post="post" />
     </div>
-    <p v-if="loading" class="blog-note">Loading posts…</p>
-    <p v-else-if="error" class="blog-note blog-note--err">Couldn't load posts right now — please try again shortly.</p>
-    <p v-else-if="postsBySection(s.id).length === 0" class="blog-note">No posts in this section yet.</p>
+    <p v-if="loading" class="blog-note">{{ t.states.loading }}</p>
+    <p v-else-if="error" class="blog-note blog-note--err">{{ t.states.error }}</p>
+    <p v-else-if="postsBySection(s.id).length === 0" class="blog-note">{{ t.states.empty }}</p>
   </div>
 </section>
 
@@ -54,9 +53,9 @@
 <section class="cta-band" id="contact">
   <div class="strip-grid" aria-hidden="true"></div>
   <div class="container cta-band__in">
-    <h2>Have a question we haven't answered?</h2>
-    <p>Tell us what you're building and we'll map the legal path — with a fixed fee, in writing. One firm, three frontiers.</p>
-    <a class="action" href="/contact#brief">Book a consultation <span class="arrow">→</span></a>
+    <h2>{{ t.cta.title }}</h2>
+    <p>{{ t.cta.text }}</p>
+    <a class="action" href="/contact#brief">{{ t.cta.action }} <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -67,26 +66,36 @@
 import { onMounted, onUnmounted, ref, nextTick } from 'vue'
 import { initEffects } from './Blog.effects'
 import { applyBlogTheme } from '@/composables/blogTheme'
+import { useHead } from '@/i18n/useHead'
+import { usePageContent } from '@/i18n/useContent'
+import { locale } from '@/i18n/locale'
 import BlogCard from '@/components/BlogCard.vue'
-import { fetchPosts, SECTIONS, type BlogPost, type SectionId } from '@/lib/contentful'
+import blog from '@/content/blog'
+import { fetchPosts, sectionMeta, type BlogPost, type SectionId } from '@/lib/contentful'
+
+const t = usePageContent(blog)
+useHead(blog)
 
 const posts = ref<BlogPost[]>([])
 const loading = ref(true)
 const error = ref(false)
 
+const clsFor = (id: SectionId) => sectionMeta(id).cls
 function postsBySection(id: SectionId): BlogPost[] {
   return posts.value.filter((p) => p.section === id)
 }
 
+// A locale switch navigates /blog ↔ /sl/blog, which changes the router-view key
+// (App.vue) and remounts this view — so onMounted refetches in the new locale;
+// no separate watcher is needed.
 let dispose: (() => void) | undefined
 onMounted(async () => {
-  document.title = 'Blog — Lemur Legal'
   applyBlogTheme()
   // Load posts first, then start the effects: the scroll-reveal sets up a
   // one-shot IntersectionObserver over [data-anim="reveal"] at init time, so
   // the cards must already be in the DOM (hence the await + nextTick).
   try {
-    posts.value = await fetchPosts()
+    posts.value = await fetchPosts(locale.value)
   } catch (e) {
     error.value = true
     console.error('[blog] failed to load posts', e)

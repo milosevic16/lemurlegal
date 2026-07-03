@@ -9,6 +9,7 @@
 
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import { BLOCKS, INLINES, type Document } from '@contentful/rich-text-types'
+import type { Locale } from '@/i18n/locale'
 
 export type SectionId = 'crypto' | 'startups' | 'defence'
 
@@ -34,50 +35,18 @@ export interface SectionMeta {
   id: SectionId
   /** modifier suffix for `blog-section--{cls}` and the placeholder accent */
   cls: 'b' | 'g' | 'o'
-  mark: string
-  coord: string
-  label: string
-  title: string
-  subtitle: string
+  /** placeholder-cover art colour */
   accent: string
 }
 
-// Section chrome lifted verbatim from the original hardcoded Blog.vue sections,
-// so the headings/labels/colours are unchanged — only the cards become dynamic.
+// Visual meta only (colour + class suffix). The section headings/labels/coords
+// are localized copy and live in src/content/blog.ts (Bilingual), mirroring the
+// media page — this keeps the same id/cls/accent lookup that BlogCard/BlogPost
+// use while the text becomes EN/SL.
 export const SECTIONS: SectionMeta[] = [
-  {
-    id: 'crypto',
-    cls: 'b',
-    mark: '§ 01',
-    coord: '[ 46.05°N · 14.51°E · MiCA ]',
-    label: 'P·1 — Crypto & Fintech',
-    title: 'MiCA, tokens and the rulebook.',
-    subtitle:
-      'How EU crypto regulation actually applies — white papers, classification, licensing and the legal opinions exchanges ask for.',
-    accent: '#7F59F5',
-  },
-  {
-    id: 'startups',
-    cls: 'g',
-    mark: '§ 02',
-    coord: '[ 46.05°N · 14.51°E · BUILD ]',
-    label: 'P·2 — Startups & Deep Tech',
-    title: 'Building the company, not just the product.',
-    subtitle:
-      'Incorporation, equity, IP and the contracts founders actually sign — the legal scaffolding behind a growing technology company.',
-    accent: '#1FC49A',
-  },
-  {
-    id: 'defence',
-    cls: 'o',
-    mark: '§ 03',
-    coord: '[ 46.05°N · 14.51°E · DUAL-USE ]',
-    label: 'P·3 — Defence & Dual-Use',
-    title: 'The new frontier: export controls.',
-    subtitle:
-      'When advanced technology becomes dual-use — classification, licensing, sanctions screening and foreign-investment review, explained from first principles.',
-    accent: '#E8A33D',
-  },
+  { id: 'crypto', cls: 'b', accent: '#7F59F5' },
+  { id: 'startups', cls: 'g', accent: '#1FC49A' },
+  { id: 'defence', cls: 'o', accent: '#E8A33D' },
 ]
 
 export function sectionMeta(id: SectionId | string): SectionMeta {
@@ -107,9 +76,25 @@ async function cda(params: Record<string, string>): Promise<any> {
   for (const k in params) url.searchParams.set(k, params[k])
   const res = await fetch(url.toString())
   if (!res.ok) {
-    throw new Error(`Contentful request failed (${res.status})`)
+    const err = new Error(`Contentful request failed (${res.status})`)
+    ;(err as { status?: number }).status = res.status
+    throw err
   }
   return res.json()
+}
+
+// Fetch in the active locale. Contentful serves the `sl` values where present
+// and falls back to `en-US` per the locale's fallback setting. If the `sl`
+// locale does not exist yet in the space (400 Unknown locale), retry once in the
+// default locale so the site keeps working until the locale is created.
+async function cdaLocalized(params: Record<string, string>, loc: Locale): Promise<any> {
+  if (loc !== 'sl') return cda(params)
+  try {
+    return await cda({ ...params, locale: 'sl' })
+  } catch (e) {
+    if ((e as { status?: number }).status === 400) return cda(params)
+    throw e
+  }
 }
 
 function indexAssets(includes: any): AssetIndex {
@@ -155,25 +140,32 @@ function initialsFrom(name: string): string {
 }
 
 /** All published posts, globally ordered by `order` asc then newest first. */
-export async function fetchPosts(): Promise<BlogPost[]> {
-  const data = await cda({
-    content_type: 'blogPost',
-    include: '1',
-    order: 'fields.order,-fields.publishDate',
-    limit: '1000',
-  })
+export async function fetchPosts(loc: Locale = 'en'): Promise<BlogPost[]> {
+  const data = await cdaLocalized(
+    {
+      content_type: 'blogPost',
+      include: '1',
+      order: 'fields.order,-fields.publishDate',
+      limit: '1000',
+    },
+    loc,
+  )
   const assets = indexAssets(data.includes)
   return (data.items ?? []).map((it: any) => mapEntry(it, assets))
 }
 
-/** A single post by slug, with `bodyHtml` rendered. Null if not found. */
-export async function fetchPostBySlug(slug: string): Promise<BlogPost | null> {
-  const data = await cda({
-    content_type: 'blogPost',
-    'fields.slug': slug,
-    include: '2',
-    limit: '1',
-  })
+/** A single post by slug, with `bodyHtml` rendered. Null if not found. The slug
+ *  is not localized, so the same slug resolves the post in either locale. */
+export async function fetchPostBySlug(slug: string, loc: Locale = 'en'): Promise<BlogPost | null> {
+  const data = await cdaLocalized(
+    {
+      content_type: 'blogPost',
+      'fields.slug': slug,
+      include: '2',
+      limit: '1',
+    },
+    loc,
+  )
   const assets = indexAssets(data.includes)
   const item = (data.items ?? [])[0]
   if (!item) return null
@@ -230,12 +222,19 @@ export function placeholderCover(section: SectionId | string, label: string): st
 }
 
 // ── Display helpers ─────────────────────────────────────────────────────────
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+// Slovenian month names (nominative), lowercase — e.g. "11. februar 2020".
+const MONTHS_SL = [
+  'januar', 'februar', 'marec', 'april', 'maj', 'junij',
+  'julij', 'avgust', 'september', 'oktober', 'november', 'december',
+]
 
-/** "2026-05-12" → "12 May 2026" (matches the original card markup). */
-export function formatDate(iso: string): string {
+/** "2026-05-12" → "12 May 2026" (EN) or "12. maj 2026" (SL). */
+export function formatDate(iso: string, loc: Locale = 'en'): string {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '')
   if (!m) return iso || ''
   const [, y, mo, d] = m
-  return `${Number(d)} ${MONTHS[Number(mo) - 1]} ${y}`
+  return loc === 'sl'
+    ? `${Number(d)}. ${MONTHS_SL[Number(mo) - 1]} ${y}`
+    : `${Number(d)} ${MONTHS_EN[Number(mo) - 1]} ${y}`
 }

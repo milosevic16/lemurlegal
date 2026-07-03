@@ -6,17 +6,14 @@ export type Locale = 'en' | 'sl'
  *  hook (see src/router.ts) and read reactively by content objects + chrome. */
 export const locale = ref<Locale>('en')
 
-// The blog is Contentful-driven and English-only — its paths are never prefixed
-// with `/sl` (see the plan: blog excluded from /sl).
-const BLOG_RE = /^\/blog(?:\/|$)/
-
 /**
  * Map a path to the given locale: prefix `/sl` for Slovenian, strip it for
- * English. Blog paths are always returned unprefixed (English-only).
+ * English. The blog and its articles are localized like every other page — the
+ * Contentful `blogPost` fields are localized (title/summary/body), falling back
+ * to English where a Slovenian translation is not yet entered.
  */
 export function localePath(path: string, loc: Locale = locale.value): string {
   const clean = path.replace(/^\/sl(?=\/|$)/, '') || '/'
-  if (BLOG_RE.test(clean)) return clean
   if (loc !== 'sl') return clean
   return clean === '/' ? '/sl' : '/sl' + clean
 }

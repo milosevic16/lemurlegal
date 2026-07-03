@@ -8,7 +8,7 @@ interface Practice {
   services: { label: string; href: string }[]
 }
 interface ConsoleRow { key: string; val: string; cls: string; tail: string }
-interface MatterStep { num: string; title: string; sub: string; badge: string }
+interface MatterStep { num: string; title: string; sub: string }
 
 export interface HomeContent {
   meta: PageMeta
@@ -51,10 +51,10 @@ const home: Bilingual<HomeContent> = {
     meta: {
       title: 'Lemur Legal — Law for crypto, fintech, startups, deep tech & dual-use',
       description:
-        'Lemur Legal is a specialist tech-law firm in Ljubljana. One firm, three practices: crypto & fintech (MiCA, tokens, licensing), startups & deep tech (incorporation, IP, contracts), and an emerging defence & dual-use practice. Founded by Peter Merc, Ph.D.',
+        'Lemur Legal is a specialist tech-law office in Ljubljana. One firm, three practices: crypto & fintech (MiCA, tokens, licensing), startups & deep tech (incorporation, IP, contracts), and an emerging defence & dual-use practice. Founded by Peter Merc, Ph.D.',
     },
     hero: {
-      kicker: 'Specialist tech-law firm · Ljubljana',
+      kicker: 'Specialist tech-law office · Ljubljana',
       titleGlitch: 'Your terminal to the legal world:',
       titleLead: 'Law for',
       crypto: 'crypto',
@@ -148,21 +148,15 @@ const home: Bilingual<HomeContent> = {
           {
             num: '01',
             title: 'Consultation',
-            sub: "Tell us what you're building. We'll map the legal path, identify the key risks and define the next steps.",
-            badge: 'OPEN',
-          },
+            sub: "Tell us what you're building. We'll map the legal path, identify the key risks and define the next steps.",          },
           {
             num: '02',
             title: 'Fixed-fee proposal',
-            sub: 'We define the scope, deliverables and fixed fee before work begins. No hourly surprises, no open-ended retainer.',
-            badge: 'in writing',
-          },
+            sub: 'We define the scope, deliverables and fixed fee before work begins. No hourly surprises, no open-ended retainer.',          },
           {
             num: '03',
             title: 'Dedicated legal support',
-            sub: 'Once we begin, you work with a dedicated legal team that understands your project, keeps the work moving and supports you from first filing to ongoing compliance.',
-            badge: 'one firm',
-          },
+            sub: 'Once we begin, you work with a dedicated legal team that understands your project, keeps the work moving and supports you from first filing to ongoing compliance.',          },
         ],
         footer: '$ open-matter --client=you  →',
       },
@@ -272,21 +266,15 @@ const home: Bilingual<HomeContent> = {
           {
             num: '01',
             title: 'Posvet',
-            sub: 'Povejte nam, kaj gradite. Začrtali bomo pravno pot, prepoznali ključna tveganja in določili naslednje korake.',
-            badge: 'ODPRTO',
-          },
+            sub: 'Povejte nam, kaj gradite. Začrtali bomo pravno pot, prepoznali ključna tveganja in določili naslednje korake.',          },
           {
             num: '02',
             title: 'Ponudba s fiksnim honorarjem',
-            sub: 'Pred začetkom dela določimo obseg, rezultate in fiksni honorar. Brez presenečenj po urah, brez odprtih akontacij.',
-            badge: 'v pisni obliki',
-          },
+            sub: 'Pred začetkom dela določimo obseg, rezultate in fiksni honorar. Brez presenečenj po urah, brez odprtih akontacij.',          },
           {
             num: '03',
             title: 'Namenska pravna podpora',
-            sub: 'Ko začnemo, sodelujete z namensko pravno ekipo, ki razume vaš projekt, ohranja tempo dela in vas podpira od prve vloge do stalne skladnosti.',
-            badge: 'ena pisarna',
-          },
+            sub: 'Ko začnemo, sodelujete z namensko pravno ekipo, ki razume vaš projekt, ohranja tempo dela in vas podpira od prve vloge do stalne skladnosti.',          },
         ],
         footer: '$ open-matter --client=you  →',
       },

@@ -13,9 +13,6 @@
         <a :href="lp('/contact')" class="nl-m">{{ c.nav.contact }}</a>
       </nav>
       <div class="head-right">
-        <span class="status" aria-hidden="true"
-          ><span class="dot" data-anim="blink"></span> {{ c.status }}</span
-        >
         <span class="lang">
           <button type="button" class="lang__btn" :class="{ 'is-active': locale === 'en' }" @click="setLocale('en')">EN</button
           ><span aria-hidden="true"> / </span
@@ -41,7 +38,6 @@
       <a :href="lp('/media')">{{ c.nav.media }}</a>
       <a :href="lp('/contact')">{{ c.nav.contact }}</a>
       <span class="mobile-menu__meta">
-        <span class="dot" data-anim="blink"></span> {{ c.status }} &nbsp;·&nbsp;
         <button type="button" class="lang__btn" :class="{ 'is-active': locale === 'en' }" @click="setLocale('en')">EN</button
         ><span aria-hidden="true"> / </span
         ><button type="button" class="lang__btn" :class="{ 'is-active': locale === 'sl' }" @click="setLocale('sl')">SI</button>

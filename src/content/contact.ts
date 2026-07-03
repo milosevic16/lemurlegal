@@ -56,7 +56,7 @@ const contact: Bilingual<ContactContent> = {
     meta: {
       title: 'Contact — Lemur Legal',
       description:
-        "Tell us what you're building. Send a brief to Lemur Legal — a specialist tech-law firm in Ljubljana for crypto & fintech, startups & deep tech, and defence & dual-use. Fixed fee, reply within 24 hours.",
+        "Tell us what you're building. Send a brief to Lemur Legal — a specialist tech-law office in Ljubljana for crypto & fintech, startups & deep tech, and defence & dual-use. Fixed fee, reply within 24 hours.",
     },
     hero: {
       kicker: 'Contact · Ljubljana',

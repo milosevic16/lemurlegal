@@ -20,23 +20,24 @@ const VIEWS: Array<[string, string]> = [
   ['terms_of_use', 'TermsOfUse'],
 ]
 
-// Every param-less view except the blog gets an optional `/sl` locale prefix and
-// one shared component across locales (EN at `/…`, SL at `/sl/…`). The blog is
-// Contentful-driven and stays English-only (see src/i18n/locale.ts).
-const LOCALIZED = VIEWS.filter(([slug]) => slug !== 'blog')
-
-const routes: RouteRecordRaw[] = LOCALIZED.map(([slug, name]) => ({
+// Every view gets an optional `/sl` locale prefix and one shared component across
+// locales (EN at `/…`, SL at `/sl/…`). The blog list is in VIEWS; its article
+// detail route is added separately below (it carries a `:slug` param).
+const routes: RouteRecordRaw[] = VIEWS.map(([slug, name]) => ({
   path: slug ? '/:lang(sl)?/' + slug : '/:lang(sl)?', // Home handles '/' and '/sl'
   name,
   component: () => import(`./views/${name}.vue`),
 }))
 
-// Blog — English only (Contentful). Registered without a locale prefix; `/sl/blog`
-// paths redirect to the English blog.
-routes.push({ path: '/blog', name: 'Blog', component: () => import('./views/Blog.vue') })
-routes.push({ path: '/blog/:slug', name: 'BlogPost', component: () => import('./views/BlogPost.vue') })
-routes.push({ path: '/sl/blog', redirect: '/blog' })
-routes.push({ path: '/sl/blog/:slug', redirect: (to) => `/blog/${to.params.slug}` })
+// Blog article detail — localized alongside the list: EN `/blog/:slug`, SL
+// `/sl/blog/:slug`. The slug is shared across locales (one entry, translated
+// fields); the Contentful fetch requests the active locale and falls back to
+// English where a Slovenian translation is missing.
+routes.push({
+  path: '/:lang(sl)?/blog/:slug',
+  name: 'BlogPost',
+  component: () => import('./views/BlogPost.vue'),
+})
 
 // `About` has no standalone page in the export — send it to the founder section,
 // preserving locale.

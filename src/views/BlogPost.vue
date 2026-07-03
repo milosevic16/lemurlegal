@@ -1,14 +1,14 @@
 <template>
 <main id="main" class="article" :class="post ? 'article--' + meta.cls : ''">
   <div class="container article__wrap">
-    <a class="article__back" href="/blog"><span aria-hidden="true">←</span> All briefings</a>
+    <a class="article__back" href="/blog"><span aria-hidden="true">←</span> {{ t.post.back }}</a>
 
     <!-- Loaded article -->
     <template v-if="post">
       <header class="article__head">
         <div class="sec-meta">
-          <span class="mark">{{ meta.label }}</span>
-          <span class="coord">{{ meta.coord }}</span>
+          <span class="mark">{{ sec.label }}</span>
+          <span class="coord">{{ sec.coord }}</span>
         </div>
         <span class="article__cat"><span class="l"></span>{{ post.category }}</span>
         <h1 class="article__title">{{ post.title }}</h1>
@@ -31,20 +31,20 @@
       <article class="article__body" v-html="post.bodyHtml"></article>
 
       <div class="article__cta">
-        <a class="action" href="/contact#brief">Have a question like this? Book a consultation <span class="arrow">→</span></a>
+        <a class="action" href="/contact#brief">{{ t.post.ctaAction }} <span class="arrow">→</span></a>
       </div>
     </template>
 
     <!-- Loading -->
     <div v-else-if="loading" class="article__state">
-      <p class="article__state-line">Loading…</p>
+      <p class="article__state-line">{{ t.post.loading }}</p>
     </div>
 
     <!-- Not found -->
     <div v-else class="article__state">
-      <h1 class="article__title">Post not found</h1>
-      <p class="article__lead">We couldn't find that article. It may have been moved or unpublished.</p>
-      <a class="action" href="/blog">Back to the blog <span class="arrow">→</span></a>
+      <h1 class="article__title">{{ t.post.notFoundTitle }}</h1>
+      <p class="article__lead">{{ t.post.notFoundText }}</p>
+      <a class="action" href="/blog">{{ t.post.notFoundAction }} <span class="arrow">→</span></a>
     </div>
   </div>
 </main>
@@ -54,28 +54,40 @@
 import { onMounted, ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { applyBlogTheme } from '@/composables/blogTheme'
+import { usePageContent } from '@/i18n/useContent'
+import { locale } from '@/i18n/locale'
+import blog from '@/content/blog'
 import { fetchPostBySlug, sectionMeta, formatDate, type BlogPost } from '@/lib/contentful'
 
 const route = useRoute()
+const t = usePageContent(blog)
 const post = ref<BlogPost | null>(null)
 const loading = ref(true)
 
+// cls (article--{cls}) comes from the visual meta; the section label/coord are
+// localized and come from the content object.
 const meta = computed(() => sectionMeta(post.value?.section ?? 'crypto'))
-const dateLabel = computed(() => (post.value ? formatDate(post.value.publishDate) : ''))
+const sec = computed(
+  () => t.value.sections.find((s) => s.id === post.value?.section) ?? t.value.sections[0],
+)
+const dateLabel = computed(() =>
+  post.value ? formatDate(post.value.publishDate, locale.value) : '',
+)
 
 async function load(slug: string): Promise<void> {
   loading.value = true
   post.value = null
   try {
-    post.value = await fetchPostBySlug(slug)
+    post.value = await fetchPostBySlug(slug, locale.value)
   } catch (e) {
     console.error('[blog] failed to load post', e)
     post.value = null
   } finally {
     loading.value = false
+    document.documentElement.lang = locale.value
     document.title = post.value
       ? `${post.value.title} — Lemur Legal`
-      : 'Article not found — Lemur Legal'
+      : `${t.value.post.notFoundTitle} — Lemur Legal`
   }
 }
 
@@ -84,8 +96,9 @@ onMounted(() => {
   load(String(route.params.slug))
 })
 
-// The router reuses this component when navigating between two articles, so
-// onMounted won't fire again — refetch on slug change.
+// A locale switch (/blog/:slug ↔ /sl/blog/:slug) changes the router-view key and
+// remounts this view, so onMounted refetches in the new locale. This watch covers
+// article-to-article navigation where only the slug param changes.
 watch(
   () => route.params.slug,
   (slug) => {
