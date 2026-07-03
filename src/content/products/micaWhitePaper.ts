@@ -15,7 +15,7 @@ export interface MiCAWhitePaperContent {
   how: { h2: string; steps: [Step, Step, Step] }
   coverage: { h2: string; intro: string; items: Cov[]; travelH3: string; travelP: string }
   expert: { eyebrow: string; h2: string; name: string; role: string; bio1: string; bio2: string; linkedinAria: string }
-  testimonials: { h2: string; quotes: [Quote, Quote, Quote] }
+  testimonials: { h2: string; quotes: Quote[] }
   included: { h2: string; items: string[]; pricebandText: string; pricebandBtn: string }
   faq: { h2: string; items: Faq[] }
   form: {
@@ -31,14 +31,18 @@ const BIO2_EN = 'Beyond private practice, Peter serves as an external evaluator 
 const BIO1_SL = 'Peter je <strong>odvetnik za tehnološko in finančno pravo</strong>, osredotočen na regulacijo kriptovalut, fintech in ekosisteme zagonskih podjetij. Kripto podjetjem, fintech podvigom in tehnološkim zagonskim podjetjem svetuje glede regulativne skladnosti, pogodbenega prava in vprašanj intelektualne lastnine ter zagotavlja praktične pravne rešitve na presečišču prava in nastajajočih tehnologij.'
 const BIO2_SL = 'Poleg zasebne prakse Peter deluje kot zunanji ocenjevalec za <strong>Horizon Europe</strong> in <strong>NATO Diana</strong>, kjer ocenjuje podvige na področju napredne tehnologije in inovacij za programsko financiranje. Je tudi partner v družbah tveganega kapitala <strong>Suricate Ventures</strong> in <strong>IBEX Equity Partners</strong>, s čimer podjetjem, s katerimi sodeluje, prinaša dvojni pogled — kot pravni svetovalec in kot investitor.'
 
-// Testimonials are intentionally placeholders until the client supplies final
-// quotes (per instruction: "3 mica testimonials are not ready, just leave a
-// placeholder … NEEDS TO BE CHANGED LATER"). Kept identical in both locales.
-const PH = 'NEEDS TO BE CHANGED LATER'
-const PLACEHOLDER_QUOTES: [Quote, Quote, Quote] = [
-  { p: PH, by: PH },
-  { p: PH, by: PH },
-  { p: PH, by: PH },
+const MICA_QUOTES_EN: Quote[] = [
+  { p: 'We provided the core project documentation, and Lemur Legal took care of everything else—from drafting the MiCA white paper to managing the submission to the competent authority. Our white paper is now published in the ESMA register. A truly turnkey service, exactly as promised.', by: 'Madani Boukalba · Founder & CEO, CarbonZero Corporation ($RIZE token)' },
+  { p: 'We knew that achieving MiCA compliance would be a significant regulatory challenge for our project. Peter and the team at Lemur Legal made the entire process clear and manageable. Thanks to their support, our project is now fully MiCA-compliant.', by: 'Simone Romano · Developer Manager, IoTeX Ltd. ($IOTX token)' },
+  { p: 'The Lemur Legal team prepared our MiCA white paper with great attention to detail and a strong understanding of our project. They managed the process efficiently and kept us informed throughout every stage.', by: 'Lilia Severina · Head of Markets, ADI DLT Foundation ($ADI token)' },
+  { p: 'Working with Lemur Legal was straightforward and efficient. They quickly understood our business model, identified the relevant MiCA requirements and prepared the documentation in a clear and professional manner.', by: 'Miguel Coutinho · Head of Operations, Relentless Security Limited ($IMU token)' },
+]
+// TODO(sl-review): client testimonials machine-translated (docx provided EN only)
+const MICA_QUOTES_SL: Quote[] = [
+  { p: 'Priskrbeli smo osnovno projektno dokumentacijo, za vse ostalo pa je poskrbel Lemur Legal — od priprave belega papirja MiCA do vodenja vloge pri pristojnem organu. Naš beli papir je zdaj objavljen v registru ESMA. Resnično celovita storitev, točno kot obljubljeno.', by: 'Madani Boukalba · ustanovitelj in izvršni direktor, CarbonZero Corporation ($RIZE token)' },
+  { p: 'Vedeli smo, da bo doseganje skladnosti z MiCA za naš projekt velik regulativni izziv. Peter in ekipa Lemur Legal so celoten postopek naredili jasen in obvladljiv. Zahvaljujoč njihovi podpori je naš projekt zdaj popolnoma skladen z MiCA.', by: 'Simone Romano · vodja razvoja, IoTeX Ltd. ($IOTX token)' },
+  { p: 'Ekipa Lemur Legal je naš beli papir MiCA pripravila z veliko pozornostjo do podrobnosti in dobrim razumevanjem našega projekta. Postopek so vodili učinkovito in nas obveščali na vsaki stopnji.', by: 'Lilia Severina · vodja trgov, ADI DLT Foundation ($ADI token)' },
+  { p: 'Sodelovanje z Lemur Legal je bilo enostavno in učinkovito. Hitro so razumeli naš poslovni model, prepoznali ustrezne zahteve MiCA in pripravili dokumentacijo na jasen in strokoven način.', by: 'Miguel Coutinho · vodja operacij, Relentless Security Limited ($IMU token)' },
 ]
 
 const c: Bilingual<MiCAWhitePaperContent> = {
@@ -103,7 +107,7 @@ const c: Bilingual<MiCAWhitePaperContent> = {
     },
     testimonials: {
       h2: 'Trusted by token issuers across the industry.',
-      quotes: PLACEHOLDER_QUOTES,
+      quotes: MICA_QUOTES_EN,
     },
     included: {
       h2: 'Everything your offering needs, in one engagement.',
@@ -215,7 +219,7 @@ const c: Bilingual<MiCAWhitePaperContent> = {
     },
     testimonials: {
       h2: 'Zaupajo nam izdajatelji žetonov iz celotne panoge.',
-      quotes: PLACEHOLDER_QUOTES,
+      quotes: MICA_QUOTES_SL,
     },
     included: {
       h2: 'Vse, kar vaša ponudba potrebuje, v enem paketu.',

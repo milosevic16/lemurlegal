@@ -206,7 +206,7 @@
   <div class="founder" data-anim="reveal">
     <!-- Founder photo slot — replace the SVG below with a square portrait, e.g. <img src="peter-merc.jpg" alt="Peter Merc, Ph.D.">. It fills the box responsively via object-fit:cover. -->
     <div class="avatar" role="img" :aria-label="t.expert.name">
-      <img src="/peter-merc.jpg" :alt="t.expert.name">
+      <img src="/rok-bizjak.jpg" :alt="t.expert.name">
     </div>
     <div>
       <span class="founder__eye">{{ t.expert.eyebrow }}</span>

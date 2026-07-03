@@ -16,7 +16,7 @@ export interface CryptoLegalOpinionContent {
     h2: string; featLabel: string; utilLabel: string; utilPrice: string; perOpinion: string; vatNote: string
     memeLabel: string; memePrice: string; deliveryH3: string; deliveryP: string
   }
-  testimonials: { h2: string; quotes: [Quote, Quote, Quote] }
+  testimonials: { h2: string; quotes: Quote[] }
   expert: { eyebrow: string; h2: string; name: string; role: string; bio1: string; bio2: string; linkedinAria: string }
   faq: { h2: string; items: Faq[] }
   ctaBand: { text: string; btn: string }
@@ -88,9 +88,8 @@ const c: Bilingual<CryptoLegalOpinionContent> = {
     testimonials: {
       h2: 'Trusted by token issuers across the industry.',
       quotes: [
-        { p: 'We navigated the crypto legal landscape with confidence, ensuring compliance and our BST token listing on MEXC.', by: 'Denis Petrovcic · Blocksquare.io' },
-        { p: 'Impressed by the skill, flexibility and speed. High quality yet very affordable — Peter is your man.', by: 'Michal Ptacnik · liberland.org' },
-        { p: 'A proactive approach that turned complex legal jargon into actionable insight — plus valuable tokenomics advice.', by: 'Martial Medi · Masternoded.com' },
+        { p: 'Lemur Legal prepared an exchange-ready legal opinion tailored to our token and business model. The document was precise, practical and structured in a way that directly addressed the exchange’s compliance requirements.', by: 'Ben Sharon · LumiShare ($LUMI token)' },
+        { p: 'Lemur Legal clearly understands what crypto exchanges expect from a token legal opinion. They prepared a robust assessment covering the token’s legal classification, regulatory treatment and relevant compliance considerations.', by: 'Chad · Linkuplay Limited ($LINKU token)' },
       ],
     },
     expert: {
@@ -195,9 +194,9 @@ const c: Bilingual<CryptoLegalOpinionContent> = {
     testimonials: {
       h2: 'Zaupajo nam izdajatelji žetonov iz celotne industrije.',
       quotes: [
-        { p: 'Skozi pravno področje kriptovalut smo krmarili samozavestno, s čimer smo zagotovili skladnost poslovanja in uvrstitev našega žetona BST na borzo MEXC.', by: 'Denis Petrovčič · Blocksquare.io' },
-        { p: 'Navdušeni nad strokovnostjo, prilagodljivostjo in hitrostjo. Visoka kakovost, a hkrati zelo dostopna cena — Peter je pravi naslov.', by: 'Michal Ptacnik · liberland.org' },
-        { p: 'Proaktiven pristop, ki je zapleten pravni žargon spremenil v praktične nasvete, poleg tega pa smo prejeli še dragocene usmeritve glede tokenomike.', by: 'Martial Medi · Masternoded.com' },
+        // TODO(sl-review): client testimonials machine-translated (docx provided EN only)
+        { p: 'Lemur Legal je pripravil pravno mnenje, primerno za borzo, prilagojeno našemu žetonu in poslovnemu modelu. Dokument je bil natančen, praktičen in strukturiran tako, da je neposredno naslovil zahteve borze glede skladnosti.', by: 'Ben Sharon · LumiShare ($LUMI token)' },
+        { p: 'Lemur Legal jasno razume, kaj kripto borze pričakujejo od pravnega mnenja o žetonu. Pripravili so temeljito oceno, ki zajema pravno klasifikacijo žetona, regulativno obravnavo in ustrezne vidike skladnosti.', by: 'Chad · Linkuplay Limited ($LINKU token)' },
       ],
     },
     expert: {

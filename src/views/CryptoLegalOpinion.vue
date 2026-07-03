@@ -195,20 +195,10 @@
     <span class="coord" aria-hidden="true">[ WHAT CLIENTS SAY ]</span>
   </div>
   <div class="quotes">
-    <div class="quote" data-anim="reveal">
+    <div class="quote" data-anim="reveal" v-for="(q, i) in t.testimonials.quotes" :key="i">
       <div class="qm">“</div>
-      <p>{{ t.testimonials.quotes[0].p }}</p>
-      <div class="by">{{ t.testimonials.quotes[0].by }}</div>
-    </div>
-    <div class="quote" data-anim="reveal">
-      <div class="qm">“</div>
-      <p>{{ t.testimonials.quotes[1].p }}</p>
-      <div class="by">{{ t.testimonials.quotes[1].by }}</div>
-    </div>
-    <div class="quote" data-anim="reveal">
-      <div class="qm">“</div>
-      <p>{{ t.testimonials.quotes[2].p }}</p>
-      <div class="by">{{ t.testimonials.quotes[2].by }}</div>
+      <p>{{ q.p }}</p>
+      <div class="by">{{ q.by }}</div>
     </div>
   </div>
 </section>
@@ -523,7 +513,7 @@ img{ display:block; }
 .founder__name{ font-size:clamp(1.6rem,1.3rem + 1.3vw,2.2rem); letter-spacing:-0.02em; margin-top:.5rem; }
 .founder__bio{ margin-top:1.2rem; max-width:60ch; color:var(--ink-2); font-size:.98rem; }
 .founder__bio strong{ color:var(--ink); font-weight:500; }
-.quotes{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--ink); }
+.quotes{ display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--ink); }
 .quote{ padding:1.7rem clamp(1.1rem,2vw,1.5rem); border-left:1px solid var(--hairline); }
 .quote:first-child{ border-left:none; padding-left:0; }
 .quote .qm{ font-size:2.4rem; line-height:.5; color:var(--blue); height:18px; }

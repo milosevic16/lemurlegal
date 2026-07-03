@@ -25,10 +25,10 @@ export interface RegulatoryQualificationContent {
   cross: { h2: string; items: [Cross, Cross] }
 }
 
-const BIO1_EN = 'Peter is a <strong>technology and financial lawyer</strong> with a focus on cryptocurrency regulation, fintech, and startup ecosystems. He advises crypto companies, fintech ventures, and technology startups on regulatory compliance, contract law, and intellectual property matters, providing practical legal solutions at the intersection of law and emerging technology.'
-const BIO2_EN = 'Beyond private practice, Peter serves as an external evaluator for <strong>Horizon Europe</strong> and <strong>NATO Diana</strong>, assessing deep-tech and innovation-driven ventures for programme funding. He is also a partner at venture capital firms, <strong>Suricate Ventures</strong> and <strong>IBEX Equity Partners</strong>, bringing a dual perspective as both legal counsel and investor to the companies he works with.'
-const BIO1_SL = 'Peter je <strong>odvetnik za tehnološko in finančno pravo</strong>, osredotočen na regulacijo kriptovalut, fintech in ekosisteme zagonskih podjetij. Kripto podjetjem, fintech podvigom in tehnološkim zagonskim podjetjem svetuje glede regulativne skladnosti, pogodbenega prava in vprašanj intelektualne lastnine ter zagotavlja praktične pravne rešitve na presečišču prava in nastajajočih tehnologij.'
-const BIO2_SL = 'Poleg zasebne prakse Peter deluje kot zunanji ocenjevalec za <strong>Horizon Europe</strong> in <strong>NATO Diana</strong>, kjer ocenjuje podvige na področju napredne tehnologije in inovacij za programsko financiranje. Je tudi partner v družbah tveganega kapitala <strong>Suricate Ventures</strong> in <strong>IBEX Equity Partners</strong>, s čimer podjetjem, s katerimi sodeluje, prinaša dvojni pogled — kot pravni svetovalec in kot investitor.'
+const BIO1_EN = 'Rok is a <strong>legal advisor in international trade law</strong>, focusing on the defence and dual-use sectors. He combines government and corporate experience in export controls, sanctions, regulatory governance, public procurement, and the military adoption of emerging technologies. His understanding of controlled items and the underlying technologies gives him a practical edge when supporting his clients on regulatory matters.'
+const BIO2_EN = 'He regularly speaks at defence and dual-use events and conferences, offering practical insight into current regulatory developments, and has contributed as a guest expert within the <strong>EU P2P export control programme</strong>.'
+const BIO1_SL = 'Rok je <strong>pravni svetovalec za pravo mednarodne trgovine</strong>, s poudarkom na obrambnem in dual-use sektorju. Združuje izkušnje iz javnega in zasebnega sektorja na področjih izvoznega nadzora, sankcij, regulativnega upravljanja, javnega naročanja ter uvajanja novih tehnologij v vojaško okolje. Njegovo razumevanje nadzorovanega blaga in tehnologij, ki stojijo za njim, mu daje praktično prednost pri svetovanju strankam v regulativnih zadevah.'
+const BIO2_SL = 'Redno nastopa na dogodkih in konferencah s področja obrambe in dual-use industrije, kjer deli praktičen vpogled v aktualni regulativni razvoj. Sodeloval je tudi kot gostujoči strokovnjak v okviru <strong>programa EU P2P za izvozni nadzor</strong>.'
 
 const c: Bilingual<RegulatoryQualificationContent> = {
   en: {
@@ -86,9 +86,9 @@ const c: Bilingual<RegulatoryQualificationContent> = {
       calloutP: 'We map the points where these regimes intersect across your supply chain, so nothing is missed operationally — and so each cross-border move is cleared before it happens.',
     },
     expert: {
-      eyebrow: 'Founder · technology & regulatory lawyer · Lemur Legal',
+      eyebrow: 'Legal advisor · international trade law · Lemur Legal',
       h2: "Who you'll work with",
-      name: 'Peter Merc, Ph.D.',
+      name: 'Rok Bizjak',
       role: '// export controls, sanctions & trade compliance',
       bio1: BIO1_EN,
       bio2: BIO2_EN,
@@ -204,9 +204,9 @@ const c: Bilingual<RegulatoryQualificationContent> = {
     },
     expert: {
       // TODO(sl-review): eyebrow machine-translated
-      eyebrow: 'Ustanovitelj · pravnik za tehnologijo in regulativo · Lemur Legal',
+      eyebrow: 'Pravni svetovalec · mednarodno trgovinsko pravo · Lemur Legal',
       h2: 'S kom boste sodelovali',
-      name: 'dr. Peter Merc',
+      name: 'Rok Bizjak',
       // TODO(sl-review): role line machine-translated
       role: '// nadzor izvoza, sankcije in trgovinska skladnost',
       bio1: BIO1_SL,

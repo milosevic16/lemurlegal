@@ -508,9 +508,10 @@ img{ display:block; }
 .founder__name{ font-size:clamp(1.6rem,1.3rem + 1.3vw,2.2rem); letter-spacing:-0.02em; margin-top:.5rem; }
 .founder__bio{ margin-top:1.2rem; max-width:60ch; color:var(--ink-2); font-size:.98rem; }
 .founder__bio strong{ color:var(--ink); font-weight:500; }
-.quotes{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--ink); }
+.quotes{ display:grid; grid-template-columns:repeat(2,1fr); gap:0; border-top:1px solid var(--ink); }
 .quote{ padding:1.7rem clamp(1.1rem,2vw,1.5rem); border-left:1px solid var(--hairline); }
-.quote:first-child{ border-left:none; padding-left:0; }
+.quote:nth-child(odd){ border-left:none; padding-left:0; }
+.quote:nth-child(n+3){ border-top:1px solid var(--hairline); }
 .quote .qm{ font-size:2.4rem; line-height:.5; color:var(--blue); height:18px; }
 .quote p{ font-size:.92rem; line-height:1.65; color:var(--ink); margin:.5rem 0 1rem; }
 .quote .by{ font-size:.74rem; color:var(--ink-2); }
