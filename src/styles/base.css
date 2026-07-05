@@ -180,6 +180,10 @@ html{ scroll-behavior:auto; }
 .head-right{ display:none; }
 .nav-toggle{ display:inline-flex; }
 .mobile-menu{ display:flex; }
+/* iOS WebKit jitters a backdrop-filtered layer while it resizes — the menu's
+   max-height animation grows .masthead every frame, shaking the menu's top
+   rows. At hamburger widths the 0.88-alpha background stands alone. */
+.masthead{ backdrop-filter:none; }
 }
 .foot__brand .bn{ font-family:var(--mono); font-size:1.2rem; font-weight:600; }
 .foot__brand a{ text-decoration:underline; }

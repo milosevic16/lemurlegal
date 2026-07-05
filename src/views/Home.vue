@@ -278,6 +278,8 @@ ul,ol{ margin:0; padding:0; list-style:none; }
 .action--muted{ color:var(--ink); border-color:var(--hairline-strong); }
 @media (max-width:820px) {
 .hero__grid{ grid-template-columns:minmax(0,1fr); gap:2.4rem; }
+.hero-title-glitch{ margin-bottom:.55rem; }
+.hero__actions{ margin-top:2.6rem; }
 }
 .strip{ border-top:1px solid var(--ink); border-bottom:1px solid var(--hairline); overflow:hidden; }
 .strip-grid{ position:absolute; inset:0; pointer-events:none; z-index:0; background-image:radial-gradient(circle,var(--blue) 1px,transparent 1px); background-size:28px 28px; opacity:.045; }
