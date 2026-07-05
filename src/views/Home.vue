@@ -323,7 +323,7 @@ ul,ol{ margin:0; padding:0; list-style:none; }
 .svc a:first-child{ border-top:none; }
 .svc a .l{ font-family:var(--mono); font-size:.78rem; color:var(--ink-2); width:1.5rem; flex-shrink:0; }
 .svc a .t{ flex:1; }
-.svc a .ar{ transition:transform .3s ease; }
+.svc a .ar{ transition:transform .3s ease; margin-right:.5rem; }
 .ledger--b .svc a .ar{ color:var(--blue); }
 .ledger--g .svc a .ar{ color:var(--green); }
 .ledger--o .svc a .ar{ color:var(--ochre); }
