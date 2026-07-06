@@ -3,6 +3,7 @@
 // Timers / listeners / observers / animations are routed through a tracker so
 // they tear down on route change. Edit the extractor, not this file.
 import { createTracker } from '@/composables/tracker'
+import { wireWeb3Form } from '@/composables/web3forms'
 
 export function initEffects(): () => void {
   const __fx = createTracker()
@@ -16,64 +17,7 @@ export function initEffects(): () => void {
   try {
 
     (function(){
-      /* ── FORM → Web3Forms (sends the brief by email, no backend) ── */
-      (function(){
-        var f = document.querySelector('[data-form="brief"]');
-        if (!f) return;
-
-        // Get a free key at https://web3forms.com — register it against the
-        var WEB3FORMS_KEY = '96fd9f6b-0383-4a33-90d6-f0292d1e867a';
-
-
-        var note = f.querySelector('.form-note');
-        function status(text, ok){
-          if (!note) return;
-          note.textContent = text;
-          note.style.color = ok ? 'var(--green-deep)' : (ok === false ? '#9B0E00' : 'var(--ink-2)');
-        }
-
-        __fx.on(f, 'submit', function(e){
-          e.preventDefault();
-          var get = function(n){ var el = f.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; };
-          var name = get('name'), email = get('email'), company = get('company'), practice = get('practice'), msg = get('message');
-
-          var btn = f.querySelector('.submit');
-          var btnHtml = btn ? btn.innerHTML : '';
-          if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-          status('Sending your brief…');
-
-          fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({
-              access_key: WEB3FORMS_KEY,
-              subject: 'New brief' + (practice ? (' — ' + practice) : ''),
-              from_name: name || 'Website visitor',
-              replyto: email,
-              name: name,
-              email: email,
-              company: company || '—',
-              practice: practice,
-              message: msg
-            })
-          })
-          .then(function(r){ return r.json(); })
-          .then(function(d){
-            if (d && d.success) {
-              f.reset();
-              status('Brief sent — we’ll reply within 24 hours.', true);
-            } else {
-              status((d && d.message) || 'Something went wrong. Email us directly at info [at] lemur.legal.', false);
-            }
-          })
-          .catch(function(){
-            status('Network error. Email us directly at info [at] lemur.legal.', false);
-          })
-          .finally(function(){
-            if (btn) { btn.disabled = false; btn.innerHTML = btnHtml; }
-          });
-        });
-      })();
+      /* FORM → Web3Forms: wired via the shared wireWeb3Form() helper at the end of init. */
 
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduce) return;
@@ -295,6 +239,12 @@ export function initEffects(): () => void {
         __fx.anim(s, [{left:'-26%',opacity:0,offset:0},{opacity:0,offset:0.72},{opacity:0.7,offset:0.8},{left:'112%',opacity:0,offset:1}],{duration:9000,iterations:Infinity,easing:'cubic-bezier(.4,0,.2,1)',delay:i*3000});
       });
     })();
+    wireWeb3Form(__fx, {
+      root: '[data-form="brief"]',
+      subject: (d) => 'New brief' + (d.practice ? ' — ' + d.practice : ''),
+      page: 'Contact',
+      success: 'Brief sent — we’ll reply within 24 hours.',
+    })
   } catch (e) { console.error('[effects] init failed', e) }
   return __fx.dispose
 }

@@ -14,13 +14,13 @@
 import type { Tracker } from './tracker'
 
 /** Default Web3Forms access key — routes to the inbox the key is registered to. */
-export const WEB3FORMS_KEY = '96fd9f6b-0383-4a33-90d6-f0292d1e867a'
+export const WEB3FORMS_KEY = '365cfa55-34d0-4017-9dd0-142559fc2e04'
 
 export interface Web3FormOpts {
   /** CSS selector for the inquiry section, e.g. '#contact' | '#mica-form'. */
   root: string
-  /** Per-page email subject, e.g. 'New inquiry — MiCA White Paper'. */
-  subject: string
+  /** Per-page email subject — a string, or a function of the collected fields. */
+  subject: string | ((data: Record<string, string>) => string)
   /** Product name, echoed into the payload as `page` (defaults to document.title). */
   page?: string
   /** Optional per-page access key override; defaults to WEB3FORMS_KEY. */
@@ -94,9 +94,10 @@ export function wireWeb3Form(fx: Tracker, opts: Web3FormOpts): void {
   const handler = (e: Event) => {
     e.preventDefault()
     const data = collect()
+    const subject = typeof opts.subject === 'function' ? opts.subject(data) : opts.subject
     const label = (btn && btn.getAttribute('data-wait')) || opts.sending || 'Sending…'
-    const btnText = btn ? btn.textContent : ''
-    if (btn) { btn.disabled = true; btn.textContent = label }
+    const btnHtml = btn ? btn.innerHTML : ''
+    if (btn) { btn.disabled = true; btn.innerHTML = label }
     status('Sending your inquiry…')
 
     fetch('https://api.web3forms.com/submit', {
@@ -104,7 +105,7 @@ export function wireWeb3Form(fx: Tracker, opts: Web3FormOpts): void {
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify({
         access_key: opts.key || WEB3FORMS_KEY,
-        subject: opts.subject,
+        subject,
         from_name: data.name || 'Website visitor',
         replyto: data.email || '',
         page: opts.page || document.title,
@@ -124,7 +125,7 @@ export function wireWeb3Form(fx: Tracker, opts: Web3FormOpts): void {
         status(opts.error || 'Network error. Email us directly at info [at] lemur.legal.', false)
       })
       .finally(() => {
-        if (btn) { btn.disabled = false; btn.textContent = btnText }
+        if (btn) { btn.disabled = false; btn.innerHTML = btnHtml }
       })
   }
 
