@@ -103,7 +103,7 @@
     <span class="hud-bl" aria-hidden="true"></span><span class="hud-br" aria-hidden="true"></span>
     <div class="tl__grid" aria-hidden="true"></div>
     <div class="tl__head" aria-hidden="true">
-      COMPLIANCE FRAMEWORK &nbsp;·&nbsp; <span style="color:var(--term-cyan)">READY TO BUILD</span> <span class="blip" data-anim="blink"></span>
+      {{ t.how.head1 }} &nbsp;·&nbsp; <span style="color:var(--term-cyan)">{{ t.how.head2 }}</span> <span class="blip" data-anim="blink"></span>
     </div>
     <div class="tl__track">
       <div class="tl__rail" aria-hidden="true">

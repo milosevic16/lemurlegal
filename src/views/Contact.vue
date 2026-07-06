@@ -158,7 +158,7 @@
           <button class="submit" type="submit">
             {{ t.form.submit }} <span class="arrow" aria-hidden="true">→</span>
           </button>
-          <p class="form-note">
+          <p v-if="t.form.note" class="form-note">
             {{ t.form.note }}
             <a
               class="js-mail"

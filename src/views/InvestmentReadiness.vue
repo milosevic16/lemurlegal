@@ -100,37 +100,37 @@
     <span class="hud-bl" aria-hidden="true"></span><span class="hud-br" aria-hidden="true"></span>
     <div class="scan__grid" aria-hidden="true"></div>
     <span class="scan__line" data-scan-line="" aria-hidden="true"></span>
-    <div class="scan__head" aria-hidden="true">READINESS SCAN &nbsp;·&nbsp; <span style="color:var(--term-cyan)">SAMPLE OUTPUT</span> <span class="blip" data-anim="blink"></span></div>
+    <div class="scan__head" aria-hidden="true">{{ t.scan.panelHead1 }} &nbsp;·&nbsp; <span style="color:var(--term-cyan)">{{ t.scan.panelHead2 }}</span> <span class="blip" data-anim="blink"></span></div>
     <div class="scan__rows">
       <div class="scan__row" data-scan-row="82">
-        <span class="scan__label">Regulatory exposure mapped</span>
+        <span class="scan__label">{{ t.scan.rows[0] }}</span>
         <span class="scan__val"><span data-scan-val="">82</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:82%"></span></span>
       </div>
       <div class="scan__row" data-scan-row="74">
-        <span class="scan__label">Export-control &amp; dual-use exposure</span>
+        <span class="scan__label">{{ t.scan.rows[1] }}</span>
         <span class="scan__val"><span data-scan-val="">74</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:74%"></span></span>
       </div>
       <div class="scan__row" data-scan-row="68">
-        <span class="scan__label">FDI &amp; ownership sensitivity</span>
+        <span class="scan__label">{{ t.scan.rows[2] }}</span>
         <span class="scan__val"><span data-scan-val="">68</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:68%"></span></span>
       </div>
       <div class="scan__row" data-scan-row="79">
-        <span class="scan__label">Tender &amp; procurement readiness</span>
+        <span class="scan__label">{{ t.scan.rows[3] }}</span>
         <span class="scan__val"><span data-scan-val="">79</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:79%"></span></span>
       </div>
       <div class="scan__row" data-scan-row="88">
-        <span class="scan__label">Documentation &amp; internal controls</span>
+        <span class="scan__label">{{ t.scan.rows[4] }}</span>
         <span class="scan__val"><span data-scan-val="">88</span><span class="u"> /100</span></span>
         <span class="scan__bar"><span class="scan__fill" data-scan-fill="" style="width:88%"></span></span>
       </div>
     </div>
     <div class="scan__foot">
-      <span class="scan__agg">OVERALL READINESS &nbsp; <b>78</b> <span style="color:var(--term-dim)">/ 100</span></span>
-      <span class="scan__note">Illustrative · scored to your business in the review</span>
+      <span class="scan__agg">{{ t.scan.agg }} &nbsp; <b>78</b> <span style="color:var(--term-dim)">/ 100</span></span>
+      <span class="scan__note">{{ t.scan.note }}</span>
     </div>
   </div>
 </section>
@@ -139,7 +139,7 @@
 <section class="section section--line container" id="how" aria-labelledby="how-h">
   <div class="sec-head">
     <span class="mark">§ 03</span>
-    <h2 id="how-h">From defence &amp; dual-use exposure to a score you can defend.</h2>
+    <h2 id="how-h">{{ t.how.h2 }}</h2>
     <span class="coord" aria-hidden="true">[ HOW IT WORKS · 3 STEPS ]</span>
   </div>
   <div class="tl" data-anim="timeline" aria-label="From exposure assessment to a defensible score, in three steps">
@@ -147,7 +147,7 @@
     <span class="hud-bl" aria-hidden="true"></span><span class="hud-br" aria-hidden="true"></span>
     <div class="tl__grid" aria-hidden="true"></div>
     <div class="tl__head" aria-hidden="true">
-      READINESS REVIEW &nbsp;·&nbsp; <span style="color:var(--term-cyan)">READY TO SCORE</span> <span class="blip" data-anim="blink"></span>
+      {{ t.how.head1 }} &nbsp;·&nbsp; <span style="color:var(--term-cyan)">{{ t.how.head2 }}</span> <span class="blip" data-anim="blink"></span>
     </div>
     <div class="tl__track">
       <div class="tl__rail" aria-hidden="true">
