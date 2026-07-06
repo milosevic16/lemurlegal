@@ -16,17 +16,62 @@ export function initEffects(): () => void {
   try {
 
     (function(){
-      /* ── FORM → mailto (runs regardless of motion settings) ── */
+      /* ── FORM → Web3Forms (sends the brief by email, no backend) ── */
       (function(){
         var f = document.querySelector('[data-form="brief"]');
         if (!f) return;
+
+        // Get a free key at https://web3forms.com — register it against the
+        var WEB3FORMS_KEY = '96fd9f6b-0383-4a33-90d6-f0292d1e867a';
+
+
+        var note = f.querySelector('.form-note');
+        function status(text, ok){
+          if (!note) return;
+          note.textContent = text;
+          note.style.color = ok ? 'var(--green-deep)' : (ok === false ? '#9B0E00' : 'var(--ink-2)');
+        }
+
         __fx.on(f, 'submit', function(e){
           e.preventDefault();
           var get = function(n){ var el = f.querySelector('[name="'+n+'"]'); return el ? el.value.trim() : ''; };
           var name = get('name'), email = get('email'), company = get('company'), practice = get('practice'), msg = get('message');
-          var subject = 'Brief' + (practice ? (' — ' + practice) : '');
-          var body = 'Name: ' + name + '\nEmail: ' + email + (company ? ('\nCompany: ' + company) : '') + '\nPractice: ' + practice + '\n\n' + msg;
-          window.location.href = 'mailto:' + ('info'+'@'+'lemur.legal') + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+          var btn = f.querySelector('.submit');
+          var btnHtml = btn ? btn.innerHTML : '';
+          if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+          status('Sending your brief…');
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              access_key: WEB3FORMS_KEY,
+              subject: 'New brief' + (practice ? (' — ' + practice) : ''),
+              from_name: name || 'Website visitor',
+              replyto: email,
+              name: name,
+              email: email,
+              company: company || '—',
+              practice: practice,
+              message: msg
+            })
+          })
+          .then(function(r){ return r.json(); })
+          .then(function(d){
+            if (d && d.success) {
+              f.reset();
+              status('Brief sent — we’ll reply within 24 hours.', true);
+            } else {
+              status((d && d.message) || 'Something went wrong. Email us directly at info [at] lemur.legal.', false);
+            }
+          })
+          .catch(function(){
+            status('Network error. Email us directly at info [at] lemur.legal.', false);
+          })
+          .finally(function(){
+            if (btn) { btn.disabled = false; btn.innerHTML = btnHtml; }
+          });
         });
       })();
 
