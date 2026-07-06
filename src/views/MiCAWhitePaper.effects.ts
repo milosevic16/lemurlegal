@@ -3,6 +3,7 @@
 // Timers / listeners / observers / animations are routed through a tracker so
 // they tear down on route change. Edit the extractor, not this file.
 import { createTracker } from '@/composables/tracker'
+import { wireWeb3Form } from '@/composables/web3forms'
 
 export function initEffects(): () => void {
   const __fx = createTracker()
@@ -457,6 +458,7 @@ export function initEffects(): () => void {
         __fx.anim(scan, [{transform:'translateY(-120%)',opacity:0},{opacity:1,offset:0.5},{transform:'translateY(320%)',opacity:0}],{duration:3600,delay:i*900,iterations:Infinity,easing:'ease-in-out'});
       });
     })();
+    wireWeb3Form(__fx, { root: '#contact', subject: 'New inquiry — MiCA White Paper', page: 'MiCA White Paper' })
   } catch (e) { console.error('[effects] init failed', e) }
   return __fx.dispose
 }
