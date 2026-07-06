@@ -147,19 +147,15 @@ const c: Bilingual<RegulatoryQualificationContent> = {
         'Obrambna tehnologija in dvojna raba za svetovne trge. Nadzor izvoza, sankcije in carinsko razvrščanje spremenimo v ponovljive čezmejne postopke.',
     },
     hero: {
-      // TODO(sl-review): kicker machine-translated
-      kicker: 'Trgovinska regulativna kvalifikacija za obrambo in dvojno rabo · Ljubljana',
-      // TODO(sl-review): H1 differs from docx — translated from current EN
+      // Client's corrections docx uses "klasifikacija" here (meta title + slug keep "kvalifikacija").
+      kicker: 'Trgovinska regulatorna klasifikacija za obrambo in dvojno rabo · Ljubljana',
       h1Glitch: 'Obrambna tehnologija in tehnologija z dvojno rabo,',
       h1Em: 'odobrena za svetovne trge.',
-      // TODO(sl-review): slogan machine-translated
-      slogan: '// razvrsti · preveri · sankcije · nadzor izvoza · odobri.',
-      // TODO(sl-review): hero lead differs from docx — translated from current EN
-      lead: 'Obrambnim podjetjem in podjetjem z dvojno rabo pomagamo nadzor izvoza, sankcije, carinsko razvrščanje in regulativno preverjanje preoblikovati v <strong>jasne, ponovljive delovne tokove</strong> — tako da se izdelki, komponente in tehnologije lahko gibljejo prek meja z manj pravnimi in operativnimi tveganji.',
+      slogan: '// klasificiraj · preveri · sankcije · izvozne kontrole · avtoriziraj.',
+      lead: 'Obrambnim podjetjem in podjetjem, ki razvijajo rešitve na področju dvojne rabe, pomagamo izvozne kontrole, sankcije, carinsko razvrščanje in regulatorno preverjanje preoblikovati v <strong>jasne, ponovljive delovne tokove</strong> — tako da se izdelki, komponente in tehnologije lahko gibljejo prek meja z manj pravnimi in operativnimi tveganji.',
       btnPrimary: 'Pošljite povpraševanje',
-      btnGhost: 'Kako deluje',
-      // TODO(sl-review): hero meta machine-translated
-      meta: 'Nadzor izvoza · sankcije · carinsko razvrščanje · kvalifikacija dvojne rabe · čezmejna rast',
+      btnGhost: 'Kako deluje?',
+      meta: 'Izvozne kontrole · sankcije · carinsko razvrščanje · kvalifikacija dvojne rabe · čezmejna rast',
     },
     strip: {
       k: 'Obramba in dvojna raba',

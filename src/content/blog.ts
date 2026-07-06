@@ -119,18 +119,19 @@ const blog: Bilingual<BlogContent> = {
   },
   sl: {
     meta: {
-      title: 'Blog o tehnološkem pravu — Lemur Legal',
+      // Client-approved copy (SL corrections docx, 2026-07); long for SERP display, kept verbatim.
+      title: 'Blog | Lemur Legal — pravni vpogledi za kripto, fintech, startup, deep tech, defence in dual-use podjetja',
       description:
-        'Pregledi in analize evropskega tehnološkega prava — MiCA in žetoni, startupi in deleži, intelektualna lastnina, izvozni nadzor in dvojna raba.',
+        'Pravni prispevki in analize Lemur Legal o MiCA white paper dokumentaciji, pravnih mnenjih za kripto projekte, klasifikaciji žetonov, regulatorni skladnosti, ESOP, zaščiti intelektualne lastnine, pogodbah, nadzoru izvoza, dual-use tehnologijah in investicijski pripravljenosti.',
     },
     hero: {
       kicker: 'Blog · Ljubljana',
       hexrow: HEXROW,
       titleLead: 'Jasni odgovori na',
       titleAccent: 'zahtevna',
-      titleTail: ' pravna vprašanja tehnologije.',
-      slogan: '// zapiski s pravne fronte.',
-      lead: 'Pregledi, razlage in poglobljene analize po naših treh področjih — od <strong>MiCA</strong> in klasifikacije žetonov, prek ustanovitve, lastniških deležev in intelektualne lastnine, do izvoznega nadzora in dvojne rabe. Napisano s strani tistih, ki nasvete tudi podpišejo.',
+      titleTail: ' vprašanja o tehnološkem pravu.',
+      slogan: '// prispevki s presečišča prava, tehnologije in regulacije.',
+      lead: 'Pravni prispevki in analize za kripto, fintech, startup, deep tech, defence in dual-use podjetja — od MiCA white paper dokumentacije, pravnih mnenj za kripto projekte in regulatorne skladnosti do zaščite intelektualne lastnine, pogodb, nadzora izvoza in investicijske pripravljenosti.',
     },
     sections: [
       {
@@ -139,29 +140,29 @@ const blog: Bilingual<BlogContent> = {
         coord: '[ 46.05°N · 14.51°E · MiCA ]',
         label: 'P·1 — Kripto in fintech',
         nav: 'Kripto in fintech',
-        title: 'MiCA, žetoni in pravila igre.',
+        title: 'MiCA, klasifikacija žetonov in pravna mnenja za kripto projekte.',
         subtitle:
-          'Kako se evropska ureditev kripta dejansko uporablja — beli listi, klasifikacija, licenciranje in pravna mnenja, ki jih zahtevajo borze.',
+          'Kako se evropska kripto regulativa uporablja v praksi — od MiCA white paper dokumentacije in klasifikacije žetonov do licenciranja, regulatorne skladnosti in pravnih mnenj za uvrstitev na kripto borze.',
       },
       {
         id: 'startups',
         mark: '§ 02',
         coord: '[ 46.05°N · 14.51°E · BUILD ]',
-        label: 'P·2 — Zagonska podjetja in globoka tehnologija',
-        nav: 'Zagonska podjetja',
-        title: 'Gradnja podjetja, ne le produkta.',
+        label: 'P·2 — Startup in deep tech',
+        nav: 'Startup in deep tech',
+        title: 'Pravni temelji za startup in deep-tech podjetja.',
         subtitle:
-          'Ustanovitev, lastniški deleži, intelektualna lastnina in pogodbe, ki jih ustanovitelji dejansko podpišejo — pravni temelji rastočega tehnološkega podjetja.',
+          'Pravni prispevki o ustanovitvi podjetja, ESOP, zaščiti intelektualne lastnine in gospodarskih pogodbah za startup in deep-tech podjetja, ki rastejo na reguliranih ali investicijsko zahtevnih trgih.',
       },
       {
         id: 'defence',
         mark: '§ 03',
         coord: '[ 46.05°N · 14.51°E · DUAL-USE ]',
-        label: 'P·3 — Obramba in dvojna raba',
-        nav: 'Obramba in dvojna raba',
-        title: 'Nova meja: izvozni nadzor.',
+        label: 'P·3 — Defence in dual-use',
+        nav: 'Defence in dual-use',
+        title: 'Pravni okvir za defence in dual-use tehnologije.',
         subtitle:
-          'Ko napredna tehnologija postane dvojne rabe — klasifikacija, licenciranje, preverjanje sankcij in pregled tujih naložb, pojasnjeno iz prvih načel.',
+          'Nadzor izvoza, dual-use klasifikacija, pregled sankcij, FDI screening, vzpostavitev okvirov skladnosti in regulativna opredelitev tehnologije — razloženo za tehnološka podjetja in investitorje.',
       },
     ],
     states: {
@@ -170,9 +171,9 @@ const blog: Bilingual<BlogContent> = {
       empty: 'V tej kategoriji še ni prispevkov.',
     },
     cta: {
-      title: 'Imate vprašanje, na katerega še nismo odgovorili?',
-      text: 'Povejte nam, kaj gradite, in začrtali vam bomo pravno pot — s fiksno ceno, pisno. Ena pisarna, tri meje.',
-      action: 'Naročite se na posvet',
+      title: 'Potrebujete pravni pogled na to, kar gradite?',
+      text: 'Pošljite nam kratek opis. Pregledali bomo kontekst, opredelili relevantna pravna in regulatorna vprašanja ter predlagali naslednji korak.',
+      action: 'Začnite tukaj',
     },
     post: {
       back: 'Vsi prispevki',

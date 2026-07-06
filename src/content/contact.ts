@@ -143,36 +143,33 @@ const contact: Bilingual<ContactContent> = {
 
   sl: {
     meta: {
-      title: 'Kontakt — Lemur Legal, Ljubljana',
-      // TODO(sl-review): meta title + description
+      // Client-approved copy (SL corrections docx, 2026-07); long for SERP display, kept verbatim.
+      title: 'Kontakt | Lemur Legal — pravna pisarna za kripto, fintech, startup, deep tech, defence in dual-use podjetja',
       description:
-        'Pošljite nam svoje pravno vprašanje. Fiksni honorar za kripto, startupe in obrambo iz specializirane pisarne v Ljubljani. Odgovor v 24 urah.',
+        'Stopite v stik z Lemur Legal, pravno pisarno za kripto, fintech, startup, deep tech, defence in dual-use podjetja. Pošljite nam pravno vprašanje in opis projekta — odgovorimo z usmeritvijo glede naslednjih korakov.',
     },
     hero: {
       kicker: 'Kontakt · Ljubljana',
       h1Main: 'Začnite s pravnim vprašanjem.',
       h1Em: 'Od tam naprej začrtamo pot.',
-      // TODO(sl-review): slogan machine-translated (post-"popravki")
       slogan: '// od prvega vprašanja do pravne strategije.',
-      // TODO(sl-review): lead machine-translated (post-"popravki")
-      lead: 'Ali izdajate žeton, zbirate krog financiranja ali širite izdelek — pošljite kratko navodilo in začrtali bomo pravno pot, s <strong>fiksnim honorarjem v pisni obliki</strong>. Odgovorimo v 24 urah.',
+      lead: 'Ne glede na to, ali pripravljate MiCA white paper, potrebujete pravno mnenje za kripto projekt, urejate regulatorno skladnost, IP zaščito, pogodbe ali regulatorno opredelitev tehnologije — pošljite kratek opis projekta. Odgovorimo v 24 urah.',
     },
     form: {
       label: 'Stopite v stik',
-      // TODO(sl-review): title + subtitle machine-translated (post-"popravki")
       title: 'Povejte nam, na čem delate.',
-      subtitle:
-        'Delite, kaj gradite, kje ste v procesu in na kateri meji delujete. Od tam naprej prevzamemo mi.',
+      subtitle: 'Na kratko opišite projekt, fazo in pravno vprašanje.',
       nameLabel: 'Ime in priimek',
       emailLabel: 'E-naslov',
       companyLabel: 'Podjetje',
       companyOpt: '/ neobvezno',
-      frontierLabel: 'Katera meja?',
-      options: ['Kripto in fintech', 'Zagonska podjetja in napredna tehnologija', 'Obramba in dvojna raba', 'Še ne vem'],
-      briefLabel: 'Pravno vprašanje', // TODO(sl-review): post-"popravki"
-      briefPlaceholder: 'Kaj gradite in kakšno je pravno vprašanje?',
-      submit: 'Pošljite povpraševanje', // TODO(sl-review): post-"popravki"
-      note: 'Odpre vaš e-poštni odjemalec z že vnesenimi podatki. Lahko pa nam pišete neposredno na',
+      frontierLabel: 'Področje',
+      options: ['Kripto in fintech', 'Startup in deep tech', 'Defence in dual-use', 'Nisem prepričan/a'],
+      briefLabel: 'Pravno vprašanje',
+      briefPlaceholder: 'Kratek opis projekta, faze in pravnega vprašanja.',
+      submit: 'Pošljite vprašanje',
+      // Client removed the mail-client hint on the SL page (the <p> is v-if guarded).
+      note: '',
     },
     console: {
       cmd: 'lemur-legal --contact',
@@ -185,49 +182,49 @@ const contact: Bilingual<ContactContent> = {
       hoursVal: 'pon–pet · 09:00–18:00 CET',
       langLabel: ' jeziki    : ',
       langVal: 'EN / SL',
-      feeLabel: ' honorar   : ',
-      feeVal: 'fiksni',
-      feeTail: ' · brez akontacije',
+      feeLabel: ' ponudba   : ',
+      feeVal: 'jasna',
+      feeTail: ' · vnaprej dogovorjena',
       respLabel: ' odziv     : ',
       respVal: 'v 24 urah',
-      awaiting: 'čakamo na vaše navodilo',
+      awaiting: 'pripravljeni · začnemo z vašim vprašanjem',
     },
     lines: {
       label: 'Neposredne povezave',
-      title: 'Obrnite se na pravo področje.',
+      title: 'Usmerite vprašanje na pravo področje.',
       subtitle:
-        'Veste, na kateri meji delujete? Pišite neposredno področju — ali pošljite splošno navodilo in mi ga bomo usmerili.',
+        'Veste, katero področje je relevantno za vaš projekt? Pišite neposredno. Splošna vprašanja lahko pošljete prek obrazca in jih usmerimo interno.',
       items: [
         {
           k: 'P·1 — vodilno področje',
           name: 'Kripto in fintech',
-          desc: 'MiCA, ponudbe žetonov, licenciranje, preprečevanje pranja denarja (AML) in stalna skladnost za kripto in fintech podjetja.',
+          desc: 'MiCA white paper (bela knjiga), pravno mnenje za kripto projekt in regulatorna skladnost za kripto in fintech podjetja.',
         },
         {
           k: 'P·2',
-          name: 'Zagonska podjetja in napredna tehnologija',
-          desc: 'Ustanovitev podjetja, ESOP, zaščita intelektualne lastnine in pogodbe, ki jih ustanovitelji dejansko podpisujejo.',
+          name: 'Startup in deep tech',
+          desc: 'Ustanovitev podjetja in ESOP, zaščita intelektualne lastnine ter pogodbe in gospodarsko pravo za startup in deep-tech podjetja.',
         },
         {
           k: 'P·3',
-          name: 'Obramba in dvojna raba',
-          desc: 'Nadzor izvoza, licenciranje za dvojno rabo in pregled tujih naložb za obrambno tehnologijo in tehnologijo za dvojno rabo.',
+          name: 'Defence in dual-use',
+          desc: 'Pregled investicijske pripravljenosti, vzpostavitev okvirov skladnosti in regulativna opredelitev tehnologije za defence in dual-use podjetja.',
         },
       ],
     },
     details: {
       emailH: 'E-naslov',
-      officeH: 'Pisarna',
-      officeVal: 'Lemur Legal d.o.o.<br>Ljubljana, Slovenija · EU',
+      officeH: 'Naslov',
+      officeVal: 'Lemur Legal d.o.o.<br>Ciril Metodov trg 14<br>Ljubljana, Slovenija, EU',
       hoursH: 'Delovni čas',
       hoursVal: 'pon–pet<br>09:00–18:00 CET',
       langH: 'Jeziki',
       langVal: 'EN / SL',
     },
     cta: {
-      heading: 'Ena pisarna, tri meje.',
-      text: 'Niste prepričani, katero področje potrebujete? Pošljite navodilo in mi ga bomo usmerili — ter vam fiksni honorar podali v pisni obliki.',
-      action: 'Rezervirajte posvet',
+      heading: 'Ena pisarna, tri specializirana področja.',
+      text: 'Niste prepričani, kam spada vaše vprašanje? Pošljite kratek opis zadeve. Usmerimo ga na pravo področje in vam pred začetkom sodelovanja pošljemo jasno ponudbo.',
+      action: 'Začnite tukaj',
     },
   },
 }

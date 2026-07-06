@@ -11,7 +11,7 @@ export interface ComplianceFrameworksContent {
   hero: { kicker: string; h1Glitch: string; h1Em: string; slogan: string; lead: string; btnPrimary: string; btnGhost: string; meta: string }
   strip: { k: string; v: string }
   why: { h2: string; items: [Why, Why, Why] }
-  how: { h2: string; steps: [Step, Step, Step] }
+  how: { h2: string; head1: string; head2: string; steps: [Step, Step, Step] }
   coverage: { h2: string; intro: string; items: Cov[]; calloutH3: string; calloutP: string }
   expert: { eyebrow: string; h2: string; name: string; role: string; bio1: string; bio2: string; linkedinAria: string }
   included: { h2: string; items: string[]; pricebandText: string; pricebandBtn: string }
@@ -60,6 +60,8 @@ const c: Bilingual<ComplianceFrameworksContent> = {
     },
     how: {
       h2: 'From defence & dual-use exposure to operational standard.',
+      head1: 'COMPLIANCE FRAMEWORK',
+      head2: 'READY TO BUILD',
       steps: [
         { stepK: 'Step 01', title: 'Design', sub: 'We design a compliance programme tailored to your technology, regulatory exposure, target markets, operating model and stage of growth.', tag: 'tailored programme' },
         { stepK: 'Step 02', title: 'Embed', sub: 'We integrate compliance into day-to-day processes, including customer and partner screening, internal approvals, contract review, export-control checks and escalation pathways.', tag: 'governance · approvals · escalation' },
@@ -145,47 +147,39 @@ const c: Bilingual<ComplianceFrameworksContent> = {
         'Regulativno kompleksnost obrambe in dvojne rabe spremenimo v operacije, pripravljene na revizijo. Gradimo prilagodljive okvire skladnosti in kontrole.',
     },
     hero: {
-      // TODO(sl-review): kicker machine-translated
       kicker: 'Okviri skladnosti za obrambo in dvojno rabo · Ljubljana',
-      // TODO(sl-review): H1 translated from current EN (docx omits "defence & dual-use")
-      h1Glitch: 'Pretvorite regulativno kompleksnost obrambe in dvojne rabe v',
-      h1Em: 'operacije, pripravljene na revizijo.',
-      // TODO(sl-review): slogan translated from current EN
-      slogan: '// nadzor izvoza · sankcije · upravljanje · kontrole · revizijska pripravljenost.',
-      // TODO(sl-review): hero lead translated from current EN
-      lead: 'Za obrambna podjetja in podjetja z dvojno rabo vzpostavljamo <strong>prilagodljive interne okvire skladnosti</strong>, ki nadzor izvoza, izpostavljenost sankcijam, preverjanje nasprotnih strank, zahteve javnih naročil in interna pravila odobritve prevajajo v jasne operativne standarde.',
+      h1Glitch: 'Pretvorite regulatorno kompleksnost obrambnih projektov in projektov dvojne rabe v',
+      h1Em: 'poslovanje, pripravljeno na revizijo.',
+      slogan: '// izvozne kontrole · sankcije · upravljanje · kontrole · revizijska pripravljenost.',
+      lead: 'Za obrambna podjetja in podjetja s področja dvojne rabe vzpostavljamo <strong>skalabilne interne okvire skladnosti poslovanja</strong>, ki izvozne kontrole, izpostavljenost sankcijam, preverjanje nasprotnih strank, zahteve postopkov javnih naročil in interna pravila odobritve spreminjajo v jasne operativne standarde.',
       btnPrimary: 'Pošljite povpraševanje',
-      btnGhost: 'Kako deluje',
-      // TODO(sl-review): hero meta machine-translated
-      meta: 'Izvedba v fiksno določenem obsegu · Pravno varne, na revizijo pripravljene in vgrajene v poslovanje obrambe in dvojne rabe',
+      btnGhost: 'Kako deluje?',
+      meta: 'Izvedba v fiksno določenem obsegu · Zasnovano za pravno skladnost obrambnih projektov in projektov dvojne rabe',
     },
     strip: {
       k: 'Obramba in dvojna raba',
-      // TODO(sl-review): strip value translated from current EN
-      v: 'Ko obrambna podjetja in podjetja z dvojno rabo rastejo, priložnostno zagotavljanje skladnosti odpove. Načrtovan okvir naredi preverjanja nadzora izvoza, presejanje sankcij, interne odobritve, pripravljenost na javna naročila in vodenje evidenc ponovljive, pravno varne in pripravljene na revizijo — tako da regulativni nadzor postane del delovanja podjetja.',
+      v: 'Ko obrambna podjetja in podjetja, ki razvijajo rešitve dvojne rabe, rastejo, priložnostno zagotavljanje skladnosti poslovanja odpove. Načrtovan okvir naredi preverjanja izvoznih kontrol, preverjanje sankcij, interne odobritve, pripravljenost na postopke javnih naročil in vodenje evidenc ponovljive, pravno varne in pripravljene na revizijo — tako da regulatorni nadzor postane del delovanja podjetja.',
     },
     why: {
-      // TODO(sl-review): heading translated from current EN
-      h2: 'Skladnost, ki raste z rastjo obrambe in dvojne rabe.',
-      // TODO(sl-review): §01 cards translated from current EN (not in docx)
+      h2: 'Regulatorna skladnost, ki raste skupaj z rastjo obrambnega podjetja.',
       items: [
-        { wn: '01', h3: 'Regulativna izpostavljenost raste s poslovanjem', p: 'Ko obrambna podjetja in podjetja z dvojno rabo prehajajo od prototipa k prodaji, izvozu, javnim naročilom, partnerstvom ali zbiranju sredstev, je neformalne odločitve o skladnosti vse težje zagovarjati.' },
-        { wn: '02', h3: 'Upravljanje mora biti jasno, preden se pojavi tveganje', p: 'Občutljive transakcije potrebujejo opredeljene vloge, eskalacijske poti in pravila odobritve, preden ekipe sprejemajo odločitve pod poslovnim pritiskom.' },
-        { wn: '03', h3: 'Revizijske pripravljenosti ni mogoče improvizirati', p: 'Investitorji, javni naročniki, strateški partnerji in regulatorji lahko vprašajo, kako so nadzor izvoza, sankcije, preverjanja in interne odobritve dokumentirani v praksi.' },
+        { wn: '01', h3: 'Regulatorna izpostavljenost raste s poslovanjem', p: 'Ko obrambna podjetja in podjetja z dvojno rabo prehajajo od prototipa k prodaji, izvozu, javnim naročilom, partnerstvom ali zbiranju sredstev, je neformalne odločitve o skladnosti vse težje zagovarjati.' },
+        { wn: '02', h3: 'Jasno upravljanje podjetja, preden se pojavi tveganje', p: 'Občutljive transakcije potrebujejo opredeljene vloge, eskalacijske poti in pravila odobritve, preden ekipe sprejemajo odločitve pod poslovnim pritiskom.' },
+        { wn: '03', h3: 'Revizijske pripravljenosti ni mogoče improvizirati', p: 'Vlagatelji, javni naročniki, strateški partnerji in regulatorji lahko vprašajo, kako so izvozne kontrole, sankcije, preverjanja in interne odobritve dokumentirani v praksi.' },
       ],
     },
     how: {
-      // TODO(sl-review): heading translated from current EN
-      h2: 'Od izpostavljenosti obrambi in dvojni rabi do operativnega standarda.',
+      h2: 'Od izpostavljenosti regulatornemu okvirju za obrambna podjetja do operativnega standarda.',
+      head1: 'OKVIR SKLADNOSTI POSLOVANJA',
+      head2: 'PRIPRAVLJENI NA RAZVOJ',
       steps: [
-        { stepK: 'Korak 01', title: 'Načrtovanje', sub: 'Oblikujemo program skladnosti, prilagojen vaši tehnologiji, regulativni izpostavljenosti, ciljnim trgom, poslovnemu modelu in stopnji rasti.', tag: 'prilagojen program' },
-        { stepK: 'Korak 02', title: 'Vključitev', sub: 'Skladnost integriramo v vsakodnevne procese, vključno s preverjanjem strank in partnerjev, internimi odobritvami, pregledom pogodb, preverjanji nadzora izvoza in eskalacijskimi potmi.', tag: 'upravljanje · odobritve · eskalacija' },
-        { stepK: 'Korak 03', title: 'Zagotavljanje', sub: 'Opredelimo standarde dokumentiranja, usposabljanja in revizijske pripravljenosti, ki podpirajo interni nadzor, pregled investitorjev, sodelovanje z javnim sektorjem in zunanje preverjanje.', tag: 'pripravljeno na revizijo' },
+        { stepK: 'Korak 01', title: 'Oblikovanje', sub: 'Oblikujemo program skladnosti poslovanja, ki je prilagojen vaši tehnologiji, regulatorni izpostavljenosti, targetiranim trgom, operativnemu modelu in stopnji razvoja.', tag: 'prilagojen program' },
+        { stepK: 'Korak 02', title: 'Vgradimo', sub: 'Skladnost poslovanja vgradimo v dnevne delovne procese, kar vključuje preverjanje strank in partnerjev, postopke internih odobritev, preglede pogodbene dokumentacije, preverjanje izvoznih kontrol in postopke eskalacije.', tag: 'upravljanje · soglasja · eskalacija' },
+        { stepK: 'Korak 03', title: 'Zagotovimo', sub: 'Opredelimo standarde dokumentacije, usposabljanja in pripravljenosti na revizijo, ki podpirajo notranji nadzor, pregled vlagateljev, sodelovanje javnega sektorja in zunanji pregled.', tag: 'pripravljeni na revizijo' },
       ],
     },
     coverage: {
-      // TODO(sl-review): heading translated from current EN
-      h2: 'Vse, kar potrebuje funkcija skladnosti za obrambo in dvojno rabo.',
+      h2: 'Vse, kar potrebuje funkcija skladnosti poslovanja za obrambne projekte.',
       // TODO(sl-review): coverage intro machine-translated
       intro: 'Šest gradnikov, en okvir — načrtovan, vgrajen in pripravljen na revizijo za regulirano poslovanje obrambe in dvojne rabe.',
       items: [

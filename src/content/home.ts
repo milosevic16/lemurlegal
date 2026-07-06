@@ -166,22 +166,23 @@ const home: Bilingual<HomeContent> = {
 
   sl: {
     meta: {
-      title: 'Lemur Legal — Pravo za kripto, tehnologijo in obrambo',
-      // TODO(sl-review): meta title + description
+      // Client-approved copy (SL corrections docx, 2026-07). Long for SERP display —
+      // Google truncates titles ~60 chars and descriptions ~160; kept verbatim per client.
+      title: 'Lemur Legal - specializirana pravna pisarna za kripto, fintech, startup, deep tech, defence in dual-use podjetja.',
       description:
-        'Specializirana odvetniška pisarna za tehnološko pravo v Ljubljani: MiCA in kripto, startupi, obramba in dvojna raba. Fiksni honorar, odgovor v 24 urah.',
+        'Lemur Legal je specializirana pravna pisarna za kripto, fintech, startup, deep tech, defence in dual-use podjetja. MiCA white paper, kripto pravna mnenja, regulatorna skladnost, IP, pogodbe in regulatorna opredelitev tehnologij.',
     },
     hero: {
-      kicker: 'Specializirana odvetniška pisarna za tehnološko pravo · Ljubljana',
+      kicker: 'Specializirana pravna pisarna za tehnološko pravo · Ljubljana',
       titleGlitch: 'Vaš terminal v pravni svet:',
       titleLead: 'pravo za',
       crypto: 'kripto',
-      deeptech: 'napredno tehnologijo',
+      deeptech: 'deep tech',
       and: 'ter',
       defence: 'obrambo in dvojno rabo',
-      actionPrimary: 'Rezervirajte posvet',
-      actionSecondary: 'Raziščite naše storitve',
-      nodes: ['zadeve: odprte', 'honorar: fiksni', 'jezik: EN / SL'],
+      actionPrimary: 'Začnite tukaj',
+      actionSecondary: 'Raziščite storitve',
+      nodes: ['zadeve: odprte', 'ponudba: fiksna', 'jezik: EN / SL'],
     },
     console: {
       cmd1: 'lemur-legal --status',
@@ -190,36 +191,35 @@ const home: Bilingual<HomeContent> = {
         { key: '  zagonska  : ', val: 'ustanovljeno · IP zaščitena', cls: 'ok', tail: ' .. AKTIVNO' },
         { key: '  obramba   : ', val: 'dvojna raba · nadzor izvoza', cls: 'wn', tail: ' ..... PRIPRAVA' },
         { key: '  sedež     : ', val: 'Ljubljana · EU', cls: 'em', tail: ' ............ v živo' },
-        { key: '  honorar   : ', val: 'fiksni', cls: 'ok', tail: ' · brez akontacije · EN/SL' },
+        { key: '  ponudba   : ', val: 'fiksna', cls: 'ok', tail: ' · EN/SL' },
       ],
       cmd2: 'open-matters',
-      ready: '  pripravljeni · čakamo na vaše navodilo ..........',
+      ready: '  pripravljeni · začnemo z vašim vprašanjem ..........',
     },
     practices: {
-      // TODO(sl-review): heading + subtitle machine-translated (post-"popravki")
-      heading: 'Trije sektorji. Specializirane pravne storitve.',
+      heading: 'Trije sektorji. Ena specializirana pravna pisarna.',
       subtitle:
-        'Lemur Legal svetuje strankam na treh specializiranih področjih: kripto in fintech, zagonska podjetja in napredna tehnologija ter obramba in inovacije za dvojno rabo. Vsako področje združuje pravno znanje s praktičnim razumevanjem trga, ki mu služi.',
+        'Lemur Legal svetuje strankam na treh specializiranih področjih: kripto in fintech, startup in deep tech ter defence in dual-use. Vsako področje združuje pravno znanje, razumevanje reguliranih trgov in praktične izkušnje z industrijami, v katerih se pravila hitro spreminjajo.',
       items: [
         {
           pno: 'P·1 — vodilno področje',
           name: 'Kripto in fintech',
           state: 'AKTIVNO',
-          desc: 'MiCA, pravno mnenje s področja kripta in stalna skladnost za kripto in fintech podjetja.',
+          desc: 'MiCA, pravna mnenja za kripto projekte in stalna regulatorna skladnost za kripto in fintech podjetja.',
           services: [
-            { label: 'Beli papir MiCA', href: '/mica-white-paper' },
-            { label: 'Pravno mnenje s področja kripta', href: '/crypto-legal-opinion' },
-            { label: 'Regulativna skladnost', href: '/regulatory-compliance' },
+            { label: 'MiCA white paper (bela knjiga)', href: '/mica-white-paper' },
+            { label: 'Pravno mnenje za kripto projekt', href: '/crypto-legal-opinion' },
+            { label: 'Regulatorna skladnost', href: '/regulatory-compliance' },
           ],
         },
         {
           pno: 'P·2',
-          name: 'Zagonska podjetja in napredna tehnologija',
+          name: 'Startup & deep tech',
           state: 'AKTIVNO',
-          desc: 'Ustanovitev podjetja, zaščita intelektualne lastnine in gospodarske pogodbe za tehnološka podjetja, ki gradijo in rastejo na reguliranih trgih.',
+          desc: 'Ustanovitev podjetja, ESOP, zaščita intelektualne lastnine in pogodbe za tehnološka podjetja, ki gradijo ali rastejo na reguliranih trgih.',
           services: [
             { label: 'Ustanovitev podjetja in ESOP', href: '/incorporation-esop' },
-            { label: 'Zaščita intelektualne lastnine — registrirani zastopniki', href: '/ip-protection' },
+            { label: 'Zaščita intelektualne lastnine', href: '/ip-protection' },
             { label: 'Pogodbe in gospodarsko pravo', href: '/startups-contracts' },
           ],
         },
@@ -227,11 +227,11 @@ const home: Bilingual<HomeContent> = {
           pno: 'P·3',
           name: 'Obramba in dvojna raba',
           state: 'AKTIVNO',
-          desc: 'Nadzor izvoza, licenciranje za dvojno rabo, pregled neposrednih tujih naložb in gospodarske pogodbe za podjetja s področja obrambne tehnologije in tehnologije za dvojno rabo.',
+          desc: 'Nadzor izvoza, licenciranje blaga in tehnologij z dvojno rabo (“dual-use”), pregled neposrednih tujih naložb ter pogodbe za podjetja s področja obrambnih tehnologij in tehnologij dvojne rabe.',
           services: [
-            { label: 'Pregled pripravljenosti na investicije', href: '/investment-readiness-review' },
-            { label: 'Okviri skladnosti', href: '/compliance-frameworks' },
-            { label: 'Regulativna opredelitev', href: '/regulatory-qualification' },
+            { label: 'Pregled investicijske pripravljenosti', href: '/investment-readiness-review' },
+            { label: 'Vzpostavitev okvirov skladnosti', href: '/compliance-frameworks' },
+            { label: 'Regulatorna opredelitev tehnologije', href: '/regulatory-qualification' },
           ],
         },
       ],
@@ -241,15 +241,15 @@ const home: Bilingual<HomeContent> = {
       photoLabel: 'FOTOGRAFIJA',
       name: 'dr. Peter Merc',
       metaName: 'DR. P. MERC',
-      role: 'Ustanovitelj · fintech odvetnik · Lemur Legal',
-      bio: 'Peter je odvetnik za tehnološko in finančno pravo, osredotočen na regulacijo kriptovalut, fintech in ekosisteme zagonskih podjetij. Kripto podjetjem, fintech podvigom in tehnološkim zagonskim podjetjem svetuje glede regulativne skladnosti, pogodbenega prava in vprašanj intelektualne lastnine ter zagotavlja praktične pravne rešitve na presečišču prava in nastajajočih tehnologij.<br><br>Poleg zasebne prakse Peter deluje kot zunanji ocenjevalec za <strong>Horizon Europe</strong> in <strong>NATO Diana</strong>, kjer ocenjuje podvige na področju napredne tehnologije in inovacij za programsko financiranje. Je tudi partner v družbah tveganega kapitala <strong>Suricate Ventures</strong> in <strong>IBEX Equity Partners</strong>, s čimer podjetjem, s katerimi sodeluje, prinaša dvojni pogled — kot pravni svetovalec in kot investitor.',
+      role: 'Ustanovitelj · pravnik za fintech in tehnološko pravo · Lemur Legal',
+      bio: 'Peter deluje na področju tehnološkega in finančnega prava, s poudarkom na regulaciji kripto, fintech in startup ekosistemih. Kripto in fintech projektom ter tehnološkim startupom svetuje pri regulatorni skladnosti, pogodbenem pravu, intelektualni lastnini in strukturiranju poslovanja. Njegovo delo je usmerjeno v praktične pravne rešitve na presečišču prava, tehnologije in regulacije.<br><br>Peter deluje tudi kot zunanji ocenjevalec za <strong>Horizon Europe</strong> in <strong>NATO DIANA</strong>, kjer ocenjuje deep-tech in obrambne projekte v shemah financiranja. Je partner v družbah tveganega kapitala <strong>Suricate Ventures</strong> in <strong>IBEX Equity Partners</strong>, zato podjetjem, s katerimi sodeluje, prinaša dvojno perspektivo — kot pravni svetovalec in kot investitor.',
       creds: [
-        'Odvetnik za tehnološko in finančno pravo',
+        'Pravnik za tehnološko in finančno pravo',
         'Regulacija kripta in fintech skladnost',
-        'Pogodbe, intelektualna lastnina in strukturiranje zagonskih podjetij',
+        'Pogodbe, intelektualna lastnina in strukturiranje podjetij',
         'Ocenjevalec za Horizon Europe',
         'Ocenjevalec za NATO DIANA',
-        'Partner v skladu tveganega kapitala: Suricate Ventures in IBEX Equity Partners',
+        'Partner v družbah tveganega kapitala Suricate Ventures in IBEX Equity Partners',
       ],
       sigName: '/s/ dr. Peter Merc',
       sigRole: '— Ustanovitelj',
@@ -257,28 +257,26 @@ const home: Bilingual<HomeContent> = {
     },
     cta: {
       heading: 'Začnite s pravnim vprašanjem.',
-      // TODO(sl-review): lead machine-translated (post-"popravki")
-      lead: 'Ne glede na to, ali podjetje zaganjate, rastete, ga uvrščate na borzo ali vstopate na regulirani trg — prinesite nam svoje pravno vprašanje. Od tam naprej začrtamo pot.',
-      // TODO(sl-review): whole matter-board machine-translated (post-"popravki")
+      lead: 'Ne glede na to, ali podjetje šele ustanavljate, ga razvijate, se pripravljate na investicijo ali vstopate na reguliran trg — začnite s pravnim vprašanjem. Od tam naprej začrtamo pot.',
       matter: {
         header: 'Od prvega posveta do namenske pravne podpore',
         steps: [
           {
             num: '01',
-            title: 'Posvet',
-            sub: 'Povejte nam, kaj gradite. Začrtali bomo pravno pot, prepoznali ključna tveganja in določili naslednje korake.',          },
+            title: 'Uvodni posvet',
+            sub: 'Povejte nam, kaj gradite, kje ste v procesu in katero odločitev morate sprejeti. Opredelimo pravni okvir, ključna tveganja in naslednje korake.',          },
           {
             num: '02',
-            title: 'Ponudba s fiksnim honorarjem',
-            sub: 'Pred začetkom dela določimo obseg, rezultate in fiksni honorar. Brez presenečenj po urah, brez odprtih akontacij.',          },
+            title: 'Ponudba',
+            sub: 'Pred začetkom sodelovanja jasno določimo, kaj bomo naredili, kaj boste prejeli in kakšna bo cena. Brez odprtih ur, nejasnega obsega ali nepričakovanih stroškov.',          },
           {
             num: '03',
-            title: 'Namenska pravna podpora',
-            sub: 'Ko začnemo, sodelujete z namensko pravno ekipo, ki razume vaš projekt, ohranja tempo dela in vas podpira od prve vloge do stalne skladnosti.',          },
+            title: 'Pravna podpora pri izvedbi',
+            sub: 'Ko začnemo, imate ob sebi ekipo, ki razume vaš projekt, poslovni model in regulatorni okvir. Pomagamo vam pri konkretnih korakih — od dokumentacije in postopkov do vzpostavitve ter vzdrževanja skladnosti.',          },
         ],
         footer: '$ open-matter --client=you  →',
       },
-      action: 'Rezervirajte posvet',
+      action: 'Začnite tukaj',
     },
   },
 }

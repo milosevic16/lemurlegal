@@ -11,8 +11,17 @@ export interface InvestmentReadinessContent {
   hero: { kicker: string; h1Glitch: string; h1Em: string; slogan: string; lead: string; btnPrimary: string; btnGhost: string; meta: string }
   strip: { k: string; v: string }
   why: { h2: string; items: [Why, Why, Why] }
-  scan: { h2: string; intro: string }
-  how: { h2: string; steps: [Step, Step, Step] }
+  scan: {
+    h2: string
+    intro: string
+    /** Terminal-panel chrome (sample scoreboard): head halves, 5 row labels, total + footnote. */
+    panelHead1: string
+    panelHead2: string
+    rows: [string, string, string, string, string]
+    agg: string
+    note: string
+  }
+  how: { h2: string; head1: string; head2: string; steps: [Step, Step, Step] }
   coverage: { h2: string; intro: string; items: Cov[]; calloutH3: string; calloutP: string }
   expert: { eyebrow: string; h2: string; name: string; role: string; bio1: string; bio2: string; linkedinAria: string }
   included: { h2: string; items: string[]; pricebandText: string; pricebandBtn: string }
@@ -62,9 +71,22 @@ const c: Bilingual<InvestmentReadinessContent> = {
     scan: {
       h2: 'A defence & dual-use readiness score you can put in front of investors.',
       intro: 'We translate regulatory preparedness into a clear maturity score across the dimensions defence and dual-use diligence cares about.',
+      panelHead1: 'READINESS SCAN',
+      panelHead2: 'SAMPLE OUTPUT',
+      rows: [
+        'Regulatory exposure mapped',
+        'Export-control & dual-use exposure',
+        'FDI & ownership sensitivity',
+        'Tender & procurement readiness',
+        'Documentation & internal controls',
+      ],
+      agg: 'OVERALL READINESS',
+      note: 'Illustrative · scored to your business in the review',
     },
     how: {
       h2: 'From defence & dual-use exposure to a score you can defend.',
+      head1: 'READINESS REVIEW',
+      head2: 'READY TO SCORE',
       steps: [
         { stepK: 'Step 01', title: 'Assess', sub: 'We identify the principal regulatory risks across your technology, business model, target markets, counterparties, investors and public-sector opportunities.', tag: 'exposure mapped' },
         { stepK: 'Step 02', title: 'Score', sub: 'We translate defence and dual-use preparedness into a clear maturity score for investor-facing, acquirer-facing or partner-facing discussions.', tag: 'maturity scored' },
@@ -149,46 +171,51 @@ const c: Bilingual<InvestmentReadinessContent> = {
         'Dokažite, da je vaše obrambno podjetje pripravljeno na investicijo — ocenimo regulativno izpostavljenost, zrelost skladnosti in pripravljenost na vlagatelje.',
     },
     hero: {
-      // TODO(sl-review): kicker machine-translated
-      kicker: 'Pregled investicijske pripravljenosti za obrambo in dvojno rabo · Ljubljana',
-      // TODO(sl-review): H1 differs from docx — translated from current EN
-      h1Glitch: 'Dokažite, da je vaše obrambno podjetje ali podjetje z dvojno rabo pripravljeno na investicijo —',
-      h1Em: 'in zmanjšajte tveganje posla.',
-      // TODO(sl-review): slogan machine-translated
-      slogan: '// izpostavljenost · točkovanje · vrzeli · pripravljeno na skrbni pregled.',
-      // TODO(sl-review): hero lead translated from current EN
-      lead: 'V investitorja usmerjena ocena vaše regulativne izpostavljenosti, zrelosti skladnosti in operativne pripravljenosti kot obrambnega podjetja ali podjetja z dvojno rabo — tako da lahko <strong>dokažete pripravljenost</strong>, zmanjšate zaznano tveganje in podprete svoje vrednotenje z jasnim rezultatom pripravljenosti in ciljnimi priporočili.',
+      kicker: 'Pregled investicijske pripravljenosti za obrambne projekte in projekte dvojne rabe · Ljubljana',
+      h1Glitch: 'Dokažite, da je vaše obrambno podjetje ali podjetje, ki razvija rešitve dvojne rabe, pripravljeno na investicijo —',
+      h1Em: 'in zmanjšajte s tem poslovna tveganja.',
+      slogan: '// regulatorna izpostavljenost · točkovanje · vrzeli · pripravljeno na skrbni pregled.',
+      lead: 'Ocena vaše regulatorne izpostavljenosti, nivoja regulatorne skladnosti in operativne pripravljenosti obrambnega projekta ali projekta dvojne rabe — vse iz perspektive potencialnega vlagatelja. S ciljem, da se dokaže investicijska pripravljenost, zmanjša zaznano regulatorno tveganje in da se podpre valuacija vrednosti podjetja, ki je podprta z argumentiranim opisom stanja in ciljnimi priporočili.',
       btnPrimary: 'Pošljite povpraševanje',
-      btnGhost: 'Kako deluje',
-      // TODO(sl-review): hero meta machine-translated
-      meta: 'Ocenjena slika pripravljenosti · Zasnovano za skrbni pregled obrambe in dvojne rabe',
+      btnGhost: 'Kako deluje?',
+      meta: 'Točkovana ocena pripravljenosti · Zasnovano za obrambne projekte in projekte dvojne rabe',
     },
     strip: {
       k: 'Obramba in dvojna raba',
-      // TODO(sl-review): strip value translated from current EN
-      v: 'Investitorji in prevzemniki v ceno vštejejo regulativno tveganje — zlasti pri poslih z obrambo in dvojno rabo. Jasna, ocenjena slika pripravljenosti spremeni izpostavljenost nadzoru izvoza, tujim naložbam (FDI), sankcijam, javnim naročilom in skladnosti v obvladljivo, dokazljivo prednost.',
+      v: 'Vlagatelji in kupci v plačano ceno vštejejo regulatorno tveganje — zlasti pri obrambnih projektih in projektih dvojne rabe. Jasno zastavljena ocena pripravljenosti spremeni izpostavljenost izvoznim kontrolam, omejitvam glede tujih naložb (“FDI”), sankcijam, pravilom javnih naročil in regulatornim tveganjem v obvladljivo in dokazljivo prednost.',
     },
     why: {
-      // TODO(sl-review): heading translated from current EN
-      h2: 'Regulativna pripravljenost je del vašega vrednotenja pri obrambi in dvojni rabi.',
+      h2: 'Regulatorna pripravljenost je ključen element vrednotenja vsakega obrambnega podjetja in podjetja, ki razvija rešitve dvojne rabe.',
       items: [
-        { wn: '01', h3: 'Tveganje je všteto v ceno', p: 'Nepopisana izpostavljenost nadzoru izvoza, sankcijam, tujim naložbam (FDI) ali javnim naročilom investitorjem pomeni tveganje — in lahko zniža vaše vrednotenje.' },
-        { wn: '02', h3: 'Ocena, ki jo lahko zagovarjajo', p: 'Obrambno pripravljenost in pripravljenost za dvojno rabo pretvorimo v jasno oceno zrelosti, ki podpira skrbni pregled pred investitorji.' },
-        { wn: '03', h3: 'Najprej poiščite vrzeli', p: 'Prepoznajte regulativne vrzeli, preden postanejo ovire za posel pri zbiranju sredstev, prevzemih (M&A), javnih naročilih ali pogovorih o strateškem partnerstvu.' },
+        { wn: '01', h3: 'Tveganje je všteto v ceno', p: 'Nemapirana izpostavljenost izvoznim kontrolam, sankcijam, tujim naložbam ali pravilom javnih naročil pomeni tveganje za vlagatelja — in s tem nižje vrednotenje vrednosti projekta.' },
+        { wn: '02', h3: 'Ocena, ki se jo lahko zagovarja', p: 'Pripravljenost za obrambne projekte in pripravljenost za projekte dvojne rabe pretvorimo v točkovano oceno zrelosti podjetja, ki podpira proces skrbnega pregleda vlagateljev.' },
+        { wn: '03', h3: 'Najprej poiščite vrzeli', p: 'Prepoznajte regulatorne vrzeli, preden postanejo ovira za zunanje investicije, prevzem (M&A), postopke javnih naročil ali za pogovore o strateškem partnerstvu.' },
       ],
     },
     scan: {
-      // TODO(sl-review): §02 heading + intro translated from current EN
-      h2: 'Ocena pripravljenosti na obrambo in dvojno rabo, ki jo lahko pokažete investitorjem.',
-      intro: 'Regulativno pripravljenost pretvorimo v jasno oceno zrelosti po dimenzijah, ki so pomembne pri skrbnem pregledu obrambe in dvojne rabe.',
+      h2: 'Ocena regulatorne pripravljenosti obrambnih podjetij in podjetij, ki razvijajo rešitve dvojne rabe, ki jo lahko pokažete vlagateljem.',
+      intro: 'Regulatorno pripravljenost pretvorimo v jasno oceno zrelosti, ki je pomembna z vidika procesa skrbnega preverjanja obrambnih projektov in projektov dvojne rabe.',
+      panelHead1: 'PREGLED PRIPRAVLJENOSTI',
+      panelHead2: 'PRIMER OCENE',
+      rows: [
+        'Mapirana regulatorna izpostavljenost',
+        'Izvozne kontrole & izpostavljenost dvojni rabi',
+        'Tuje naložbe (FDI) & občutljivost lastniške strukture',
+        'Pripravljenost na postopek javnega naročila',
+        'Dokumentacija in notranje kontrole',
+      ],
+      agg: 'SKUPNA PRIPRAVLJENOST',
+      // TODO(sl-review): footnote not in the corrections docx — translated to match the panel
+      note: 'Ilustrativno · v pregledu ocenjeno za vaše podjetje',
     },
     how: {
-      // TODO(sl-review): heading translated from current EN (docx §03 heading was contaminated)
-      h2: 'Od izpostavljenosti obrambi in dvojni rabi do ocene, ki jo lahko zagovarjate.',
+      h2: 'Od izpostavljenosti pravilom obrambne industrije do ocene pripravljenosti, ki jo lahko zagovarjate.',
+      head1: 'OCENA PRIPRAVLJENOSTI',
+      head2: 'PRIPRAVLJENI NA TOČKOVANJE',
       steps: [
-        { stepK: 'Korak 01', title: 'Ocena', sub: 'Prepoznamo glavna regulativna tveganja v vaši tehnologiji, poslovnem modelu, ciljnih trgih, nasprotnih strankah, pri investitorjih in priložnostih v javnem sektorju.', tag: 'izpostavljenost popisana' },
-        { stepK: 'Korak 02', title: 'Točkovanje', sub: 'Obrambno pripravljenost in pripravljenost za dvojno rabo pretvorimo v jasno oceno zrelosti za pogovore z investitorji, prevzemniki ali partnerji.', tag: 'zrelost ocenjena' },
-        { stepK: 'Korak 03', title: 'Sanacija', sub: 'Izpostavimo vrzeli in prednostne ukrepe, potrebne za okrepitev pripravljenosti pred zbiranjem sredstev, prevzemi (M&A), javnimi naročili ali skrbnim pregledom pri strateškem partnerstvu.', tag: 'vrzeli · prioritete' },
+        { stepK: 'Korak 01', title: 'Ocena', sub: 'Identificiramo glavna regulatorna tveganja v vaši tehnologiji, poslovnem modelu, ciljnih trgih, nasprotnih strankah, pri vlagateljih in priložnostih v javnem sektorju.', tag: 'izpostavljenost mapirana' },
+        { stepK: 'Korak 02', title: 'Točkovanje', sub: 'Pripravljenost za obrambne projekte in projekte dvojne rabe pretvorimo v jasno oceno zrelosti, pripravljeno za pogovore z vlagatelji, kupci ali partnerji.', tag: 'zrelost ocenjena' },
+        { stepK: 'Korak 03', title: 'Prilagoditve', sub: 'Izpostavimo vrzeli in določimo prednostne ukrepe, potrebne za okrepitev investicijske pripravljenosti ali za pripravo pred prevzemom, postopki javnih naročil in skrbnim pregledom v postopku sklepanja strateškega partnerstva.', tag: 'vrzeli · prioritete' },
       ],
     },
     coverage: {

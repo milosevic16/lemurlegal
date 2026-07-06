@@ -41,33 +41,33 @@ const chrome: Bilingual<ChromeContent> = {
   sl: {
     nav: {
       crypto: 'Kripto in fintech',
-      startups: 'Zagonska podjetja',
+      startups: 'Startup in deep tech',
       defence: 'Obramba in dvojna raba',
       blog: 'Blog',
-      media: 'V medijih', // TODO(sl-review)
+      media: 'V medijih',
       contact: 'Kontakt',
     },
     footer: {
-      // TODO(sl-review): tagline reworded per "popravki" (added obrambo/defence, dropped "Specializirano")
-      blurb: 'Pravo za kripto, fintech, zagonska podjetja, napredno tehnologijo, obrambo in dvojno rabo',
+      blurb: 'Specializirana pravna pisarna za kripto, fintech, startup, deep tech, defence in dual-use podjetja.',
       org: 'Lemur Legal, d.o.o.',
       street: 'Ciril-Metodov trg 14',
       city: 'Ljubljana, Slovenija',
       cols: {
         crypto: {
           heading: 'Kripto in fintech',
-          links: ['Beli papir MiCA', 'Pravno mnenje s področja kripta', 'Regulativna skladnost'],
+          links: ['MiCA white paper (bela knjiga)', 'Pravno mnenje za kripto projekt', 'Regulatorna skladnost'],
         },
         startups: {
-          heading: 'Zagonska podjetja in napredna tehnologija',
+          heading: 'Startup in deep tech',
           links: ['Ustanovitev podjetja in ESOP', 'Zaščita intelektualne lastnine', 'Pogodbe in gospodarsko pravo'],
         },
         defence: {
-          heading: 'Obramba in dvojna raba',
-          links: ['Regulativna opredelitev', 'Pregled pripravljenosti na investicije', 'Okviri skladnosti'],
+          heading: 'Defence in dual-use',
+          // Order is positional (Footer.vue binds hrefs by index): [0] Regulatory
+          // Qualification, [1] Investment Readiness, [2] Compliance Frameworks.
+          links: ['Regulativna opredelitev tehnologije', 'Pregled investicijske pripravljenosti', 'Vzpostavitev okvirov skladnosti'],
         },
       },
-      // TODO(sl-review): "Pogoji uporabe in politika zasebnosti" machine-translated (not in docx)
       legal: { terms: 'Pogoji uporabe in politika zasebnosti' },
       copyright: '© 2026 Lemur Legal d.o.o.',
       strap: 'Fintech Factory — praksa za kripto in fintech pri Lemur Legal',
