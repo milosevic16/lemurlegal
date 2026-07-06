@@ -262,7 +262,7 @@
         <div class="eye">{{ t.form.eye }}</div>
         <h2 id="frm-h">{{ t.form.h }}</h2>
         <p class="fl">{{ t.form.lead }}</p>
-        <p class="fl" style="font-size:.8rem;">{{ t.form.contactPrefix }}<span class="js-mail" data-u="info" data-d="fintechfactory.eu">info [at] fintechfactory.eu</span></p>
+        <p class="fl" style="font-size:.8rem;">{{ t.form.contactPrefix }}<span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
       </div>
       <div>
         <div class="field"><label for="f-name">{{ t.form.nameLabel }}</label><input type="text" id="f-name" name="name"></div>

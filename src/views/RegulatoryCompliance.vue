@@ -184,7 +184,7 @@
           <span class="mica__form-eyebrow" data-ht="mica__form-eyebrow">{{ t.form.eyebrow }}</span>
           <h2 class="mica__form-h" data-ht="mica__form-h">{{ t.form.h }}</h2>
           <p class="mica__form-lead" data-ht="mica__form-lead">{{ t.form.lead }}</p>
-          <p class="mica__form-contact" data-ht="mica__form-contact">{{ t.form.contactPrefix }}<span class="js-mail" data-u="info" data-d="fintechfactory.eu">info [at] fintechfactory.eu</span></p>
+          <p class="mica__form-contact" data-ht="mica__form-contact">{{ t.form.contactPrefix }}<span class="js-mail" data-u="info" data-d="lemur.legal">info [at] lemur.legal</span></p>
         </div>
         <form class="mica__form-fields" data-ht="mica__form-fields" name="mica-inquiry" id="mica-inquiry" method="post" data-ht-form="">
           <div class="mica__field" data-ht="mica__field">

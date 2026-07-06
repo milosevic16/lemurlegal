@@ -103,7 +103,7 @@ const c: Bilingual<RegulatoryComplianceContent> = {
       eyebrow: 'Get started',
       h: 'Send your inquiry.',
       lead: "Tell us about your business and where you need compliance support. We'll review it and come back with next steps — usually the same day.",
-      contactPrefix: 'WhatsApp · ',
+      contactPrefix: 'Ljubljana, Slovenia · ',
       nameLabel: 'Name and surname',
       emailLabel: 'Email',
       companyLabel: 'Company & website',
@@ -204,7 +204,7 @@ const c: Bilingual<RegulatoryComplianceContent> = {
       h: 'Pošljite povpraševanje.',
       // TODO(sl-review): form lead machine-translated
       lead: 'Povejte nam več o svojem podjetju in kje potrebujete podporo pri skladnosti. Pregledali bomo in vam sporočili naslednje korake — praviloma še isti dan.',
-      contactPrefix: 'WhatsApp · ',
+      contactPrefix: 'Ljubljana, Slovenija · ',
       nameLabel: 'Ime in priimek',
       emailLabel: 'E-naslov',
       companyLabel: 'Podjetje in spletna stran',
