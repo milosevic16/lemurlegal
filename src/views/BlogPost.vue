@@ -1,7 +1,7 @@
 <template>
 <main id="main" class="article" :class="post ? 'article--' + meta.cls : ''">
   <div class="container article__wrap">
-    <a class="article__back" href="/blog"><span aria-hidden="true">←</span> {{ t.post.back }}</a>
+    <a class="article__back" :href="lp('/blog')"><span aria-hidden="true">←</span> {{ t.post.back }}</a>
 
     <!-- Loaded article -->
     <template v-if="post">
@@ -31,7 +31,7 @@
       <article class="article__body" v-html="post.bodyHtml"></article>
 
       <div class="article__cta">
-        <a class="action" href="/contact#brief">{{ t.post.ctaAction }} <span class="arrow">→</span></a>
+        <a class="action" :href="lp('/contact') + '#brief'">{{ t.post.ctaAction }} <span class="arrow">→</span></a>
       </div>
     </template>
 
@@ -44,7 +44,7 @@
     <div v-else class="article__state">
       <h1 class="article__title">{{ t.post.notFoundTitle }}</h1>
       <p class="article__lead">{{ t.post.notFoundText }}</p>
-      <a class="action" href="/blog">{{ t.post.notFoundAction }} <span class="arrow">→</span></a>
+      <a class="action" :href="lp('/blog')">{{ t.post.notFoundAction }} <span class="arrow">→</span></a>
     </div>
   </div>
 </main>
@@ -55,12 +55,13 @@ import { onMounted, ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { applyBlogTheme } from '@/composables/blogTheme'
 import { usePageContent } from '@/i18n/useContent'
-import { locale } from '@/i18n/locale'
+import { locale, localePath } from '@/i18n/locale'
 import blog from '@/content/blog'
 import { fetchPostBySlug, sectionMeta, formatDate, type BlogPost } from '@/lib/contentful'
 
 const route = useRoute()
 const t = usePageContent(blog)
+const lp = (p: string) => localePath(p)
 const post = ref<BlogPost | null>(null)
 const loading = ref(true)
 
@@ -88,6 +89,16 @@ async function load(slug: string): Promise<void> {
     document.title = post.value
       ? `${post.value.title} — Lemur Legal`
       : `${t.value.post.notFoundTitle} — Lemur Legal`
+    // Meta description from the already-fetched post (additive — independent of the
+    // Contentful fetch above; the article's summary doubles as its SEO description).
+    const desc = post.value ? post.value.summary : t.value.post.notFoundText
+    let descEl = document.head.querySelector<HTMLMetaElement>('meta[name="description"]')
+    if (!descEl) {
+      descEl = document.createElement('meta')
+      descEl.setAttribute('name', 'description')
+      document.head.appendChild(descEl)
+    }
+    descEl.setAttribute('content', desc)
   }
 }
 

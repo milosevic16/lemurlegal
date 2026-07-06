@@ -34,7 +34,7 @@ const c: Bilingual<IncorporationESOPContent> = {
     meta: {
       title: 'Incorporation & ESOP — Lemur Legal',
       description:
-        'Set up your company and incentivise your team. From the right legal form to employee option plans (ESOP), Lemur Legal puts the legal foundations of your startup in place from day one.',
+        "Set up your company and incentivise your team. From the right legal form to employee option plans (ESOP), we lay your startup's legal foundations.",
     },
     hero: {
       kicker: 'Incorporation & ESOP · Ljubljana',
@@ -127,7 +127,7 @@ const c: Bilingual<IncorporationESOPContent> = {
       title: 'Ustanovitev podjetja in ESOP — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Ustanovite svoje podjetje in nagradite ekipo. Od prave pravne oblike do opcijskih načrtov za zaposlene (ESOP) — Lemur Legal postavi pravne temelje vašega startupa že od prvega dne.',
+        'Ustanovite podjetje in nagradite ekipo. Od prave pravne oblike do opcijskih načrtov za zaposlene (ESOP) — postavimo pravne temelje vašega startupa.',
     },
     hero: {
       // TODO(sl-review): kicker machine-translated

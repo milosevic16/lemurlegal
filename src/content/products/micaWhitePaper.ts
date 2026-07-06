@@ -50,7 +50,7 @@ const c: Bilingual<MiCAWhitePaperContent> = {
     meta: {
       title: 'MiCA White Paper — Lemur Legal',
       description:
-        'A MiCA-compliant white paper, drafted and filed. Every token issuer targeting EU investors needs a MiCA white paper and legal documentation — Lemur Legal handles drafting through to regulator filing.',
+        'A MiCA-compliant white paper, drafted and filed. Every EU token issuer needs one — we handle it from drafting to regulator submission.',
     },
     hero: {
       kicker: 'MiCA White Paper · Ljubljana',
@@ -158,7 +158,7 @@ const c: Bilingual<MiCAWhitePaperContent> = {
       title: 'MiCA bela knjiga — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Bela knjiga, skladna z uredbo MiCA, pripravljena in vložena. Vsak izdajatelj žetonov, ki cilja na vlagatelje v EU, potrebuje belo knjigo MiCA in pravno dokumentacijo — Lemur Legal poskrbi za vse, od priprave do vložitve pri regulatorju.',
+        'Bela knjiga, skladna z MiCA, pripravljena in vložena. Vsak izdajatelj žetonov v EU jo potrebuje — poskrbimo od priprave do vložitve pri regulatorju.',
     },
     hero: {
       kicker: 'MiCA bela knjiga · Ljubljana',

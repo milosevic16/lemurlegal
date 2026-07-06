@@ -143,7 +143,7 @@ const c: Bilingual<CryptoLegalOpinionContent> = {
       title: 'Pravno mnenje za kriptovalute — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Pravno mnenje za kriptovalute, ki zagotovi uvrstitev vašega žetona — utemeljeno, klasificirano in sprejeto po uredbi MiCA in pravu EU. Prvi osnutek v 48 urah.',
+        'Pravno mnenje, ki vaš žeton pripelje do uvrstitve — utemeljeno in sprejeto po uredbi MiCA in pravu EU. Prvi osnutek v 48 urah.',
     },
     hero: {
       kicker: 'Pravno mnenje za kriptovalute · Ljubljana',

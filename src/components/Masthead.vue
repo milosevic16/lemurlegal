@@ -5,9 +5,9 @@
         <img class="brand__logo" src="/ll-logo.svg" alt="Lemur Legal" width="764" height="184" />
       </a>
       <nav class="nav" aria-label="Primary">
-        <a :href="sec('crypto_fintech')" class="nl-b">{{ c.nav.crypto }}</a>
-        <a :href="sec('startups_deeptech')" class="nl-g">{{ c.nav.startups }}</a>
-        <a :href="sec('defence_dualuse')" class="nl-o">{{ c.nav.defence }}</a>
+        <a :href="sec('crypto-fintech')" class="nl-b">{{ c.nav.crypto }}</a>
+        <a :href="sec('startups-deeptech')" class="nl-g">{{ c.nav.startups }}</a>
+        <a :href="sec('defence-dualuse')" class="nl-o">{{ c.nav.defence }}</a>
         <a :href="lp('/blog')" class="nl-m">{{ c.nav.blog }}</a>
         <a :href="lp('/media')" class="nl-m">{{ c.nav.media }}</a>
         <a :href="lp('/contact')" class="nl-m">{{ c.nav.contact }}</a>
@@ -31,9 +31,9 @@
       </button>
     </div>
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
-      <a :href="sec('crypto_fintech')" class="mm-b">{{ c.nav.crypto }}</a>
-      <a :href="sec('startups_deeptech')" class="mm-g">{{ c.nav.startups }}</a>
-      <a :href="sec('defence_dualuse')" class="mm-o">{{ c.nav.defence }}</a>
+      <a :href="sec('crypto-fintech')" class="mm-b">{{ c.nav.crypto }}</a>
+      <a :href="sec('startups-deeptech')" class="mm-g">{{ c.nav.startups }}</a>
+      <a :href="sec('defence-dualuse')" class="mm-o">{{ c.nav.defence }}</a>
       <a :href="lp('/blog')">{{ c.nav.blog }}</a>
       <a :href="lp('/media')">{{ c.nav.media }}</a>
       <a :href="lp('/contact')">{{ c.nav.contact }}</a>

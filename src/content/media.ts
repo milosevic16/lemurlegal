@@ -47,7 +47,7 @@ const media: Bilingual<MediaContent> = {
     meta: {
       title: 'Media Coverage — Lemur Legal',
       description:
-        'Podcasts and lectures, TV appearances and press articles featuring Lemur Legal across Slovenian and international media — on MiCA, crypto regulation, startups and the law behind emerging technology.',
+        'Podcasts, lectures, TV and press featuring Lemur Legal — on MiCA, crypto regulation, startups and the law behind emerging technology.',
     },
     hero: {
       kicker: 'Media · Ljubljana',
@@ -107,7 +107,7 @@ const media: Bilingual<MediaContent> = {
     meta: {
       title: 'V medijih — Lemur Legal',
       description:
-        'Podkasti in predavanja, TV oddaje in medijski članki z Lemur Legal v slovenskih in mednarodnih medijih — o MiCA, regulaciji kriptovalut, zagonskih podjetjih in pravu za nove tehnologije.',
+        'Podkasti, predavanja, TV in članki z Lemur Legal — o MiCA, regulaciji kriptovalut, startupih in pravu za nove tehnologije.',
     },
     hero: {
       kicker: 'Mediji · Ljubljana',

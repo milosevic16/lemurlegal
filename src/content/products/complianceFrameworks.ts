@@ -34,7 +34,7 @@ const c: Bilingual<ComplianceFrameworksContent> = {
     meta: {
       title: 'Compliance Frameworks — Lemur Legal',
       description:
-        'Turn defence & dual-use regulatory complexity into audit-ready operations. Lemur Legal builds scalable compliance frameworks, governance and controls across export controls, sanctions and procurement.',
+        'Turn defence and dual-use complexity into audit-ready operations. We build scalable compliance frameworks, governance and controls.',
     },
     hero: {
       kicker: 'Compliance Frameworks for Defence & Dual-Use · Ljubljana',
@@ -142,7 +142,7 @@ const c: Bilingual<ComplianceFrameworksContent> = {
       title: 'Okviri skladnosti — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Regulativno kompleksnost obrambe in dvojne rabe pretvorite v operacije, pripravljene na revizijo. Lemur Legal gradi prilagodljive okvire skladnosti, upravljanje in kontrole na področju nadzora izvoza, sankcij in javnih naročil.',
+        'Regulativno kompleksnost obrambe in dvojne rabe spremenimo v operacije, pripravljene na revizijo. Gradimo prilagodljive okvire skladnosti in kontrole.',
     },
     hero: {
       // TODO(sl-review): kicker machine-translated

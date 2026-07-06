@@ -49,9 +49,9 @@ export interface HomeContent {
 const home: Bilingual<HomeContent> = {
   en: {
     meta: {
-      title: 'Lemur Legal — Law for crypto, fintech, startups, deep tech & dual-use',
+      title: 'Lemur Legal — Tech Law for Crypto, Deep Tech & Defence',
       description:
-        'Lemur Legal is a specialist tech-law office in Ljubljana. One firm, three practices: crypto & fintech (MiCA, tokens, licensing), startups & deep tech (incorporation, IP, contracts), and an emerging defence & dual-use practice. Founded by Peter Merc, Ph.D.',
+        'Specialist tech-law office in Ljubljana: MiCA & crypto, startups & deep tech, defence & dual-use. Fixed fees, first reply within 24 hours.',
     },
     hero: {
       kicker: 'Specialist tech-law office · Ljubljana',
@@ -89,9 +89,9 @@ const home: Bilingual<HomeContent> = {
           state: 'ACTIVE',
           desc: 'MiCA, crypto legal opinion, and ongoing compliance for crypto and fintech companies.',
           services: [
-            { label: 'MiCA white paper', href: '/mica_white_paper' },
-            { label: 'Crypto Legal Opinion', href: '/crypto_legal_opinion' },
-            { label: 'Regulatory Compliance', href: '/regulatory_compliance' },
+            { label: 'MiCA white paper', href: '/mica-white-paper' },
+            { label: 'Crypto Legal Opinion', href: '/crypto-legal-opinion' },
+            { label: 'Regulatory Compliance', href: '/regulatory-compliance' },
           ],
         },
         {
@@ -100,9 +100,9 @@ const home: Bilingual<HomeContent> = {
           state: 'ACTIVE',
           desc: 'Incorporation, IP protection and commercial contracts for technology companies building and scaling in regulated markets.',
           services: [
-            { label: 'Incorporation & ESOP', href: '/incorporation_esop' },
-            { label: 'IP protection — registered representatives', href: '/ip_protection' },
-            { label: 'Contracts & commercial', href: '/startups_contracts' },
+            { label: 'Incorporation & ESOP', href: '/incorporation-esop' },
+            { label: 'IP protection — registered representatives', href: '/ip-protection' },
+            { label: 'Contracts & commercial', href: '/startups-contracts' },
           ],
         },
         {
@@ -111,9 +111,9 @@ const home: Bilingual<HomeContent> = {
           state: 'ACTIVE',
           desc: 'Export controls, dual-use licensing, FDI screening and commercial contracts for defence and dual-use technology companies.',
           services: [
-            { label: 'Investment readiness review', href: '/investment_readiness_review' },
-            { label: 'Compliance frameworks', href: '/compliance_frameworks' },
-            { label: 'Regulatory qualification', href: '/regulatory_qualification' },
+            { label: 'Investment readiness review', href: '/investment-readiness-review' },
+            { label: 'Compliance frameworks', href: '/compliance-frameworks' },
+            { label: 'Regulatory qualification', href: '/regulatory-qualification' },
           ],
         },
       ],
@@ -166,10 +166,10 @@ const home: Bilingual<HomeContent> = {
 
   sl: {
     meta: {
-      title: 'Lemur Legal — Pravo za kripto, fintech, zagonska podjetja, napredno tehnologijo in dvojno rabo',
-      // TODO(sl-review): meta description machine-translated
+      title: 'Lemur Legal — Pravo za kripto, tehnologijo in obrambo',
+      // TODO(sl-review): meta title + description
       description:
-        'Lemur Legal je specializirana odvetniška pisarna za tehnološko pravo v Ljubljani. Ena pisarna, tri področja: kripto in fintech (MiCA, žetoni, licenciranje), zagonska podjetja in napredna tehnologija (ustanovitev, IL, pogodbe) ter obramba in dvojna raba. Ustanovitelj dr. Peter Merc.',
+        'Specializirana odvetniška pisarna za tehnološko pravo v Ljubljani: MiCA in kripto, startupi, obramba in dvojna raba. Fiksni honorar, odgovor v 24 urah.',
     },
     hero: {
       kicker: 'Specializirana odvetniška pisarna za tehnološko pravo · Ljubljana',
@@ -207,9 +207,9 @@ const home: Bilingual<HomeContent> = {
           state: 'AKTIVNO',
           desc: 'MiCA, pravno mnenje s področja kripta in stalna skladnost za kripto in fintech podjetja.',
           services: [
-            { label: 'Beli papir MiCA', href: '/mica_white_paper' },
-            { label: 'Pravno mnenje s področja kripta', href: '/crypto_legal_opinion' },
-            { label: 'Regulativna skladnost', href: '/regulatory_compliance' },
+            { label: 'Beli papir MiCA', href: '/mica-white-paper' },
+            { label: 'Pravno mnenje s področja kripta', href: '/crypto-legal-opinion' },
+            { label: 'Regulativna skladnost', href: '/regulatory-compliance' },
           ],
         },
         {
@@ -218,9 +218,9 @@ const home: Bilingual<HomeContent> = {
           state: 'AKTIVNO',
           desc: 'Ustanovitev podjetja, zaščita intelektualne lastnine in gospodarske pogodbe za tehnološka podjetja, ki gradijo in rastejo na reguliranih trgih.',
           services: [
-            { label: 'Ustanovitev podjetja in ESOP', href: '/incorporation_esop' },
-            { label: 'Zaščita intelektualne lastnine — registrirani zastopniki', href: '/ip_protection' },
-            { label: 'Pogodbe in gospodarsko pravo', href: '/startups_contracts' },
+            { label: 'Ustanovitev podjetja in ESOP', href: '/incorporation-esop' },
+            { label: 'Zaščita intelektualne lastnine — registrirani zastopniki', href: '/ip-protection' },
+            { label: 'Pogodbe in gospodarsko pravo', href: '/startups-contracts' },
           ],
         },
         {
@@ -229,9 +229,9 @@ const home: Bilingual<HomeContent> = {
           state: 'AKTIVNO',
           desc: 'Nadzor izvoza, licenciranje za dvojno rabo, pregled neposrednih tujih naložb in gospodarske pogodbe za podjetja s področja obrambne tehnologije in tehnologije za dvojno rabo.',
           services: [
-            { label: 'Pregled pripravljenosti na investicije', href: '/investment_readiness_review' },
-            { label: 'Okviri skladnosti', href: '/compliance_frameworks' },
-            { label: 'Regulativna opredelitev', href: '/regulatory_qualification' },
+            { label: 'Pregled pripravljenosti na investicije', href: '/investment-readiness-review' },
+            { label: 'Okviri skladnosti', href: '/compliance-frameworks' },
+            { label: 'Regulativna opredelitev', href: '/regulatory-qualification' },
           ],
         },
       ],

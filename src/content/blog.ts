@@ -53,9 +53,9 @@ const HEXROW =
 const blog: Bilingual<BlogContent> = {
   en: {
     meta: {
-      title: 'Blog — Lemur Legal',
+      title: 'EU Tech Law Blog — Lemur Legal',
       description:
-        'Briefings, explainers and deep-dives on EU tech law — MiCA and token regulation, startups and equity, IP, export controls and dual-use — from Lemur Legal.',
+        'Briefings and deep-dives on EU tech law — MiCA and tokens, startups and equity, IP, export controls and dual-use.',
     },
     hero: {
       kicker: 'Blog · Ljubljana',
@@ -119,9 +119,9 @@ const blog: Bilingual<BlogContent> = {
   },
   sl: {
     meta: {
-      title: 'Blog — Lemur Legal',
+      title: 'Blog o tehnološkem pravu — Lemur Legal',
       description:
-        'Pregledi, razlage in poglobljene analize o evropskem tehnološkem pravu — MiCA in regulacija žetonov, zagonska podjetja in lastniški deleži, intelektualna lastnina, izvozni nadzor in dvojna raba — iz pisarne Lemur Legal.',
+        'Pregledi in analize evropskega tehnološkega prava — MiCA in žetoni, startupi in deleži, intelektualna lastnina, izvozni nadzor in dvojna raba.',
     },
     hero: {
       kicker: 'Blog · Ljubljana',
