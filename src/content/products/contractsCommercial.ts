@@ -36,7 +36,7 @@ const c: Bilingual<ContractsCommercialContent> = {
     meta: {
       title: 'Contracts & Commercial — Lemur Legal',
       description:
-        'The contracts that protect your business. From software and source-code licences to manufacturing and partnership deals, Lemur Legal drafts the agreements that remove risk from every relationship your technology company enters.',
+        'The contracts that protect your business — from software and source-code licences to manufacturing and partnership deals, drafted to remove risk.',
     },
     hero: {
       kicker: 'Contracts & Commercial · Ljubljana',
@@ -148,7 +148,7 @@ const c: Bilingual<ContractsCommercialContent> = {
       title: 'Pogodbe in gospodarsko pravo — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Pogodbe, ki ščitijo vaše podjetje. Od licenc za programsko in izvorno kodo do proizvodnih in partnerskih poslov — Lemur Legal pripravlja sporazume, ki odpravljajo tveganja iz vsakega odnosa, v katerega vaše tehnološko podjetje vstopa.',
+        'Pogodbe, ki ščitijo vaše podjetje — od licenc za programsko in izvorno kodo do proizvodnih in partnerskih poslov, pripravljene za odpravo tveganj.',
     },
     hero: {
       // TODO(sl-review): kicker machine-translated

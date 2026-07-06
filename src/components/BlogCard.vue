@@ -3,7 +3,7 @@
     class="blog-card"
     :class="'blog-card--' + meta.cls"
     data-anim="reveal"
-    :href="'/blog/' + post.slug"
+    :href="localePath('/blog/' + post.slug)"
   >
     <img class="blog-card__img" :alt="post.coverImageAlt" :src="coverSrc" />
     <div class="blog-card__body">
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { type BlogPost, sectionMeta, placeholderCover, formatDate } from '@/lib/contentful'
-import { locale } from '@/i18n/locale'
+import { locale, localePath } from '@/i18n/locale'
 
 const props = defineProps<{ post: BlogPost }>()
 

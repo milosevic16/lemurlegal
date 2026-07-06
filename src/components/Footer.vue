@@ -13,25 +13,25 @@
         </div>
         <nav class="foot-col fc-b" :aria-label="c.footer.cols.crypto.heading">
           <h5>{{ c.footer.cols.crypto.heading }}</h5>
-          <a :href="lp('/mica_white_paper')">{{ c.footer.cols.crypto.links[0] }}</a>
-          <a :href="lp('/crypto_legal_opinion')">{{ c.footer.cols.crypto.links[1] }}</a>
-          <a :href="lp('/regulatory_compliance')">{{ c.footer.cols.crypto.links[2] }}</a>
+          <a :href="lp('/mica-white-paper')">{{ c.footer.cols.crypto.links[0] }}</a>
+          <a :href="lp('/crypto-legal-opinion')">{{ c.footer.cols.crypto.links[1] }}</a>
+          <a :href="lp('/regulatory-compliance')">{{ c.footer.cols.crypto.links[2] }}</a>
         </nav>
         <nav class="foot-col fc-g" :aria-label="c.footer.cols.startups.heading">
           <h5>{{ c.footer.cols.startups.heading }}</h5>
-          <a :href="lp('/incorporation_esop')">{{ c.footer.cols.startups.links[0] }}</a>
-          <a :href="lp('/ip_protection')">{{ c.footer.cols.startups.links[1] }}</a>
-          <a :href="lp('/startups_contracts')">{{ c.footer.cols.startups.links[2] }}</a>
+          <a :href="lp('/incorporation-esop')">{{ c.footer.cols.startups.links[0] }}</a>
+          <a :href="lp('/ip-protection')">{{ c.footer.cols.startups.links[1] }}</a>
+          <a :href="lp('/startups-contracts')">{{ c.footer.cols.startups.links[2] }}</a>
         </nav>
         <nav class="foot-col fc-o" :aria-label="c.footer.cols.defence.heading">
           <h5>{{ c.footer.cols.defence.heading }}</h5>
-          <a :href="lp('/regulatory_qualification')">{{ c.footer.cols.defence.links[0] }}</a>
-          <a :href="lp('/investment_readiness_review')">{{ c.footer.cols.defence.links[1] }}</a>
-          <a :href="lp('/compliance_frameworks')">{{ c.footer.cols.defence.links[2] }}</a>
+          <a :href="lp('/regulatory-qualification')">{{ c.footer.cols.defence.links[0] }}</a>
+          <a :href="lp('/investment-readiness-review')">{{ c.footer.cols.defence.links[1] }}</a>
+          <a :href="lp('/compliance-frameworks')">{{ c.footer.cols.defence.links[2] }}</a>
         </nav>
       </div>
       <nav class="foot__legal" aria-label="Legal">
-        <a :href="lp('/terms_of_use')">{{ c.footer.legal.terms }}</a>
+        <a :href="lp('/terms-of-use')">{{ c.footer.legal.terms }}</a>
       </nav>
       <div class="foot__base">
         <span>{{ c.footer.copyright }}</span>

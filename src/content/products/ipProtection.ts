@@ -29,7 +29,7 @@ const c: Bilingual<IPProtectionContent> = {
     meta: {
       title: 'IP Protection — Lemur Legal',
       description:
-        'Protect and defend your intellectual property. IPR strategy, trademark and design registration (EUIPO representative), copyright, contracts and licensing — from Lemur Legal.',
+        'Protect and defend your IP: strategy, trademark and design registration (EUIPO representative), copyright, contracts and licensing.',
     },
     hero: {
       kicker: 'IP Protection · Ljubljana',
@@ -123,7 +123,7 @@ const c: Bilingual<IPProtectionContent> = {
       title: 'Zaščita intelektualne lastnine — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Zaščitite in branite svojo intelektualno lastnino. Strategija IP, registracija blagovnih znamk in modelov (zastopnik pri EUIPO), avtorske pravice, pogodbe in licenciranje — Lemur Legal.',
+        'Zaščitite in branite svojo intelektualno lastnino: strategija IP, registracija znamk in modelov (zastopnik EUIPO), avtorske pravice in licence.',
     },
     hero: {
       // TODO(sl-review): kicker machine-translated

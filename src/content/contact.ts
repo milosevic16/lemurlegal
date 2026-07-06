@@ -54,9 +54,9 @@ export interface ContactContent {
 const contact: Bilingual<ContactContent> = {
   en: {
     meta: {
-      title: 'Contact — Lemur Legal',
+      title: 'Contact Lemur Legal — Tech Law in Ljubljana',
       description:
-        "Tell us what you're building. Send a brief to Lemur Legal — a specialist tech-law office in Ljubljana for crypto & fintech, startups & deep tech, and defence & dual-use. Fixed fee, reply within 24 hours.",
+        'Send us your legal question. Fixed-fee tech-law advice for crypto, startups and defence, from a specialist office in Ljubljana. Reply within 24 hours.',
     },
     hero: {
       kicker: 'Contact · Ljubljana',
@@ -143,10 +143,10 @@ const contact: Bilingual<ContactContent> = {
 
   sl: {
     meta: {
-      title: 'Kontakt — Lemur Legal',
-      // TODO(sl-review): meta description machine-translated
+      title: 'Kontakt — Lemur Legal, Ljubljana',
+      // TODO(sl-review): meta title + description
       description:
-        'Povejte nam, kaj gradite. Pošljite navodilo pisarni Lemur Legal — specializirani odvetniški pisarni za tehnološko pravo v Ljubljani za kripto in fintech, zagonska podjetja in napredno tehnologijo ter obrambo in dvojno rabo. Fiksni honorar, odgovor v 24 urah.',
+        'Pošljite nam svoje pravno vprašanje. Fiksni honorar za kripto, startupe in obrambo iz specializirane pisarne v Ljubljani. Odgovor v 24 urah.',
     },
     hero: {
       kicker: 'Kontakt · Ljubljana',

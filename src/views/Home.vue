@@ -13,7 +13,7 @@
       <h1 id="hero-h"><span class="hero-title-glitch" data-glitch-text="" :data-text="t.hero.titleGlitch" style="font-size:25px;font-weight:500;color:rgb(159,159,159)">{{ t.hero.titleGlitch }}</span><br>{{ t.hero.titleLead }} <span class="b">{{ t.hero.crypto }}</span>, <span class="g">{{ t.hero.deeptech }}</span> {{ t.hero.and }} <span class="o">{{ t.hero.defence }}</span>.</h1>
 
       <div class="hero__actions">
-        <a class="action" href="/contact#brief">{{ t.hero.actionPrimary }} <span class="arrow">→</span></a>
+        <a class="action" :href="lp('/contact') + '#brief'">{{ t.hero.actionPrimary }} <span class="arrow">→</span></a>
         <a class="action action--muted" href="#practices">{{ t.hero.actionSecondary }} <span class="arrow">→</span></a>
       </div>
       <div class="node-row" aria-hidden="true">
@@ -48,7 +48,7 @@
     <p style="font-style:normal;">{{ t.practices.subtitle }}</p>
   </div>
 
-  <article class="ledger ledger--b" id="crypto_fintech" data-anim="reveal">
+  <article class="ledger ledger--b" id="crypto-fintech" data-anim="reveal">
     <div class="ledger__head">
       <span class="pno">{{ t.practices.items[0].pno }}</span>
       <h3>{{ t.practices.items[0].name }}</h3>
@@ -56,13 +56,13 @@
       <p class="desc">{{ t.practices.items[0].desc }}</p>
     </div>
     <div class="svc">
-      <a href="/mica_white_paper"><span class="l">a.</span><span class="t">{{ t.practices.items[0].services[0].label }}</span><span class="ar">→</span></a>
-      <a href="/crypto_legal_opinion"><span class="l">b.</span><span class="t">{{ t.practices.items[0].services[1].label }}</span><span class="ar">→</span></a>
-      <a href="/regulatory_compliance"><span class="l">c.</span><span class="t">{{ t.practices.items[0].services[2].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/mica-white-paper')"><span class="l">a.</span><span class="t">{{ t.practices.items[0].services[0].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/crypto-legal-opinion')"><span class="l">b.</span><span class="t">{{ t.practices.items[0].services[1].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/regulatory-compliance')"><span class="l">c.</span><span class="t">{{ t.practices.items[0].services[2].label }}</span><span class="ar">→</span></a>
     </div>
   </article>
 
-  <article class="ledger ledger--g" id="startups_deeptech" data-anim="reveal">
+  <article class="ledger ledger--g" id="startups-deeptech" data-anim="reveal">
     <div class="ledger__head">
       <span class="pno">{{ t.practices.items[1].pno }}</span>
       <h3>{{ t.practices.items[1].name }}</h3>
@@ -70,13 +70,13 @@
       <p class="desc">{{ t.practices.items[1].desc }}</p>
     </div>
     <div class="svc">
-      <a href="/incorporation_esop"><span class="l">a.</span><span class="t">{{ t.practices.items[1].services[0].label }}</span><span class="ar">→</span></a>
-      <a href="/ip_protection"><span class="l">b.</span><span class="t">{{ t.practices.items[1].services[1].label }}</span><span class="ar">→</span></a>
-      <a href="/startups_contracts"><span class="l">c.</span><span class="t">{{ t.practices.items[1].services[2].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/incorporation-esop')"><span class="l">a.</span><span class="t">{{ t.practices.items[1].services[0].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/ip-protection')"><span class="l">b.</span><span class="t">{{ t.practices.items[1].services[1].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/startups-contracts')"><span class="l">c.</span><span class="t">{{ t.practices.items[1].services[2].label }}</span><span class="ar">→</span></a>
     </div>
   </article>
 
-  <article class="ledger ledger--o" id="defence_dualuse" data-anim="reveal">
+  <article class="ledger ledger--o" id="defence-dualuse" data-anim="reveal">
     <div class="ledger__head">
       <span class="pno">{{ t.practices.items[2].pno }}</span>
       <h3>{{ t.practices.items[2].name }}</h3>
@@ -85,9 +85,9 @@
 
     </div>
     <div class="svc">
-      <a href="/investment_readiness_review"><span class="l">a.</span><span class="t">{{ t.practices.items[2].services[0].label }}</span><span class="ar">→</span></a>
-      <a href="/compliance_frameworks"><span class="l">b.</span><span class="t">{{ t.practices.items[2].services[1].label }}</span><span class="ar">→</span></a>
-      <a href="/regulatory_qualification"><span class="l">c.</span><span class="t">{{ t.practices.items[2].services[2].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/investment-readiness-review')"><span class="l">a.</span><span class="t">{{ t.practices.items[2].services[0].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/compliance-frameworks')"><span class="l">b.</span><span class="t">{{ t.practices.items[2].services[1].label }}</span><span class="ar">→</span></a>
+      <a :href="lp('/regulatory-qualification')"><span class="l">c.</span><span class="t">{{ t.practices.items[2].services[2].label }}</span><span class="ar">→</span></a>
     </div>
   </article>
 </section>
@@ -176,13 +176,13 @@
         <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[2].sub"></span></span>      </div>
     </div>
     <div class="matter-board__footer mb-hide">
-      <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" data-type-link="/contact#brief" data-type-speed="28"></span>
+      <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" :data-type-link="lp('/contact') + '#brief'" data-type-speed="28"></span>
     </div>
   </div>
 
 
   <div class="cta__act">
-    <a class="action" href="/contact#brief">{{ t.cta.action }} <span class="arrow">→</span></a>
+    <a class="action" :href="lp('/contact') + '#brief'">{{ t.cta.action }} <span class="arrow">→</span></a>
   </div>
 </section>
 </main>
@@ -194,10 +194,14 @@ import { initEffects } from './Home.effects'
 import { useTheme, useRootVars } from '@/composables/useTheme'
 import { usePageContent } from '@/i18n/useContent'
 import { useHead } from '@/i18n/useHead'
+import { localePath } from '@/i18n/locale'
 import home from '@/content/home'
 
 const t = usePageContent(home)
 useHead(home)
+// Locale-aware internal links: renders the current locale's URL so right-click /
+// new-tab and crawlers get the Slovenian path on SL pages (not just left-clicks).
+const lp = (p: string) => localePath(p)
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.

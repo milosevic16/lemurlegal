@@ -282,12 +282,12 @@
     <h2 id="xs-h">{{ t.cross.h2 }}</h2>
   </div>
   <div class="cross">
-    <a class="xc" href="/incorporation_esop" data-anim="reveal" data-ht-arrow="">
+    <a class="xc" :href="lp('/incorporation-esop')" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"></path></svg></span>
       <span><h4>{{ t.cross.items[0].h4 }}</h4><p>{{ t.cross.items[0].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
-    <a class="xc" href="/ip_protection" data-anim="reveal" data-ht-arrow="">
+    <a class="xc" :href="lp('/ip-protection')" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
       <span><h4>{{ t.cross.items[1].h4 }}</h4><p>{{ t.cross.items[1].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
@@ -303,10 +303,12 @@ import { initEffects } from './ContractsCommercial.effects'
 import { useTheme, useRootVars } from '@/composables/useTheme'
 import { usePageContent } from '@/i18n/useContent'
 import { useHead } from '@/i18n/useHead'
+import { localePath } from '@/i18n/locale'
 import content from '@/content/products/contractsCommercial'
 
 const t = usePageContent(content)
 useHead(content)
+const lp = (p: string) => localePath(p)
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.

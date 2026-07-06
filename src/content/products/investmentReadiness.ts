@@ -35,7 +35,7 @@ const c: Bilingual<InvestmentReadinessContent> = {
     meta: {
       title: 'Investment Readiness Review — Lemur Legal',
       description:
-        'Prove your defence or dual-use company is investment-ready and de-risk the deal. Lemur Legal scores your regulatory exposure, compliance maturity and operational readiness for fundraising, M&A and diligence.',
+        'Prove your defence or dual-use company is investment-ready. We score regulatory exposure, compliance maturity and readiness for fundraising and M&A.',
     },
     hero: {
       kicker: 'Investment Readiness Review for Defence & Dual-Use · Ljubljana',
@@ -146,7 +146,7 @@ const c: Bilingual<InvestmentReadinessContent> = {
       title: 'Pregled investicijske pripravljenosti — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Dokažite, da je vaše obrambno podjetje ali podjetje z dvojno rabo pripravljeno na investicijo, in zmanjšajte tveganje posla. Lemur Legal oceni vašo regulativno izpostavljenost, zrelost skladnosti in operativno pripravljenost za zbiranje sredstev, prevzeme (M&A) in skrbni pregled.',
+        'Dokažite, da je vaše obrambno podjetje pripravljeno na investicijo — ocenimo regulativno izpostavljenost, zrelost skladnosti in pripravljenost na vlagatelje.',
     },
     hero: {
       // TODO(sl-review): kicker machine-translated

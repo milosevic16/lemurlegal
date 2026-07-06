@@ -29,7 +29,7 @@ const c: Bilingual<RegulatoryComplianceContent> = {
     meta: {
       title: 'Regulatory Compliance — Lemur Legal',
       description:
-        'Your outsourced compliance function. We act as your external compliance officer across PSD2, MiFID II, EBA guidelines, MiCA and EU AML rules.',
+        'Your outsourced compliance function — we act as your external compliance officer across PSD2, MiFID II, EBA guidelines, MiCA and EU AML.',
     },
     hero: {
       kicker: 'Regulatory Compliance · Ljubljana',
@@ -127,7 +127,7 @@ const c: Bilingual<RegulatoryComplianceContent> = {
       title: 'Regulativna skladnost — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Vaš zunanji pooblaščenec za skladnost. Delujemo kot vaš zunanji pooblaščenec za skladnost na področjih PSD2, MiFID II, smernic EBA, MiCA in EU pravil AML.',
+        'Vaša zunanja funkcija skladnosti — delujemo kot vaš pooblaščenec za skladnost na področjih PSD2, MiFID II, smernic EBA, MiCA in EU pravil AML.',
     },
     hero: {
       kicker: 'Regulativna skladnost · Ljubljana',

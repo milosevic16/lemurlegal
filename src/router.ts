@@ -1,48 +1,40 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import { locale, closeMobileMenu } from './i18n/locale'
+import { SLUGS } from './i18n/slugs'
 
-// Map route slugs to lazily-loaded view components. Keep in sync with
-// tools/extract.py FILES / src/pages.ts.
-const VIEWS: Array<[string, string]> = [
-  ['', 'Home'],
-  ['mica_white_paper', 'MiCAWhitePaper'],
-  ['crypto_legal_opinion', 'CryptoLegalOpinion'],
-  ['regulatory_compliance', 'RegulatoryCompliance'],
-  ['incorporation_esop', 'IncorporationESOP'],
-  ['ip_protection', 'IPProtection'],
-  ['startups_contracts', 'ContractsCommercial'],
-  ['regulatory_qualification', 'RegulatoryQualification'],
-  ['investment_readiness_review', 'InvestmentReadiness'],
-  ['compliance_frameworks', 'ComplianceFrameworks'],
-  ['blog', 'Blog'],
-  ['media', 'MediaCoverage'],
-  ['contact', 'Contact'],
-  ['terms_of_use', 'TermsOfUse'],
-]
+const routes: RouteRecordRaw[] = []
 
-// Every view gets an optional `/sl` locale prefix and one shared component across
-// locales (EN at `/…`, SL at `/sl/…`). The blog list is in VIEWS; its article
-// detail route is added separately below (it carries a `:slug` param).
-const routes: RouteRecordRaw[] = VIEWS.map(([slug, name]) => ({
-  path: slug ? '/:lang(sl)?/' + slug : '/:lang(sl)?', // Home handles '/' and '/sl'
-  name,
-  component: () => import(`./views/${name}.vue`),
-}))
+// Two routes per param-less view: English at `/<en>` and Slovenian at `/sl/<sl>`
+// (Home is `/` and `/sl`). The slugs differ per locale — English uses dashes,
+// Slovenian is translated (see src/i18n/slugs.ts). Both locales share one lazy
+// component; `meta.locale` drives the active locale (read in beforeEach). SL
+// routes take a distinct name so route names stay unique.
+for (const s of SLUGS) {
+  const component = () => import(`./views/${s.view}.vue`)
+  routes.push({ path: s.en ? '/' + s.en : '/', name: s.view, component, meta: { locale: 'en' } })
+  routes.push({ path: s.sl ? '/sl/' + s.sl : '/sl', name: s.view + '-sl', component, meta: { locale: 'sl' } })
+}
 
 // Blog article detail — localized alongside the list: EN `/blog/:slug`, SL
-// `/sl/blog/:slug`. The slug is shared across locales (one entry, translated
-// fields); the Contentful fetch requests the active locale and falls back to
-// English where a Slovenian translation is missing.
-routes.push({
-  path: '/:lang(sl)?/blog/:slug',
-  name: 'BlogPost',
-  component: () => import('./views/BlogPost.vue'),
-})
+// `/sl/blog/:slug`. The slug is the Contentful slug, shared across locales (one
+// entry, translated fields); the fetch requests the active locale and falls back
+// to English where a Slovenian translation is missing.
+routes.push({ path: '/blog/:slug', name: 'BlogPost', component: () => import('./views/BlogPost.vue'), meta: { locale: 'en' } })
+routes.push({ path: '/sl/blog/:slug', name: 'BlogPost-sl', component: () => import('./views/BlogPost.vue'), meta: { locale: 'sl' } })
 
 // `About` has no standalone page in the export — send it to the founder section,
 // preserving locale.
 routes.push({ path: '/about', redirect: { path: '/', hash: '#founder' } })
 routes.push({ path: '/sl/about', redirect: { path: '/sl', hash: '#founder' } })
+
+// Redirect legacy underscore URLs (and the old English-slug SL URLs) to the new
+// dashed / translated ones, so existing links, bookmarks and the already-rendered
+// Slovenian PDFs keep resolving instead of falling through to the catch-all.
+for (const s of SLUGS) {
+  if (s.old && s.old !== s.en) routes.push({ path: '/' + s.old, redirect: '/' + s.en })
+  if (s.old && s.old !== s.sl) routes.push({ path: '/sl/' + s.old, redirect: s.sl ? '/sl/' + s.sl : '/sl' })
+}
+
 routes.push({ path: '/:pathMatch(.*)*', redirect: '/' })
 
 // Resolve once the hash target exists, the fixed-header spacer has a height
@@ -93,11 +85,13 @@ export const router = createRouter({
   },
 })
 
-// Keep the active locale in sync with the URL's `:lang` segment. Set in a
-// beforeEach (not afterEach) so the locale is already correct when the view's
-// setup/onMounted runs — the ported effects read locale-bound content at mount.
+// Keep the active locale in sync with the matched route. Set in a beforeEach (not
+// afterEach) so the locale is already correct when the view's setup/onMounted runs
+// — the ported effects and the Contentful fetches (blog/media) read `locale.value`
+// at mount. Prefer the route's meta.locale; fall back to a `/sl` path test so no
+// route can ever load the wrong-locale content even if its meta were missing.
 router.beforeEach((to) => {
-  locale.value = to.params.lang === 'sl' ? 'sl' : 'en'
+  locale.value = to.meta.locale === 'sl' || /^\/sl(\/|$)/.test(to.path) ? 'sl' : 'en'
   // Snap the mobile menu shut before the next view renders so an open/animating
   // menu doesn't inflate the fixed-header height that anchor scrolls offset by.
   closeMobileMenu()

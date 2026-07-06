@@ -1,21 +1,33 @@
 import { ref } from 'vue'
+import { resolveSlug, slugFor } from './slugs'
 
 export type Locale = 'en' | 'sl'
 
-/** The active UI locale. Set from the route's `:lang` param by a router.afterEach
- *  hook (see src/router.ts) and read reactively by content objects + chrome. */
+/** The active UI locale. Set from the matched route's `meta.locale` by a
+ *  router.beforeEach hook (see src/router.ts) and read reactively by content
+ *  objects + chrome. */
 export const locale = ref<Locale>('en')
 
 /**
- * Map a path to the given locale: prefix `/sl` for Slovenian, strip it for
- * English. The blog and its articles are localized like every other page — the
- * Contentful `blogPost` fields are localized (title/summary/body), falling back
- * to English where a Slovenian translation is not yet entered.
+ * Translate a path into the given locale's URL. Page slugs differ per locale
+ * (English uses dashes, Slovenian is translated — see src/i18n/slugs.ts), so
+ * this does a slug lookup, not a blind `/sl` prefix. It is bidirectional: the
+ * input path may already be in either locale's (or a legacy underscore) form,
+ * which is why the language toggle and useHead can call it with `route.path`.
+ *
+ * Sub-paths are preserved, so a blog article `/blog/<slug>` maps to
+ * `/sl/blog/<slug>` — the article slug itself is Contentful-managed and shared
+ * across locales (its localized fields are fetched by the active locale).
  */
 export function localePath(path: string, loc: Locale = locale.value): string {
+  // Drop any leading `/sl` so we work from a locale-neutral path.
   const clean = path.replace(/^\/sl(?=\/|$)/, '') || '/'
-  if (loc !== 'sl') return clean
-  return clean === '/' ? '/sl' : '/sl' + clean
+  const [first, ...rest] = clean.replace(/^\//, '').split('/')
+  const entry = first ? resolveSlug(first) : undefined
+  const seg = entry ? slugFor(entry, loc) : first
+  const base = loc === 'sl' ? '/sl' : ''
+  if (!seg) return base || '/' // home
+  return base + '/' + seg + (rest.length ? '/' + rest.join('/') : '')
 }
 
 export function otherLocale(loc: Locale = locale.value): Locale {

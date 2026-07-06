@@ -35,7 +35,7 @@ const c: Bilingual<RegulatoryQualificationContent> = {
     meta: {
       title: 'Trade Regulatory Qualification — Lemur Legal',
       description:
-        'Defence & dual-use technology, cleared for global markets. Lemur Legal turns export controls, sanctions and customs classification into clear, repeatable cross-border workflows for products, components and technologies.',
+        'Defence and dual-use tech, cleared for global markets. We turn export controls, sanctions and customs classification into repeatable workflows.',
     },
     hero: {
       kicker: 'Trade Regulatory Qualification for Defence & Dual-Use · Ljubljana',
@@ -144,7 +144,7 @@ const c: Bilingual<RegulatoryQualificationContent> = {
       title: 'Trgovinska regulativna kvalifikacija — Lemur Legal',
       // TODO(sl-review): meta description machine-translated
       description:
-        'Obrambna tehnologija in tehnologija z dvojno rabo, odobrena za svetovne trge. Lemur Legal nadzor izvoza, sankcije in carinsko razvrščanje spreminja v jasne, ponovljive čezmejne delovne tokove za izdelke, komponente in tehnologije.',
+        'Obrambna tehnologija in dvojna raba za svetovne trge. Nadzor izvoza, sankcije in carinsko razvrščanje spremenimo v ponovljive čezmejne postopke.',
     },
     hero: {
       // TODO(sl-review): kicker machine-translated

@@ -55,7 +55,7 @@
   <div class="container cta-band__in">
     <h2>{{ t.cta.title }}</h2>
     <p>{{ t.cta.text }}</p>
-    <a class="action" href="/contact#brief">{{ t.cta.action }} <span class="arrow">→</span></a>
+    <a class="action" :href="lp('/contact') + '#brief'">{{ t.cta.action }} <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -71,13 +71,14 @@ import { initEffects } from './Blog.effects'
 import { applyBlogTheme } from '@/composables/blogTheme'
 import { useHead } from '@/i18n/useHead'
 import { usePageContent } from '@/i18n/useContent'
-import { locale } from '@/i18n/locale'
+import { locale, localePath } from '@/i18n/locale'
 import MediaCard from '@/components/MediaCard.vue'
 import media from '@/content/media'
 import { fetchMediaItems, SAMPLE_MEDIA, mediaSectionMeta, type MediaItem, type MediaSectionId } from '@/lib/media'
 
 const t = usePageContent(media)
 useHead(media)
+const lp = (p: string) => localePath(p)
 
 const items = ref<MediaItem[]>([])
 const loading = ref(true)

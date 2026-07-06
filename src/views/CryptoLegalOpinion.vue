@@ -287,12 +287,12 @@
     <h2 id="xs-h">{{ t.cross.h2 }}</h2>
   </div>
   <div class="cross">
-    <a class="xc" href="/mica_white_paper" data-anim="reveal" data-ht-arrow="">
+    <a class="xc" :href="lp('/mica-white-paper')" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span>
       <span><h4>{{ t.cross.items[0].h4 }}</h4><p>{{ t.cross.items[0].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
     </a>
-    <a class="xc" href="/regulatory_compliance" data-anim="reveal" data-ht-arrow="">
+    <a class="xc" :href="lp('/regulatory-compliance')" data-anim="reveal" data-ht-arrow="">
       <span class="xi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
       <span><h4>{{ t.cross.items[1].h4 }}</h4><p>{{ t.cross.items[1].p }}</p></span>
       <span class="arr" data-ht-glyph="">→</span>
@@ -308,10 +308,12 @@ import { initEffects } from './CryptoLegalOpinion.effects'
 import { useTheme, useRootVars } from '@/composables/useTheme'
 import { usePageContent } from '@/i18n/useContent'
 import { useHead } from '@/i18n/useHead'
+import { localePath } from '@/i18n/locale'
 import content from '@/content/products/cryptoLegalOpinion'
 
 const t = usePageContent(content)
 useHead(content)
+const lp = (p: string) => localePath(p)
 
 // This page's :root custom properties (fonts / spacing / palette). Applied at
 // runtime so pages with different design tokens don't clobber each other.
