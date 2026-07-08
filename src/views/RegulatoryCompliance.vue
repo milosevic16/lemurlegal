@@ -1218,7 +1218,6 @@ input, button, textarea, select { font: inherit; color: inherit; }
     row-gap: 2.4rem;
   }
 .mica__seal-wrap {
-    order: -1;
     justify-content: flex-start;
   }
 .mica__cov-grid {
