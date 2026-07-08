@@ -17,7 +17,7 @@ const chrome: Bilingual<ChromeContent> = {
       blurb: 'Law for crypto, fintech, startup, deep tech, defence & dual-use',
       org: 'Lemur Legal, d.o.o.',
       street: 'Ciril-Metodov trg 14',
-      city: 'Ljubljana, Slovenia',
+      city: 'Ljubljana',
       cols: {
         crypto: {
           heading: 'Crypto & Fintech',
@@ -34,7 +34,6 @@ const chrome: Bilingual<ChromeContent> = {
       },
       legal: { terms: 'Terms of Use and Privacy Policy' },
       copyright: '© 2026 Lemur Legal d.o.o.',
-      strap: 'Fintech Factory — crypto & fintech practice by Lemur Legal',
       socialAria: 'Lemur Legal on LinkedIn',
     },
   },
@@ -51,7 +50,7 @@ const chrome: Bilingual<ChromeContent> = {
       blurb: 'Specializirana pravna pisarna za kripto, fintech, startup, deep tech, defence in dual-use podjetja.',
       org: 'Lemur Legal, d.o.o.',
       street: 'Ciril-Metodov trg 14',
-      city: 'Ljubljana, Slovenija',
+      city: 'Ljubljana',
       cols: {
         crypto: {
           heading: 'Kripto in fintech',
@@ -70,7 +69,6 @@ const chrome: Bilingual<ChromeContent> = {
       },
       legal: { terms: 'Pogoji uporabe in politika zasebnosti' },
       copyright: '© 2026 Lemur Legal d.o.o.',
-      strap: 'Fintech Factory — praksa za kripto in fintech pri Lemur Legal',
       socialAria: 'Lemur Legal na LinkedInu', // TODO(sl-review)
     },
   },

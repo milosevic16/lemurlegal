@@ -27,7 +27,7 @@ export interface ChromeContent {
     org: string
     /** Street address line. */
     street: string
-    /** City + country line. */
+    /** City line. */
     city: string
     cols: {
       crypto: { heading: string; links: [string, string, string] }
@@ -36,7 +36,6 @@ export interface ChromeContent {
     }
     legal: { terms: string }
     copyright: string
-    strap: string
     socialAria: string
   }
 }
