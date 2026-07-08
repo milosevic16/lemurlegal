@@ -50,7 +50,7 @@ const chrome: Bilingual<ChromeContent> = {
       blurb: 'Specializirana pravna pisarna za kripto, fintech, startup, deep tech, defence in dual-use podjetja.',
       org: 'Lemur Legal, d.o.o.',
       street: 'Ciril-Metodov trg 14',
-      city: 'Ljubljana, Slovenija',
+      city: 'Ljubljana',
       cols: {
         crypto: {
           heading: 'Kripto in fintech',
