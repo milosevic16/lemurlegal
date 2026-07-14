@@ -489,6 +489,13 @@ ul,ol{ margin:0; padding:0; list-style:none; }
 .hud-br{ bottom:0; right:0; border-bottom:1.5px solid var(--sig); border-right:1.5px solid var(--sig); opacity:.3; }
 .node-row{ display:flex; gap:1.6rem; margin-top:1.6rem; flex-wrap:wrap; }
 .node-item{ font-family:var(--mono); font-size:.69rem; color:var(--ink-2); display:flex; align-items:center; gap:.42rem; letter-spacing:.02em; }
+/* On phones the longer Slovenian labels naturally push "jezik: EN / SL" onto a
+   second row; the shorter English labels don't, so all three sit on one line.
+   Force the last status item to its own row below SL's natural wrap point so the
+   English hero status breaks the same 2+1 way. Desktop (>420px) is unaffected. */
+@media (max-width:420px) {
+.node-item:last-child{ flex-basis:100%; }
+}
 .node-dot{ width:5px; height:5px; border-radius:50%; flex-shrink:0; }
 .nd-ok{ background:var(--term-ok); }
 .nd-blue{ background:var(--sig); }
