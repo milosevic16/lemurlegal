@@ -1,0 +1,11 @@
+# Netlify build settings. Pinning these turns "Netlify builds from source" from a
+# UI-setting assumption into an enforced guarantee — which is what makes untracking
+# dist/ safe: production is always compiled fresh from src/ on every push to main.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # vite-ssg 28 / vite 5 / jsdom 28 need Node >= 20; pin a current LTS so a stale
+  # Netlify default (e.g. 18) can't break the prerender build.
+  NODE_VERSION = "22"

@@ -8,3 +8,7 @@
 vite.config.js
 vite.config.d.ts
 *.tsbuildinfo
+
+# Build output — Netlify compiles it fresh from src/ on every deploy (netlify.toml).
+# Keeping it out of git stops the ~30-file SSG output from burying real diffs.
+dist/
