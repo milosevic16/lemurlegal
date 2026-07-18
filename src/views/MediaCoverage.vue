@@ -63,7 +63,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, nextTick } from 'vue'
+import { onMounted, onServerPrefetch, onUnmounted, ref, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 // Reuse the blog's effects verbatim — they attach to generic hooks (#mesh,
 // [data-anim="blink|hexrow|reveal|cpulse"]) plus the shared header/mobile-menu,
 // all of which this page has.
@@ -76,38 +77,57 @@ import MediaCard from '@/components/MediaCard.vue'
 import media from '@/content/media'
 import { fetchMediaItems, SAMPLE_MEDIA, mediaSectionMeta, type MediaItem, type MediaSectionId } from '@/lib/media'
 
+const STATE_KEY = 'items'
+const route = useRoute()
 const t = usePageContent(media)
 useHead(media)
 const lp = (p: string) => localePath(p)
 
-const items = ref<MediaItem[]>([])
-const loading = ref(true)
+// Seed from the SSR-serialized state so a prerendered media page ships with its
+// cards and hydrates without a refetch.
+const stateBag = route.meta.state as Record<string, unknown> | undefined
+const seeded = (stateBag?.[STATE_KEY] as MediaItem[] | undefined) ?? null
+
+const items = ref<MediaItem[]>(seeded ?? [])
+const loading = ref(!seeded)
 const error = ref(false)
 
 const clsFor = (id: MediaSectionId) => mediaSectionMeta(id).cls
 const itemsBySection = (id: MediaSectionId) => items.value.filter((i) => i.section === id)
 
+// SSR: prerender ONLY real Contentful items — never bake SAMPLE_MEDIA mockups
+// into static HTML. On empty/error, ship the shell (the client re-fetches).
+onServerPrefetch(async () => {
+  try {
+    items.value = await fetchMediaItems(locale.value)
+  } catch (e) {
+    console.error('[media] SSR items fetch failed', e)
+    items.value = []
+  }
+  loading.value = false
+  if (stateBag) stateBag[STATE_KEY] = items.value
+})
+
 let dispose: (() => void) | undefined
 onMounted(async () => {
   applyBlogTheme()
-  // Load items first, then start effects: the scroll-reveal sets up a one-shot
-  // IntersectionObserver over [data-anim="reveal"] at init time, so the cards
-  // must already be in the DOM (hence the await + nextTick) — same as Blog.vue.
-  try {
-    const live = await fetchMediaItems(locale.value)
-    // Until the Contentful `mediaCoverage` type is populated, show the mockups so
-    // the layout is visible. Once real entries exist, replace this with
-    // `items.value = live` and restore the error/empty states.
-    items.value = live.length ? live : SAMPLE_MEDIA
-  } catch (e) {
-    // Backend not wired yet → fall back to sample mockups rather than an error.
-    console.warn('[media] Contentful not configured — showing sample mockups', e)
-    items.value = SAMPLE_MEDIA
-  } finally {
-    loading.value = false
-    await nextTick()
-    dispose = initEffects()
+  // Client fetch only when NOT prerendered/seeded (SPA fallback). Here the
+  // SAMPLE_MEDIA placeholder is acceptable — it never reaches static HTML.
+  if (!seeded) {
+    try {
+      const live = await fetchMediaItems(locale.value)
+      items.value = live.length ? live : SAMPLE_MEDIA
+    } catch (e) {
+      console.warn('[media] Contentful not configured — showing sample mockups', e)
+      items.value = SAMPLE_MEDIA
+    } finally {
+      loading.value = false
+    }
   }
+  // Cards must be in the DOM before the scroll-reveal IntersectionObserver inits
+  // (from SSR when seeded, or after the client fetch above).
+  await nextTick()
+  dispose = initEffects()
 })
 onUnmounted(() => dispose && dispose())
 </script>

@@ -20,14 +20,9 @@ export default defineConfig({
     // out Slovenian. Serial rendering keeps each page's locale correct. Required
     // for correctness, not speed — a post-build assertion (scripts/) guards it.
     concurrency: 1,
-    // Prerender the static, component-backed routes (both locales + /404) and
-    // nothing else. Filter the ROUTER'S constructed records (not raw SLUGS — the
-    // router special-cases the empty home segment, so 'sl' → '/sl' not '/sl/'),
-    // dropping param routes (/blog/:slug, the catch-all) and redirect records.
-    includedRoutes(_paths, routes) {
-      return routes
-        .filter((r) => r.component && typeof r.path === 'string' && !r.path.includes(':') && !r.redirect)
-        .map((r) => r.path)
-    },
+    // `includedRoutes` lives in src/main.ts (the server entry), not here: it needs
+    // Vite's SSR env substitution to read Contentful creds and enumerate blog
+    // slugs at build time. vite-ssg prefers the server-entry export over a config
+    // one, so defining it here too would be dead code / a second source of truth.
   },
 })

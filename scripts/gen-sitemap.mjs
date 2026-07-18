@@ -4,10 +4,11 @@
 // and that page's own en/sl/x-default hreflang alternates become the <xhtml:link>
 // entries. So the sitemap is, by construction, consistent with useHead's output.
 //
-// Covers all prerendered pages (dist/**/*.html) except 404.html. The dynamic blog
-// article routes (/blog/:slug) are not prerendered, so they are naturally absent
-// (deferred with the rest of Contentful); the /blog and /media LIST pages are
-// included as thin-but-valid shells.
+// Covers all prerendered pages (dist/**/*.html) except 404.html and any noindex
+// page. Blog articles (/blog/:slug, /sl/blog/:slug) and the blog/media list pages
+// are prerendered from Contentful, so their canonical + hreflang flow in here
+// automatically; a slug published since the last build is served client-side and
+// is simply absent until the next build.
 
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import { join, relative } from 'node:path'
@@ -42,6 +43,9 @@ for (const file of files) {
   const canonTag = head.match(/<link\b[^>]*\brel="canonical"[^>]*>/i)?.[0]
   const loc = canonTag?.match(/\bhref="([^"]+)"/)?.[1]
   if (!loc) continue // no canonical -> not an indexable page; skip
+  // Skip noindex pages (e.g. a rare not-found article render): they carry a
+  // canonical but must never appear in the sitemap.
+  if (/name="robots"[^>]*content="[^"]*\bnoindex\b/i.test(head)) continue
 
   const alts = []
   const linkRe = /<link\b[^>]*\brel="alternate"[^>]*>/gi

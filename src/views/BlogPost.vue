@@ -51,19 +51,31 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, computed, watch } from 'vue'
+import { onMounted, onServerPrefetch, ref, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useHead as unheadUseHead } from '@unhead/vue'
 import { applyBlogTheme } from '@/composables/blogTheme'
 import { usePageContent } from '@/i18n/useContent'
 import { locale, localePath } from '@/i18n/locale'
 import blog from '@/content/blog'
 import { fetchPostBySlug, sectionMeta, formatDate, type BlogPost } from '@/lib/contentful'
 
+// Canonical/hreflang base — kept in sync with src/i18n/useHead.ts.
+const SITE = 'https://lemur.legal'
+const STATE_KEY = 'post'
+
 const route = useRoute()
 const t = usePageContent(blog)
 const lp = (p: string) => localePath(p)
-const post = ref<BlogPost | null>(null)
-const loading = ref(true)
+
+// vite-ssg serializes route.meta.state → window.__INITIAL_STATE__ and rehydrates
+// it on the client, so a prerendered article ships with its post already present
+// and hydrates without a refetch (identical first render → clean v-html hydration).
+const stateBag = route.meta.state as Record<string, unknown> | undefined
+const seeded = (stateBag?.[STATE_KEY] as BlogPost | null | undefined) ?? null
+
+const post = ref<BlogPost | null>(seeded)
+const loading = ref(!seeded)
 
 // cls (article--{cls}) comes from the visual meta; the section label/coord are
 // localized and come from the content object.
@@ -73,6 +85,34 @@ const sec = computed(
 )
 const dateLabel = computed(() =>
   post.value ? formatDate(post.value.publishDate, locale.value) : '',
+)
+
+// Per-article head, serialized into the prerendered HTML: title/description from
+// the fetched post, canonical + reciprocal en/sl/x-default hreflang mirroring
+// src/i18n/useHead.ts so it satisfies scripts/assert-ssg-locale.mjs. A missing post
+// still emits a valid canonical/hreflang/title but is noindex, so a not-found
+// render never breaks the build gate and never gets indexed.
+unheadUseHead(
+  computed(() => {
+    const loc = locale.value
+    const p = post.value
+    const enUrl = SITE + localePath(route.path, 'en')
+    const slUrl = SITE + localePath(route.path, 'sl')
+    return {
+      title: p ? `${p.title} — Lemur Legal` : `${t.value.post.notFoundTitle} — Lemur Legal`,
+      htmlAttrs: { lang: loc },
+      meta: [
+        { name: 'description', content: p ? p.summary : t.value.post.notFoundText },
+        ...(p ? [] : [{ name: 'robots', content: 'noindex' }]),
+      ],
+      link: [
+        { rel: 'canonical', href: loc === 'sl' ? slUrl : enUrl },
+        { rel: 'alternate', hreflang: 'en', href: enUrl },
+        { rel: 'alternate', hreflang: 'sl', href: slUrl },
+        { rel: 'alternate', hreflang: 'x-default', href: enUrl },
+      ],
+    }
+  }),
 )
 
 async function load(slug: string): Promise<void> {
@@ -85,35 +125,36 @@ async function load(slug: string): Promise<void> {
     post.value = null
   } finally {
     loading.value = false
-    document.documentElement.lang = locale.value
-    document.title = post.value
-      ? `${post.value.title} — Lemur Legal`
-      : `${t.value.post.notFoundTitle} — Lemur Legal`
-    // Meta description from the already-fetched post (additive — independent of the
-    // Contentful fetch above; the article's summary doubles as its SEO description).
-    const desc = post.value ? post.value.summary : t.value.post.notFoundText
-    let descEl = document.head.querySelector<HTMLMetaElement>('meta[name="description"]')
-    if (!descEl) {
-      descEl = document.createElement('meta')
-      descEl.setAttribute('name', 'description')
-      document.head.appendChild(descEl)
-    }
-    descEl.setAttribute('content', desc)
   }
 }
 
-onMounted(() => {
-  applyBlogTheme()
-  load(String(route.params.slug))
+// Fetch on the server so the article body is in the prerendered HTML; stash a
+// trimmed post (drop the unused rich-text AST, keep bodyHtml) into the state bag
+// for the client to seed from. Never touches document — that stays in onMounted.
+onServerPrefetch(async () => {
+  try {
+    post.value = await fetchPostBySlug(String(route.params.slug), locale.value)
+  } catch (e) {
+    console.error('[blog] SSR post fetch failed', e)
+    post.value = null
+  }
+  loading.value = false
+  if (stateBag) stateBag[STATE_KEY] = post.value ? { ...post.value, body: null } : null
 })
 
-// A locale switch (/blog/:slug ↔ /sl/blog/:slug) changes the router-view key and
-// remounts this view, so onMounted refetches in the new locale. This watch covers
-// article-to-article navigation where only the slug param changes.
+onMounted(() => {
+  applyBlogTheme()
+  // Skip the client fetch when the page was prerendered + seeded; only fetch for
+  // the SPA fallback (a slug published after the last build, served as the shell).
+  if (!seeded) load(String(route.params.slug))
+})
+
+// Article-to-article navigation where only the slug changes. App.vue keys
+// router-view by $route.path, so this also remounts — kept as a safety net.
 watch(
   () => route.params.slug,
-  (slug) => {
-    if (slug) load(String(slug))
+  (slug, prev) => {
+    if (slug && slug !== prev) load(String(slug))
   },
 )
 </script>

@@ -63,7 +63,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, nextTick } from 'vue'
+import { onMounted, onServerPrefetch, onUnmounted, ref, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 import { initEffects } from './Blog.effects'
 import { applyBlogTheme } from '@/composables/blogTheme'
 import { useHead } from '@/i18n/useHead'
@@ -73,12 +74,19 @@ import BlogCard from '@/components/BlogCard.vue'
 import blog from '@/content/blog'
 import { fetchPosts, sectionMeta, type BlogPost, type SectionId } from '@/lib/contentful'
 
+const STATE_KEY = 'posts'
+const route = useRoute()
 const t = usePageContent(blog)
 useHead(blog)
 const lp = (p: string) => localePath(p)
 
-const posts = ref<BlogPost[]>([])
-const loading = ref(true)
+// Seed from the SSR-serialized state (route.meta.state) so a prerendered blog
+// index ships with its cards and hydrates without a refetch.
+const stateBag = route.meta.state as Record<string, unknown> | undefined
+const seeded = (stateBag?.[STATE_KEY] as BlogPost[] | undefined) ?? null
+
+const posts = ref<BlogPost[]>(seeded ?? [])
+const loading = ref(!seeded)
 const error = ref(false)
 
 const clsFor = (id: SectionId) => sectionMeta(id).cls
@@ -86,25 +94,38 @@ function postsBySection(id: SectionId): BlogPost[] {
   return posts.value.filter((p) => p.section === id)
 }
 
-// A locale switch navigates /blog ↔ /sl/blog, which changes the router-view key
-// (App.vue) and remounts this view — so onMounted refetches in the new locale;
-// no separate watcher is needed.
-let dispose: (() => void) | undefined
-onMounted(async () => {
-  applyBlogTheme()
-  // Load posts first, then start the effects: the scroll-reveal sets up a
-  // one-shot IntersectionObserver over [data-anim="reveal"] at init time, so
-  // the cards must already be in the DOM (hence the await + nextTick).
+// Fetch on the server so the post cards (and their /blog/<slug> links) are in the
+// prerendered HTML; stash trimmed posts (drop the unused rich-text AST) for the client.
+onServerPrefetch(async () => {
   try {
     posts.value = await fetchPosts(locale.value)
   } catch (e) {
     error.value = true
-    console.error('[blog] failed to load posts', e)
-  } finally {
-    loading.value = false
-    await nextTick()
-    dispose = initEffects()
+    console.error('[blog] SSR posts fetch failed', e)
   }
+  loading.value = false
+  if (stateBag) stateBag[STATE_KEY] = posts.value.map((p) => ({ ...p, body: null }))
+})
+
+// The scroll-reveal sets up a one-shot IntersectionObserver over
+// [data-anim="reveal"] at init, so cards must already be in the DOM — either from
+// SSR (seeded) or after the client fetch below. A locale switch remounts the view
+// (router-view key), so onMounted re-runs in the new locale; no watcher needed.
+let dispose: (() => void) | undefined
+onMounted(async () => {
+  applyBlogTheme()
+  if (!seeded) {
+    try {
+      posts.value = await fetchPosts(locale.value)
+    } catch (e) {
+      error.value = true
+      console.error('[blog] failed to load posts', e)
+    } finally {
+      loading.value = false
+    }
+  }
+  await nextTick()
+  dispose = initEffects()
 })
 onUnmounted(() => dispose && dispose())
 </script>

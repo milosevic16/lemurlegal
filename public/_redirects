@@ -28,8 +28,9 @@
 /about  /  301
 /sl/about  /sl  301
 
-# 2. Deferred blog: article deep links have no prerendered file, so hydrate the
-#    SPA (Contentful loads in the browser). Non-forced 200 -> real files still win.
+# 2. Blog articles are prerendered to real files; this is the FALLBACK for slugs
+#    published since the last build. Non-forced 200 -> a real /blog/<slug>.html wins;
+#    only a not-yet-built slug hydrates the SPA shell and client-fetches it.
 /blog/*  /index.html  200
 /sl/blog/*  /index.html  200
 

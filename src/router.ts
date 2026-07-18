@@ -21,8 +21,9 @@ for (const s of SLUGS) {
 // Blog article detail — localized alongside the list: EN `/blog/:slug`, SL
 // `/sl/blog/:slug`. The slug is the Contentful slug, shared across locales (one
 // entry, translated fields); the fetch requests the active locale and falls back
-// to English where a Slovenian translation is missing. These are dynamic and are
-// NOT prerendered (Contentful is out of phase-1 scope); they hydrate client-side.
+// to English where a Slovenian translation is missing. These param routes are
+// prerendered by enumerating slugs at build time (see includedRoutes in main.ts);
+// a slug published since the last build falls through to the SPA shell.
 routes.push({ path: '/blog/:slug', name: 'BlogPost', component: () => import('./views/BlogPost.vue'), meta: { locale: 'en' } })
 routes.push({ path: '/sl/blog/:slug', name: 'BlogPost-sl', component: () => import('./views/BlogPost.vue'), meta: { locale: 'sl' } })
 
