@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
     "composite": true,
+    // Type-check vite.config.ts but never emit vite.config.js from it. Vite loads
+    // its config via esbuild directly from the .ts; a compiled .js sibling would
+    // shadow the .ts (Vite resolves .js first), so config edits would silently
+    // no-op. `emitDeclarationOnly` (not `noEmit`, which is invalid with `composite`
+    // — TS6310) stops the .js while keeping this a valid referenced project.
+    "emitDeclarationOnly": true,
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
