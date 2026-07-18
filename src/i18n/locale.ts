@@ -50,6 +50,10 @@ export function otherLocale(loc: Locale = locale.value): Locale {
  * is forced to its final height immediately.
  */
 export function closeMobileMenu() {
+  // No-op during SSG (vite-ssg calls this from the router beforeEach in Node,
+  // where `document` does not exist). Guarding at the source keeps every caller
+  // isomorphic-safe.
+  if (typeof document === 'undefined') return
   const menu = document.getElementById('mobile-menu')
   if (!menu) return
   const toggle = document.querySelector<HTMLElement>('.nav-toggle')
