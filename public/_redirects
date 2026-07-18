@@ -1,1 +1,37 @@
-/*    /index.html   200
+# Netlify redirect + rewrite rules. Ordered, first match wins.
+# Kept in sync with src/router.ts (legacy redirects) and src/i18n/slugs.ts.
+
+# 1. Legacy underscore / old-slug URLs -> canonical dashed / translated slugs (301).
+#    Server-side so direct hits and crawlers resolve without loading the SPA.
+/mica_white_paper  /mica-white-paper  301
+/sl/mica_white_paper  /sl/mica-bela-knjiga  301
+/crypto_legal_opinion  /crypto-legal-opinion  301
+/sl/crypto_legal_opinion  /sl/pravno-mnenje-kriptovalute  301
+/regulatory_compliance  /regulatory-compliance  301
+/sl/regulatory_compliance  /sl/regulativna-skladnost  301
+/incorporation_esop  /incorporation-esop  301
+/sl/incorporation_esop  /sl/ustanovitev-in-esop  301
+/ip_protection  /ip-protection  301
+/sl/ip_protection  /sl/zascita-intelektualne-lastnine  301
+/startups_contracts  /startups-contracts  301
+/sl/startups_contracts  /sl/pogodbe-in-gospodarsko-pravo  301
+/regulatory_qualification  /regulatory-qualification  301
+/sl/regulatory_qualification  /sl/trgovinska-regulativna-kvalifikacija  301
+/investment_readiness_review  /investment-readiness-review  301
+/sl/investment_readiness_review  /sl/pregled-investicijske-pripravljenosti  301
+/compliance_frameworks  /compliance-frameworks  301
+/sl/compliance_frameworks  /sl/okviri-skladnosti  301
+/sl/media  /sl/v-medijih  301
+/sl/contact  /sl/kontakt  301
+/terms_of_use  /terms-of-use  301
+/sl/terms_of_use  /sl/pogoji-uporabe  301
+/about  /  301
+/sl/about  /sl  301
+
+# 2. Deferred blog: article deep links have no prerendered file, so hydrate the
+#    SPA (Contentful loads in the browser). Non-forced 200 -> real files still win.
+/blog/*  /index.html  200
+/sl/blog/*  /index.html  200
+
+# 3. Anything else that is not a prerendered file is a real 404 (not a Home bounce).
+/*  /404.html  404
