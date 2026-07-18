@@ -70,11 +70,14 @@ export function initEffects(): () => void {
           var box = el.parentElement; /* .founder-photo (position:relative) */
           var imgReady = false, inView = false, started = false, done = false, cv = null;
 
-          function finish(){ if (done) return; done = true; el.src = SRC; el.style.display = 'block'; if (cv && cv.parentNode) cv.parentNode.removeChild(cv); }
+          function finish(){ if (done) return; done = true; el.src = SRC; el.style.display = 'block'; el.style.opacity = '1'; if (cv && cv.parentNode) cv.parentNode.removeChild(cv); }
 
           function animate(){
             var w = box ? box.clientWidth : 0, h = box ? box.clientHeight : 0;
             if (reduce || !box || !w || !h) { finish(); return; }
+            /* The <img> is now in the prerendered HTML and visible by default; hide it
+               while the pixelate canvas plays so there's no sharp -> blocky -> sharp flash. */
+            el.style.opacity = '0';
             var SZ = 480; /* square internal res; CSS object-fit crops to the box like the <img> */
             cv = document.createElement('canvas'); cv.width = SZ; cv.height = SZ;
             cv.setAttribute('aria-hidden', 'true');
@@ -257,7 +260,9 @@ export function initEffects(): () => void {
 
           /* typewriter helper — types into a .mb-type span */
           function typeInto(span, done){
-            var text  = span.getAttribute('data-type') || '';
+            /* Source text now lives as the span's real content (prerendered into the
+               HTML for crawlers/no-JS); fall back to the legacy data-type attribute. */
+            var text  = span.getAttribute('data-type') || span.textContent || '';
             var col   = span.getAttribute('data-type-color') || '';
             var link  = span.getAttribute('data-type-link') || '';
             var speed = parseInt(span.getAttribute('data-type-speed') || '10', 10);
