@@ -1,8 +1,11 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import { locale, closeMobileMenu } from './i18n/locale'
+import { type RouteRecordRaw, type RouterScrollBehavior } from 'vue-router'
 import { SLUGS } from './i18n/slugs'
 
-const routes: RouteRecordRaw[] = []
+// The route table is exported (not a live `createRouter` singleton) so that
+// vite-ssg owns router/history creation — memory history on the server, web
+// history in the browser. `main.ts` passes `routes` + `scrollBehavior` into
+// `ViteSSG(...)` and registers the locale `beforeEach` in its setup callback.
+export const routes: RouteRecordRaw[] = []
 
 // Two routes per param-less view: English at `/<en>` and Slovenian at `/sl/<sl>`
 // (Home is `/` and `/sl`). The slugs differ per locale — English uses dashes,
@@ -18,7 +21,9 @@ for (const s of SLUGS) {
 // Blog article detail — localized alongside the list: EN `/blog/:slug`, SL
 // `/sl/blog/:slug`. The slug is the Contentful slug, shared across locales (one
 // entry, translated fields); the fetch requests the active locale and falls back
-// to English where a Slovenian translation is missing.
+// to English where a Slovenian translation is missing. These param routes are
+// prerendered by enumerating slugs at build time (see includedRoutes in main.ts);
+// a slug published since the last build falls through to the SPA shell.
 routes.push({ path: '/blog/:slug', name: 'BlogPost', component: () => import('./views/BlogPost.vue'), meta: { locale: 'en' } })
 routes.push({ path: '/sl/blog/:slug', name: 'BlogPost-sl', component: () => import('./views/BlogPost.vue'), meta: { locale: 'sl' } })
 
@@ -35,7 +40,15 @@ for (const s of SLUGS) {
   if (s.old && s.old !== s.sl) routes.push({ path: '/sl/' + s.old, redirect: s.sl ? '/sl/' + s.sl : '/sl' })
 }
 
-routes.push({ path: '/:pathMatch(.*)*', redirect: '/' })
+// Explicit 404 route — prerendered to dist/404.html (flat dirStyle), which Netlify
+// serves for unmatched URLs (see public/_redirects). NotFound sets noindex and
+// carries no canonical/hreflang, so it is excluded from the sitemap.
+routes.push({ path: '/404', name: 'NotFound', component: () => import('./views/NotFound.vue'), meta: { locale: 'en' } })
+
+// Catch-all renders the same NotFound view client-side (a real 404, not a bounce
+// to Home). It has a param, so it is excluded from prerendering; the server-side
+// 404 comes from dist/404.html via _redirects.
+routes.push({ path: '/:pathMatch(.*)*', name: 'NotFoundCatchAll', component: () => import('./views/NotFound.vue'), meta: { locale: 'en' } })
 
 // Resolve once the hash target exists, the fixed-header spacer has a height
 // (a proxy for "the lazy view mounted and its effects ran") and web fonts have
@@ -63,36 +76,20 @@ function waitForAnchor(hash: string): Promise<void> {
   })
 }
 
-export const router = createRouter({
-  history: createWebHistory(),
-  routes,
-  async scrollBehavior(to, _from, savedPosition) {
-    if (to.hash) {
-      // Anchor navigations — especially cross-page ones (a nav "sector" link on
-      // a product page jumps back to a Home section) — must wait for the lazy
-      // view to mount, fonts to load and the header spacer to be sized. Otherwise
-      // the target is measured mid-layout and the scroll lands on the wrong
-      // section. Then offset by the *actual* header height (varies by viewport).
-      await waitForAnchor(to.hash)
-      const head = document.getElementById('site-head')
-      const top = (head ? head.offsetHeight : 78) + 12
-      return { el: to.hash, top, behavior: 'smooth' }
-    }
-    if (savedPosition) return savedPosition
-    // Jump to top instantly — overrides the global `html { scroll-behavior: smooth }`
-    // in base.css so route changes don't play a smooth scroll-up.
-    return { top: 0, behavior: 'instant' }
-  },
-})
-
-// Keep the active locale in sync with the matched route. Set in a beforeEach (not
-// afterEach) so the locale is already correct when the view's setup/onMounted runs
-// — the ported effects and the Contentful fetches (blog/media) read `locale.value`
-// at mount. Prefer the route's meta.locale; fall back to a `/sl` path test so no
-// route can ever load the wrong-locale content even if its meta were missing.
-router.beforeEach((to) => {
-  locale.value = to.meta.locale === 'sl' || /^\/sl(\/|$)/.test(to.path) ? 'sl' : 'en'
-  // Snap the mobile menu shut before the next view renders so an open/animating
-  // menu doesn't inflate the fixed-header height that anchor scrolls offset by.
-  closeMobileMenu()
-})
+export const scrollBehavior: RouterScrollBehavior = async (to, _from, savedPosition) => {
+  if (to.hash) {
+    // Anchor navigations — especially cross-page ones (a nav "sector" link on a
+    // product page jumps back to a Home section) — must wait for the lazy view to
+    // mount, fonts to load and the header spacer to be sized. Otherwise the target
+    // is measured mid-layout and the scroll lands on the wrong section. Then offset
+    // by the *actual* header height (varies by viewport).
+    await waitForAnchor(to.hash)
+    const head = document.getElementById('site-head')
+    const top = (head ? head.offsetHeight : 78) + 12
+    return { el: to.hash, top, behavior: 'smooth' }
+  }
+  if (savedPosition) return savedPosition
+  // Jump to top instantly — overrides the global `html { scroll-behavior: smooth }`
+  // in base.css so route changes don't play a smooth scroll-up.
+  return { top: 0, behavior: 'instant' }
+}

@@ -100,8 +100,9 @@
   <div class="founder">
     <div class="founder__aside">
       <div class="founder-photo" data-anim="reveal">
-      <!-- DEVELOPER: drop founder.jpg (square, ~1341×1356) next to this HTML file. The image will appear automatically. -->
-      <img id="founder-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" :alt="t.founder.name" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2;display:none;">
+      <!-- Real src so the founder photo is in the server-rendered HTML (crawlers, no-JS).
+           The pixelate effect hides it only while its canvas animation plays, then reveals it. -->
+      <img id="founder-img" src="/founder.jpg" :alt="t.founder.name" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:2;">
       <div class="photo-grid"></div>
       <div class="photo-scan"></div>
       <span class="photo-corner photo-corner--tl"></span>
@@ -157,26 +158,26 @@
     <span class="hud-tl" aria-hidden="true"></span><span class="hud-tr" aria-hidden="true"></span>
     <span class="hud-bl" aria-hidden="true"></span><span class="hud-br" aria-hidden="true"></span>
     <div class="matter-board__header" aria-hidden="true">
-      <span class="mb-type" :data-type="t.cta.matter.header"></span> <span class="blip" data-anim="blink"></span><span class="blip" data-anim="blink" style="margin-left:.4rem;opacity:.5;"></span>
+      <span class="mb-type">{{ t.cta.matter.header }}</span> <span class="blip" data-anim="blink"></span><span class="blip" data-anim="blink" style="margin-left:.4rem;opacity:.5;"></span>
     </div>
     <div class="matter-board__nodes">
       <div class="mnode mb-hide">
-        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[0].num"></span></span>
-        <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[0].title"></span></p>
-        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[0].sub"></span></span>      </div>
+        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type">{{ t.cta.matter.steps[0].num }}</span></span>
+        <p class="mnode__title"><span class="mb-type">{{ t.cta.matter.steps[0].title }}</span></p>
+        <span class="mnode__sub"><span class="mb-type">{{ t.cta.matter.steps[0].sub }}</span></span>      </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
-        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[1].num"></span></span>
-        <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[1].title"></span></p>
-        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[1].sub"></span></span>      </div>
+        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type">{{ t.cta.matter.steps[1].num }}</span></span>
+        <p class="mnode__title"><span class="mb-type">{{ t.cta.matter.steps[1].title }}</span></p>
+        <span class="mnode__sub"><span class="mb-type">{{ t.cta.matter.steps[1].sub }}</span></span>      </div>
       <div class="mnode-trace mb-hide" aria-hidden="true"><div class="mnode-pulse" data-anim="mpulse"></div></div>
       <div class="mnode mb-hide">
-        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type" :data-type="t.cta.matter.steps[2].num"></span></span>
-        <p class="mnode__title"><span class="mb-type" :data-type="t.cta.matter.steps[2].title"></span></p>
-        <span class="mnode__sub"><span class="mb-type" :data-type="t.cta.matter.steps[2].sub"></span></span>      </div>
+        <span class="mnode__step"><span class="blip" data-anim="blink" style="margin-right:.4rem;vertical-align:middle;"></span><span class="mb-type">{{ t.cta.matter.steps[2].num }}</span></span>
+        <p class="mnode__title"><span class="mb-type">{{ t.cta.matter.steps[2].title }}</span></p>
+        <span class="mnode__sub"><span class="mb-type">{{ t.cta.matter.steps[2].sub }}</span></span>      </div>
     </div>
     <div class="matter-board__footer mb-hide">
-      <span class="mb-type" data-type="$ open-matter --client=you  →" data-type-color="var(--term-cyan)" :data-type-link="lp('/contact') + '#brief'" data-type-speed="28"></span>
+      <span class="mb-type" :data-type-link="lp('/contact') + '#brief'" data-type-speed="28"><a :href="lp('/contact') + '#brief'" style="font-family:var(--mono);font-size:.82rem;color:var(--term-cyan);text-decoration:none;letter-spacing:.02em;">$ open-matter --client=you  →</a></span>
     </div>
   </div>
 

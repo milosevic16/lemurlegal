@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build && node scripts/gen-sitemap.mjs && node scripts/assert-ssg-locale.mjs",
+    "build:spa": "vite build",
     "typecheck": "vue-tsc -b",
     "preview": "vite preview"
   },
@@ -16,12 +17,15 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@unhead/vue": "^2.1.15",
     "@vitejs/plugin-vue": "^5.1.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "typescript": "~5.5.4",
     "vite": "^5.4.8",
+    "vite-ssg": "^28.3.0",
     "vue-tsc": "^2.1.6"
   }
 }

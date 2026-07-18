@@ -1,0 +1,7 @@
+# Lemur Legal. All crawlers welcome — including AI / LLM retrieval bots such as
+# GPTBot, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended and CCBot.
+# AEO (visibility to AI search) is a priority, so nothing is disallowed.
+User-agent: *
+Allow: /
+
+Sitemap: https://lemur.legal/sitemap.xml

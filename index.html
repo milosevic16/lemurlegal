@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>Lemur Legal — Tech Law for Crypto, Deep Tech &amp; Defence</title>
-    <meta
-      name="description"
-      content="Specialist tech-law office in Ljubljana: MiCA &amp; crypto, startups &amp; deep tech, defence &amp; dual-use. Fixed fees, first reply within 24 hours."
-    />
+    <!-- No hardcoded <title>/<meta description> here: every route sets its own via
+         useHead (@unhead), and vite-ssg serializes them per page. A static tag here
+         would duplicate onto all 28 prerendered pages. -->
   </head>
   <body>
     <div id="app"></div>
