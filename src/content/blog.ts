@@ -34,7 +34,7 @@ export interface BlogContent {
     lead: string
   }
   sections: [BlogSection, BlogSection, BlogSection]
-  states: { loading: string; error: string; empty: string }
+  states: { loading: string; error: string; empty: string; more: string }
   cta: { title: string; text: string; action: string }
   /** Strings for the single-article page (BlogPost.vue). */
   post: {
@@ -102,6 +102,7 @@ const blog: Bilingual<BlogContent> = {
       loading: 'Loading posts…',
       error: "Couldn't load posts right now — please try again shortly.",
       empty: 'No posts in this section yet.',
+      more: 'More',
     },
     cta: {
       title: "Have a question we haven't answered?",
@@ -169,6 +170,7 @@ const blog: Bilingual<BlogContent> = {
       loading: 'Nalaganje prispevkov…',
       error: 'Prispevkov trenutno ni bilo mogoče naložiti — poskusite znova čez nekaj trenutkov.',
       empty: 'V tej kategoriji še ni prispevkov.',
+      more: 'Več',
     },
     cta: {
       title: 'Potrebujete pravni pogled na to, kar gradite?',

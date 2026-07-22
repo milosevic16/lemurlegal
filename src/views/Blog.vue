@@ -40,8 +40,17 @@
       <h2 class="section-title">{{ s.title }}</h2>
       <p class="section-subtitle">{{ s.subtitle }}</p>
     </div>
-    <div class="blog-grid">
-      <BlogCard v-for="post in postsBySection(s.id)" :key="post.id" :post="post" />
+    <div class="blog-scroller" data-blog-scroller>
+      <div class="blog-grid">
+        <BlogCard v-for="post in postsBySection(s.id)" :key="post.id" :post="post" />
+      </div>
+      <!-- Scroll affordance: shown by JS only when the track overflows and isn't
+           at the end, so users know more posts exist to the right. Colour comes
+           from the section (.blog-section--{b,g,o}). -->
+      <button type="button" class="blog-more" data-blog-more hidden>
+        <span class="blog-more__label">{{ t.states.more }}</span>
+        <span class="blog-more__arrow" aria-hidden="true">→</span>
+      </button>
     </div>
     <p v-if="loading" class="blog-note">{{ t.states.loading }}</p>
     <p v-else-if="error" class="blog-note blog-note--err">{{ t.states.error }}</p>
@@ -111,7 +120,48 @@ onServerPrefetch(async () => {
 // [data-anim="reveal"] at init, so cards must already be in the DOM — either from
 // SSR (seeded) or after the client fetch below. A locale switch remounts the view
 // (router-view key), so onMounted re-runs in the new locale; no watcher needed.
+// "More" scroll affordance per section. Each .blog-grid is a horizontal scroll
+// track; without a hint users don't realise a section holds more posts than fit
+// (3 on desktop, 1 on mobile). Show the button + right-edge fade only while the
+// track overflows AND isn't scrolled to the end. Client-only; returns a disposer.
+function initScrollHints(): () => void {
+  const cleanups: Array<() => void> = []
+  document.querySelectorAll<HTMLElement>('[data-blog-scroller]').forEach((wrap) => {
+    const grid = wrap.querySelector<HTMLElement>('.blog-grid')
+    const btn = wrap.querySelector<HTMLButtonElement>('[data-blog-more]')
+    if (!grid || !btn) return
+    const update = () => {
+      const max = grid.scrollWidth - grid.clientWidth
+      const show = max > 8 && grid.scrollLeft < max - 8
+      btn.hidden = !show
+      wrap.classList.toggle('has-overflow', show)
+    }
+    const onClick = () => {
+      const card = grid.querySelector<HTMLElement>('.blog-card')
+      const step = card ? card.getBoundingClientRect().width + 20 : grid.clientWidth * 0.85
+      // Direct scrollLeft (not scrollBy/behavior:'smooth', which is a no-op in
+      // no-paint contexts). scroll-snap on .blog-grid lands it on the next card;
+      // CSS scroll-behavior on the grid provides the smooth animation.
+      grid.scrollLeft = Math.min(grid.scrollLeft + step, grid.scrollWidth - grid.clientWidth)
+    }
+    grid.addEventListener('scroll', update, { passive: true })
+    btn.addEventListener('click', onClick)
+    window.addEventListener('resize', update, { passive: true })
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(update) : null
+    ro?.observe(grid)
+    update()
+    cleanups.push(() => {
+      grid.removeEventListener('scroll', update)
+      btn.removeEventListener('click', onClick)
+      window.removeEventListener('resize', update)
+      ro?.disconnect()
+    })
+  })
+  return () => cleanups.forEach((c) => c())
+}
+
 let dispose: (() => void) | undefined
+let disposeHints: (() => void) | undefined
 onMounted(async () => {
   applyBlogTheme()
   if (!seeded) {
@@ -126,8 +176,12 @@ onMounted(async () => {
   }
   await nextTick()
   dispose = initEffects()
+  disposeHints = initScrollHints()
 })
-onUnmounted(() => dispose && dispose())
+onUnmounted(() => {
+  dispose && dispose()
+  disposeHints && disposeHints()
+})
 </script>
 
 <style scoped>
@@ -185,10 +239,34 @@ img{ max-width:100%; }
 .section-subtitle{ font-family:var(--serif); font-style:italic; color:var(--ink-2); font-size:1.05rem; max-width:62ch; }
 /* Horizontal scroll track — cards line up left-to-right and scroll when the
    section has more than fit. Card sizing/scroll-snap lives in BlogCard.vue. */
-.blog-grid{ display:flex; gap:clamp(1rem,2vw,1.5rem); margin-top:2.4rem; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x proximity; padding-bottom:1rem; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:var(--hairline-strong) transparent; }
+.blog-grid{ display:flex; gap:clamp(1rem,2vw,1.5rem); margin-top:2.4rem; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x proximity; scroll-behavior:smooth; padding-bottom:1rem; -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:var(--hairline-strong) transparent; }
 .blog-grid::-webkit-scrollbar{ height:8px; }
 .blog-grid::-webkit-scrollbar-track{ background:transparent; }
 .blog-grid::-webkit-scrollbar-thumb{ background:var(--hairline-strong); border-radius:8px; border:2px solid transparent; background-clip:padding-box; }
+/* ── "More" scroll affordance ─────────────────────────────────────────── */
+.blog-scroller{ position:relative; }
+/* Right-edge fade — only while more cards exist to the right (JS toggles .has-overflow). */
+.blog-scroller.has-overflow::after{ content:""; position:absolute; top:0; bottom:1rem; right:0; width:clamp(56px,12%,120px); pointer-events:none; z-index:2; }
+.blog-more{ position:absolute; top:calc(50% - .5rem); right:.5rem; transform:translateY(-50%); z-index:3; display:inline-flex; align-items:center; gap:.45rem; padding:.62rem 1.05rem; border:none; border-radius:999px; font-family:var(--mono); font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#fff; cursor:pointer; box-shadow:0 10px 26px -12px rgba(20,18,30,.7); transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.blog-more[hidden]{ display:none; }
+.blog-more:hover{ transform:translateY(-50%) scale(1.05); box-shadow:0 14px 30px -12px rgba(20,18,30,.85); }
+.blog-more:active{ transform:translateY(-50%) scale(.98); }
+.blog-more:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+.blog-more__arrow{ font-size:.95rem; line-height:1; transition:transform .2s ease; }
+.blog-more:hover .blog-more__arrow{ transform:translateX(3px); }
+/* Per-section colour: button = deep accent + white text; fade = section background. */
+.blog-section--b .blog-more{ background:#6444CC; }
+.blog-section--b .blog-more:hover{ background:#573BB8; }
+.blog-section--b .blog-scroller.has-overflow::after{ background:linear-gradient(90deg,rgba(203,196,220,0),#CBC4DC 72%); }
+.blog-section--g .blog-more{ background:#137A5F; }
+.blog-section--g .blog-more:hover{ background:#0E6E54; }
+.blog-section--g .blog-scroller.has-overflow::after{ background:linear-gradient(90deg,rgba(186,210,196,0),#BAD2C4 72%); }
+.blog-section--o .blog-more{ background:#9E5A1E; }
+.blog-section--o .blog-more:hover{ background:#874C18; }
+.blog-section--o .blog-scroller.has-overflow::after{ background:linear-gradient(90deg,rgba(217,210,180,0),#D9D2B4 72%); }
+@media (prefers-reduced-motion: reduce){
+  .blog-more, .blog-more__arrow{ transition:none; }
+}
 .blog-note{ font-family:var(--mono); font-size:.8rem; color:var(--ink-2); margin-top:1.6rem; letter-spacing:.02em; }
 .blog-note--err{ color:#9B0E00; }
 .blog-section{ border-top:1px solid var(--hairline); }
